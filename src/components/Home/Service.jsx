@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Service() {
   return (
-    <div class="services-outline">
-      <div class="liquid-damage" /*data-aos="zoom-in-right" data-aos-delay="100"*/ >
-        <div class="service-content">
+    <div className="services-outline">
+      <div className="liquid-damage" /*data-aos="zoom-in-right" data-aos-delay="100"*/ >
+        <div className="service-content">
           <h3>Liquid Damage</h3>
           <h5>
             It’s one of our specialties. If you suspect any liquid exposure to
@@ -15,8 +15,8 @@ export default function Service() {
           <a href="/">Make an appointment</a>
         </div>
       </div>
-      <div class="custom-desktop" /*data-aos="zoom-in-left" data-aos-delay="100"*/>
-        <div class="service-content">
+      <div className="custom-desktop" /*data-aos="zoom-in-left" data-aos-delay="100"*/>
+        <div className="service-content">
           <h3>Custom desktop</h3>
           <h5>
             It’s one of our specialties. If you suspect any liquid exposure to
@@ -27,8 +27,8 @@ export default function Service() {
           <a href="/">Make an appointment</a>
         </div>
       </div>
-      <div class="data-recovery" /*data-aos="zoom-in-right" data-aos-delay="100"*/ >
-        <div class="service-content">
+      <div className="data-recovery" /*data-aos="zoom-in-right" data-aos-delay="100"*/ >
+        <div className="service-content">
           <h3>Liquid Damage</h3>
           <h5>
             It’s one of our specialties. If you suspect any liquid exposure to
@@ -39,8 +39,8 @@ export default function Service() {
           <a href="/">Make an appointment</a>
         </div>
       </div>
-      <div class="it-support" /*data-aos="zoom-in-left" data-aos-delay="100"*/>
-        <div class="service-content">
+      <div className="it-support" /*data-aos="zoom-in-left" data-aos-delay="100"*/>
+        <div className="service-content">
           <h3>IT Support</h3>
           <h5>
             It’s one of our specialties. If you suspect any liquid exposure to

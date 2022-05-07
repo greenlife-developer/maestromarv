@@ -4,29 +4,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import reviews from "../../review";
 // console.log(reviews[0].time);j8ki9lo0p;-'[]
 
 export default function Swipper() {
+
+  // if (window.screen.width <= 425) { 
+  //   setSlide(1)
+  //  }
+  // if (window.screen.width <= 425) { 
+  //   setSlide(1)
+  //  }
+
+
   return (
     <div className="container">
       <h1 style={{textAlign: "center"}}>What our customer's say</h1>
       <hr />
       <Swiper
         spaceBetween={30} 
-        slidesPerView={3}
+        slidesPerView={window.screen.width <= 425 ? 1 : 3}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
         {reviews.map((review) => {
          return <SwiperSlide key={review.id}>
             <div className="review-item">
               <div className="review-text">
-                <i class="fa-solid fa-quote-left"></i>
+                <i className="fa-solid fa-quote-left"></i>
                 <p>{review.text}</p>
               </div>
               <div className="review-info">

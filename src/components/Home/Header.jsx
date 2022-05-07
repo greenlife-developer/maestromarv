@@ -1,19 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function Header() {
-  const [navBackground, setNavBackground] = useState(false)
-  
+  const [navBackground, setNavBackground] = useState(false);
+
   window.onscroll = function () {
-    if (window.scrollY > window.innerHeight){
-      setNavBackground(true)
+    if (window.scrollY > window.innerHeight) {
+      setNavBackground(true);
     }
-    if (window.scrollY < window.innerHeight){
-      setNavBackground(false)
+    if (window.scrollY < window.innerHeight) {
+      setNavBackground(false);
     }
-  }
+  };
 
   return (
-    <nav style={{boxShadow: navBackground ? "inset 0 0 0 1000px rgba(0, 0, 0, 1)" : "inset 0 0 0 1000px rgba(0, 0, 0, 0.5)"}} className="navigation" id="navigation">
+    <nav
+      style={{
+        boxShadow: navBackground
+          ? "inset 0 0 0 1000px rgba(0, 0, 0, 1)"
+          : "inset 0 0 0 1000px rgba(0, 0, 0, 0.5)",
+      }}
+      className="navigation"
+      id="navigation"
+    >
       <div className="logo">
         <img src="images/logo.png" alt="logo" />
       </div>
@@ -54,6 +62,9 @@ function Header() {
           </ul>
         </div>
       </div>
+      <a className="bars" href="/">
+        <i className="fa-solid fa-bars"></i>
+      </a>
     </nav>
   );
 }

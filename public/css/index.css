@@ -18,29 +18,24 @@ hr {
     border-top: 1px solid #459db6;
 }
 
-.background {
-    background-color: #D4AB6A;
-    color: red;
-}
-
+/* --------------------------- navigation bar ------------------------------------ */
 .navigation {
     display: flex;
-    width: 100%;
+    width: 100% !important;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 999;
-    justify-content: space-between;
-    padding: 10px 200px;
+    padding: .5rem 0;
+    justify-content: space-around;
 }
 
 .logo img {
     object-fit: cover;
-    width: 80px;
+    width: 60px;
 }
 
 .menu {
-    margin-right: 15px;
-    margin-top: 15px;
+    margin: 1rem 0;
 }
 
 .menu-items ul {
@@ -53,10 +48,15 @@ hr {
     list-style: none;
 }
 
+.bars{
+    font-size: 25px;
+    display: none;
+}
+
 .menu ul li a {
     position: relative;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
     color: whitesmoke;
     padding: 8px;
     margin: 5px;
@@ -100,62 +100,74 @@ hr {
     color: #D4AB6A;
 }
 
-/* Carousel starts from here */
+/* --------------------------- navigation bar ------------------------------------ */
 
-.carousel {
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    clear: both;
+
+/* ------------------- Carousel starts from here --------------------------------- */
+
+.banner{
+    /* background-image: url("../images/banner12.jpg"); */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    /* text-align: center; */
+    color: hsl(0, 0%, 100%);
+    height: 99vh;
 }
 
-.carousel-inner .item img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-
-.bg-color {
+.banner-content{
     position: absolute;
-    background-color: rgba(0, 0, 25, 0.7);
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-inner .item .carousel-caption {
-    bottom: 15rem;
-}
-
-.carousel-inner .item .carousel-caption .caption-content {
-    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 75%;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.banner-content-text{
+    position: relative;
+    text-align: center;
+    margin-top: 5rem;
     /* background-color: blue; */
-    gap: 1rem;
-    justify-content: space-around;
-    margin: auto;
-
+    /* padding: 5rem 3rem; */
+    /* top: 5.5rem; */
 }
 
-.carousel-inner .item .carousel-caption img {
-    width: 300px;
+.banner-content img{
+    padding: 0;
+    margin: 0;
+    /* background-color: yellow; */
     height: 400px;
-    object-fit: cover;
 }
 
-.carousel-inner .item .carousel-caption h1 {
+.banner-content h1{
+    padding-bottom: 1rem;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0; /*to be removed*/
+}
+
+.banner-content-text span{
+    font-size: 18px;
     font-weight: bold;
 }
 
-.carousel-inner .item .carousel-caption span {
-    font-size: 2rem;
+.banner-content button{
+    background-color: #000000;
+    border: none;
+    font-size: 1.5em;
     font-weight: bold;
+    border: none;
 }
 
 /* ------------------------ Carousel ends here --------------------- */
 
 .about .container {
-    height: 70vh;
+    /* height: 70vh; */
+    padding-bottom: 15px;
     margin-top: 5%;
     /* margin: 0; */
 }
@@ -193,16 +205,19 @@ hr {
     background-attachment: fixed;
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.8);
+    background-color: #000000;
     color: white;
     margin: 0;
-    padding-top: 10%;
     height: 90vh;
+    margin-top: 2rem;
     text-align: center;
 }
 
 .product-display-content {
-    width: 50vw;
-    margin: auto auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .product-display-content p i {
@@ -218,13 +233,12 @@ hr {
 
 .services-outline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
-    /* width: 98%; */
-    padding: 25px 5px;
-    margin: auto 2rem;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    text-align: center;
+    padding: 25px 0;
+    margin: auto 1rem;
+    width: 100%;
+    grid-gap: 1.5rem;
 }
 
 .services-outline h3,
@@ -250,9 +264,12 @@ hr {
 .data-recovery,
 .it-support {
     height: 81vh;
-    text-align: center;
-    padding: 40px 0;
-    /* border-radius: 5px; */
+    /* text-align: center; */
+    /* padding: 40px 0; */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .liquid-damage {
@@ -284,21 +301,21 @@ hr {
 .review-item {
     background-color: #dfdfdf;
     /* height: 22rem; */
-    width: 350px;
+    width: 340px;
     margin: 0 .5rem;
     padding: 5px;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     display: inline-block;
     /* color: white; */
 }
 
 .review-text {
     background-color: white;
-    height: 20rem;
+    height: 12rem;
     overflow-y: scroll;
-    outline: none;
+    outline: none; 
     color: rgba(0, 0, 25, 0.7);
-    padding: 10px;
+    padding: 10px; 
     /* margin: 5px; */
 }
 
@@ -366,7 +383,7 @@ hr {
     /* background-size: contain; */
     background-repeat: no-repeat;
     /* padding-bottom: 5rem; */
-    height: 60rem;
+    height: 40rem;
     width: 97%;
     margin: 5rem auto;
 }
@@ -375,7 +392,7 @@ hr {
     color: #f1f1f1;
     /* background-color: blue; */
     /* width: 700px; */
-    padding: 15rem 35rem;
+    padding: 7rem 20rem;
 }
 
 .help-content h1{
@@ -408,10 +425,16 @@ hr {
 
 .about-company{
     text-align: center;
-    font-size: 100%;
+    /* font-size: 100%; */
     margin: 5rem auto;
-    width: 95rem;
+    width: 100%;
     /* font-family: fantasy; */
+}
+
+.about-company-content{
+    /* background-color: rgb(0, 0, 255); */
+    width: 80%;
+    margin: auto;
 }
 
 .about-company h1{
@@ -440,7 +463,7 @@ hr {
 
 /* -------------------------------------------------------------------- */
 
-.about-maestromarv {
+/* .about-maestromarv {
     margin: auto;
     text-align: center;
     padding: 0 0 40px 0;
@@ -488,7 +511,7 @@ hr {
     /* border-top: 1px solid red; */
     background-color: #f2f2f2;
     padding: 1.5rem;
-}
+} */
 
 .footer {
     width: 100%;
@@ -499,29 +522,50 @@ hr {
 
 
 @media screen and (max-width: 430px) {
-    .menu ul li a {
-        font-size: 10px;
-        padding: 3px;
-    }
-
     .navigation {
-        display: flex;
-        justify-content: space-around;
-        padding: 0 30px 0 30px;
+        width: 100vw !important;
+        justify-content: space-between;
+        padding: 5px 15px;
+        margin: 0;
     }
 
-    /* .about img {
-        border-radius: 8px;
-        width: 200px;
-        height: 300px
-    } */
+    .menu{
+        display: none;
+    }
 
-    .logo {
-        margin: 12px 0 12px 12px;
+    .bars{
+        display: block;
+    }
+
+    
+    .banner-content{
+        flex-direction: column;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+    }
+
+    .banner button{
+        font-size: 15px;
+    }
+
+    .banner-content img{
+        display: none;
+    }
+
+    .product-display-content p i{
+        font-size: 4.5rem;
+    }
+    
+    .product-display-content h1{
+        font-size: 22px;
     }
 
     .services-outline {
-        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        margin: 0;
+        padding: 5px;
     }
 
     .logo img {
@@ -539,6 +583,16 @@ hr {
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
+    }
+
+.help-section{
+    height: 30rem;
+}
+
+    .help-content{
+        color: #f1f1f1;
+        padding: 2rem 5rem;
+        margin: auto;
     }
 
     .text img {
