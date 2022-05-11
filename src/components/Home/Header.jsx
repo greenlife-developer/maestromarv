@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Header() {
   const [navBackground, setNavBackground] = useState(false);
+  const [icon, setIcon] = useState(true)
 
   window.onscroll = function () {
     if (window.scrollY > window.innerHeight) {
@@ -12,12 +13,25 @@ function Header() {
     }
   };
 
+  function handleDropClick(e) {
+    if(icon){
+      setIcon(false)
+      document.getElementById('dropDownContent').style.display = "block"
+      document.getElementById('dropDownContent').style.transform = "translateY(0)"
+    } else{
+      setIcon(true)
+      document.getElementById('dropDownContent').style.display = "none"
+      document.getElementById('dropDownContent').style.transform = "translateY(0)"
+
+    }
+  }
+
   return (
     <nav
       style={{
         boxShadow: navBackground
           ? "inset 0 0 0 1000px rgba(0, 0, 0, 1)"
-          : "inset 0 0 0 1000px rgba(0, 0, 0, 0.5)",
+          : "inset 0 0 0 1000px rgba(0, 0, 0, 0.3)",
       }}
       className="navigation"
       id="navigation"
@@ -32,13 +46,13 @@ function Header() {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/">Computer repair</a>
+              <a href="/">Computer Repair</a>
             </li>
             <li>
-              <a href="/">Phone repair</a>
+              <a href="/">Phone Repair</a>
             </li>
             <li>
-              <a href="/">Home automation</a>
+              <a href="/">Home Automation</a>
             </li>
             <li>
               <a href="/">Products</a>
@@ -62,9 +76,76 @@ function Header() {
           </ul>
         </div>
       </div>
-      <a className="bars" href="/">
-        <i className="fa-solid fa-bars"></i>
-      </a>
+      <div className="dropdown">
+        <div className="bars">
+          <i
+            onClick={handleDropClick}
+            className={icon ? "fa-solid fa-bars dropbtn dropdown" : "fa-solid fa-xmark dropbtn dropdown" }
+          ></i>
+          <div className="dropdown">
+            <div className="dropdown-content" id="dropDownContent">
+              <ul>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/">Computer Repair</a>
+                </li>
+                <li>
+                  <a href="/">Phone Repair</a>
+                </li>
+                <li>
+                  <a href="/">Home Automation</a>
+                </li>
+                <li>
+                  <a href="/">Products</a>
+                </li>
+                <li>
+                  <a href="/">About us</a>
+                </li>
+                <li>
+                  <a href="/">Location</a>
+                </li>
+                <li>
+                  <a href="/">Blog</a>
+                </li>
+                <li>
+                  <a href="/">FAQ</a>
+                </li>
+                <li>
+                  <a href="/">Contact Us</a>
+                </li>
+                <li className="cart">
+                  <span
+                    style={{
+                      backgroundColor: "green",
+                      padding: "3px 8px",
+                      borderRadius: "40%",
+                      color: "#f5f5f5",
+                    }}
+                  >
+                    0
+                  </span>{" "}
+                  <i className="fa-solid fa-shopping-cart"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="cart">
+        <span
+          style={{
+            backgroundColor: "green",
+            padding: "3px 8px",
+            borderRadius: "40%",
+            color: "#f5f5f5",
+          }}
+        >
+          0
+        </span>{" "}
+        <i className="fa-solid fa-shopping-cart"></i>
+      </div>
     </nav>
   );
 }

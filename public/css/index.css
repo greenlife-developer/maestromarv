@@ -1,14 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-p {
-    font-size: 1.3rem;
-}
-
 body {
     margin: 0px;
     padding: 0px;
-    font-family: 'roboto', sans-serif;
-    font-weight: bold;
+    font-family: "Open Sans", Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -25,17 +18,18 @@ hr {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 999;
-    padding: .5rem 0;
+    padding: .3rem 0;
     justify-content: space-around;
 }
 
 .logo img {
     object-fit: cover;
-    width: 60px;
+    width: 70px;
 }
 
 .menu {
     margin: 1rem 0;
+    font-size: 12px;
 }
 
 .menu-items ul {
@@ -48,24 +42,55 @@ hr {
     list-style: none;
 }
 
-.bars{
-    font-size: 25px;
-    display: none;
-}
-
 .menu ul li a {
     position: relative;
     text-decoration: none;
-    font-size: 14px;
-    color: whitesmoke;
+    font-size: 12px;
+    color: #f5f5f5;
     padding: 8px;
-    margin: 5px;
+    margin: 11px;
     transition: all 1s;
 }
 
-.dropdown {
+.menu-items ul .dropdown {
     position: relative;
     display: inline-block;
+}
+
+.bars {
+    font-size: 25px;
+    margin-top: .6rem;
+    display: none;
+}
+
+.bars .dropdown {
+    display: none;
+}
+
+.bars .dropdown .dropdown-content{
+    padding: 2rem;
+    height: 90vh;
+    width: 280px;
+    overflow-y: scroll !important;
+    transition: all 5s ease;
+}
+
+.dropdown-content ul li{
+    list-style: none;
+}
+
+.dropdown-content ul{
+    transition: all 1.5s ease;
+}
+
+.bars .dropdown-content a{
+    font-size: 16px;
+}
+
+.cart i{
+    font-size: 1.5rem;
+    padding: 15px;
+    color: #f5f5f5;
 }
 
 .dropdown-content {
@@ -91,6 +116,7 @@ hr {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    transform: translateY(0);
 }
 
 .menu ul li a:hover {
@@ -105,7 +131,7 @@ hr {
 
 /* ------------------- Carousel starts from here --------------------------------- */
 
-.banner{
+.banner {
     /* background-image: url("../images/banner12.jpg"); */
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     background-size: cover;
@@ -114,7 +140,7 @@ hr {
     height: 99vh;
 }
 
-.banner-content{
+.banner-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -127,7 +153,7 @@ hr {
     /* background-color: red; */
 }
 
-.banner-content-text{
+.banner-content-text {
     position: relative;
     text-align: center;
     margin-top: 5rem;
@@ -136,30 +162,31 @@ hr {
     /* top: 5.5rem; */
 }
 
-.banner-content img{
+.banner-content img {
     padding: 0;
     margin: 0;
     /* background-color: yellow; */
     height: 400px;
 }
 
-.banner-content h1{
+.banner-content h1 {
     padding-bottom: 1rem;
     font-size: 50px;
-    font-weight: bold;
-    margin: 0; /*to be removed*/
+    /* font-weight: bold; */
+    margin: 0;
+    /*to be removed*/
 }
 
-.banner-content-text span{
+.banner-content-text span {
     font-size: 18px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
-.banner-content button{
+.banner-content button {
     background-color: #000000;
     border: none;
     font-size: 1.5em;
-    font-weight: bold;
+    /* font-weight: bold; */
     border: none;
 }
 
@@ -175,7 +202,7 @@ hr {
 .about .container .row .content h1 {
     text-align: center;
     font-size: 28px;
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
 }
 
 .about .container .row .content-img {
@@ -233,24 +260,24 @@ hr {
 
 .services-outline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     text-align: center;
     padding: 25px 0;
     margin: auto 1rem;
-    width: 100%;
+    /* width: 100%; */
     grid-gap: 1.5rem;
 }
 
 .services-outline h3,
 .services-outline h5 {
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
 }
 
 .services-outline a {
     margin: 10px;
     color: yellowgreen;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .service-content {
@@ -313,26 +340,26 @@ hr {
     background-color: white;
     height: 12rem;
     overflow-y: scroll;
-    outline: none; 
+    outline: none;
     color: rgba(0, 0, 25, 0.7);
-    padding: 10px; 
+    padding: 10px;
     /* margin: 5px; */
 }
 
-.review-text p{
+.review-text p {
     font-size: 18px;
     width: 90%;
     float: right;
 }
 
-.review-text i{
+.review-text i {
     width: 10%;
     position: fixed;
     float: left;
     font-size: 18px;
 }
 
-.review-text p::before{
+.review-text p::before {
     content: "⭐⭐⭐⭐⭐";
     color: gold;
     margin-right: 10px;
@@ -377,8 +404,8 @@ hr {
 /* ------------------------------------------------------- */
 
 /* ----------------------- Help -------------------------- */
-.help-section{
-    background-image: linear-gradient(90deg,#000000 40%,rgba(0,0,0,0) 70%),url("../images/help-bg.jpg");
+.help-section {
+    background-image: linear-gradient(90deg, #000000 40%, rgba(0, 0, 0, 0) 70%), url("../images/help-bg.jpg");
     background-size: cover;
     /* background-size: contain; */
     background-repeat: no-repeat;
@@ -388,42 +415,45 @@ hr {
     margin: 5rem auto;
 }
 
-.help-content{
+.help-content {
     color: #f1f1f1;
     /* background-color: blue; */
     /* width: 700px; */
     padding: 7rem 20rem;
 }
 
-.help-content h1{
+.help-content h1 {
     border-bottom: 3px solid #f1f1f1;
     padding-bottom: 15px;
     width: 300px;
 }
+
 .help-content ul {
     list-style: none;
     padding: 0;
     margin: 2.5rem 0;
-  }
-  .help-content li {
+}
+
+.help-content li {
     padding-left: 1.3em;
     margin: 1rem 0;
     font-size: 18px;
     text-transform: uppercase;
-  }
-  .help-content li:before {
+}
+
+.help-content li:before {
     content: "\f14a";
     font-family: FontAwesome;
     display: inline-block;
     margin-left: -1.3em;
     width: 1.3em;
-  }
+}
 
 
 /* ------------------------------------------------------- */
 /* --------------------- About | section ------------------------------ */
 
-.about-company{
+.about-company {
     text-align: center;
     /* font-size: 100%; */
     margin: 5rem auto;
@@ -431,92 +461,102 @@ hr {
     /* font-family: fantasy; */
 }
 
-.about-company-content{
+.about-company-content {
     /* background-color: rgb(0, 0, 255); */
     width: 80%;
     margin: auto;
 }
 
-.about-company h1{
-    font-weight: bold;
+.about-company h1 {
+    /* font-weight: bold; */
 }
 
-.about-company p{
+.about-company p {
     font-size: 20px;
 }
 
 /* -------------------------------------------------------------------- */
 /* ---------------------------- footer -------------------------------- */
-.footer{
+.footer {
     background-color: #1B1D1F;
+    font-family: "Open Sans", Arial, sans-serif;
+    /* font-weight: lighter; */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    height: auto;
-    padding: 2rem;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    /* margin: auto; */
+    padding: 7rem 6rem;
+    color: #ddd;
+    grid-gap: 3rem;
 }
 
-.footer div{
-    background-color: #459db6;
+.footer a:hover {
+    text-decoration: none;
+}
+
+.footer h4 {
+    font-size: 18px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer ul li {
+    list-style: none;
+    margin: 8px .5rem;
+    font-size: 14px;
+}
+
+.footer .footer-main-menu ul li::before,
+.footer-apple-repair ul li::before {
+    content: '\f105';
+    font-family: FontAwesome;
+    padding-right: 8px;
+    color: #112B3C;
+}
+
+.footer-about img {
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-about em {
+    font-size: 10px;
+    display: block;
+    /* margin: auto; */
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 2.5rem;
+}
+
+.footer .social-icons i {
+    padding: 14px;
+}
+
+.footer .footer-it-support li i {
+    padding-right: 10px;
+}
+
+.copyright p {
+    font-size: 10px;
+    /* font-weight: bold; */
+    background-color: #000000;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 29px;
+}
+
+.footer div {
+    /* background-color: #459db6; */
 
 }
 
 /* -------------------------------------------------------------------- */
-
-/* .about-maestromarv {
-    margin: auto;
-    text-align: center;
-    padding: 0 0 40px 0;
-}
-
-.about-maestromarv-content {
-    width: 80%;
-    margin: auto;
-}
-
-.review {
-    margin: auto;
-    text-align: center;
-}
-
-.review-content {
-    width: 80%;
-    margin: auto;
-}
-
-.review-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(358px, 1fr));
-    text-align: left;
-    grid-gap: 15px;
-    padding: 0 1.5rem 1.5rem 0;
-}
-
-.review-container-content {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #f2f2f2;
-    /* padding: 1.5rem; */
-}
-
-.review-container-content .review-text {
-    padding: 1.5rem;
-    max-height: 160px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-align: justify;
-}
-
-.review-container-content .review-info {
-    /* border-top: 1px solid red; */
-    background-color: #f2f2f2;
-    padding: 1.5rem;
-} */
-
-.footer {
-    width: 100%;
-    background-color: ;
-}
 
 
 
@@ -529,16 +569,30 @@ hr {
         margin: 0;
     }
 
-    .menu{
+    .menu {
         display: none;
     }
 
-    .bars{
+    .dropdown-content{
+        position:absolute ;
+        right: .2rem;
+    }
+
+    .bars {
+        display: block !important;
+        color: #459db6;
+    }
+
+    .bars .dropdown {
         display: block;
     }
 
-    
-    .banner-content{
+    .cart{
+        display: none;
+    }
+
+
+    .banner-content {
         flex-direction: column;
     }
 
@@ -546,19 +600,19 @@ hr {
         font-size: 30px;
     }
 
-    .banner button{
+    .banner button {
         font-size: 15px;
     }
 
-    .banner-content img{
+    .banner-content img {
         display: none;
     }
 
-    .product-display-content p i{
+    .product-display-content p i {
         font-size: 4.5rem;
     }
-    
-    .product-display-content h1{
+
+    .product-display-content h1 {
         font-size: 22px;
     }
 
@@ -566,6 +620,10 @@ hr {
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         margin: 0;
         padding: 5px;
+    }
+
+    .services-outline .service-content{
+        font-size: 10px;
     }
 
     .logo img {
@@ -585,11 +643,18 @@ hr {
         align-items: center;
     }
 
-.help-section{
-    height: 30rem;
-}
+    .help-section h1 {
+        /* height: 30rem; */
+        /* border-bottom: none; */
+        width: 100%;
+        font-size: 25px;
+    }
 
-    .help-content{
+    .help-section li{
+        font-size: 15px;
+    }
+
+    .help-content {
         color: #f1f1f1;
         padding: 2rem 5rem;
         margin: auto;
@@ -607,5 +672,9 @@ hr {
         display: none;
         height: 600px;
         width: 100%;
+    }
+
+    .footer {
+        padding: 5rem 1rem;
     }
 }
