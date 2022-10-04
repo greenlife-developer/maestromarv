@@ -1,0 +1,386 @@
+/* ------------------------- Carousel ----------------------------- */
+.carousel-container {
+    position: relative;
+}
+
+.content-carouel {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+}
+
+.carousel-item img {
+    object-fit: cover;
+}
+
+.content-carouel button {
+    background-color: transparent;
+    padding: .5rem 2.5rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+}
+
+/* ------------------------- !Carousel ----------------------------- */
+
+/* ------------------------- section 1 ----------------------------- */
+
+.phone-pc {
+    display: flex;
+    margin: 2rem 5rem;
+}
+
+.phone-pc-info {
+    width: 50%;
+}
+
+.phone-pc-info button,
+.section-2 button,
+.section-3-content button {
+    background-color: #007BFF;
+    padding: .5rem 1rem;
+    border: 1px solid #007BFF;
+    border-radius: 3px;
+    color: white;
+}
+
+.phone-pc-img {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+.phone-pc-img video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.text-primary{
+    margin-top: 1.5rem;
+}
+
+.phone-pc-info p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* ------------------------- !section 1 ----------------------------- */
+
+/* ------------------------- section 2 ----------------------------- */
+.section-2 {
+    position: relative;
+    text-align: center;
+}
+
+.section-2 img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.section-2 .section-2-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* ------------------------- !section 2 ----------------------------- */
+
+
+/* ------------------------- section 3 ----------------------------- */
+
+.section-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: .5rem;
+    margin: 2rem 2rem;
+}
+
+.section-3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-3-box {
+    position: relative;
+}
+
+.section-3-box img {
+    border-radius: 5px;
+}
+
+.section-3-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* ------------------------- !section 3 ----------------------------- */
+
+
+/* -------------------------- section 4 - review ----------------------------- */
+
+.review-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.review-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Handle */
+.review-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.review-item {
+    background-color: #D9D9D9;
+    padding: 10px;
+}
+
+.review-text {
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    height: 150px;
+    overflow-y: scroll;
+    font-family: "roboto";
+    text-align: justify;
+}
+
+.review-text i {
+    padding: 5px 0;
+}
+
+.review-text p span {
+    color: gold;
+    font-size: 20px;
+}
+
+.review-info {
+    display: flex;
+    padding: 30px 10px;
+}
+
+.review-info img {
+    margin-right: 1rem;
+}
+
+/* ------------------------- !section 4 - review ----------------------------- */
+
+
+/* -------------------------- section 5 ----------------------------- */
+
+.section-5 {
+    width: 100%;
+    margin: 5rem 0;
+    height: 700px;
+}
+
+.section-5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------- !section 5 ----------------------------- */
+
+
+/* -------------------------- section 6 about MTS ----------------------------- */
+
+.section-6 .about-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.section-6 .about-content div {
+    box-shadow: 2px 2px 12px #ddd;
+    border-radius: 10px;
+    width: 80%;
+    padding: 1rem;
+}
+
+.section-6 .about-content p {
+    text-align: justify;
+}
+
+/* ------------------------- !section 6 about MTS ----------------------------- */
+
+
+/* -------------------------- section 7 - footer ----------------------------- */
+
+.footer-container{
+    display: flex;
+    background-color: #1B1D1F;
+    justify-content: center;
+}
+
+.footer-container *{
+    color: white;
+}
+
+.footer-container .footer-items{
+    /* background-color: blue; */
+    padding: 1.4rem .5rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.footer-container .footer-items .mts-logo img{
+    width: 65px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.footer-container .footer-items .mts-logo h6{
+    font-size: 10px;
+}
+
+.footer-container .footer-items .abt-mts{
+    max-width: 300px;
+}
+
+.footer-container .footer-items .abt-mts p{
+    text-align: justify;
+}
+
+.footer-container .footer-items .footer-main-menu ul li{
+    list-style: none;
+    text-align: left;
+    color: white;
+    margin: .7rem .5rem;
+    max-width: 300px;
+}
+
+.footer-container .footer-items .footer-main-menu ul li a{
+    color: wheat;
+}
+
+.footer-container .footer-items .footer-main-menu ul li a:hover{
+    text-decoration: none;
+}
+
+.footer-container .footer-items .footer-contact ul li{
+    list-style: none;
+    text-align: left;
+    display: flex;
+}
+
+.footer-container .footer-items .footer-contact ul li i{
+    margin-right: .5rem;
+}
+
+.footer .mts-copy{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .mts-copy p{
+    color: white;
+    /* margin: auto; */
+    font-size: 11px;
+}
+
+/* ------------------------- !section 7 - footer ----------------------------- */
+
+
+
+
+/* -------------------------------------------------------Query--------------------------------------------------------------------------------- */
+@media screen and (max-width: 320px){
+    .content-carouel {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    /* ------------------------- Carousel ----------------------------- */
+    .content-carouel {
+        position: absolute;
+        bottom: 0;
+        /* top: 40%; */
+        width: 100%;
+    }
+
+    /* ------------------------- !Carousel ----------------------------- */
+
+    /* ------------------------- section 1 ----------------------------- */
+    .phone-pc {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 2rem .5rem;
+    }
+
+    .phone-pc-info {
+        width: 100%;
+    }
+
+    .phone-pc-img {
+        width: 100%;
+        margin: .5rem 0;
+    }
+
+    /* ------------------------- !section 1 ----------------------------- */
+
+
+    /* ------------------------- section 2 ----------------------------- */
+    .section-2 .section-2-content {
+        top: 50%;
+    }
+
+    .section-2 img {
+        height: 300px;
+    }
+
+    .phone-pc-info button,
+    .section-2 button {
+        padding: .5rem .5rem;
+        border-radius: 3px;
+    }
+
+    .section-2 .section-2-content h1 {
+        font-size: 1.5rem;
+    }
+
+    /* ------------------------- !section 2 ----------------------------- */
+
+    /* ------------------------- section 3 ----------------------------- */
+
+    .section-3 {
+        grid-template-columns: 1fr;
+        grid-gap: .4rem;
+        margin: .5rem;
+    }
+
+    /* ------------------------- !section 3 ----------------------------- */
+
+    .section-6 .about-content div {
+        width: 100%;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+
+}
