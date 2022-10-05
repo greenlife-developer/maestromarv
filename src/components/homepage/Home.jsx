@@ -29,7 +29,7 @@ export default function Home() {
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={image} alt="Los Angeles" width="100%" height="500" />
+            <img src={image} alt="Los Angeles" width="100%" />
             <div className="content-carouel">
               <div className="">
                 <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
@@ -42,10 +42,10 @@ export default function Home() {
             </div>
           </div>
           <div class="carousel-item">
-            <img src={image} alt="Chicago" width="100%" height="500" />
+            <img src={image} alt="Chicago" width="100%" />
           </div>
           <div class="carousel-item">
-            <img src={image} alt="New York" width="100%" height="500" />
+            <img src={image} alt="New York" width="100%" />
           </div>
         </div>
         <a class="carousel-control-prev" href="#demo" data-slide="prev">

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from "./components/homepage/Home"
 import Repairs from './components/repairs/Repairs';
+import Products from "./components/products/Product"
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/repairs" element={<Repairs />} />
+          <Route path="/products" element={<Products />} />
           {/* <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upload" element={<Upload />} />
