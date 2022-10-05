@@ -320,7 +320,6 @@
     /* ------------------------- Carousel ----------------------------- */
     .content-carouel {
         position: absolute;
-        bottom: 0;
         /* top: 40%; */
         width: 100%;
     }
