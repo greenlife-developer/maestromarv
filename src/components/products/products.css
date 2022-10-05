@@ -1,5 +1,109 @@
-.products-container{
-    position: relative;
-    height: 100vh;
-    background-color: blue;
+.products-container {
+  position: relative;
+  min-height: 90vh;
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.product {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin-top: 6rem;
+  width: 80%;
+  /* background-color: yellow; */
+  /* margin: auto; */
+}
+
+.product .product-banner-image img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product .product-banner-text {
+  width: 600px;
+  margin-right: 1rem;
+  text-align: left;
+}
+
+.product .product-banner-text h1 {
+  font-size: 3rem;
+}
+
+.product .product-banner-text p {
+  line-height: 2;
+}
+
+.product .product-banner-text button {
+  border-radius: 3px;
+  padding: 0.7rem 2rem;
+}
+
+.sales-history {
+  display: flex;
+  margin-top: 3.5rem;
+  /* background-color: yellowgreen; */
+}
+
+.sales-history .history-item {
+  width: 120px;
+  padding: 0.5rem 1rem;
+  /* background-color: black;
+  color: white; */
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px #ddd;
+}
+
+/* --------------------------- !Head --------------------- */
+
+
+/* --------------------------- !Head --------------------- */
+.product-categories{
+  margin: 0 3rem;
+  background-color: #ddd;
+}
+
+.category-1 .cat-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --------------------------- !Head --------------------- */
+
+
+
+
+/* ------------- Queries ------------------------ */
+@media screen and (max-width: 430px) {
+  .product {
+    flex-direction: column;
+    margin: 0.5rem 5rem;
+    min-width: 100%;
+  }
+
+  .product .product-banner-image img {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 0;
+  }
+
+  .product .product-banner-text {
+    width: 100%;
+    margin: 10px 10px;
+  }
+
+  .product .product-banner-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .sales-history .history-item {
+    width: 95px;
+    margin-right: 5px;
+  }
 }
