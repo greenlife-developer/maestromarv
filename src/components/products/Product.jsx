@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../homepage/Navigation";
 import bannerimage from "../images/products.jpg";
 import laptop from "../images/laptop.png";
+import { Modal } from "antd";
+import "antd/dist/antd.min.css";
 import "./products.css";
 
 export default function Product() {
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewImage, setPreviewImage] = useState("");
+
+  const handleCancel = () => setPreviewVisible(false);
+
   return (
     <>
       <div className="">
         <Navigation />
         <div className="cart-container">
-            <div className="cart" style={{ marginLeft: "100px" }}>
-              <div className="icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </div>
-              <div className="item-no">
-                <span>25</span>
-              </div>
+          <div className="cart" style={{ marginLeft: "100px" }}>
+            <div className="icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div className="item-no">
+              <span>25</span>
             </div>
           </div>
+        </div>
         <div className="products-container">
           <div className="product">
             <div className="product-banner-image">
@@ -61,7 +68,15 @@ export default function Product() {
             <div className="cat-body">
               <div className="cat-item">
                 <div className="cat-item-img">
-                  <img src={laptop} alt="" />
+                  <img
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setPreviewVisible(true);
+                      setPreviewImage(laptop);
+                    }}
+                    src={laptop}
+                    alt=""
+                  />
                 </div>
                 <div className="item-content">
                   <h4>Hp laptop</h4>
@@ -137,6 +152,20 @@ export default function Product() {
             </div>
           </div>
         </div>
+        <Modal
+          visible={previewVisible}
+          title={"previewTitle"}
+          footer={null}
+          onCancel={handleCancel}
+        >
+          <img
+            alt="example"
+            style={{
+              width: "100%",
+            }}
+            src={previewImage}
+          />
+        </Modal>
       </div>
     </>
   );

@@ -27,8 +27,6 @@
   padding-right: .8rem;
   right: 0;
   z-index: 999;
-  /* background-color: red; */
-  justify-content: end;
 }
 
 .cart{
@@ -165,6 +163,7 @@
 }
 
 .cat-body .cat-item-img{
+  cursor: pointer;
   max-width: 220px;
   /* object-fit: contain; */
 }
