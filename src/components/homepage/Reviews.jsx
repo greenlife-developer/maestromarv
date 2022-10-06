@@ -20,7 +20,7 @@ export default function Swipper() {
 
   return (
     <div className="container">
-      <h1 style={{textAlign: "center"}}>What our customer's say</h1>
+      <h3 style={{textAlign: "center"}}>What our customer's say</h3>
       <hr />
       <Swiper
         spaceBetween={30} 

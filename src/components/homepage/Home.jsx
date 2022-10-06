@@ -2,10 +2,10 @@ import React from "react";
 import Navigation from "./Navigation";
 import image from "../images/image1.png";
 import image7 from "../images/image7.png";
-import image2 from "../images/image2.png";
-import image4 from "../images/image4.png";
-import image6 from "../images/image6.png";
-import image5 from "../images/image5.png";
+import image2 from "../images/image2.jpg";
+import image4 from "../images/image4.jpg";
+import image6 from "../images/image6.jpg";
+import image5 from "../images/image5.jpg";
 import video2 from "../images/videos/video2.mp4";
 import section2 from "../images/section2.png";
 import "./home.css";
@@ -93,54 +93,58 @@ export default function Home() {
           <h1 className="text-light">We repair all laptops and phones</h1>
           <button>make appointment</button>
         </div>
+      </div><br /><br />
+
+      <div className="">
+        <h3>Our Services</h3>
+        <div className="section-3">
+          <div className="section-3-box">
+            <img src={image2} alt="" />
+            <div className="section-3-content">
+              <h1>Computer Repair</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                nulla culpa!
+              </p>
+              <button>Make appointment</button>
+            </div>
+          </div>
+          <div className="section-3-box">
+            <img src={image4} alt="" />
+            <div className="section-3-content">
+              <h1>Liquid Damage Repair</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                nulla culpa!
+              </p>
+              <button>Make appointment</button>
+            </div>
+          </div>
+          <div className="section-3-box">
+            <img src={image6} alt="" />
+            <div className="section-3-content">
+              <h1>Custom Build Computers</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                nulla culpa!
+              </p>
+              <button>Make appointment</button>
+            </div>
+          </div>
+          <div className="section-3-box">
+            <img src={image5} alt="" />
+            <div className="section-3-content">
+              <h1>Windows installation</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                nulla culpa!
+              </p>
+              <button>Make appointment</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="section-3">
-        <div className="section-3-box">
-          <img src={image2} alt="" />
-          <div className="section-3-content">
-            <h1>Liquid Damage</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-              nulla culpa!
-            </p>
-            <button>Make appointment</button>
-          </div>
-        </div>
-        <div className="section-3-box">
-          <img src={image4} alt="" />
-          <div className="section-3-content">
-            <h1>Custom Desktop</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-              nulla culpa!
-            </p>
-            <button>Make appointment</button>
-          </div>
-        </div>
-        <div className="section-3-box">
-          <img src={image6} alt="" />
-          <div className="section-3-content">
-            <h1>Liquid Spills</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-              nulla culpa!
-            </p>
-            <button>Make appointment</button>
-          </div>
-        </div>
-        <div className="section-3-box">
-          <img src={image5} alt="" />
-          <div className="section-3-content">
-            <h1>IT Support</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-              nulla culpa!
-            </p>
-            <button>Make appointment</button>
-          </div>
-        </div>
-      </div>
       <div className="reviews">
         <Swipper />
       </div>
@@ -149,7 +153,7 @@ export default function Home() {
       </div>
       <div className="section-6">
         <div className="about">
-          <h1>About MaestroMarv Tech Solution (MTS)</h1>
+          <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>
         <div className="about-content">
           <div className="">
