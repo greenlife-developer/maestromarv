@@ -6,6 +6,7 @@ import { Modal } from "antd";
 import "antd/dist/antd.min.css";
 import "./products.css";
 import products from "../../products";
+import Footer from "../homepage/Footer";
 import Paystack from "../paystack/Paystack";
 
 export default function Product() {
@@ -100,6 +101,9 @@ export default function Product() {
               })}
             </div>
           </div>
+        </div>
+        <div className="footer">
+          <Footer />
         </div>
         <Modal
           visible={previewVisible}

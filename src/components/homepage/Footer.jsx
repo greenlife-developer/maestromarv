@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
         <div className="footer-items">
           <div className="footer-main-menu">
-            <h4>Main Menu</h4>
+            <h6>Main Menu</h6>
             <ul>
               <li>
                 <a href="">Home</a>
@@ -55,12 +55,12 @@ export default function Footer() {
         </div>
         <div className="footer-items">
           <div className="home-automation">
-            <h4>Home Automation</h4>
+            <h6>Home Automation</h6>
           </div>
         </div>
         <div className="footer-items">
           <div className="footer-contact">
-            <h4>Contact Us</h4>
+            <h6>Contact Us</h6>
             <ul>
               <li>
                 <i class="fa-solid fa-phone"></i> 
@@ -78,6 +78,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="mts-copy">
+          <p>
+            &copy; 2022 Maestromarv Tech Solution. All Rights Reserved |
+            Delivery & Pick-Up Services | Computer Recycling Services All
+            trademarks displayed on this website are the property of the
+            trademark owner. MaestroMarv does not claim any ownership or
+            affiliation with the brands displayed.
+          </p>
+        </div>
     </footer>
   );
 }

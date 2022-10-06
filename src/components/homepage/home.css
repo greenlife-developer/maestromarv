@@ -9,6 +9,7 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    padding: .5rem;
     color: white;
 }
 
@@ -307,6 +308,8 @@
 .footer .mts-copy p{
     color: white;
     /* margin: auto; */
+    padding: 1rem;
+    width: 80%;
     font-size: 11px;
 }
 
@@ -403,6 +406,10 @@
 
     .footer-container{
         flex-direction: column;
+    }
+
+    .footer .mts-copy p{
+        width: 100%;
     }
 
 }

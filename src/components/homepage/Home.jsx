@@ -182,15 +182,6 @@ export default function Home() {
 
       <div className="footer">
         <Footer />
-        <div className="mts-copy">
-          <p>
-            &copy; 2022 Maestromarv Tech Solution. All Rights Reserved |
-            Delivery & Pick-Up Services | Computer Recycling Services All
-            trademarks displayed on this website are the property of the
-            trademark owner. MaestroMarv does not claim any ownership or
-            affiliation with the brands displayed.
-          </p>
-        </div>
       </div>
     </>
   );

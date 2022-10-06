@@ -55,6 +55,7 @@ header{
 
 .logo-container img{
     object-fit: cover;
+    margin-top: .5rem;
 }
 
 .nav-btn{
