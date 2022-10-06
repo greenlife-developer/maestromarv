@@ -109,6 +109,7 @@
 .category-1 .cat-head{
   display: flex;
   justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .cat-body .cat-item{

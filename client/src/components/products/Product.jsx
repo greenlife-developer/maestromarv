@@ -77,7 +77,7 @@ export default function Product() {
                         onClick={(e) => {
                           e.preventDefault();
                           setPreviewVisible(true);
-                          setPreviewImage(product.img);
+                          setPreviewImage(laptop);
                         }}
                         src={laptop}
                         alt=""
