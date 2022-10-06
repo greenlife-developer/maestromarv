@@ -16,7 +16,7 @@ header{
     position: fixed ;
     top: 0px ;
     background-color: #000 ;
-    /* height: 80px ; */
+    height: 80px ;
     /* padding-top: 15px ; */
     width: 100% ;
     z-index: 1000 ;
@@ -245,6 +245,16 @@ header{
 .hamburger-menu div:after{
     transform: translateY(7px);
 }
+
+
+
+
+
+
+
+
+
+
 
 #check{
     position: absolute;

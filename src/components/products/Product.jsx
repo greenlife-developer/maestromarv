@@ -9,6 +9,16 @@ export default function Product() {
     <>
       <div className="">
         <Navigation />
+        <div className="cart-container">
+            <div className="cart" style={{ marginLeft: "100px" }}>
+              <div className="icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <div className="item-no">
+                <span>25</span>
+              </div>
+            </div>
+          </div>
         <div className="products-container">
           <div className="product">
             <div className="product-banner-image">
@@ -57,7 +67,6 @@ export default function Product() {
                   <h4>Hp laptop</h4>
                   <p>
                     Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
-                    voluptatibus
                   </p>
                   <h5>
                     <span>NGN</span>230,000<span>.34</span>
