@@ -5,6 +5,8 @@ import laptop from "../images/laptop.png";
 import { Modal } from "antd";
 import "antd/dist/antd.min.css";
 import "./products.css";
+import products from "../../products";
+import Paystack from "../paystack/Paystack";
 
 export default function Product() {
   const [previewVisible, setPreviewVisible] = useState(false);
@@ -66,89 +68,36 @@ export default function Product() {
               </div>
             </div>
             <div className="cat-body">
-              <div className="cat-item">
-                <div className="cat-item-img">
-                  <img
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setPreviewVisible(true);
-                      setPreviewImage(laptop);
-                    }}
-                    src={laptop}
-                    alt=""
-                  />
-                </div>
-                <div className="item-content">
-                  <h4>Hp laptop</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
-                  </p>
-                  <h5>
-                    <span>NGN</span>230,000<span>.34</span>
-                  </h5>
-                  <div className="buys">
-                    <span>Buy now</span>
-                    <span>Add to Cart</span>
+              {products.map((product, index) => {
+                return (
+                  <div key={index} className="cat-item">
+                    <div className="cat-item-img">
+                      <img
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setPreviewVisible(true);
+                          setPreviewImage(product.img);
+                        }}
+                        src={laptop}
+                        alt=""
+                      />
+                    </div>
+                    <div className="item-content">
+                      <h4>{product.name}</h4>
+                      <p>{product.description}</p>
+                      <h5>
+                        <span>NGN</span>
+                        {product.price}
+                        <span>.34</span>
+                      </h5>
+                      <div className="buys">
+                        <span>Buy now</span>
+                        <span>Add to Cart</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="cat-item">
-                <div className="cat-item-img">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="item-content">
-                  <h4>Hp laptop</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
-                    voluptatibus
-                  </p>
-                  <h5>
-                    <span>NGN</span>230,000<span>.34</span>
-                  </h5>
-                  <div className="buys">
-                    <span>Buy now</span>
-                    <span>Add to Cart</span>
-                  </div>
-                </div>
-              </div>
-              <div className="cat-item">
-                <div className="cat-item-img">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="item-content">
-                  <h4>Hp laptop</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
-                    voluptatibus
-                  </p>
-                  <h5>
-                    <span>NGN</span>230,000<span>.34</span>
-                  </h5>
-                  <div className="buys">
-                    <span>Buy now</span>
-                    <span>Add to Cart</span>
-                  </div>
-                </div>
-              </div>
-              <div className="cat-item">
-                <div className="cat-item-img">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="item-content">
-                  <h4>Hp laptop</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
-                    voluptatibus
-                  </p>
-                  <h5>
-                    <span>NGN</span>230,000<span>.34</span>
-                  </h5>
-                  <div className="buys">
-                    <span>Buy now</span>
-                    <span>Add to Cart</span>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
