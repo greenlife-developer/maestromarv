@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../homepage/Navigation";
 import bannerimage from "../images/products.jpg";
+import laptop from "../images/laptop.png";
 import "./products.css";
 
 export default function Product() {
@@ -40,12 +41,89 @@ export default function Product() {
         <div className="product-categories">
           <div className="category-1">
             <div className="cat-head">
-              <div className="cat-head-1"><h1>Laptops and Phones</h1></div>
-              <div className="cat-head-1"><h3>See more</h3></div>
+              <div className="cat-head-1">
+                <h4>Laptops and Phones</h4>
+              </div>
+              <div className="cat-head-1">
+                <a href="#">See more</a>
+              </div>
             </div>
             <div className="cat-body">
               <div className="cat-item">
-                
+                <div className="cat-item-img">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="item-content">
+                  <h4>Hp laptop</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
+                    voluptatibus
+                  </p>
+                  <h5>
+                    <span>NGN</span>230,000<span>.34</span>
+                  </h5>
+                  <div className="buys">
+                    <span>Buy now</span>
+                    <span>Add to Cart</span>
+                  </div>
+                </div>
+              </div>
+              <div className="cat-item">
+                <div className="cat-item-img">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="item-content">
+                  <h4>Hp laptop</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
+                    voluptatibus
+                  </p>
+                  <h5>
+                    <span>NGN</span>230,000<span>.34</span>
+                  </h5>
+                  <div className="buys">
+                    <span>Buy now</span>
+                    <span>Add to Cart</span>
+                  </div>
+                </div>
+              </div>
+              <div className="cat-item">
+                <div className="cat-item-img">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="item-content">
+                  <h4>Hp laptop</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
+                    voluptatibus
+                  </p>
+                  <h5>
+                    <span>NGN</span>230,000<span>.34</span>
+                  </h5>
+                  <div className="buys">
+                    <span>Buy now</span>
+                    <span>Add to Cart</span>
+                  </div>
+                </div>
+              </div>
+              <div className="cat-item">
+                <div className="cat-item-img">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="item-content">
+                  <h4>Hp laptop</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet jide, ade elit. Harum laboriosam
+                    voluptatibus
+                  </p>
+                  <h5>
+                    <span>NGN</span>230,000<span>.34</span>
+                  </h5>
+                  <div className="buys">
+                    <span>Buy now</span>
+                    <span>Add to Cart</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
