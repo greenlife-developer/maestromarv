@@ -165,7 +165,7 @@
 
 .cat-body .cat-item-img{
   cursor: pointer;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .cat-item-img img{
