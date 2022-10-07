@@ -1,31 +1,18 @@
-.products-container {
-  position: relative;
-  margin-top: 5.5rem;
-  /* min-height: 90vh; */
-  display: flex;
-  justify-content: center;
-  /* background-color: blue; */
+.product-page .carousel-item img{
+  height: 100vh;
+  background-color: red;
 }
 
-.product {
-  /* position: absolute; */
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  /* margin-top: 6rem; */
-  margin-bottom: 3rem;
-  width: 80%;
-  /* background-color: yellow; */
-  /* margin: auto; */
-}
 
 /* --------------------Cart --------------------- */
 
 .cart-container{
   display: flex;
   position: fixed;
-  padding-right: .8rem;
+  padding-right: .1rem;
+  /* background-color: red; */
   right: 0;
+  top: 11%;
   z-index: 999;
 }
 
@@ -34,7 +21,7 @@
 }
 
 .cart .icon{
-  padding: .3rem .5rem;
+  padding: .8rem 1rem;
   margin: 1rem;
   cursor: pointer;
   border-radius: 10%;
@@ -42,12 +29,17 @@
   color: white;
 }
 
+.cart .icon i{
+  font-size: 1.5rem;
+}
+
 .cart .item-no{
   font-size: 1rem;
-  color: yellow;
-  padding: .5rem .5rem;
-  background-color: #d4f2;
-  border-radius: skew;
+  color: white;
+  padding: .2rem .5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: blue;
   position: absolute;
   top: 0;
   right: 0;
@@ -55,125 +47,59 @@
 
 /* ----------------- ! Cart ----------------------------- */
 
-.product .product-banner-image img {
-  width: 500px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product .product-banner-text {
-  width: 600px;
-  margin-right: 1rem;
-  text-align: left;
-}
-
-.product .product-banner-text h1 {
-  font-size: 3rem;
-}
-
-.product .product-banner-text p {
-  line-height: 2;
-}
-
-.product .product-banner-text button {
-  border-radius: 3px;
-  padding: 0.7rem 2rem;
-}
-
-.sales-history {
-  display: flex;
-  margin-top: 3.5rem;
-  /* background-color: yellowgreen; */
-}
-
-.sales-history .history-item {
-  width: 120px;
-  padding: 0.5rem 1rem;
-  /* background-color: black;
-  color: white; */
-  margin-right: 10px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 20px #ddd;
-}
-
 /* --------------------------- !Head --------------------- */
 
 
 /* --------------------------- Product-categories --------------------- */
 .product-categories{
-  margin: 0 3rem 2rem 2rem;
-  /* background-color: #ddd; */
-}
-
-.category-1 .cat-head{
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-}
-
-.cat-body .cat-item{
-  position: relative;
-  max-width: 310px;
-  /* display: flex; */
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 2px 2px 20px #ddd;
-
+  margin: 4rem 0;
 }
 
 .cat-body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 1rem;
-  grid-column-gap: 1rem;
-  /* background-color: #ddd; */
 }
 
-.cat-body .cat-items-container{
-  display: flex;
-  justify-content: center;
-}
-
-.cat-body .cat-item .item-content{
-  /* max-width: 280px; */
-  text-align: left;
-  padding: 1rem  .5rem;
-  /* margin-bottom: 1rem; */
-  /* background-color: black;
-  color: white; */
-}
-
-.item-content .buys {
-  position: absolute;
-  display: none;
-  bottom: 15px;
-  left: 10px;
-}
-
-.item-content .buys span{
-  background-color: orangered;
-  color: white;
+.cat-item{
+  margin: 1rem;
+  box-shadow: 1px 1px 10px #ddd;
   border-radius: 5px;
-  /* display: none; */
-  margin-right: 5px;
-  padding: .5rem .8rem;
+  display: flex;
 }
 
-.item-content h5 span{
-  font-size: 14px;
+.cat-item .cat-item-img{
+  max-width: 150px;
+  max-height: 125px;
+  padding: .5rem;
 }
 
-.cat-body .cat-item-img{
+.cat-item .cat-item-img img{
+  width: 100%;
   cursor: pointer;
-  /* background-color: blue; */
+  height: 100%;
+} 
+
+.cat-item .item-content{
+  max-height: 125px;
+  width: 250px;
+  text-align: left;
+  padding: .9rem 2rem 2rem .5rem;
 }
 
-.cat-item-img img{
-  max-width: 273px;
-  /* height: 300px; */
-  object-fit: cover;
-  /* transform: scale(1.1); */
+.item-content h4{
+  margin-bottom: 0;
+  background-color: darkblue;
+  color: white;
+}
+
+.item-content span{
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.item-content p{
+  margin-bottom: 1rem;
 }
 
 /* --------------------------- !Product-categories --------------------- */

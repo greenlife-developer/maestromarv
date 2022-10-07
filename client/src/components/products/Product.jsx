@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import Navigation from "../homepage/Navigation";
 import bannerimage from "../images/products.jpg";
 import laptop from "../images/laptop.png";
+import phoneaccess from "../images/phoneaccess.jpg";
+import laptopaccess from "../images/laptopaccess.jpg";
+import accessories from "../images/accessories.jpg";
 import { Modal } from "antd";
 import "antd/dist/antd.min.css";
 import "./products.css";
 import products from "../../products";
 import Footer from "../homepage/Footer";
+import LinesEllipsis from "react-lines-ellipsis";
+import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC'
 import Paystack from "../paystack/Paystack";
 
 export default function Product() {
   const [previewVisible, setPreviewVisible] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
+
+  const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis)
 
   const handleCancel = () => setPreviewVisible(false);
 
@@ -19,6 +26,46 @@ export default function Product() {
     <>
       <div className="">
         <Navigation />
+        <div
+          id="demo"
+          class="carousel slide carousel-container"
+          data-ride="carousel"
+        >
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src={phoneaccess} alt="Los Angeles" width="100%" />
+              <div className="content-carouel">
+                <div className="">
+                  <h1>Best and affordable electronic gadgets</h1>
+                  <p>
+                    Welcome to Maestromarv Tech solutions, thank you for
+                    choosing us, we welcome you to our world.
+                  </p>
+                  <button>Start now</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src={laptopaccess} alt="Chicago" width="100%" />
+            </div>
+            <div class="carousel-item">
+              <img src={accessories} alt="New York" width="100%" />
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+
         <div className="cart-container">
           <div className="cart" style={{ marginLeft: "100px" }}>
             <div className="icon">
@@ -29,50 +76,19 @@ export default function Product() {
             </div>
           </div>
         </div>
-        <div className="products-container">
-          <div className="product">
-            <div className="product-banner-image">
-              <img src={bannerimage} alt="banner image" />
-            </div>
-            <div className="product-banner-text">
-              <h1>Best and affordable electronic gadgets</h1>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Quibusdam consectetur vel dolorem corporis cup.
-              </p>
-              <button className="btn btn-primary">Shop now</button>
-              <div className="sales-history">
-                <div className="history-item">
-                  <h5>120+</h5>
-                  <span>Total clients</span>
-                </div>
-                <div className="history-item">
-                  <h5>134+</h5>
-                  <span>Total Sales</span>
-                </div>
-                <div className="history-item">
-                  <h5>1000+</h5>
-                  <span>Total repairs</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div className="product-categories">
           <div className="category-1">
             <div className="cat-head">
               <div className="cat-head-1">
-                <h4>Laptops and Phones</h4>
-              </div>
-              <div className="cat-head-1">
-                <a href="#">See more</a>
+                <h1>Laptops and Phones</h1>
               </div>
             </div>
             <div className="cat-body">
               {products.map((product, index) => {
                 return (
-                  <div className="cat-items-container">
-                    <div key={index} className="cat-item">
+                  <div key={index} className="cat-items-container">
+                    <div className="cat-item">
                       <div className="cat-item-img">
                         <img
                           onClick={(e) => {
@@ -85,17 +101,21 @@ export default function Product() {
                         />
                       </div>
                       <div className="item-content">
-                        <h4>{product.name}</h4>
-                        <p>{product.description}</p>
-                        <h5>
-                          <span>NGN</span>
-                          {product.price}
-                          <span>.34</span>
-                        </h5>
-                        <div className="buys">
-                          <span>Buy now</span>
-                          <span>Add to Cart</span>
-                        </div>
+                        <p>
+                          <ResponsiveEllipsis
+                            text={product.name}
+                            maxLine="1"
+                            ellipsis="..."
+                            // trimRight
+                            basedOn="letters"
+                          />
+                        </p>
+                        <h4>&#35;{product.price}</h4>
+                        <span>your're saving 18%</span>
+                        <br />
+                        <span>
+                          {product.sold} sold &#9733; {product.rating}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -104,9 +124,13 @@ export default function Product() {
             </div>
           </div>
         </div>
+
+
         <div className="footer">
           <Footer />
         </div>
+
+        
         <Modal
           visible={previewVisible}
           title={"previewTitle"}
