@@ -71,29 +71,31 @@ export default function Product() {
             <div className="cat-body">
               {products.map((product, index) => {
                 return (
-                  <div key={index} className="cat-item">
-                    <div className="cat-item-img">
-                      <img
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setPreviewVisible(true);
-                          setPreviewImage(laptop);
-                        }}
-                        src={laptop}
-                        alt=""
-                      />
-                    </div>
-                    <div className="item-content">
-                      <h4>{product.name}</h4>
-                      <p>{product.description}</p>
-                      <h5>
-                        <span>NGN</span>
-                        {product.price}
-                        <span>.34</span>
-                      </h5>
-                      <div className="buys">
-                        <span>Buy now</span>
-                        <span>Add to Cart</span>
+                  <div className="cat-items-container">
+                    <div key={index} className="cat-item">
+                      <div className="cat-item-img">
+                        <img
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setPreviewVisible(true);
+                            setPreviewImage(laptop);
+                          }}
+                          src={laptop}
+                          alt=""
+                        />
+                      </div>
+                      <div className="item-content">
+                        <h4>{product.name}</h4>
+                        <p>{product.description}</p>
+                        <h5>
+                          <span>NGN</span>
+                          {product.price}
+                          <span>.34</span>
+                        </h5>
+                        <div className="buys">
+                          <span>Buy now</span>
+                          <span>Add to Cart</span>
+                        </div>
                       </div>
                     </div>
                   </div>
