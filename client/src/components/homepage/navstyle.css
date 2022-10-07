@@ -16,7 +16,7 @@ header{
     position: fixed ;
     top: 0px ;
     background-color: #000 ;
-    height: 80px ;
+    height: 60px ;
     /* padding-top: 15px ; */
     width: 100% ;
     z-index: 1000 ;
@@ -55,7 +55,7 @@ header{
 
 .logo-container img{
     object-fit: cover;
-    margin-top: .5rem;
+    margin-bottom: .4rem;
 }
 
 .nav-btn{
@@ -97,7 +97,7 @@ header{
 
 .nav-link{
     position: relative;
-    margin-top: .5rem;
+    margin-top: .2rem;
 }
 
 .nav-link > a{
@@ -298,6 +298,10 @@ header{
         display: flex;
     }
 
+    .logo-container img{
+        margin-top: .3rem;
+    }
+
     #check{
         display: block;
     }
@@ -338,6 +342,7 @@ header{
     .nav-link{
         width: 100%;
         opacity: 0;
+        margin-top: -.7rem;
         transform: translateY(15px);
     }
 

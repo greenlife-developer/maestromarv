@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./Navigation";
 import image from "../images/image1.png";
-import image7 from "../images/image7.png";
+import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
 import image4 from "../images/image4.jpg";
 import image6 from "../images/image6.jpg";
@@ -87,13 +87,19 @@ export default function Home() {
         </div>
       </div>
 
+
+
+
       <div className="section-2">
-        <img src={section2} alt="" />
         <div className="section-2-content">
           <h1 className="text-light">We repair all laptops and phones</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro perferendis nulla consectetur iure animi reiciendis possimus provident eligendi quas.</p>
           <button>make appointment</button>
         </div>
       </div><br /><br />
+
+
+
 
       <div className="">
         <h3>Our Services</h3>
@@ -148,9 +154,18 @@ export default function Home() {
       <div className="reviews">
         <Swipper />
       </div>
+
+
       <div className="section-5">
-        <img src={image7} alt="" />
+        {/* <img src={image7} alt="" /> */}
+        <div className="section-5-content">
+          <h1 className="text-light">We build the best home automation features</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro perferendis nulla consectetur iure animi reiciendis possimus provident eligendi quas.</p>
+          <button>make appointment</button>
+        </div>
       </div>
+
+
       <div className="section-6">
         <div className="about">
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
