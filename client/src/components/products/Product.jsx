@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navigation from "../homepage/Navigation";
-import bannerimage from "../images/products.jpg";
 import laptop from "../images/laptop.png";
+import { Link } from "react-router-dom";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
 import accessories from "../images/accessories.jpg";
@@ -11,16 +11,16 @@ import "./products.css";
 import products from "../../products";
 import Footer from "../homepage/Footer";
 import LinesEllipsis from "react-lines-ellipsis";
-import responsiveHOC from 'react-lines-ellipsis/lib/responsiveHOC'
+import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
 import Paystack from "../paystack/Paystack";
 
 export default function Product() {
-  const [previewVisible, setPreviewVisible] = useState(false);
-  const [previewImage, setPreviewImage] = useState("");
+  // const [previewVisible, setPreviewVisible] = useState(false);
+  // const [previewImage, setPreviewImage] = useState("");
 
-  const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis)
+  const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
-  const handleCancel = () => setPreviewVisible(false);
+  // const handleCancel = () => setPreviewVisible(false);
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function Product() {
           data-ride="carousel"
         >
           <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="0" className="active"></li>
             <li data-target="#demo" data-slide-to="1"></li>
             <li data-target="#demo" data-slide-to="2"></li>
           </ul>
@@ -90,15 +90,9 @@ export default function Product() {
                   <div key={index} className="cat-items-container">
                     <div className="cat-item">
                       <div className="cat-item-img">
-                        <img
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setPreviewVisible(true);
-                            setPreviewImage(laptop);
-                          }}
-                          src={laptop}
-                          alt=""
-                        />
+                        <Link to={"/products/view/" + product.id}>
+                          <img src={laptop} alt={product.name} />
+                        </Link>
                       </div>
                       <div className="item-content">
                         <p>
@@ -106,7 +100,6 @@ export default function Product() {
                             text={product.name}
                             maxLine="1"
                             ellipsis="..."
-                            // trimRight
                             basedOn="letters"
                           />
                         </p>
@@ -125,13 +118,11 @@ export default function Product() {
           </div>
         </div>
 
-
         <div className="footer">
           <Footer />
         </div>
 
-        
-        <Modal
+        {/* <Modal
           visible={previewVisible}
           title={"previewTitle"}
           footer={null}
@@ -144,7 +135,7 @@ export default function Product() {
             }}
             src={previewImage}
           />
-        </Modal>
+        </Modal> */}
       </div>
     </>
   );

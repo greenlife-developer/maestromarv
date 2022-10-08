@@ -39,7 +39,7 @@ export default function Swipper() {
          return <SwiperSlide key={review.id}>
             <div className="review-item">
               <div className="review-text">
-                <i className="fa-solid fa-quote-left"></i>
+                <i className="fa-solid fa-quote-left"></i>&nbsp;
                 <p> <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> {review.text}</p>
               </div>
               <div className="review-info"> 
