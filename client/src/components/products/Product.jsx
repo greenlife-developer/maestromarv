@@ -20,7 +20,10 @@ export default function Product() {
 
   const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
-  // const handleCancel = () => setPreviewVisible(false);
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
 
   return (
     <>
@@ -103,7 +106,7 @@ export default function Product() {
                             basedOn="letters"
                           />
                         </p>
-                        <h4>&#35;{product.price}</h4>
+                        <h4>{formatter.format(product.price)}</h4>
                         <span>your're saving 18%</span>
                         <br />
                         <span>

@@ -2,55 +2,61 @@ const products = [
     {
         name: "HP Laptop, Lorem ipsum dolor sit amet jide.",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "230,000",
+        price: "230000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "10000",
         id: "1"
     },
     {
         name: "Hp Laptop",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "230,000",
+        price: "230000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "5000",
         id: "2"
     },
     {
         name: "Hp Laptop",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "230,000",
+        price: "230000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "10000",
         id: "3"
     },
     {
         name: "Hp Laptop",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "240,000",
+        price: "240000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "10000",
         id: "4"
     },
     {
         name: "Hp Laptop",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "230,000",
+        price: "230000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "10000",
         id: "5"
     },
     {
         name: "Hp Laptop",
         description: "Lorem ipsum dolor sit amet jide.",
-        price: "230,000",
+        price: "230000",
         img: "../images/laptop.png",
         rating: 4.8,
         sold: "200",
+        subprice: "10000",
         id: "6"
     },
 ]

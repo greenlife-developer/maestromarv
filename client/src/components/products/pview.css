@@ -51,7 +51,62 @@
     padding: 1rem .5rem .2rem;
 }
 
+.product-price{
+    display: flex;
+    font-size: 1.5rem;
+    padding: .5rem ;
+    background-color: darkblue;
+}
 
+.product-price *{
+    margin: 0 .2rem;
+    color: whitesmoke;
+    font-size: .8rem;
+}
+
+.product-price h1{
+    font-size: 1.2rem;
+}
+
+.product-price h4{
+    text-decoration: line-through;
+    margin-top: .2rem;
+}
+
+.specifications{
+    /* background-color: red; */
+    margin-top: 1rem;
+}
+
+.specifications .quantity div{
+    display: flex;
+}
+
+.specifications .quantity button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 1px 10px #ddd;
+    margin: .5rem .2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.specifications .quantity button.available-pieces{
+    width: 200px;
+    box-shadow: none;
+    cursor: default;
+    border-radius: 0;
+    justify-content: start;
+}
+.specifications .quantity button.items-count{
+    box-shadow: none;
+    cursor: default;
+}
 
 
 
@@ -93,10 +148,7 @@
     }
 
     .img .other-imgs img{
-        width: 80%;
-        height: 100%;
+        width: 75%;
         margin: 5px;
-        padding: .5rem 0;
-        /* background-color: brown; */
     }
 }

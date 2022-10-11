@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
@@ -8,6 +8,7 @@ import "./pview.css";
 
 export default function ViewProduct() {
   const location = useLocation();
+  const [items, setItems] = useState(1);
 
   const selected = location.pathname.split("/")[3];
 
@@ -15,10 +16,21 @@ export default function ViewProduct() {
     return std.id === selected;
   });
 
-  console.log(product);
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
 
-  const handleImageChange = (e) => {
-    console.log(e.target);
+  const decreaseProduct = (e) => {
+    if (items === 0) {
+      // e.preventDefault();
+      setItems(0);
+    } else {
+      setItems(items - 1);
+    }
+  };
+  const increaseProduct = () => {
+    setItems(items + 1);
   };
 
   return (
@@ -29,7 +41,7 @@ export default function ViewProduct() {
           <div className="img">
             <img src={laptop} alt="" />
             <div className="other-imgs">
-              <img onClick={handleImageChange} src={laptop} alt="" />
+              <img src={laptop} alt="" />
               <img src={laptop} alt="" />
               <img src={laptop} alt="" />
               <img src={laptop} alt="" />
@@ -45,9 +57,54 @@ export default function ViewProduct() {
                 </p>
 
                 <div className="reviews">
-                  <span>&#9733;&#9733;&#9733;&#9733;&#9733; 4.8 200 sold</span>
+                  <span>
+                    &#9733;&#9733;&#9733;&#9733;&#9733; 4.8 | 200 sold | 18
+                    reviews
+                  </span>
                 </div>
                 <hr />
+
+                <div className="product-price">
+                  <h1>
+                    {formatter.format(
+                      parseInt(product[0].price) - parseInt(product[0].subprice)
+                    )}
+                  </h1>
+                  <h4>{formatter.format(product[0].price)}</h4>
+                  <span>
+                    -{" "}
+                    {Math.round(
+                      (parseInt(product[0].subprice) * 100) /
+                        parseInt(product[0].price)
+                    )}
+                    %
+                  </span>
+                </div>
+
+                <div className="specifications">
+                  <div className="color">
+                    <h6>color: grey</h6>
+                    <div className="quantity">
+                      <h6>quantity: </h6>
+                      <div className="">
+                        <button
+                          style={{
+                            backgroundColor:
+                              items === 0 ? "lightgrey" : "white",
+                          }}
+                          onClick={decreaseProduct}
+                        >
+                          -
+                        </button>
+                        <button className="items-count">{items}</button>
+                        <button onClick={increaseProduct}>+</button>
+                        <button className="available-pieces">
+                          124 available pieces
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
