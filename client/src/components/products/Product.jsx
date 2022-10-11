@@ -5,18 +5,14 @@ import { Link } from "react-router-dom";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
 import accessories from "../images/accessories.jpg";
-import { Modal } from "antd";
 import "antd/dist/antd.min.css";
 import "./products.css";
 import products from "../../products";
 import Footer from "../homepage/Footer";
 import LinesEllipsis from "react-lines-ellipsis";
 import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
-import Paystack from "../paystack/Paystack";
 
 export default function Product() {
-  // const [previewVisible, setPreviewVisible] = useState(false);
-  // const [previewImage, setPreviewImage] = useState("");
 
   const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
@@ -124,21 +120,6 @@ export default function Product() {
         <div className="footer">
           <Footer />
         </div>
-
-        {/* <Modal
-          visible={previewVisible}
-          title={"previewTitle"}
-          footer={null}
-          onCancel={handleCancel}
-        >
-          <img
-            alt="example"
-            style={{
-              width: "100%",
-            }}
-            src={previewImage}
-          />
-        </Modal> */}
       </div>
     </>
   );

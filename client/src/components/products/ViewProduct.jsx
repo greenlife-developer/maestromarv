@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
+import { Modal } from "antd";
 import { useLocation } from "react-router-dom";
+import Paystack from "../paystack/Paystack";
 
 import "./pview.css";
 
 export default function ViewProduct() {
   const location = useLocation();
   const [items, setItems] = useState(1);
+  const [previewVisible, setPreviewVisible] = useState(false);
 
   const selected = location.pathname.split("/")[3];
 
   const product = products.filter((std) => {
     return std.id === selected;
   });
+
+  const handleCancel = () => setPreviewVisible(false);
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -104,6 +109,51 @@ export default function ViewProduct() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="total-checkout">
+                  <div className="totals">
+                    <h1>
+                      Total:{" "}
+                      {formatter.format(
+                        (parseInt(product[0].price) -
+                          parseInt(product[0].subprice)) *
+                          items
+                      )}
+                    </h1>
+                  </div>
+
+                  <div className="actions">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setPreviewVisible(true);
+                      }}
+                    >
+                      Buy now
+                    </button>
+                    <button>Add to Cart</button>
+                  </div>
+                  <Modal
+                    visible={previewVisible}
+                    style={{
+                      height: "auto !important",
+                      backgroundColor: "red",
+                    }}
+                    title={"previewTitle"}
+                    footer={null}
+                    onCancel={handleCancel}
+                  >
+                    <Paystack
+                      amount={
+                        ((parseInt(product[0].price) -
+                          parseInt(product[0].subprice)) *
+                        items) + "00"
+                      }
+                      name={product[0].name}
+                      close={handleCancel}
+                    />
+                  </Modal>
                 </div>
               </div>
             </div>
