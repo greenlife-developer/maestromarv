@@ -15,18 +15,24 @@
     padding: 0 2rem;
 }
 
+.other-imgs-container{
+    display: flex;
+    justify-content: center;
+}
+
 .img .other-imgs{
     display: flex;
     margin-top: 1rem;
-    width: 100%;
-    height: 100px;
+    justify-content: center;
+    width: 60%;
+    height: 70px;
 }
 
 .img .other-imgs img{
     width: 80%;
     height: 100%;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid grey;
     cursor: pointer;
     padding: .5rem 0;
     /* background-color: brown; */
@@ -49,6 +55,22 @@
     /* background-color: red; */
     text-align: left;
     padding: 1rem .5rem .2rem;
+}
+
+.text-name p{
+    /* background-color: blue;
+    color: #ddd; */
+    font-size: 1.1rem;
+}
+
+.text-name .reviews .stars{
+    font-size: 1.5rem;
+    /* background-color: #ddd; */
+    color: gold;
+}
+
+.text-name .reviews span{
+    font-size: 1.3rem;
 }
 
 .product-price{
@@ -76,6 +98,10 @@
 .specifications{
     /* background-color: red; */
     margin-top: 1rem;
+}
+
+.specifications img{
+    /* border: 2px solid grey; */
 }
 
 .specifications .quantity div{
@@ -160,8 +186,13 @@
         width: 100%;
     }
 
+    .img .other-imgs{
+        width: 90%;
+        margin-top: 2rem;
+    }
+
     .img .other-imgs img{
-        width: 75%;
-        margin: 5px;
+        width: 100%;
+        margin: 5px; 
     }
 }

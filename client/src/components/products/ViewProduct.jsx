@@ -27,9 +27,8 @@ export default function ViewProduct() {
   });
 
   const decreaseProduct = (e) => {
-    if (items === 0) {
-      // e.preventDefault();
-      setItems(0);
+    if (items === 1) {
+      setItems(1);
     } else {
       setItems(items - 1);
     }
@@ -45,11 +44,13 @@ export default function ViewProduct() {
         <div className="img-text">
           <div className="img">
             <img src={laptop} alt="" />
-            <div className="other-imgs">
-              <img src={laptop} alt="" />
-              <img src={laptop} alt="" />
-              <img src={laptop} alt="" />
-              <img src={laptop} alt="" />
+            <div className="other-imgs-container">
+              <div className="other-imgs">
+                <img src={laptop} alt="" />
+                <img src={laptop} alt="" />
+                <img src={laptop} alt="" />
+                <img src={laptop} alt="" />
+              </div>
             </div>
           </div>
           <div className="text">
@@ -63,8 +64,10 @@ export default function ViewProduct() {
 
                 <div className="reviews">
                   <span>
-                    &#9733;&#9733;&#9733;&#9733;&#9733; 4.8 | 200 sold | 18
-                    reviews
+                    <span className="stars">
+                      &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </span>{" "}
+                    4.8 | 200 sold | 18 reviews
                   </span>
                 </div>
                 <hr />
@@ -88,14 +91,17 @@ export default function ViewProduct() {
 
                 <div className="specifications">
                   <div className="color">
-                    <h6>color: grey</h6>
+                    <h6>color: {product[0].color}</h6>
+                    <img src={laptop} style={{border: `2px solid ${product[0].color}`}} width="50px" alt="" />
+                    <br />
+                    <br />
                     <div className="quantity">
                       <h6>quantity: </h6>
                       <div className="">
                         <button
                           style={{
                             backgroundColor:
-                              items === 0 ? "lightgrey" : "white",
+                              items === 1 ? "lightgrey" : "white",
                           }}
                           onClick={decreaseProduct}
                         >
@@ -146,9 +152,10 @@ export default function ViewProduct() {
                   >
                     <Paystack
                       amount={
-                        ((parseInt(product[0].price) -
+                        (parseInt(product[0].price) -
                           parseInt(product[0].subprice)) *
-                        items) + "00"
+                          items +
+                        "00"
                       }
                       name={product[0].name}
                       close={handleCancel}
