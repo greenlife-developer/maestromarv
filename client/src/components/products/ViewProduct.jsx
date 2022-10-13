@@ -3,10 +3,14 @@ import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
 import { Modal } from "antd";
+import "antd/dist/antd.min.css";
+import { Tabs } from "antd";
 import { useLocation } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
 
 import "./pview.css";
+
+const { TabPane } = Tabs;
 
 export default function ViewProduct() {
   const location = useLocation();
@@ -92,7 +96,12 @@ export default function ViewProduct() {
                 <div className="specifications">
                   <div className="color">
                     <h6>color: {product[0].color}</h6>
-                    <img src={laptop} style={{border: `2px solid ${product[0].color}`}} width="50px" alt="" />
+                    <img
+                      src={laptop}
+                      style={{ border: `2px solid ${product[0].color}` }}
+                      width="50px"
+                      alt=""
+                    />
                     <br />
                     <br />
                     <div className="quantity">
@@ -142,10 +151,6 @@ export default function ViewProduct() {
                   </div>
                   <Modal
                     visible={previewVisible}
-                    style={{
-                      height: "auto !important",
-                      backgroundColor: "red",
-                    }}
                     title={"previewTitle"}
                     footer={null}
                     onCancel={handleCancel}
@@ -166,6 +171,23 @@ export default function ViewProduct() {
             </div>
           </div>
         </div>
+        <Tabs tabPosition={window.innerWidth <= 425 ? "top" : "top"}>
+          <TabPane tab="SPECIFICATIONS" key="1">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+              velit!
+            </p>
+          </TabPane>
+          <TabPane tab="DESCRIPTION" key="2">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </TabPane>
+          <TabPane tab="MORE" key="3">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              totam voluptas, placeat ullam temporibus corrupti.
+            </p>
+          </TabPane>
+        </Tabs>
       </div>
     </>
   );
