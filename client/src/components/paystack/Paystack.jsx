@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { PaystackButton } from "react-paystack";
-import Checkout from "./Checkout";
+import React, { useRef, useState } from "react";
+// import { PaystackButton } from "react-paystack";
+import PaystackPop from "@paystack/inline-js";
+// import Checkout from "./Checkout";
+import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
@@ -8,7 +10,14 @@ const Paystack = (props) => {
   const amount = props.amount;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const payRef = useRef();
   const [phone, setPhone] = useState("");
+
+  const formBody = {
+    email,
+    name,
+    phone,
+  };
 
   const componentProps = {
     email,
@@ -17,13 +26,29 @@ const Paystack = (props) => {
       name,
       phone,
     },
-    publicKey,
-    text: "Pay Now",
     onSuccess: () => {
-      alert("Thanks for doing business with us! Come back soon!!");
+      axios
+        .post(
+          "/api/products/shop",
+          { formBody },
+        )
+        .then((res) => {
+          console.log(res);
+          console.log(res.data);
+        });
       props.close();
     },
     onClose: () => alert("Wait! Don't leave :("),
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const pay = new PaystackPop();
+    pay.newTransaction({
+      key: publicKey,
+      ...componentProps,
+    });
+    console.log("Hello submit");
   };
 
   return (
@@ -36,7 +61,7 @@ const Paystack = (props) => {
           </div>
         </div>
         <div className="checkout-form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <label>Name</label>
             <input
               type="text"
@@ -59,12 +84,8 @@ const Paystack = (props) => {
               required
             />
 
-            <button>
-              H
-            </button>
+            <button type="submit">Pay Now</button>
           </form>
-          <PaystackButton {...componentProps} />
-          {/* <Checkout /> */}
         </div>
       </div>
     </div>

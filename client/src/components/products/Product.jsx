@@ -13,7 +13,6 @@ import LinesEllipsis from "react-lines-ellipsis";
 import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
 
 export default function Product() {
-
   const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
   const formatter = new Intl.NumberFormat("en-US", {

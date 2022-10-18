@@ -57,3 +57,7 @@
   color: white;
   width: 98%;
 }
+
+.checkout-form .paystack-button {
+  display: none;
+}

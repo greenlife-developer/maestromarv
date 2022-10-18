@@ -8,5 +8,9 @@ router.get("/", (req, res) => {
     res.send("API is working...")
 })
 
+router.post("/products/shop", (req, res) => {
+    console.log(req.body.formBody.name)
+})
+
 
 module.exports = router

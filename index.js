@@ -4,7 +4,36 @@ const path = require("path")
 const app = express();
 
 
-// app.use("/", require("./routes/image"));
+app.use(express.json());
+
+const mainURL = "http://localhost:4000/";
+let database = null;
+
+let http = require("http").createServer(app);
+
+app.use(express.json());
+
+const expressSession = require("cookie-session");
+app.use(
+    expressSession({
+        key: "user_id",
+        secret: "User secret object ID",
+        resave: true,
+        saveUninitialized: true,
+    })
+);
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.json({ limit: "10000mb" }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+    bodyParser.urlencoded({
+        extended: true,
+        limit: "10000mb",
+        parameterLimit: 1000000,
+    })
+);
+
 app.use('/api', require("./routes/route"));
 
 // --------------------------deployment------------------------------

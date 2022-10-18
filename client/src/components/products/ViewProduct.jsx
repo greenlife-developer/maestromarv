@@ -3,6 +3,7 @@ import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
 import { Modal } from "antd";
+import Footer from "../homepage/Footer";
 import "antd/dist/antd.min.css";
 import { Tabs } from "antd";
 import { useLocation } from "react-router-dom";
@@ -47,7 +48,37 @@ export default function ViewProduct() {
       <div className="product-view">
         <div className="img-text">
           <div className="img">
-            <img src={laptop} alt="" />
+            <div
+              id="demo"
+              class="carousel slide carousel-container"
+              data-ride="carousel"
+            >
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0"
+                  className="active"
+                ></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src={laptop} alt="Los Angeles" width="100%" />
+                </div>
+                <div class="carousel-item">
+                  <img src={laptop} alt="Chicago" width="100%" />
+                </div>
+                <div class="carousel-item">
+                  <img src={laptop} alt="New York" width="100%" />
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
             <div className="other-imgs-container">
               <div className="other-imgs">
                 <img src={laptop} alt="" />
@@ -91,6 +122,17 @@ export default function ViewProduct() {
                     )}
                     %
                   </span>
+                </div>
+
+                <div className="cart-container">
+                  <div className="cart" style={{ marginLeft: "100px" }}>
+                    <div className="icon">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div className="item-no">
+                      <span>25</span>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="specifications">
@@ -188,6 +230,10 @@ export default function ViewProduct() {
             </p>
           </TabPane>
         </Tabs>
+      </div>
+
+      <div className="footer">
+        <Footer />
       </div>
     </>
   );
