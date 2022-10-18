@@ -2,12 +2,14 @@ import React, { useRef, useState } from "react";
 // import { PaystackButton } from "react-paystack";
 import PaystackPop from "@paystack/inline-js";
 // import Checkout from "./Checkout";
+import { redirect } from "react-router-dom";
 import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
   const publicKey = "pk_test_ea2edc0186f8edb588fe762f89d73ef2c0fdeeef";
   const amount = props.amount;
+  const item = props.item
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const payRef = useRef();
@@ -17,6 +19,7 @@ const Paystack = (props) => {
     email,
     name,
     phone,
+    item
   };
 
   const componentProps = {
@@ -36,6 +39,7 @@ const Paystack = (props) => {
           console.log(res);
           console.log(res.data);
         });
+        // redirect("/?message=bought");
       props.close();
     },
     onClose: () => alert("Wait! Don't leave :("),
@@ -48,7 +52,7 @@ const Paystack = (props) => {
       key: publicKey,
       ...componentProps,
     });
-    console.log("Hello submit");
+    // console.log("Hello submit");
   };
 
   return (

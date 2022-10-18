@@ -35,10 +35,10 @@ export default function Navigation() {
   return (
     <>
       <header>
-        <div class="container1">
+        <div className="container1">
           <input type="checkbox" name="" id="check" />
 
-          <div class="logo-container">
+          <div className="logo-container">
             <img
               src={logo}
               // style={{ borderRadius: "50%" }}
@@ -47,48 +47,48 @@ export default function Navigation() {
             />
           </div>
 
-          <div class="nav-btn">
-            <div class="nav-links">
+          <div className="nav-btn">
+            <div className="nav-links">
               <ul>
-                <li class="nav-link">
+                <li className="nav-link">
                   <NavLink className="nav-link" to="/">
                     Home
                   </NavLink>
                 </li>
-                <li class="nav-link">
+                <li className="nav-link">
                   <NavLink className="nav-link" to="/repairs">
                     Repairs
                   </NavLink>
                 </li>
-                <li class="nav-link">
+                <li className="nav-link">
                   <NavLink className="nav-link" to="/automation">
                     Automation
                   </NavLink>
                 </li>
-                <li class="nav-link">
+                <li className="nav-link">
                   <NavLink className="nav-link" to="/products">
                     Products
                   </NavLink>
                 </li>
-                <li class="nav-link">
+                <li className="nav-link">
                   <a href="#">
-                    About<i class="fas fa-caret-down"></i>
+                    About<i className="fas fa-caret-down"></i>
                   </a>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <ul>
-                      <li class="dropdown-link">
+                      <li className="dropdown-link">
                         <NavLink to="/">About us</NavLink>
                       </li>
-                      <li class="dropdown-link">
+                      <li className="dropdown-link">
                         <NavLink to="/">Blog</NavLink>
                       </li>
-                      <li class="dropdown-link">
+                      <li className="dropdown-link">
                         <NavLink to="/">Location</NavLink>
                       </li>
-                      <li class="dropdown-link">
+                      <li className="dropdown-link">
                         <NavLink to="/">FAQ</NavLink>
                       </li>
-                      <div class="arrow"></div>
+                      <div className="arrow"></div>
                     </ul>
                   </div>
                 </li>
@@ -96,8 +96,8 @@ export default function Navigation() {
             </div>
           </div>
 
-          <div class="hamburger-menu-container">
-            <div class="hamburger-menu">
+          <div className="hamburger-menu-container">
+            <div className="hamburger-menu">
               <div></div>
             </div>
           </div>

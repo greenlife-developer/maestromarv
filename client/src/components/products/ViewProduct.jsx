@@ -6,9 +6,8 @@ import { Modal } from "antd";
 import Footer from "../homepage/Footer";
 import "antd/dist/antd.min.css";
 import { Tabs } from "antd";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
-
 import "./pview.css";
 
 const { TabPane } = Tabs;
@@ -17,6 +16,7 @@ export default function ViewProduct() {
   const location = useLocation();
   const [items, setItems] = useState(1);
   const [previewVisible, setPreviewVisible] = useState(false);
+  const redirect = useNavigate();
 
   const selected = location.pathname.split("/")[3];
 
@@ -25,6 +25,10 @@ export default function ViewProduct() {
   });
 
   const handleCancel = () => setPreviewVisible(false);
+
+  const handleRedirect = () => {
+    return redirect("/?message=bought");
+  };
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -50,43 +54,53 @@ export default function ViewProduct() {
           <div className="img">
             <div
               id="demo"
-              class="carousel slide carousel-container"
+              className="carousel slide carousel-container"
               data-ride="carousel"
             >
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0"
+              <ul className="carousel-indicators">
+                <li
+                  data-target="#demo"
+                  data-slide-to="0"
                   className="active"
                 ></li>
                 <li data-target="#demo" data-slide-to="1"></li>
                 <li data-target="#demo" data-slide-to="2"></li>
               </ul>
 
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+              <div className="carousel-inner">
+                <div className="carousel-item active">
                   <img src={laptop} alt="Los Angeles" width="100%" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                   <img src={laptop} alt="Chicago" width="100%" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                   <img src={laptop} alt="New York" width="100%" />
                 </div>
               </div>
-              <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+              <a
+                className="carousel-control-prev"
+                href="#demo"
+                data-slide="prev"
+              >
+                <span className="carousel-control-prev-icon-custom"></span>
               </a>
-              <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
+              <a
+                className="carousel-control-next"
+                href="#demo"
+                data-slide="next"
+              >
+                <span className="carousel-control-next-icon-custom"></span>
               </a>
             </div>
-            <div className="other-imgs-container">
+            {/* <div className="other-imgs-container">
               <div className="other-imgs">
                 <img src={laptop} alt="" />
                 <img src={laptop} alt="" />
                 <img src={laptop} alt="" />
                 <img src={laptop} alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="text">
             <div className="text-description">
@@ -127,7 +141,7 @@ export default function ViewProduct() {
                 <div className="cart-container">
                   <div className="cart" style={{ marginLeft: "100px" }}>
                     <div className="icon">
-                      <i class="fa-solid fa-cart-shopping"></i>
+                      <i className="fa-solid fa-cart-shopping"></i>
                     </div>
                     <div className="item-no">
                       <span>25</span>
@@ -184,15 +198,15 @@ export default function ViewProduct() {
                     <button
                       onClick={(e) => {
                         e.preventDefault();
-                        setPreviewVisible(true);
+                        setPreviewVisible("open");
                       }}
                     >
-                      Buy now
+                      Buy Now
                     </button>
-                    <button>Add to Cart</button>
+                    <button onClick={handleRedirect}>Add to Cart</button>
                   </div>
                   <Modal
-                    visible={previewVisible}
+                    open={previewVisible}
                     title={"previewTitle"}
                     footer={null}
                     onCancel={handleCancel}
@@ -205,7 +219,8 @@ export default function ViewProduct() {
                         "00"
                       }
                       name={product[0].name}
-                      close={handleCancel}
+                      item={product}
+                      close={handleRedirect}
                     />
                   </Modal>
                 </div>

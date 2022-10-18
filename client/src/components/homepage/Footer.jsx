@@ -63,15 +63,15 @@ export default function Footer() {
             <h6>Contact Us</h6>
             <ul>
               <li>
-                <i class="fa-solid fa-phone"></i> 
+                <i className="fa-solid fa-phone"></i> 
                 <span>09073628831</span>
               </li>
               <li>
-                <i class="fa-solid fa-earth-americas"></i>{" "}
+                <i className="fa-solid fa-earth-americas"></i>{" "}
                 <span>www.maestromarv.com</span>
               </li>
               <li>
-                <i class="fa-regular fa-envelope"></i>{" "}
+                <i className="fa-regular fa-envelope"></i>{" "}
                 <span>realmail@gmail.com</span>
               </li>
             </ul>

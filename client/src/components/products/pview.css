@@ -1,198 +1,251 @@
-.product-view{
-    margin-top: 3.8rem;
-    padding: 1rem 4rem ;
-    /* background-color: orangered; */
+.product-view {
+  margin-top: 3.8rem;
+  padding: 1rem 4rem;
+  /* background-color: orangered; */
 }
 
-.product-view .img-text{
-    display: flex;
+.product-view .img-text {
+  display: flex;
 }
 
-.product-view .img-text .img{
-    width: 50%;
-    height: 500px;
-    /* background-color: black; */
-    padding: 0 2rem;
+.product-view .img-text .img {
+  width: 50%;
+  height: 500px;
+  /* background-color: black; */
+  padding: 0 2rem;
 }
 
-.other-imgs-container{
-    display: flex;
-    justify-content: center;
+.other-imgs-container {
+  display: flex;
+  justify-content: center;
 }
 
-.img .other-imgs{
-    display: flex;
-    margin-top: 1rem;
-    justify-content: center;
-    width: 60%;
-    height: 70px;
+.img .other-imgs {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  width: 60%;
+  height: 70px;
 }
 
-.img .other-imgs img{
-    width: 80%;
-    height: 100%;
-    margin: 10px;
-    border: 1px solid grey;
-    cursor: pointer;
-    padding: .5rem 0;
-    /* background-color: brown; */
+.img .other-imgs img {
+  width: 80%;
+  height: 100%;
+  margin: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  /* background-color: brown; */
 }
 
-.img-text .text{
-    /* background-color: blue; */
-    width: 50%;
+/* ------------------------------ Carousel indicator custom style --------------------------------------- */
+ul.carousel-indicators {
+  /* background-color: red; */
+  margin-bottom: -1.5em;
 }
 
-.product-view .img-text .img img{
-    width: 100%;
-    object-fit: contain;
-    height: 70%;
+ul.carousel-indicators li {
+  background-color: blue;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon-custom {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  color: blue;
+  width: 15px;
+}
+
+.carousel-control-prev-icon-custom::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-225deg);
+  right: 6px;
+  top: 4px;
+}
+
+.carousel-control-next-icon-custom {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  color: blue;
+  width: 15px;
+}
+.carousel-control-next-icon-custom::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-45deg);
+  right: 6px;
+  top: 4px;
+  /* background-color: red; */
+  color: blue;
+  /* width: 15px; */
+}
+
+/* ----------------------------- !Carousel indicator custom style --------------------------------------- */
+
+.img-text .text {
+  /* background-color: blue; */
+  width: 50%;
+}
+
+.product-view .img-text .img img {
+  width: 100%;
+  object-fit: contain;
+  height: 70%;
 }
 
 /* section 2 */
 
-.text-description .text-name{
-    /* background-color: red; */
-    text-align: left;
-    padding: 1rem .5rem .2rem;
+.text-description .text-name {
+  /* background-color: red; */
+  text-align: left;
+  padding: 1rem 0.5rem 0.2rem;
 }
 
-.text-name p{
-    /* background-color: blue;
+.text-name p {
+  /* background-color: blue;
     color: #ddd; */
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
-.text-name .reviews .stars{
-    font-size: 1.5rem;
-    /* background-color: #ddd; */
-    color: gold;
+.text-name .reviews .stars {
+  font-size: 1.5rem;
+  /* background-color: #ddd; */
+  color: gold;
 }
 
-.text-name .reviews span{
-    font-size: 1.3rem;
+.text-name .reviews span {
+  font-size: 1.3rem;
 }
 
-.product-price{
-    display: flex;
-    font-size: 1.5rem;
-    padding: .5rem ;
-    background-color: darkblue;
+.product-price {
+  display: flex;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: darkblue;
 }
 
-.product-price *{
-    margin: 0 .2rem;
-    color: whitesmoke;
-    font-size: .8rem;
+.product-price * {
+  margin: 0 0.2rem;
+  color: whitesmoke;
+  font-size: 0.8rem;
 }
 
-.product-price h1{
-    font-size: 1.2rem;
+.product-price h1 {
+  font-size: 1.2rem;
 }
 
-.product-price h4{
-    text-decoration: line-through;
-    margin-top: .2rem;
+.product-price h4 {
+  text-decoration: line-through;
+  margin-top: 0.2rem;
 }
 
-.specifications{
-    /* background-color: red; */
-    margin-top: 1rem;
+.specifications {
+  /* background-color: red; */
+  margin-top: 1rem;
 }
 
-.specifications img{
-    /* border: 2px solid grey; */
+.specifications img {
+  /* border: 2px solid grey; */
 }
 
-.specifications .quantity div{
-    display: flex;
+.specifications .quantity div {
+  display: flex;
 }
 
-.specifications .quantity button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: white;
-    box-shadow: 1px 1px 10px #ddd;
-    margin: .5rem .2rem;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.specifications .quantity button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: white;
+  box-shadow: 1px 1px 10px #ddd;
+  margin: 0.5rem 0.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
-.specifications .quantity button.available-pieces{
-    width: 200px;
-    box-shadow: none;
-    cursor: default;
-    border-radius: 0;
-    justify-content: start;
+.specifications .quantity button.available-pieces {
+  width: 200px;
+  box-shadow: none;
+  cursor: default;
+  border-radius: 0;
+  justify-content: start;
 }
-.specifications .quantity button.items-count{
-    box-shadow: none;
-    cursor: default;
-}
-
-.total-checkout{
-    /* background-color: blue; */
-    margin-top: 1rem;
+.specifications .quantity button.items-count {
+  box-shadow: none;
+  cursor: default;
 }
 
-.total-checkout .actions button{
-    padding: .5rem 2.5rem;
-    margin: 0 .5rem 1rem 0;
-    border-radius: 5px;
-    border: none;
-    background-color: darkblue;
-    color: white;
+.total-checkout {
+  /* background-color: blue; */
+  margin-top: 1rem;
 }
 
+.total-checkout .actions button {
+  padding: 0.5rem 2.5rem;
+  margin: 0 0.5rem 1rem 0;
+  border-radius: 5px;
+  border: none;
+  background-color: darkblue;
+  color: white;
+}
 
+@media screen and (max-width: 430px) {
+  .product-view {
+    margin-top: 3.8rem;
+    padding: 1rem 0;
+    /* background-color: orangered; */
+  }
 
+  .product-view .img-text {
+    /* display: flex; */
+    flex-direction: column;
+  }
 
+  .product-view .img-text .img {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+  }
 
+  .img-text .text {
+    width: 100%;
+  }
 
+  .img .other-imgs {
+    width: 90%;
+    margin-top: 2rem;
+  }
 
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 430px){
-
-    .product-view{
-        margin-top: 3.8rem;
-        padding: 1rem 0 ;
-        /* background-color: orangered; */
-    }
-
-    .product-view .img-text{
-        /* display: flex; */
-        flex-direction: column;
-    }
-
-    .product-view .img-text .img{
-        width: 100%;
-        height: 300px;
-        padding: 0;
-    }
-
-    .img-text .text{
-        width: 100%;
-    }
-
-    .img .other-imgs{
-        width: 90%;
-        margin-top: 2rem;
-    }
-
-    .img .other-imgs img{
-        width: 100%;
-        margin: 5px; 
-    }
+  .img .other-imgs img {
+    width: 100%;
+    margin: 5px;
+  }
 }
