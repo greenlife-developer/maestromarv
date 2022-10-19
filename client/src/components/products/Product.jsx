@@ -9,16 +9,10 @@ import "antd/dist/antd.min.css";
 import "./products.css";
 import products from "../../products";
 import Footer from "../homepage/Footer";
-import LinesEllipsis from "react-lines-ellipsis";
-import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
+import Cart from "./Cart";
+import Item from "./Item";
 
 export default function Product() {
-  const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
-
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "NGN",
-  });
 
   return (
     <>
@@ -64,16 +58,7 @@ export default function Product() {
           </a>
         </div>
 
-        <div className="cart-container">
-          <div className="cart" style={{ marginLeft: "100px" }}>
-            <div className="icon">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-            <div className="item-no">
-              <span>25</span>
-            </div>
-          </div>
-        </div>
+        <Cart />
 
         <div className="product-categories">
           <div className="category-1">
@@ -85,31 +70,14 @@ export default function Product() {
             <div className="cat-body">
               {products.map((product, index) => {
                 return (
-                  <div key={index} className="cat-items-container">
-                    <div className="cat-item">
-                      <div className="cat-item-img">
-                        <Link to={"/products/view/" + product.id}>
-                          <img src={laptop} alt={product.name} />
-                        </Link>
-                      </div>
-                      <div className="item-content">
-                        <p>
-                          <ResponsiveEllipsis
-                            text={product.name}
-                            maxLine="1"
-                            ellipsis="..."
-                            basedOn="letters"
-                          />
-                        </p>
-                        <h4>{formatter.format(product.price)}</h4>
-                        <span>your're saving 18%</span>
-                        <br />
-                        <span>
-                          {product.sold} sold &#9733; {product.rating}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <Item
+                    key={index}
+                    sold={product.sold}
+                    name={product.name}
+                    id={product.id}
+                    price={product.price}
+                    rating={product.rating}
+                  />
                 );
               })}
             </div>

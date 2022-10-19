@@ -19,7 +19,7 @@ const Paystack = (props) => {
     email,
     name,
     phone,
-    item
+    item: item
   };
 
   const componentProps = {
@@ -39,7 +39,6 @@ const Paystack = (props) => {
           console.log(res);
           console.log(res.data);
         });
-        // redirect("/?message=bought");
       props.close();
     },
     onClose: () => alert("Wait! Don't leave :("),

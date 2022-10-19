@@ -3,12 +3,14 @@ import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
 import { Modal } from "antd";
+import axios from "axios";
 import Footer from "../homepage/Footer";
 import "antd/dist/antd.min.css";
 import { Tabs } from "antd";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
 import "./pview.css";
+import Cart from "./Cart";
 
 const { TabPane } = Tabs;
 
@@ -28,6 +30,16 @@ export default function ViewProduct() {
 
   const handleRedirect = () => {
     return redirect("/?message=bought");
+  };
+
+  const handleAddToCart = () => {
+    // console.log("Added to cart");
+    if (product) {
+      axios.post("/api/products/add-to-cart", { product }).then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+    }
   };
 
   const formatter = new Intl.NumberFormat("en-US", {
@@ -93,14 +105,6 @@ export default function ViewProduct() {
                 <span className="carousel-control-next-icon-custom"></span>
               </a>
             </div>
-            {/* <div className="other-imgs-container">
-              <div className="other-imgs">
-                <img src={laptop} alt="" />
-                <img src={laptop} alt="" />
-                <img src={laptop} alt="" />
-                <img src={laptop} alt="" />
-              </div>
-            </div> */}
           </div>
           <div className="text">
             <div className="text-description">
@@ -138,16 +142,7 @@ export default function ViewProduct() {
                   </span>
                 </div>
 
-                <div className="cart-container">
-                  <div className="cart" style={{ marginLeft: "100px" }}>
-                    <div className="icon">
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div className="item-no">
-                      <span>25</span>
-                    </div>
-                  </div>
-                </div>
+                <Cart />
 
                 <div className="specifications">
                   <div className="color">
@@ -203,7 +198,7 @@ export default function ViewProduct() {
                     >
                       Buy Now
                     </button>
-                    <button onClick={handleRedirect}>Add to Cart</button>
+                    <button onClick={handleAddToCart}>Add to Cart</button>
                   </div>
                   <Modal
                     open={previewVisible}

@@ -41,7 +41,7 @@
 /* ------------------------------ Carousel indicator custom style --------------------------------------- */
 ul.carousel-indicators {
   /* background-color: red; */
-  margin-bottom: -1.5em;
+  /* margin-bottom: ; */
 }
 
 ul.carousel-indicators li {
@@ -49,6 +49,7 @@ ul.carousel-indicators li {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  margin: 0 .2rem;
 }
 
 .carousel-control-prev-icon-custom {

@@ -19,7 +19,7 @@ header{
     height: 60px ;
     /* padding-top: 15px ; */
     width: 100% ;
-    z-index: 1000 ;
+    z-index: 5 ;
 }
 
 /* section{
@@ -65,6 +65,8 @@ header{
 
 .nav-links{
     flex: 2;
+    /* background-color: red; */
+    padding-top: .6rem;
 }
 
 .bty{
@@ -92,11 +94,14 @@ header{
 .nav-links > ul{
     display: flex;
     justify-content: center;
+    /* background-color: blue; */
     align-items: center;
 }
 
 .nav-link{
     position: relative;
+    /* background-color: #000; */
+    margin: 0 .5rem;
     margin-top: .2rem;
 }
 
@@ -248,6 +253,20 @@ header{
 }
 
 
+
+.login-register{
+    /* background-color: red; */
+    max-height: 100%;
+}
+
+.login-register button{
+    border: none;
+    margin: .7rem .2rem;
+    padding: .5rem 2.5rem;
+    border-radius: .3rem;
+    background-color: #4141b4;
+    color: whitesmoke;
+}
 
 
 
