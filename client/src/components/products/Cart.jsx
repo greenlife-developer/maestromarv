@@ -89,6 +89,8 @@ export default function Cart() {
                           id={sale.item[0].id}
                           price={sale.item[0].price}
                           rating={sale.item[0].rating}
+                          phone={sale.item[0].phone}
+                          call={"call"}
                         />
                       );
                     })

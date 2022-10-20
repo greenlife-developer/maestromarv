@@ -36,6 +36,9 @@ export default function Item(props) {
             <span>
               {props.sold} sold &#9733; {props.rating}
             </span>
+            <span>
+              <a href={`tel:${props.phone}`}>{props.call}</a>
+            </span>
           </div>
         </div>
       </div>

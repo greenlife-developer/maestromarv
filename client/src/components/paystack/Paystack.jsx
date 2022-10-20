@@ -1,15 +1,15 @@
 import React, { useRef, useState } from "react";
-// import { PaystackButton } from "react-paystack";
 import PaystackPop from "@paystack/inline-js";
-// import Checkout from "./Checkout";
-import { redirect } from "react-router-dom";
+import { SmileOutlined } from "@ant-design/icons";
+import "antd/dist/antd.min.css";
+import { notification } from "antd";
 import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
   const publicKey = "pk_test_ea2edc0186f8edb588fe762f89d73ef2c0fdeeef";
   const amount = props.amount;
-  const item = props.item
+  const item = props.item;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const payRef = useRef();
@@ -19,7 +19,7 @@ const Paystack = (props) => {
     email,
     name,
     phone,
-    item: item
+    item: item,
   };
 
   const componentProps = {
@@ -30,18 +30,24 @@ const Paystack = (props) => {
       phone,
     },
     onSuccess: () => {
-      axios
-        .post(
-          "/api/products/shop",
-          { formBody },
-        )
-        .then((res) => {
-          console.log(res);
-          console.log(res.data);
-        });
+      axios.post("/api/products/shop", { formBody }).then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
       props.close();
+      notification.open({
+        message: "Thank you for your purchase!",
+        description: "Please, let's do business together in the future",
+        icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+      });
     },
-    onClose: () => alert("Wait! Don't leave :("),
+    onClose: () => {
+      notification.open({
+        message: "Oh no!",
+        description: "We hope to see your purchase",
+        icon: <SmileOutlined style={{ color: "#108ee9" }} />
+      });
+    },
   };
 
   const handleSubmit = (e) => {
