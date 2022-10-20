@@ -79,7 +79,7 @@ export default function Cart() {
             <div className="cart-details">
               <h4>View Your Orders</h4>
               <div className="cart-items">
-                {sales[0] && sales[0].item
+                {sales && sales[0] && sales[0].item
                   ? sales.map((sale, id) => {
                       return (
                         <Item

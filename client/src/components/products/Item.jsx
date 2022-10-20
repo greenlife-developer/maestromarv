@@ -17,9 +17,9 @@ export default function Item(props) {
       <div className="cat-items-container">
         <div className="cat-item">
           <div className="cat-item-img">
-            <Link to={"/products/view/" + props.id}>
+            <a href={"/products/view/" + props.id}>
               <img src={laptop} alt={props.name} />
-            </Link>
+            </a>
           </div>
           <div className="item-content">
             <p>
