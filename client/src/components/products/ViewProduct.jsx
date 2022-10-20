@@ -4,13 +4,15 @@ import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
 import { Modal } from "antd";
 import axios from "axios";
+import { SmileOutlined } from '@ant-design/icons';
 import Footer from "../homepage/Footer";
 import "antd/dist/antd.min.css";
-import { Tabs } from "antd";
+import { Tabs, Button, notification } from "antd";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
 import "./pview.css";
 import Cart from "./Cart";
+import Notification from "./Notification";
 
 const { TabPane } = Tabs;
 
@@ -33,13 +35,19 @@ export default function ViewProduct() {
   };
 
   const handleAddToCart = () => {
-    // console.log("Added to cart");
     if (product) {
       axios.post("/api/products/add-to-cart", { product }).then((res) => {
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
+        // console.log(res.data);
+        notification.open({
+          message: 'Added to Cart!',
+          description:
+            "Please, don't forget to check out",
+          icon: <SmileOutlined style={{ color: '#108ee9' }} />,
+        });
       });
     }
+
   };
 
   const formatter = new Intl.NumberFormat("en-US", {

@@ -57,7 +57,7 @@ export default function Cart() {
         <div class="offcanvas-body">
           <div className="order-page">
             <div className="cart-details">
-              <h4>View Your Cart</h4>
+              <h4>View Your Cart({cartno})</h4>
               <div className="cart-items">
                 {cart
                   ? cart.map((cat, id) => {
@@ -79,7 +79,7 @@ export default function Cart() {
             <div className="cart-details">
               <h4>View Your Orders</h4>
               <div className="cart-items">
-                {sales && sales[0].item
+                {sales[0] && sales[0].item
                   ? sales.map((sale, id) => {
                       return (
                         <Item
