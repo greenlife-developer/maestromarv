@@ -1,13 +1,19 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import "./appointment.css";
 
 export default function Appointment() {
+
+  const redirect = useNavigate();
+
   return (
     <>
       <div className="appointment-container">
         <div className="appointment-header">
-          <h4><Link to="/">Make an appointment</Link></h4>
+          <h4>
+            <Link to="/">Make an appointment</Link>
+          </h4>
         </div>
         <div className="app-details">
           <div className="">
@@ -28,11 +34,13 @@ export default function Appointment() {
                       <option value="completed">Work Completed</option>
                     </select>
                   </div>
+                  <br />
                   <div className="issue-type">
                     <label htmlFor="type">Issue Subject</label>
                     <br />
-                    <input type="text" placeholder="Need help with" />
+                    <input type="text" placeholder="Need help with..." />
                   </div>
+                  <br />
                   <div className="issue-type">
                     <label htmlFor="type">Issue Details</label>
                     <br />
@@ -45,7 +53,7 @@ export default function Appointment() {
                     ></textarea>
                   </div>
                   <div className="issue-type">
-                    <button type="submit">Next</button>
+                    <button onClick={() => redirect("/make-appointment/contact")} type="submit">Next</button>
                   </div>
                 </form>
               </div>

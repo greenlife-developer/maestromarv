@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Navigation from "../homepage/Navigation";
-import laptop from "../images/laptop.png";
-import { Link } from "react-router-dom";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
 import accessories from "../images/accessories.jpg";
