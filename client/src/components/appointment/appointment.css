@@ -1,0 +1,77 @@
+.appointment-container{
+    color: #333;
+    background-color: #f2f2f2;
+    text-align: left;
+    height: 100vh;
+}
+
+.appointment-header{
+    color: #333333;
+    background-color: #f2f2f2;
+    padding: .5rem 2rem;
+    box-shadow: 2px 2px 10px rgb(212, 206, 206);
+}
+
+.appointment-header h1{
+    color: white;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.app-details{
+    margin-top: 3rem;
+}
+
+.app-details .details-form{
+    display: flex;
+    justify-content: center;
+}
+
+.app-details .details-form .form{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+    width: 85%;
+}
+
+.app-details .details-form form{
+    width: 50%;
+}
+
+.issue-type *{
+    width: 100%;
+    margin: .2rem 0;
+    /* font-weight: bold; */
+}
+
+.issue-type label{
+    font-weight: bold;
+    color: #867272;
+}
+
+.issue-type input, .issue-type select, .issue-type button, .issue-type textarea{
+    padding: .5rem .8rem;
+    border: 1px solid #f2f2f2;
+    outline: none;
+    border-radius: 3px;
+}
+
+.issue-type button{
+    background-color: #333;
+    color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 430px){
+    .app-details .details-form form{
+        width: 100%;
+        padding: 1rem;
+    }
+}

@@ -96,18 +96,20 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* <div className="login-register">
-            <button>Login</button>
-            <button>Register</button>
-          </div> */}
-
           <div className="hamburger-menu-container">
             <div className="hamburger-menu">
               <div></div>
             </div>
           </div>
+
+          <div className="login-register">
+            <button>Login</button>
+            <button>Register</button>
+          </div>
+
         </div>
       </header>
     </>
   );
 }
+

@@ -5,6 +5,7 @@ import Home from "./components/homepage/Home";
 import ViewProduct from './components/products/ViewProduct';
 import Repairs from './components/repairs/Repairs';
 import Products from "./components/products/Product";
+import Appointment from './components/appointment/Appointment';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/repairs" element={<Repairs />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/view/:id" element={<ViewProduct />} />
+          <Route path="/make-appointment" element={<Appointment />} />
           {/* <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upload" element={<Upload />} />

@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import image from "../images/image1.png";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
+import { Link } from "react-router-dom";
 import image4 from "../images/image4.jpg";
 import image6 from "../images/image6.jpg";
 import image5 from "../images/image5.jpg";
@@ -76,7 +77,9 @@ export default function Home() {
               much more, we are committed to the continuity of your smooth
               gadget use and technology experience.
             </p>
-            <button>Make appointment</button>
+            <button>
+              <Link to="/make-appointment">Make Appontment</Link>
+            </button>
           </div>
           <div className="phone-pc-img">
             <video src={video2} autoPlay muted loop className="myVideo">
@@ -87,19 +90,19 @@ export default function Home() {
         </div>
       </div>
 
-
-
-
       <div className="section-2">
         <div className="section-2-content">
           <h1 className="text-light">We repair all laptops and phones</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro perferendis nulla consectetur iure animi reiciendis possimus provident eligendi quas.</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro
+            perferendis nulla consectetur iure animi reiciendis possimus
+            provident eligendi quas.
+          </p>
           <button>make appointment</button>
         </div>
-      </div><br /><br />
-
-
-
+      </div>
+      <br />
+      <br />
 
       <div className="">
         <h3>Our Services</h3>
@@ -155,16 +158,20 @@ export default function Home() {
         <Swipper />
       </div>
 
-
       <div className="section-5">
         {/* <img src={image7} alt="" /> */}
         <div className="section-5-content">
-          <h1 className="text-light">We build the best home automation features</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro perferendis nulla consectetur iure animi reiciendis possimus provident eligendi quas.</p>
+          <h1 className="text-light">
+            We build the best home automation features
+          </h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro
+            perferendis nulla consectetur iure animi reiciendis possimus
+            provident eligendi quas.
+          </p>
           <button>make appointment</button>
         </div>
       </div>
-
 
       <div className="section-6">
         <div className="about">
