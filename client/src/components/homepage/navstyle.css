@@ -17,7 +17,8 @@ header{
     top: 0px ;
     background-color: #000 ;
     height: 60px ;
-    /* padding-top: 15px ; */
+    padding: 0 1rem;
+    padding-right: 1.5rem;
     width: 100% ;
     z-index: 5 ;
 }
@@ -310,6 +311,12 @@ header{
     to{
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 430px){
+    .login-register{
+        display: none;
     }
 }
 
