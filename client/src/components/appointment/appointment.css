@@ -65,6 +65,37 @@
 }
 
 
+/* time scheduling */
+
+.time-container .details-form .form{
+    padding: 2rem 1rem;
+}
+
+.time-day{
+    /* overflow: scroll; */
+    /* background-color: gray; */
+}
+
+.time-day h1{
+    font-size: 1.5rem;
+}
+
+.time-day .time{
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+}
+
+.time-day .time-item{
+    /* background-color: red; */
+    box-shadow: 3px 3px 10px #ddd;
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 5px;
+    margin: .5rem;
+}
+
+
 
 
 
@@ -76,5 +107,28 @@
     .app-details .details-form form{
         width: 100%;
         padding: 1rem;
+    }
+
+    .time-container .details-form .form{
+        /* overflow-x: scroll; */
+        position: relative;
+        /* background-color: blue; */
+    }
+
+    .time-day .time-item{
+        /* background-color: lemonchiffon; */
+        padding: .5rem;
+    }
+
+    .time-day{
+        /* position: absolute; */
+        /* background-color: #333; */
+    }
+
+    .time-day .time{
+        overflow-x: scroll;
+        /* position: absolute; */
+        /* background-color: yellow; */
+        width: 100%;
     }
 }
