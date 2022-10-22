@@ -114,19 +114,22 @@
         position: relative;
         justify-content: start;
         /* background-color: blue; */
-        padding: .1rem;
+        padding: .4rem;
         /* background-color: blue; */
+    }
+
+    .time-container .details-form .form .appointment-time{
+        /* background-color: red; */
+        width: 100%;
     }
 
     .time-day .time-item{
         /* background-color: lemonchiffon; */
-        padding: .5rem .8rem;
+        padding: .5rem 1rem;
     }
 
     .time-day{
         /* position: absolute; */
-        max-width: 100%;
-        overflow-x: scroll;
         /* background-color: #333; */
         /* padding: 0 1rem ; */
     }
@@ -134,7 +137,8 @@
     .time-day .time{
         overflow-x: hidden;
         /* position: absolute; */
-        /* background-color: yellow; */
         max-width: 100%;
+        overflow-x: scroll;
+        /* background-color: yellow; */
     }
 }
