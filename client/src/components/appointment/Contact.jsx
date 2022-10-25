@@ -1,12 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./appointment.css";
 
 export default function Contact() {
   const redirect = useNavigate();
 
+  const [contact, setContact] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setContact((prev) => {
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prev.lName,
+          email: prev.email,
+          phone: prev.phone,
+          address: prev.address,
+        };
+      }
+      if (name === "lName") {
+        return {
+          fName: prev.fName,
+          lName: value,
+          email: prev.email,
+          phone: prev.phone,
+          address: prev.address,
+        };
+      }
+      if (name === "email") {
+        return {
+          fName: prev.fName,
+          lName: prev.lName,
+          email: value,
+          phone: prev.phone,
+          address: prev.address,
+        };
+      }
+      if (name === "phone") {
+        return {
+          fName: prev.fName,
+          lName: prev.lName,
+          email: prev.email,
+          phone: value,
+          address: prev.address,
+        };
+      }
+      if (name === "address") {
+        return {
+          fName: prev.fName,
+          lName: prev.lName,
+          email: prev.email,
+          phone: prev.phone,
+          address: value,
+        };
+      }
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    localStorage.setItem("contact", JSON.stringify(contact))
     redirect("/make-appointment/time");
   };
 
@@ -29,7 +91,8 @@ export default function Contact() {
                   <div className="issue-type">
                     <label htmlFor="type">First Name</label>
                     <input
-                      name="firstName"
+                      name="fName"
+                      onChange={handleChange}
                       type="text"
                       placeholder="First Name"
                       required
@@ -39,7 +102,8 @@ export default function Contact() {
                   <div className="issue-type">
                     <label htmlFor="type">Last Name</label>
                     <input
-                      name="lastName"
+                      name="lName"
+                      onChange={handleChange}
                       type="text"
                       placeholder="Last Name"
                       required
@@ -50,6 +114,7 @@ export default function Contact() {
                     <label htmlFor="type">Email Address</label>
                     <input
                       name="email"
+                      onChange={handleChange}
                       type="email"
                       placeholder="Email Address"
                       required
@@ -60,6 +125,7 @@ export default function Contact() {
                     <label htmlFor="type">Phone Number</label>
                     <input
                       name="phone"
+                      onChange={handleChange}
                       type="number"
                       placeholder="Phone Number"
                       required
@@ -70,6 +136,7 @@ export default function Contact() {
                     <label htmlFor="type">Address</label>
                     <input
                       name="address"
+                      onChange={handleChange}
                       type="text"
                       placeholder="Address"
                       required

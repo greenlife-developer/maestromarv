@@ -1,18 +1,57 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./appointment.css";
 
 export default function Contact() {
+  let d = new Date();
   const [days, setDays] = useState([
-    { name: "Monday", no: 1 },
-    { name: "Tuesday", no: 2 },
-    { name: "Wednesday", no: 3 },
-    { name: "Thursday", no: 4 },
-    { name: "Friday", no: 5 },
-    { name: "Saturday", no: 6 },
+    {
+      name: "Monday",
+      no: 1,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
+    {
+      name: "Tuesday",
+      no: 2,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
+    {
+      name: "Wednesday",
+      no: 3,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
+    {
+      name: "Thursday",
+      no: 4,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
+    {
+      name: "Friday",
+      no: 5,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
+    {
+      name: "Saturday",
+      no: 6,
+      time: ["9am - 11am", "11am - 1pm", "1pm - 3pm", "3pm - 5pm", "5pm - 7pm"],
+    },
   ]);
 
-  let d = new Date();
+  const handleBook = (time) => {
+    const details = localStorage.getItem("details");
+    const contact = localStorage.getItem("contact");
+    const newContact = JSON.parse(contact);
+    const newDetails = JSON.parse(details);
+    // console.log(JSON.parse(contact))
+    const appointment = { ...newDetails, ...newContact, time };
+    axios.post("/api/maestromarv/make-appointment", { appointment }).then((res) => {
+      console.log(res.data);
+    });
+    console.log(time);
+  };
+
+  // console.log(details, contact);
 
   return (
     <>
@@ -36,11 +75,24 @@ export default function Contact() {
                             {day.name} ({d.toLocaleDateString()})
                           </h1>
                           <div className="time">
-                            <div className="time-item">9am - 11am</div>
-                            <div className="time-item">11am - 1pm</div>
-                            <div className="time-item">1pm - 3pm</div>
-                            <div className="time-item">3pm - 5pm</div>
-                            <div className="time-item">5pm - 7pm</div>
+                            {day.time.map((time, id) => {
+                              const schedule =
+                                day.name +
+                                " " +
+                                d.toLocaleDateString() +
+                                " " +
+                                time;
+
+                              return (
+                                <div
+                                  onClick={() => handleBook(schedule)}
+                                  key={id}
+                                  className="time-item"
+                                >
+                                  {time}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                         <br />

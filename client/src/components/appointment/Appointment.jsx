@@ -1,13 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./appointment.css";
 
 export default function Appointment() {
   const redirect = useNavigate();
+  const [details, setDetails] = useState({
+    priority: "",
+    type: "",
+    subject: "",
+    details: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setDetails((prev) => {
+      if (name === "priority") {
+        return {
+          priority: value,
+          type: prev.type,
+          subject: prev.subject,
+          details: prev.details,
+        };
+      }
+      if (name === "type") {
+        return {
+          priority: prev.priority,
+          type: value,
+          subject: prev.subject,
+          details: prev.details,
+        };
+      }
+      if (name === "subject") {
+        return {
+          priority: prev.priority,
+          type: prev.type,
+          subject: value,
+          details: prev.details,
+        };
+      }
+      if (name === "details") {
+        return {
+          priority: prev.priority,
+          type: prev.type,
+          subject: prev.subject,
+          details: value,
+        };
+      }
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    localStorage.setItem("details", JSON.stringify(details));
     redirect("/make-appointment/contact");
   };
 
@@ -30,18 +77,23 @@ export default function Appointment() {
                   <div className="issue-type">
                     <label htmlFor="type">Priority</label>
                     <br />
-                    <select name="type" id="" required>
+                    <select
+                      onChange={handleChange}
+                      name="priority"
+                      id=""
+                      required
+                    >
                       <option value=""></option>
-                      <option value="approved">High</option>
-                      <option value="completed">Medium</option>
-                      <option value="completed">Low</option>
+                      <option value="high">High</option>
+                      <option value="medium">Medium</option>
+                      <option value="low">Low</option>
                     </select>
                   </div>
                   <br />
                   <div className="issue-type">
                     <label htmlFor="type">Issue Type</label>
                     <br />
-                    <select name="type" id="" required>
+                    <select onChange={handleChange} name="type" id="" required>
                       <option value=""></option>
                       <option value="new">New</option>
                       <option value="diagnosed">Diagnosed</option>
@@ -54,7 +106,9 @@ export default function Appointment() {
                     <label htmlFor="type">Issue Subject</label>
                     <br />
                     <input
+                      onChange={handleChange}
                       type="text"
+                      name="subject"
                       placeholder="Need help with..."
                       required
                     />
@@ -65,6 +119,7 @@ export default function Appointment() {
                     <br />
                     <textarea
                       name="details"
+                      onChange={handleChange}
                       id=""
                       cols="30"
                       rows="5"

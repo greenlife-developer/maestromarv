@@ -43,14 +43,14 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       })
       .toArray((err, sales) => {
         database.collection("cart").find().sort({
-            createdAt: -1
+          createdAt: -1
         })
-        .toArray((err, cart) => {
+          .toArray((err, cart) => {
             res.json({
-                sales: sales,
-                cart: cart
+              sales: sales,
+              cart: cart
             })
-        })
+          })
       });
   });
 
@@ -78,6 +78,26 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       }
     );
   });
+
+  router.post("/maestromarv/make-appointment", (req, res) => {
+    console.log(req.body.appointment.fName)
+    const currentTime = new Date().getTime();
+    database.collection("apppointments").insertOne({
+      createdAt: currentTime,
+      fName: req.body.appointment.fName,
+      lName: req.body.appointment.lName,
+      email: req.body.appointment.email,
+      phone: req.body.appointment.phone,
+      address: req.body.appointment.address,
+      time: req.body.appointment.time,
+      priority: req.body.appointment.priority,
+      type: req.body.appointment.type,
+      subject: req.body.appointment.subject,
+      details: req.body.appointment.details,
+    }, (err, data) => {
+      console.log(data)
+    })
+  })
 
   // router.post("/register", (req, res) => {
   //     database.collection("users").findOne(

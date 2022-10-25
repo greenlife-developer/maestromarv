@@ -3,7 +3,6 @@
     background-color: #f2f2f2;
     text-align: left;
     padding-bottom: 4rem;
-    /* height: 100vh; */
 }
 
 .appointment-header{
@@ -44,7 +43,6 @@
 .issue-type *{
     width: 100%;
     margin: .2rem 0;
-    /* font-weight: bold; */
 }
 
 .issue-type label{
@@ -71,31 +69,22 @@
     padding: 2rem 1rem;
 }
 
-.time-day{
-    /* overflow: scroll; */
-    /* background-color: gray; */
-}
-
 .time-day h1{
     font-size: 1.5rem;
 }
 
 .time-day .time{
     display: flex;
-    /* background-color: red; */
     width: 100%;
 }
 
 .time-day .time-item{
-    /* background-color: red; */
     box-shadow: 3px 3px 10px #ddd;
     cursor: pointer;
     padding: 2rem;
     border-radius: 5px;
     margin: .5rem;
 }
-
-
 
 
 
@@ -110,35 +99,22 @@
     }
 
     .time-container .details-form .form{
-        /* overflow-x: scroll; */
         position: relative;
         justify-content: start;
-        /* background-color: blue; */
         padding: .4rem;
-        /* background-color: blue; */
     }
 
     .time-container .details-form .form .appointment-time{
-        /* background-color: red; */
         width: 100%;
     }
 
     .time-day .time-item{
-        /* background-color: lemonchiffon; */
         padding: .5rem 1rem;
-    }
-
-    .time-day{
-        /* position: absolute; */
-        /* background-color: #333; */
-        /* padding: 0 1rem ; */
     }
 
     .time-day .time{
         overflow-x: hidden;
-        /* position: absolute; */
         max-width: 100%;
         overflow-x: scroll;
-        /* background-color: yellow; */
     }
 }

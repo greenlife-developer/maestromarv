@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
