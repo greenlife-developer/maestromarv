@@ -18,7 +18,7 @@ header{
     background-color: #000 ;
     height: 60px ;
     padding-left: 1rem;
-    padding-right: 1.5rem;
+    padding-right: 2.5rem;
     width: 100% ;
     z-index: 5 ;
 }
@@ -266,7 +266,8 @@ header{
     margin: .7rem .2rem;
     padding: .5rem 2.5rem;
     border-radius: .3rem;
-    background-color: #4141b4;
+    background-color: transparent;
+    border: 1.5px solid #5252e7;
     color: whitesmoke;
 }
 

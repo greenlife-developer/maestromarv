@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt")
 
 const mongodb = require("mongodb");
 const ObjectId = mongodb.ObjectId;
@@ -79,8 +80,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     );
   });
 
-  router.post("/maestromarv/make-appointment", (req, res) => {
-    console.log(req.body.appointment.fName)
+  router.post("/maestromarv/appointment", (req, res) => {
     const currentTime = new Date().getTime();
     database.collection("apppointments").insertOne({
       createdAt: currentTime,
@@ -99,63 +99,65 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     })
   })
 
-  // router.post("/register", (req, res) => {
-  //     database.collection("users").findOne(
-  //         {
-  //             email: req.body.email,
-  //         },
-  //         (err, user) => {
-  //             if (user === null) {
-  //                 bcrypt.hash(req.body.password, 10, (err, hash) => {
-  //                     database.collection("users").insertOne(
-  //                         {
-  //                             firstName: req.body.fName,
-  //                             lastName: req.body.lName,
-  //                             email: req.body.email,
-  //                             number: req.body.number,
-  //                             password: hash,
-  //                         },
-  //                         (err, data) => {
-  //                             console.log(err);
-  //                             res.redirect("/login?message=registered");
-  //                         }
-  //                     );
-  //                 });
-  //             } else {
-  //                 res.redirect("/register?error=exists");
-  //             }
-  //         }
-  //     );
-  // });
+  router.post("/maestromarv/register", (req, res) => {
 
-  // router.post("/login", (req, res) => {
-  //     const email = req.body.email;
-  //     const password = req.body.password;
+    console.log(req.body)
+    database.collection("users").findOne(
+      {
+        email: req.body.regForm.email,
+      },
+      (err, user) => {
+        if (user === null) {
+          bcrypt.hash(req.body.regForm.password, 10, (err, hash) => {
+            database.collection("users").insertOne(
+              {
+                firstName: req.body.regForm.fName,
+                lastName: req.body.regForm.lName,
+                email: req.body.regForm.email,
+                number: req.body.regForm.phone,
+                password: hash,
+              },
+              (err, data) => {
+                console.log(err);
+                res.redirect("/login?message=registered");
+              }
+            );
+          });
+        } else {
+          res.redirect("/register?error=exists");
+        }
+      }
+    );
+  });
 
-  //     database.collection("users").findOne(
-  //         {
-  //             email: email,
-  //         },
-  //         (err, user) => {
-  //             if (user === null) {
-  //                 res.redirect("/login?error=not_exists");
-  //             } else {
-  //                 bcrypt.compare(
-  //                     password,
-  //                     user.password,
-  //                     (err, isPasswordVerify) => {
-  //                         if (isPasswordVerify) {
-  //                             req.session.user_id = user._id;
-  //                             res.redirect("/");
-  //                         } else {
-  //                             res.redirect("/login?error=wrong_password");
-  //                         }
-  //                     }
-  //                 );
-  //             }
-  //         }
-  //     );
-  // });
+  router.post("/maestromarv/login", (req, res) => {
+      const email = req.body.email;
+      const password = req.body.password;
+
+      database.collection("users").findOne(
+          {
+              email: email,
+          },
+          (err, user) => {
+              if (user === null) {
+                  res.redirect("/login?error=not_exists");
+              } else {
+                  bcrypt.compare(
+                      password,
+                      user.password,
+                      (err, isPasswordVerify) => {
+                          if (isPasswordVerify) {
+                              req.session.user_id = user._id;
+                              res.redirect("/");
+                          } else {
+                              res.redirect("/login?error=wrong_password");
+                          }
+                      }
+                  );
+              }
+          }
+      );
+  });
 });
 
 module.exports = router;

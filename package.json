@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/greenlife-developer/maestromarv#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "cookie-session": "^2.0.0",
     "dotenv": "^16.0.3",

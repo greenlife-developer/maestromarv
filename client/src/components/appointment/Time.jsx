@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./appointment.css";
 
 export default function Contact() {
+  const redirect = useNavigate();
   let d = new Date();
   const [days, setDays] = useState([
     {
@@ -38,17 +39,20 @@ export default function Contact() {
     },
   ]);
 
+  const details = localStorage.getItem("details");
+  const contact = localStorage.getItem("contact");
+  const newContact = JSON.parse(contact);
+  const newDetails = JSON.parse(details);
+  // console.log(JSON.parse(contact))
+
   const handleBook = (time) => {
-    const details = localStorage.getItem("details");
-    const contact = localStorage.getItem("contact");
-    const newContact = JSON.parse(contact);
-    const newDetails = JSON.parse(details);
-    // console.log(JSON.parse(contact))
     const appointment = { ...newDetails, ...newContact, time };
-    axios.post("/api/maestromarv/make-appointment", { appointment }).then((res) => {
-      console.log(res.data);
+    axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
+      if (res.status === 200) {
+        console.log("data has been posted");
+        redirect("/?message=booked");
+      }
     });
-    console.log(time);
   };
 
   // console.log(details, contact);
@@ -61,6 +65,7 @@ export default function Contact() {
             <Link to="/">Make an appointment</Link>
           </h4>
         </div>
+
         <div className="app-details">
           <div className="">
             <div className="details-form">

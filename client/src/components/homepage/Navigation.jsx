@@ -103,13 +103,15 @@ export default function Navigation() {
           </div>
 
           <div className="login-register">
-            <button>Login</button>
-            <button>Register</button>
+            <button>
+              <Link to="/login">Login</Link>
+            </button>
+            <button>
+              <Link to="/register">Register</Link>
+            </button>
           </div>
-
         </div>
       </header>
     </>
   );
 }
-

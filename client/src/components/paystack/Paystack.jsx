@@ -45,7 +45,7 @@ const Paystack = (props) => {
       notification.open({
         message: "Oh no!",
         description: "We hope to see your purchase",
-        icon: <SmileOutlined style={{ color: "#108ee9" }} />
+        icon: <SmileOutlined style={{ color: "#108ee9" }} />,
       });
     },
   };

@@ -8,6 +8,9 @@ import Products from "./components/products/Product";
 import Appointment from './components/appointment/Appointment';
 import Contact from "./components/appointment/Contact";
 import Time from './components/appointment/Time';
+import Register from './components/register/Register';
+import Login from './components/register/Login';
+import New from './components/products/New';
 
 export default function App() {
   return (
@@ -21,10 +24,9 @@ export default function App() {
           <Route path="/make-appointment" element={<Appointment />} />
           <Route path="/make-appointment/contact" element={<Contact />} />
           <Route path="/make-appointment/time" element={<Time />} />
-          {/* <Route path="/signup" element={<Signup />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/upload" element={<Upload />} />
-          <Route path="/book" element={<Book />} /> */}
+          <Route path="/new-product" element={<New />} />
         </Routes>
       </Router>
     </div>
