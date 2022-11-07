@@ -13,9 +13,10 @@ a{
 }
 
 header{
-    position: fixed ;
+    position: fixed;
     top: 0px ;
-    background-color: #000 ;
+    /* background-color: #000 ; */
+    transition: all 1s ease;
     height: 60px ;
     padding-left: 1rem;
     padding-right: 2.5rem;
