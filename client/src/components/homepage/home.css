@@ -91,6 +91,7 @@
 .section-2 .section-2-content {
     position: absolute;
     top: 45%;
+    /* background-color: red; */
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
@@ -111,7 +112,7 @@
 
 .section-3 img {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -130,7 +131,8 @@
     bottom: 0;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     width: 100%;
-    padding-top: 40%;
+    padding-top: 50%;
+    /* background: red; */
     color: white;
 }
 
@@ -140,6 +142,8 @@
 
 .section-3-content button{
     background-color: transparent;
+    border-radius: 10px;
+    /* border: none; */
 }
 
 /* ------------------------- !section 3 ----------------------------- */
@@ -429,7 +433,14 @@
     }
 
     .section-3-content {
-        padding-top: 15%;
+        padding-top: 50%;
+    }
+
+    .section-3 img {
+        width: 100%;
+        height: 80vh;
+        border-radius: 10px;
+        object-fit: cover;
     }
 
     /* ------------------------- !section 3 ----------------------------- */
