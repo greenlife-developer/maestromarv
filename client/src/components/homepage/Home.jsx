@@ -78,7 +78,7 @@ export default function Home() {
               gadget use and technology experience.
             </p>
             <button>
-              <Link to="/make-appointment">Make Appontment</Link>
+              <Link to="/make-appointment/first-contact/">Make Appontment</Link>
             </button>
           </div>
           <div className="phone-pc-img">
@@ -110,45 +110,53 @@ export default function Home() {
           <div className="section-3-box">
             <img src={image2} alt="" />
             <div className="section-3-content">
-              <h1>Computer Repair</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                nulla culpa!
-              </p>
-              <button>Make appointment</button>
+              <div className="">
+                <h1>Computer Repair</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                  nulla culpa!
+                </p>
+                <button>Make appointment</button>
+              </div>
             </div>
           </div>
           <div className="section-3-box">
             <img src={image4} alt="" />
             <div className="section-3-content">
-              <h1>Liquid Damage Repair</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                nulla culpa!
-              </p>
-              <button>Make appointment</button>
+              <div className="">
+                <h1>Liquid Damage Repair</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                  nulla culpa!
+                </p>
+                <button>Make appointment</button>
+              </div>
             </div>
           </div>
           <div className="section-3-box">
             <img src={image6} alt="" />
             <div className="section-3-content">
-              <h1>Custom Build Computers</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                nulla culpa!
-              </p>
-              <button>Make appointment</button>
+              <div className="">
+                <h1>Custom Build Computers</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                  nulla culpa!
+                </p>
+                <button>Make appointment</button>
+              </div>
             </div>
           </div>
           <div className="section-3-box">
             <img src={image5} alt="" />
             <div className="section-3-content">
-              <h1>Windows installation</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                nulla culpa!
-              </p>
-              <button>Make appointment</button>
+              <div className="">
+                <h1>Windows installation</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
+                  nulla culpa!
+                </p>
+                <button>Make appointment</button>
+              </div>
             </div>
           </div>
         </div>

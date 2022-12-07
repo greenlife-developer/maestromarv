@@ -44,13 +44,13 @@ export default function Navigation() {
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/automation">
-                    Automation
+                  <NavLink className="nav-link" to="/products">
+                    Products
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/products">
-                    Products
+                  <NavLink className="nav-link" to="/make-appointment/first-contact/">
+                    Contact
                   </NavLink>
                 </li>
                 <li className="nav-link">

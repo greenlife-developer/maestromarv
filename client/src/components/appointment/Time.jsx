@@ -47,9 +47,13 @@ export default function Contact() {
 
   const handleBook = (time) => {
     const appointment = { ...newDetails, ...newContact, time };
-    axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
+    console.log("res")
+    axios.post("/api/maestromarv/appointment", { appointment })
+    .then((res) => {
+      console.log(res)
       if (res.status === 200) {
         console.log("data has been posted");
+        alert("Hello there", appointment)
         redirect("/?message=booked");
       }
     });
@@ -87,15 +91,15 @@ export default function Contact() {
                                 d.toLocaleDateString() +
                                 " " +
                                 time;
-
+                              console.log(schedule)
                               return (
-                                <div
+                                <button
                                   onClick={() => handleBook(schedule)}
                                   key={id}
                                   className="time-item"
                                 >
                                   {time}
-                                </div>
+                                </button>
                               );
                             })}
                           </div>
