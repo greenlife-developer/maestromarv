@@ -106,9 +106,10 @@
 .section-3 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 2rem 1.2rem;
     margin: 2rem 2rem;
 }
+
 
 .section-3 img {
     width: 100%;
@@ -116,6 +117,7 @@
     border-radius: 10px;
     object-fit: cover;
 }
+
 
 .section-3-box {
     position: relative;
@@ -228,6 +230,10 @@
     margin: 2rem 0;
 }
 
+.section-5 h1{
+    font-weight: 300;
+}
+
 .section-5 .section-5-content {
     position: absolute;
     top: 45%;
@@ -279,81 +285,15 @@
 
 
 /* -------------------------- section 7 - footer ----------------------------- */
-
-.footer-container{
-    display: flex;
-    background-color: #1B1D1F;
-    justify-content: center;
+footer.footer-container{
+    background-color: #007BFF;
 }
 
-.footer-container *{
-    color: white;
+footer.footer-container .row .col{
+    background-color: red;
 }
 
-.footer-container .footer-items{
-    /* background-color: blue; */
-    padding: 1.4rem .5rem;
-    margin: 1rem;
-    border-radius: 10px;
-}
 
-.footer-container .footer-items .mts-logo img{
-    width: 65px;
-    height: 50px;
-    object-fit: cover;
-}
-
-.footer-container .footer-items .mts-logo h6{
-    font-size: 10px;
-}
-
-.footer-container .footer-items .abt-mts{
-    max-width: 300px;
-}
-
-.footer-container .footer-items .abt-mts p{
-    text-align: justify;
-}
-
-.footer-container .footer-items .footer-main-menu ul li{
-    list-style: none;
-    text-align: left;
-    color: white;
-    margin: .7rem .5rem;
-    max-width: 300px;
-}
-
-.footer-container .footer-items .footer-main-menu ul li a{
-    color: wheat;
-}
-
-.footer-container .footer-items .footer-main-menu ul li a:hover{
-    text-decoration: none;
-}
-
-.footer-container .footer-items .footer-contact ul li{
-    list-style: none;
-    text-align: left;
-    display: flex;
-}
-
-.footer-container .footer-items .footer-contact ul li i{
-    margin-right: .5rem;
-}
-
-.footer .mts-copy{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-}
-
-.footer .mts-copy p{
-    color: white;
-    /* margin: auto; */
-    padding: 1rem;
-    width: 80%;
-    font-size: 11px;
-}
 
 /* ------------------------- !section 7 - footer ----------------------------- */
 

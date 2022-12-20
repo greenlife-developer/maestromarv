@@ -1,54 +1,127 @@
 .repairs-page{
-    margin: 6rem 0;
+    /* margin: 6rem 0; */
 }
 
 
-.repair-items{
+.repair-page-banner{
+    height: 65vh;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.re-banner-content h1{
+    font-size: 4.5em;
+    color: white;
+    font-weight: 300;
+} 
+
+.re-banner-content p{
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+
+.laptop-services{
+    /* background-color: orangered; */
     display: flex;
     justify-content: center;
 }
 
-
-.repair-item{
-    width: 400px;
-    border: 1px solid #ddd;
-    margin: 1em;
-    /* padding: 1em; */
-    border-radius: 10px ;
-}
-
-.repair-item-img{
-    position: relative;
-}
-
-.repair-item-img h3{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: #fff;
+.services-items{
+    /* background-color: blue; */
+    box-shadow: 2px 2px 15px #615e5e;
     width: 80%;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    display: flex;
 }
 
-.repair-item-img img{
-    width: 100%;
+.services-items .service-item{
+    width: 50%;
+    text-align: left;
+}
+
+.services-items .service-item img{
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
     object-fit: cover;
-    border-radius: 10px 0;
-    height: 300px;
 }
 
-.repair-item-txt p{
-    margin: 1em;
-    text-align: justify;
+.services-items .item2{
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.repair-item-txt button{
-    border: none;
-    padding: .5rem 1.5rem;
-    margin: 1em 0;
-    background-color: black;
-    color: #fff;
-    border-radius: .3em;
+.service-item .item2 *{
+    font-weight: 300;
+}
+
+.services-items .item2 .appointment{
+    font-size: 1.8em;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+}
+
+.services-items .service-item ul li{
+    list-style: disc;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.services-items .service-item p{
+    font-size: 1.2rem;
+}
+
+
+.data-recovery{
+    height: 80vh;
+    width: 100%;
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.data-recovery .data{
+    /* background-color: blue; */
+    color: white;
+    width: 60%;
+}
+
+.data *{
+    font-weight: 200;
+}
+
+.data h2{
+    font-size: 2em;
+    color: white;
+}
+
+.data h1{
+    color: white;
+}
+
+.data .team{
+    font-size: .8em;
+    font-style: italic;
+}
+
+.data p{
+    font-size: 1.5em;
+}
+
+
+.data .appointment{
+    font-size: 1.6em;
 }
 
 

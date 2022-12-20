@@ -1,5 +1,7 @@
 import React from "react";
 import Navigation from "../homepage/Navigation";
+import Footer from "../homepage/Footer";
+import Faq from "./Faq"
 import {Link} from "react-router-dom"
 
 export default function FirstContact() {
@@ -29,6 +31,17 @@ export default function FirstContact() {
           </Link>
         </div>
       </div>
+
+      <div className="faq">
+        <div className="faq-container">
+          <h1>Frequesntly Asked Questions</h1>
+          <div className="">
+            <Faq />
+          </div>
+        </div>
+      </div><br /><br />
+
+      <Footer />
     </div>
   );
 }

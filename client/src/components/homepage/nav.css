@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "Open Sans", Arial, sans-serif;
     box-sizing: border-box;
+    font-weight: 300;
 }
 
 /* --------------------------Navigation------------------------------------ */
@@ -15,7 +16,7 @@
 .navigation .active {
     border-bottom: 3px solid blue;
     border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px; 
 }
 
 .navigation {
