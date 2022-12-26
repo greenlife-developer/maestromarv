@@ -1,5 +1,4 @@
-------------------------- Carousel -----------------------------
-.carousel-container {
+------------------------- Carousel ----------------------------- .carousel-container {
     position: relative;
 }
 
@@ -13,7 +12,7 @@
     color: white;
 }
 
-.content-carouel h1{
+.content-carouel h1 {
     color: white;
 }
 
@@ -63,7 +62,7 @@
     border-radius: 5px;
 }
 
-.text-primary{
+.text-primary {
     margin-top: 1.5rem;
 }
 
@@ -138,16 +137,16 @@
     color: white;
 }
 
-.section-3-content div{
+.section-3-content div {
     position: relative;
     top: 50%;
 }
 
-.section-3-content h1{
+.section-3-content h1 {
     color: white;
 }
 
-.section-3-content button{
+.section-3-content button {
     background-color: transparent;
     border-radius: 10px;
 }
@@ -230,7 +229,7 @@
     margin: 2rem 0;
 }
 
-.section-5 h1{
+.section-5 h1 {
     font-weight: 300;
 }
 
@@ -243,17 +242,17 @@
     color: white;
 }
 
-.section-5 .section-5-content button{
+.section-5 .section-5-content button {
     padding: .8rem 1rem;
     border-radius: .5rem;
     background: transparent;
     color: #007BFF;
     text-transform: capitalize;
-    border:1px solid white;
+    border: 1px solid white;
     transition: all .5s ease-in-out;
 }
 
-.section-5 .section-5-content button:hover{
+.section-5 .section-5-content button:hover {
     background-color: black;
     border: none;
     color: wheat;
@@ -285,12 +284,58 @@
 
 
 /* -------------------------- section 7 - footer ----------------------------- */
-footer.footer-container{
-    background-color: #007BFF;
+.footer-container {
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
 }
 
-footer.footer-container .row .col{
-    background-color: red;
+.footer-container .footer-items {
+    /* background-color: blue; */
+    padding: 7.1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.footer-items .footer-item {
+    width: 190px;
+}
+
+.footer-items .footer-item * {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    /* color: white; */
+}
+
+.footer-items .footer-item p {
+    color: #fff;
+}
+
+.footer-items .footer-item ul li {
+    padding: .3rem 0;
+}
+
+.footer-items .footer-item h6 {
+    margin-bottom: 1rem;
+    /* background-color: yellow; */
+}
+
+.footer-items .footer-item .footer-link {
+    color: white;
+}
+
+.footer-items .footer-item h6 {
+    color: #007BFF;
+}
+
+.social-icon i{
+    color: white;
+    padding: .5em 1em !important;
+    border-radius: .5rem;
+    font-size: 1rem;
+    margin: auto !important;
+    margin-right: .5rem !important;
 }
 
 
@@ -301,7 +346,18 @@ footer.footer-container .row .col{
 
 
 /* -------------------------------------------------------Query--------------------------------------------------------------------------------- */
-@media screen and (max-width: 320px){
+@media screen and (max-width: 768px) {
+    .footer-container .footer-items {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 2.1rem;
+    }
+
+    .footer-items .footer-item {
+        width: 175px;
+    }
+}
+
+@media screen and (max-width: 320px) {
     .content-carouel {
         position: absolute;
         top: 50%;
@@ -315,7 +371,7 @@ footer.footer-container .row .col{
 
 @media screen and (max-width: 430px) {
 
-    h1{
+    h1 {
         font-size: 1.5rem;
     }
 
@@ -390,12 +446,15 @@ footer.footer-container .row .col{
         width: 100%;
     }
 
-    .footer-container{
-        flex-direction: column;
+    .footer-container .footer-items {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 
-    .footer .mts-copy p{
+    .footer-items .footer-item {
         width: 100%;
+        /* background-color: blue; */
+        margin-bottom: 1rem;
     }
 
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./appointment.css";
@@ -44,6 +44,10 @@ export default function Contact() {
   const newContact = JSON.parse(contact);
   const newDetails = JSON.parse(details);
   // console.log(JSON.parse(contact))
+
+  useEffect(() => {
+    
+  })
 
   const handleBook = (time) => {
     const appointment = { ...newDetails, ...newContact, time };

@@ -1,9 +1,8 @@
-.repairs-page{
+.repairs-page {
     /* margin: 6rem 0; */
 }
 
-
-.repair-page-banner{
+.repair-page-banner {
     height: 65vh;
     width: 100%;
     background-color: blue;
@@ -13,62 +12,61 @@
     align-items: center;
 }
 
-.re-banner-content h1{
+.re-banner-content h1 {
     font-size: 4.5em;
     color: white;
     font-weight: 300;
-} 
+}
 
-.re-banner-content p{
+.re-banner-content p {
     font-size: 1.5em;
     font-weight: 300;
 }
 
-
-.laptop-services{
+.laptop-services {
     /* background-color: orangered; */
     display: flex;
     justify-content: center;
 }
 
-.services-items{
+.services-items {
     /* background-color: blue; */
     box-shadow: 2px 2px 15px #615e5e;
     width: 80%;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     margin-top: 2rem;
     display: flex;
 }
 
-.services-items .service-item{
+.services-items .service-item {
     width: 50%;
     text-align: left;
 }
 
-.services-items .service-item img{
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+.services-items .service-item img {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
     object-fit: cover;
 }
 
-.services-items .item2{
+.services-items .item2 {
     padding-bottom: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-.service-item .item2 *{
+.service-item .item2 * {
     font-weight: 300;
 }
 
-.services-items .item2 .appointment{
+.services-items .item2 .appointment {
     font-size: 1.8em;
     font-weight: 300;
     display: flex;
     justify-content: center;
 }
 
-.services-items .service-item ul li{
+.services-items .service-item ul li {
     list-style: disc;
     margin: 0;
     padding: 0;
@@ -76,12 +74,11 @@
     font-size: 1.2rem;
 }
 
-.services-items .service-item p{
+.services-items .service-item p {
     font-size: 1.2rem;
 }
 
-
-.data-recovery{
+.data-recovery {
     height: 80vh;
     width: 100%;
     background-color: maroon;
@@ -91,52 +88,108 @@
     margin: 4rem 0;
 }
 
-.data-recovery .data{
+.data-recovery .data {
     /* background-color: blue; */
     color: white;
     width: 60%;
 }
 
-.data *{
+.data * {
     font-weight: 200;
 }
 
-.data h2{
+.data h2 {
     font-size: 2em;
     color: white;
 }
 
-.data h1{
+.data h1 {
     color: white;
 }
 
-.data .team{
-    font-size: .8em;
+.data .team {
+    font-size: 0.8em;
     font-style: italic;
 }
 
-.data p{
+.data p {
     font-size: 1.5em;
 }
 
-
-.data .appointment{
+.data .appointment {
     font-size: 1.6em;
+}
+
+@media screen and (max-width: 768px) {
+    .re-banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .re-banner-content p {
+        font-size: 0.8em;
+    }
+
+    .services-items .service-item {
+        width: 100%;
+    }
+
+    .services-items .service-item img {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0.5rem;
+    }
+
+    .data h2 {
+        font-size: 1em;
+        color: white;
+    }
+
+    .data p {
+        font-size: 1em;
+    }
+
+    .data-recovery .data {
+        width: 90%;
+    }
 }
 
 
 
+@media screen and (max-width: 430px) {
+    .re-banner-content h1 {
+        font-size: 2.5em;
+    }
 
+    .re-banner-content p {
+        font-size: 0.8em;
+    }
 
-
-
-@media screen and (max-width: 430px){
-    .repair-items{
+    .services-items {
         flex-direction: column;
     }
 
-    .repair-item{
+    .services-items .service-item {
         width: 100%;
-        margin: 1rem 0;
+    }
+
+    .services-items .service-item img {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        margin-bottom: 1em;
+        border-top-right-radius: 0.5rem;
+        object-fit: cover;
+    }
+
+    .data h2 {
+        font-size: 1em;
+        color: white;
+    }
+
+    .data p {
+        font-size: 1em;
+    }
+
+    .data-recovery .data {
+        width: 90%;
     }
 }
