@@ -41,7 +41,7 @@ export default function Home() {
           <div class="carousel-item active">
             <img src={image} alt="Los Angeles" width="100%" />
             <div className="content-carouel">
-              <div className="" data-aos="fade-down">
+              <div className="">
                 <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
                 <p>
                   Welcome to Maestromarv Tech solutions, thank you for choosing
@@ -67,8 +67,8 @@ export default function Home() {
       </div>
 
       <div className="">
-        <h1 className="text-center text-primary" data-aos="fade-left">Why choose us?</h1>
-        <div className="phone-pc" data-aos="fade-up">
+        <h1 className="text-center text-primary" >Why choose us?</h1>
+        <div className="phone-pc" >
           <div className="phone-pc-info">
             <p className="phone-text">
               Imagine that your gadget is an extension of your mind. We know how
@@ -90,7 +90,7 @@ export default function Home() {
               <Link to="/make-appointment/first-contact/">Make Appontment</Link>
             </button>
           </div>
-          <div className="phone-pc-img" data-aos="fade-down">
+          <div className="phone-pc-img" >
             <video src={video2} autoPlay muted loop className="myVideo">
               <source type="video/mp4" />
             </video>
@@ -114,9 +114,9 @@ export default function Home() {
       <br />
 
       <div className="">
-        <h3>Our Services</h3>
+        <h3 className="our-services">Our Services</h3>
         <div className="section-3">
-          <div className="section-3-box" data-aos="fade-right">
+          <div className="section-3-box" >
             <img src={image2} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="section-3-box" data-aos="fade-left">
+          <div className="section-3-box" >
             <img src={image4} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -142,7 +142,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="section-3-box" data-aos="fade-right">
+          <div className="section-3-box" >
             <img src={image6} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="section-3-box" data-aos="fade-left">
+          <div className="section-3-box" >
             <img src={image5} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -202,10 +202,10 @@ export default function Home() {
       </div>
 
       <div className="section-6">
-        <div className="about" data-aos="fade-up">
+        <div className="about" >
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>
-        <div className="about-content" data-aos="fade-down">
+        <div className="about-content">
           <div className="">
             <p>
               At MTS, we are saddled with a burden of helping individuals

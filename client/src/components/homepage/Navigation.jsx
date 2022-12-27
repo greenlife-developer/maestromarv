@@ -18,16 +18,16 @@ export default function Navigation() {
 
   return (
     <>
-      <header style={{backgroundColor: navBackground ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, .3)" }}>
+      <header
+        style={{
+          backgroundColor: navBackground
+            ? "rgba(0, 0, 0, 1)"
+            : "rgba(0, 0, 0, .3)",
+        }}
+      >
         <div className="container1">
-          <input type="checkbox" name="" id="check" />
-
           <div className="logo-container">
-            <img
-              src={logo}
-              height="50px"
-              alt=""
-            />
+            <img src={logo} height="50px" alt="" />
           </div>
 
           <div className="nav-btn">
@@ -49,13 +49,16 @@ export default function Navigation() {
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/make-appointment/first-contact/">
+                  <NavLink
+                    className="nav-link"
+                    to="/make-appointment/first-contact/"
+                  >
                     Contact
                   </NavLink>
                 </li>
-                <li className="nav-link">
+                <li className="nav-link nav-button">
                   <a href="#">
-                    About<i className="fas fa-caret-down"></i>
+                    About &nbsp; <i className="fas fa-caret-down"></i>
                   </a>
                   <div className="dropdown">
                     <ul>
@@ -79,12 +82,6 @@ export default function Navigation() {
             </div>
           </div>
 
-          <div className="hamburger-menu-container">
-            <div className="hamburger-menu">
-              <div></div>
-            </div>
-          </div>
-
           <div className="login-register">
             <button>
               <Link to="/login">Login</Link>
@@ -92,6 +89,79 @@ export default function Navigation() {
             <button>
               <Link to="/register">Register</Link>
             </button>
+          </div>
+
+          <div className="btn-group">
+            <div
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions"
+              className="dropbtx btn"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div
+              class="offcanvas offcanvas-end"
+              data-bs-scroll="true"
+              tabindex="-1"
+              id="offcanvasWithBothOptions"
+              aria-labelledby="offcanvasWithBothOptionsLabel"
+            >
+              <div class="offcanvas-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body mobile-navs">
+                <div className="navs">
+                  <div className="nav-items">
+                    <div className="nav-item">
+                      <i class="fa-solid fa-house"></i>
+                      <span>Home</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-screwdriver-wrench"></i>
+                      <span>Repairs</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-box-open"></i>
+                      <span>Products</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-inbox"></i>
+                      <span>Contact</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-circle-info"></i>
+                      <span>About</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-house-laptop"></i>
+                      <span>Computer Repair</span>
+                    </div>
+                    <div className="nav-item">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <span>Location</span>
+                    </div>
+                  </div>
+
+                  <div className="login-register1">
+                    <button>
+                      <Link to="/login">Login</Link>
+                    </button>
+                    <button>
+                      <Link to="/register">Register</Link>
+                    </button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>

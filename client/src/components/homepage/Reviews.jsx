@@ -19,7 +19,7 @@ export default function Swipper() {
 
 
   return (
-    <div className="container">
+    <div className="container customer">
       <h3 style={{textAlign: "center"}}>What our customer's say</h3>
       <hr />
       <Swiper
