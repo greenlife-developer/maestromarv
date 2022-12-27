@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navigation from "./Navigation";
 import image from "../images/image1.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
 import { Link } from "react-router-dom";
@@ -14,6 +16,13 @@ import Swipper from "./Reviews";
 import Footer from "./Footer";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Navigation />
@@ -32,7 +41,7 @@ export default function Home() {
           <div class="carousel-item active">
             <img src={image} alt="Los Angeles" width="100%" />
             <div className="content-carouel">
-              <div className="">
+              <div className="" data-aos="fade-down">
                 <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
                 <p>
                   Welcome to Maestromarv Tech solutions, thank you for choosing
@@ -58,8 +67,8 @@ export default function Home() {
       </div>
 
       <div className="">
-        <h1 className="text-center text-primary">Why choose us?</h1>
-        <div className="phone-pc">
+        <h1 className="text-center text-primary" data-aos="fade-left">Why choose us?</h1>
+        <div className="phone-pc" data-aos="fade-up">
           <div className="phone-pc-info">
             <p className="phone-text">
               Imagine that your gadget is an extension of your mind. We know how
@@ -81,7 +90,7 @@ export default function Home() {
               <Link to="/make-appointment/first-contact/">Make Appontment</Link>
             </button>
           </div>
-          <div className="phone-pc-img">
+          <div className="phone-pc-img" data-aos="fade-down">
             <video src={video2} autoPlay muted loop className="myVideo">
               <source type="video/mp4" />
             </video>
@@ -169,15 +178,26 @@ export default function Home() {
       <div className="section-5">
         {/* <img src={image7} alt="" /> */}
         <div className="section-5-content">
-          <h1 className="text-light">
-            We build the best home automation features
-          </h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro
-            perferendis nulla consectetur iure animi reiciendis possimus
-            provident eligendi quas.
-          </p>
-          <button>make appointment</button>
+          <div className="item1">
+            <h6>We Are Here to Help</h6>
+            <span></span><br /><br />
+            <ul>
+              <li>
+                <i class="fa-regular fa-square-check"></i>
+                <div>Walk-ins welcome during all business hours</div>
+              </li>
+              <li>
+                <i class="fa-regular fa-square-check"></i>
+                <div>Appointments preferred</div>
+              </li>
+              <li>
+                <i class="fa-regular fa-square-check"></i>
+                <div>All Macs and PCs</div>
+              </li>
+            </ul><br /><br />
+            <button>MAKE APPOINTMENT</button>
+          </div>
+          <div className="item2"></div>
         </div>
       </div>
 
