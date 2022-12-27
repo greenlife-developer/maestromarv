@@ -44,8 +44,8 @@ export default function ViewProduct() {
       });
       if (cart) {
         axios.post("/api/products/add-to-cart", { product }).then((res) => {
-          // console.log(res);
-          // console.log(res.data);
+          console.log(res.status);
+          console.log(res.data);
           notification.open({
             message: "Added to Cart!",
             description: "Please, don't forget to check out",
