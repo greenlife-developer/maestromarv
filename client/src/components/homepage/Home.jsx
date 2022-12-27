@@ -100,7 +100,7 @@ export default function Home() {
       </div>
 
       <div className="section-2">
-        <div className="section-2-content">
+        <div className="section-2-content" data-aos="fade-down">
           <h1 className="text-light">We repair all laptops and phones</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro
@@ -116,7 +116,7 @@ export default function Home() {
       <div className="">
         <h3>Our Services</h3>
         <div className="section-3">
-          <div className="section-3-box">
+          <div className="section-3-box" data-aos="fade-left">
             <img src={image2} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="section-3-box">
+          <div className="section-3-box" data-aos="fade-right">
             <img src={image4} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -142,7 +142,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="section-3-box">
+          <div className="section-3-box" data-aos="fade-left">
             <img src={image6} alt="" />
             <div className="section-3-content">
               <div className="">
@@ -178,7 +178,7 @@ export default function Home() {
       <div className="section-5">
         {/* <img src={image7} alt="" /> */}
         <div className="section-5-content">
-          <div className="item1">
+          <div className="item1" data-aos="fade-down">
             <h6>We Are Here to Help</h6>
             <span></span><br /><br />
             <ul>
@@ -202,10 +202,10 @@ export default function Home() {
       </div>
 
       <div className="section-6">
-        <div className="about">
+        <div className="about" data-aos="fade-up">
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>
-        <div className="about-content">
+        <div className="about-content" data-aos="fade-down">
           <div className="">
             <p>
               At MTS, we are saddled with a burden of helping individuals
