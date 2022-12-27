@@ -37,7 +37,7 @@ export default function ViewProduct() {
   const handleAddToCart = () => {
     if (product) {
       axios.get("/api").then((data) => {
-        console.log(data);
+        console.log(data.status);
         if (data) {
           setCart(data.data.cart);
         }
@@ -78,7 +78,9 @@ export default function ViewProduct() {
     setItems(items + 1);
   };
 
-  return (
+  const productName = <div style={{fontSize: "14px"}}>{product[0].name}</div>
+
+  return ( 
     <>
       <Navigation />
       <div className="product-view">
@@ -233,7 +235,7 @@ export default function ViewProduct() {
                           items +
                         "00"
                       }
-                      name={product[0].name}
+                      name={productName}
                       item={product}
                       close={handleRedirect}
                     />
