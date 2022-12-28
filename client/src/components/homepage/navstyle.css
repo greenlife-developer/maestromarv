@@ -37,7 +37,7 @@ header {
 }
 
 .nav-links {
-    width: 500px;
+    width: 450px;
     /* background-color: yellow; */
 }
 
@@ -163,7 +163,7 @@ header {
     }
 
     .nav-links {
-        width: 350px;
+        width: 330px;
         /* background-color: yellow; */
     }
 }

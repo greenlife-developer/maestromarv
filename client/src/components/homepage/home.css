@@ -37,6 +37,14 @@
 
 /* ------------------------- section 1 ----------------------------- */
 
+.fist-section{
+    margin-top: 2.5rem;
+}
+
+.fist-section h1{
+    font-weight: 300;
+}
+
 .phone-pc {
     display: flex;
     margin: 2rem 5rem;

@@ -66,7 +66,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="">
+      <div className="fist-section">
         <h1 className="text-center text-primary" >Why choose us?</h1>
         <div className="phone-pc" >
           <div className="phone-pc-info">
