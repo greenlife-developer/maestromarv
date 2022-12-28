@@ -1,4 +1,5 @@
-------------------------- Carousel ----------------------------- .carousel-container {
+/* ------------------------- Carousel -----------------------------  */
+.carousel-container {
     position: relative;
 }
 
@@ -7,12 +8,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    font-weight: 300;
     transform: translateX(-50%) translateY(-50%);
     padding: .5rem;
     color: white;
 }
 
 .content-carouel h1 {
+    font-weight: 300;
     color: white;
 }
 
@@ -81,11 +84,16 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    font-weight: 300;
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 600px;
     text-align: center;
+}
+
+.section-2 h1{
+    font-weight: 300;
 }
 
 .section-2 .section-2-content {
@@ -105,7 +113,7 @@
 
 .section-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     grid-gap: 2rem 1.2rem;
     margin: 2rem 2rem;
 }
@@ -417,6 +425,18 @@
 
 /* -------------------------------------------------------Query--------------------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
+
+    .section-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 2rem 1.2rem;
+        margin: 2rem 2rem;
+    }
+
+    .carousel-item img {
+        height: 90vh;
+    }
+
     .footer-container .footer-items {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 2.1rem;
@@ -502,12 +522,22 @@
 
     .section-3 {
         grid-template-columns: 1fr;
-        grid-gap: .4rem;
+        grid-gap: 2rem;
         margin: .5rem;
+    }
+
+    .section-3 {
     }
 
     .section-3-content {
         padding-top: 50%;
+    }
+
+    .section-3 img {
+        width: 100%;
+        height: 90vh;
+        border-radius: 10px;
+        object-fit: cover;
     }
 
     .section-3 img {
