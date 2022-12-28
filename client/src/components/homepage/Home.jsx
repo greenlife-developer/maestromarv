@@ -201,7 +201,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="section-6">
+      <div className="section-6" id="about">
         <div className="about" >
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>

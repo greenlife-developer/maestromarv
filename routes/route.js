@@ -33,6 +33,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     console.log(error);
     return;
   }
+  console.log("MongoDB Connected...")
   database = client.db("MaestroMarv");
 
   router.get("/", (req, res) => {

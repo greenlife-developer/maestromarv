@@ -21,6 +21,10 @@ header {
     z-index: 5;
 }
 
+.nav-link1{
+    color: #fff;
+}
+
 
 .container1 {
     display: flex;
@@ -128,9 +132,9 @@ header {
     text-align: left;
 }
 
-.container1 .mobile-navs .nav-items{
+/* .container1 .mobile-navs .nav-items{
 
-}
+} */
 
 .container1 .mobile-navs .nav-item{
     padding: .5rem;

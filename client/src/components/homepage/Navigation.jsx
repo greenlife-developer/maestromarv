@@ -122,33 +122,67 @@ export default function Navigation() {
                   <div className="nav-items">
                     <div className="nav-item">
                       <i class="fa-solid fa-house"></i>
-                      <span>Home</span>
+                      <span>
+                        <Link className="nav-link1" to="/">
+                          Home
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-screwdriver-wrench"></i>
-                      <span>Repairs</span>
+                      <span>
+                        <Link className="nav-link1" to="/repairs">
+                          Repairs
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-box-open"></i>
-                      <span>Products</span>
+                      <span>
+                        <Link className="nav-link1" to="/products">
+                          Products
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-inbox"></i>
-                      <span>Contact</span>
+                      <span>
+                        <Link
+                          className="nav-link1"
+                          to="/make-appointment/first-contact/"
+                        >
+                          Contact
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-circle-info"></i>
-                      <span>About</span>
+                      <span>
+                        <Link className="nav-link1" to="/#about">
+                          About
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-house-laptop"></i>
-                      <span>Computer Repair</span>
+                      <span>
+                        <Link className="nav-link1" to="/repairs">
+                          Computer Repair
+                        </Link>
+                      </span>
                     </div>
                     <div className="nav-item">
                       <i class="fa-solid fa-location-dot"></i>
-                      <span>Location</span>
+                      <span>
+                        <Link
+                          className="nav-link1"
+                          to="/make-appointment/first-contact/"
+                        >
+                          Location
+                        </Link>
+                      </span>
                     </div>
-                  </div>
+                  </div><br />
 
                   <div className="login-register1">
                     <button>
@@ -158,7 +192,6 @@ export default function Navigation() {
                       <Link to="/register">Register</Link>
                     </button>
                   </div>
-                  
                 </div>
               </div>
             </div>
