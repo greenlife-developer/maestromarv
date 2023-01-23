@@ -1,8 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Navigation from "./Navigation";
 import image from "../images/image1.png";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
 import { Link } from "react-router-dom";
@@ -12,6 +11,7 @@ import image5 from "../images/image5.jpg";
 import video2 from "../images/videos/video2.mp4";
 import section2 from "../images/section2.png";
 import "./home.css";
+import "aos/dist/aos.css";
 import Swipper from "./Reviews";
 import Footer from "./Footer";
 
@@ -19,6 +19,9 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
     });
     AOS.refresh();
   }, []);
@@ -41,13 +44,17 @@ export default function Home() {
           <div class="carousel-item active">
             <img src={image} alt="Los Angeles" width="100%" />
             <div className="content-carouel">
-              <div className="">
+              <div className="" data-aos="fade-down">
                 <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
-                <p>
-                  Welcome to Maestromarv Tech solutions, thank you for choosing
-                  us, we welcome you to our world.
-                </p>
-                <button>Start now</button>
+                <p>Welcome to our world.</p>
+                <button>
+                <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/"
+                  >
+                    Start Now
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -67,12 +74,13 @@ export default function Home() {
       </div>
 
       <div className="fist-section">
-        <h1 className="text-center text-primary" >Why choose us?</h1>
-        <div className="phone-pc" >
-          <div className="phone-pc-info">
+        <h1 className="text-center text-primary" data-aos="fade-right">
+          Why choose us?
+        </h1>
+        <div className="phone-pc">
+          <div className="phone-pc-info" data-aos="fade-up">
             <p className="phone-text">
-              Imagine that your gadget is an extension of your mind. We know how
-              important the mind is to the body, therefore, we consider your
+              Imagine your gadget is an extension of your mind. We consider your
               gadget as important to you as the mind is to the body. Therefore
               at every turn, we incorporate a customer service strategy that
               prioritizes your interests – the wholeness of the filters (namely,
@@ -87,10 +95,15 @@ export default function Home() {
               gadget use and technology experience.
             </p>
             <button>
-              <Link to="/make-appointment/first-contact/">Make Appontment</Link>
+              <Link
+                className="make-appointment-btn"
+                to="/make-appointment/first-contact/"
+              >
+                Make Appontment
+              </Link>
             </button>
           </div>
-          <div className="phone-pc-img" >
+          <div className="phone-pc-img" data-aos="fade-down">
             <video src={video2} autoPlay muted loop className="myVideo">
               <source type="video/mp4" />
             </video>
@@ -100,78 +113,136 @@ export default function Home() {
       </div>
 
       <div className="section-2">
-        <div className="section-2-content">
+        <div className="section-2-content" data-aos="fade-down">
           <h1 className="text-light">We repair all laptops and phones</h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At porro
-            perferendis nulla consectetur iure animi reiciendis possimus
-            provident eligendi quas.
+            For all your laptop or phone repairs, look no further than our
+            repair shop! Our experienced technicians are knowledgeable and can
+            handle a wide range of issues while providing affordable, fast
+            service. We guarantee quality repairs backed by our commitment to
+            excellence.
           </p>
-          <button>make appointment</button>
+          <button>
+            <Link
+              className="make-appointment-btn"
+              to="/make-appointment/first-contact/"
+            >
+              Make Appontment
+            </Link>
+          </button>
         </div>
       </div>
       <br />
       <br />
 
       <div className="">
-        <h3 className="our-services">Our Services</h3>
+        <h3 className="our-services" data-aos="fade-down">
+          Our Services
+        </h3>
         <div className="section-3">
-          <div className="section-3-box" >
+          <div className="section-3-box" data-aos="fade-right">
             <img src={image2} alt="" />
             <div className="section-3-content">
               <div className="">
                 <h1>Computer Repair</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                  nulla culpa!
+                  It is crucial to maintain your computer's performance and
+                  stability. When your computer starts experiencing problems,
+                  it's important to get it repaired as soon as possible. Our
+                  computer repair services include everything from basic
+                  troubleshooting and system optimization to virus and malware
+                  removal. We have years of experience in diagnosing and
+                  resolving computer issues, including hardware and software
+                  malfunctions. We provide quick and profession al service so
+                  you can get back to what's important in no time.
                 </p>
-                <button>Make appointment</button>
+                <button>
+                  <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/"
+                  >
+                    Make Appontment
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
-          <div className="section-3-box" >
+          <div className="section-3-box" data-aos="fade-down">
             <img src={image4} alt="" />
             <div className="section-3-content">
               <div className="">
                 <h1>Liquid Damage Repair</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                  nulla culpa!
+                  We know accidents happen, so if you have suffered liquid
+                  damage to your device, don't worry. Our technicians are
+                  experts in repairing liquid-damaged devices of all makes and
+                  models. Come to our store now to get your device back in
+                  working order!
                 </p>
-                <button>Make appointment</button>
+                <button>
+                  <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/"
+                  >
+                    Make Appontment
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
-          <div className="section-3-box" >
+          <div className="section-3-box" data-aos="fade-right">
             <img src={image6} alt="" />
             <div className="section-3-content">
               <div className="">
                 <h1>Custom Build Computers</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                  nulla culpa!
+                  Custom built computer systems are an excellent choice for
+                  those who want a powerful and reliable machine that is
+                  tailored to their exact specifications. With a custom-built
+                  computer, you can enjoy faster speeds, better performance, and
+                  the ability to customize it to fit your specific needs. From
+                  gaming rigs to multimedia machines, build the perfect computer
+                  for your needs today!
                 </p>
-                <button>Make appointment</button>
+                <button>
+                  <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/"
+                  >
+                    Make Appontment
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
-          <div className="section-3-box" >
+          <div className="section-3-box" data-aos="fade-up">
             <img src={image5} alt="" />
             <div className="section-3-content">
               <div className="">
                 <h1>Windows installation</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur, quasi saepe ex ipsam
-                  nulla culpa!
+                  We are experts in Windows installation and can help you set up
+                  your system quickly and easily. Our team of specialists are
+                  knowledgeable and experienced, and will be able to provide you
+                  with the best quality service. We guarantee satisfaction with
+                  our service and a great customer experience. Contact us today
+                  to get started!
                 </p>
-                <button>Make appointment</button>
+                <button>
+                  <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/"
+                  >
+                    Make Appontment
+                  </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="reviews">
+      <div className="reviews" data-aos="fade-right">
         <Swipper />
       </div>
 
@@ -180,7 +251,9 @@ export default function Home() {
         <div className="section-5-content">
           <div className="item1" data-aos="fade-down">
             <h6>We Are Here to Help</h6>
-            <span></span><br /><br />
+            <span></span>
+            <br />
+            <br />
             <ul>
               <li>
                 <i class="fa-regular fa-square-check"></i>
@@ -194,15 +267,17 @@ export default function Home() {
                 <i class="fa-regular fa-square-check"></i>
                 <div>All Macs and PCs</div>
               </li>
-            </ul><br /><br />
+            </ul>
+            <br />
+            <br />
             <button>MAKE APPOINTMENT</button>
           </div>
           <div className="item2"></div>
         </div>
       </div>
 
-      <div className="section-6" id="about">
-        <div className="about" >
+      <div className="section-6" id="about" data-aos="fade-up">
+        <div className="about">
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>
         <div className="about-content">
@@ -212,13 +287,13 @@ export default function Home() {
               experience technology smoothly and experientially. Therefore our
               core values are shaped by empathy for our customers and passion
               for technology. We let our passion for technology drive what we
-              do, and at the same time we let empathy for our customers guide
-              how we treat people.
+              do, and at the same time let empathy for customers guide how we
+              treat people.
             </p>
             <p>
               We have designed a great way of making our customers feel welcome
               here at MTS. One way by which we do this is answering your
-              tech-related questions and concerns in the blog sections. Another
+              tech-related questions and concerns in the blog section. Another
               way we do this is through the provision of free consultation to
               customers who wish to know the condition of their device before
               they make their decision on repair or replacement. Whichever of
