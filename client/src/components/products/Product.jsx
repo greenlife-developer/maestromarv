@@ -34,8 +34,7 @@ export default function Product() {
                 <div className="">
                   <h1>Best and affordable electronic gadgets</h1>
                   <p>
-                    Welcome to Maestromarv Tech solutions, thank you for
-                    choosing us, we welcome you to our world.
+                    Welcome to Maestromarv Tech solutions, welcome you to our world.
                   </p>
                   <button>Start now</button>
                 </div>
@@ -72,6 +71,7 @@ export default function Product() {
                     key={index}
                     sold={product.sold}
                     name={product.name}
+                    subprice={product.subprice}
                     id={product.id}
                     price={product.price}
                     rating={product.rating}

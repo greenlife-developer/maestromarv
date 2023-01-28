@@ -30,9 +30,8 @@ export default function Item(props) {
                 basedOn="letters"
               />
             </p>
-            <h4>{formatter.format(props.price)}</h4>
+            <h4>{formatter.format(props.price)} <sub>{formatter.format(props.subprice)}</sub></h4>
             <span>your're saving 18%</span>
-            <br />
             <span>
               {props.sold} sold &#9733; {props.rating}
             </span>

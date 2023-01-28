@@ -3,6 +3,24 @@
   background-color: red;
 }
 
+.category-1{
+  /* background-color: yellow; */
+  box-shadow: 2px 2px 10px #ddd;
+  margin: 1.5rem;
+  /* padding: 1rem; */
+}
+
+.cat-head{
+  background-color: black;
+}
+
+.cat-head h1{
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-align: left;
+  color: #fff;
+}
+
 
 /* --------------------Cart --------------------- */
 
@@ -61,6 +79,7 @@
 
 .cat-body{
   display: grid;
+  /* background-color: blue; */
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -68,7 +87,7 @@
   margin: 1rem;
   box-shadow: 1px 1px 10px #ddd;
   border-radius: 5px;
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
   display: flex;
 }
 
@@ -80,26 +99,35 @@
 
 .cat-item .cat-item-img img{
   width: 100%;
+  object-fit: contain;
   cursor: pointer;
   height: 100%;
 } 
 
 .cat-item .item-content{
-  max-height: 125px;
-  width: 250px;
+  max-height: 100%;
+  /* background-color: blue; */
+  padding: .5rem .2rem;
+  width: 100%;
   text-align: left;
   /* padding: .9rem 2rem 2rem .5rem; */
 }
 
 .item-content h4{
   margin-bottom: 0;
-  font-size: 1.5rem;
-  background-color: darkblue;
-  color: white;
+  font-size: 1rem;
+  /* background-color: darkblue; */
+  /* color: white; */
+}
+.item-content h4 sub{
+  text-decoration: line-through;
+  display: inline-block;
 }
 
 .item-content span{
   font-size: 10px;
+  display: block;
+  line-height: 16px;
   padding: 0;
   margin: 0;
 }

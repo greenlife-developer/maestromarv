@@ -27,31 +27,31 @@ export default function Navigation() {
       >
         <div className="container1">
           <div className="logo-container">
-            <img src={logo} height="50px" alt="" />
+            <Link to="/#"><img src={logo} height="50px" alt="" /></Link>
           </div>
 
           <div className="nav-btn">
             <div className="nav-links">
               <ul>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/">
+                  <NavLink className="nav-link" to="/#">
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/repairs">
+                  <NavLink className="nav-link" to="/repairs#">
                     Repairs
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/products">
+                  <NavLink className="nav-link" to="/products#">
                     Products
                   </NavLink>
                 </li>
                 <li className="nav-link">
                   <NavLink
                     className="nav-link"
-                    to="/make-appointment/first-contact/"
+                    to="/make-appointment/first-contact/#"
                   >
                     Contact
                   </NavLink>
@@ -63,16 +63,16 @@ export default function Navigation() {
                   <div className="dropdown">
                     <ul>
                       <li className="dropdown-link">
-                        <NavLink to="/">About us</NavLink>
+                        <NavLink to="/#">About us</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/">Blog</NavLink>
+                        <NavLink to="/#">Blog</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/">Location</NavLink>
+                        <NavLink to="/#">Location</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/">FAQ</NavLink>
+                        <NavLink to="/#">FAQ</NavLink>
                       </li>
                       <div className="arrow"></div>
                     </ul>
@@ -84,10 +84,10 @@ export default function Navigation() {
 
           <div className="login-register">
             <button>
-              <Link to="/login">Login</Link>
+              <Link to="/login#">Login</Link>
             </button>
             <button>
-              <Link to="/register">Register</Link>
+              <Link to="/register#">Register</Link>
             </button>
           </div>
 
@@ -123,7 +123,7 @@ export default function Navigation() {
                     <div className="nav-item">
                       <i class="fa-solid fa-house"></i>
                       <span>
-                        <Link className="nav-link1" to="/">
+                        <Link className="nav-link1" to="/#">
                           Home
                         </Link>
                       </span>
@@ -131,7 +131,7 @@ export default function Navigation() {
                     <div className="nav-item">
                       <i class="fa-solid fa-screwdriver-wrench"></i>
                       <span>
-                        <Link className="nav-link1" to="/repairs">
+                        <Link className="nav-link1" to="/repairs#">
                           Repairs
                         </Link>
                       </span>
@@ -139,7 +139,7 @@ export default function Navigation() {
                     <div className="nav-item">
                       <i class="fa-solid fa-box-open"></i>
                       <span>
-                        <Link className="nav-link1" to="/products">
+                        <Link className="nav-link1" to="/products#">
                           Products
                         </Link>
                       </span>
@@ -149,7 +149,7 @@ export default function Navigation() {
                       <span>
                         <Link
                           className="nav-link1"
-                          to="/make-appointment/first-contact/"
+                          to="/make-appointment/first-contact/#"
                         >
                           Contact
                         </Link>
@@ -166,7 +166,7 @@ export default function Navigation() {
                     <div className="nav-item">
                       <i class="fa-solid fa-house-laptop"></i>
                       <span>
-                        <Link className="nav-link1" to="/repairs">
+                        <Link className="nav-link1" to="/repairs#">
                           Computer Repair
                         </Link>
                       </span>
@@ -176,7 +176,7 @@ export default function Navigation() {
                       <span>
                         <Link
                           className="nav-link1"
-                          to="/make-appointment/first-contact/"
+                          to="/make-appointment/first-contact#"
                         >
                           Location
                         </Link>
@@ -186,10 +186,10 @@ export default function Navigation() {
 
                   <div className="login-register1">
                     <button>
-                      <Link to="/login">Login</Link>
+                      <Link to="/login#">Login</Link>
                     </button>
                     <button>
-                      <Link to="/register">Register</Link>
+                      <Link to="/register#">Register</Link>
                     </button>
                   </div>
                 </div>
