@@ -28,8 +28,8 @@ export default function Product() {
           </ul>
 
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src={phoneaccess} alt="Los Angeles" width="100%" />
+            <div class="carousel-item2 active">
+              <img src={phoneaccess} alt="Laptop cover" width="100%" />
               <div className="content-carouel">
                 <div className="">
                   <h1>Best and affordable electronic gadgets</h1>
@@ -41,10 +41,10 @@ export default function Product() {
               </div>
             </div>
             <div class="carousel-item">
-              <img src={laptopaccess} alt="Chicago" width="100%" />
+              <img src={laptopaccess} alt="laptopaccess" width="100%" />
             </div>
             <div class="carousel-item">
-              <img src={accessories} alt="New York" width="100%" />
+              <img src={accessories} alt="laptopaccess" width="100%" />
             </div>
           </div>
           <a class="carousel-control-prev" href="#demo" data-slide="prev">

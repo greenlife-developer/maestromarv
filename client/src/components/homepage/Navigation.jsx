@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import "./navstyle.css";
 import logo from "../images/logo.png";
 
 export default function Navigation() {
+
+  // const currentLocation = useNavigate()
+  // console.log(currentLocation)
   const [navBackground, setNavBackground] = useState(false);
   // const [icon, setIcon] = useState(true);
 
@@ -83,8 +86,8 @@ export default function Navigation() {
           </div>
 
           <div className="login-register">
-            <button>
-              <Link to="/login#">Login</Link>
+            <button className="login-fill">
+              <Link className="login-fill-btn" to="/login#">Login</Link>
             </button>
             <button>
               <Link to="/register#">Register</Link>
@@ -96,7 +99,7 @@ export default function Navigation() {
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasWithBothOptions"
               aria-controls="offcanvasWithBothOptions"
-              className="dropbtx btn"
+              className="dropbtx"
             >
               <span></span>
               <span></span>
@@ -185,8 +188,8 @@ export default function Navigation() {
                   </div><br />
 
                   <div className="login-register1">
-                    <button>
-                      <Link to="/login#">Login</Link>
+                    <button className="login-fill">
+                      <Link className="login-fill-btn" to="/login#">Login</Link>
                     </button>
                     <button>
                       <Link to="/register#">Register</Link>
