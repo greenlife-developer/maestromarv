@@ -1,9 +1,11 @@
 require("dotenv").config({
   path: "./config_files/.env",
 });
+const sgMail = require("@sendgrid/mail");
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt")
+sgMail.setApiKey(process.env.MAIL_KEY);
+const bcrypt = require("bcrypt");
 
 const mongodb = require("mongodb");
 const ObjectId = mongodb.ObjectId;
@@ -33,7 +35,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     console.log(error);
     return;
   }
-  console.log("MongoDB Connected...")
+  console.log("MongoDB Connected...");
   database = client.db("MaestroMarv");
 
   router.get("/", (req, res) => {
@@ -44,15 +46,18 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         createdAt: -1,
       })
       .toArray((err, sales) => {
-        database.collection("cart").find().sort({
-          createdAt: -1
-        })
+        database
+          .collection("cart")
+          .find()
+          .sort({
+            createdAt: -1,
+          })
           .toArray((err, cart) => {
             res.json({
               sales: sales,
-              cart: cart
-            })
-          })
+              cart: cart,
+            });
+          });
       });
   });
 
@@ -83,26 +88,52 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
 
   router.post("/maestromarv/appointment", (req, res) => {
     const currentTime = new Date().getTime();
-    database.collection("apppointments").insertOne({
-      createdAt: currentTime,
-      fName: req.body.appointment.fName,
-      lName: req.body.appointment.lName,
-      email: req.body.appointment.email,
-      phone: req.body.appointment.phone,
-      address: req.body.appointment.address,
-      time: req.body.appointment.time,
-      priority: req.body.appointment.priority,
-      type: req.body.appointment.type,
-      subject: req.body.appointment.subject,
-      details: req.body.appointment.details,
-    }, (err, data) => {
-      res.redirect("/booked?message=booked")
-    })
-  })
+    const fullName = req.body.appointment.fName + " " + req.body.appointment.lName
+    database.collection("apppointments").insertOne(
+      {
+        createdAt: currentTime,
+        fName: req.body.appointment.fName,
+        lName: req.body.appointment.lName,
+        email: req.body.appointment.email,
+        phone: req.body.appointment.phone,
+        address: req.body.appointment.address,
+        time: req.body.appointment.time,
+        priority: req.body.appointment.priority,
+        type: req.body.appointment.type,
+        subject: req.body.appointment.subject,
+        details: req.body.appointment.details,
+      },
+      (err, data) => {
+        const emailData = {
+          from: "yemijoshua81@gmail.com",
+          to: "yemijoshua80@gmail.com",
+          subject: "A new appointmemt",
+          html: `
+                            <h1>Appointment by ${fullName}</h1>
+                            <h5>Please I need a quiker reply sir</h5>
+                        `,
+        };
+
+        sgMail
+          .send(emailData)
+          .then((sent) => {
+            // TODO: Decide whether to make a response here or when the data has been uploaded to the database
+            // return res.json({
+            //   message: `Email has been sent to ${email}`,
+            // });
+          })
+          .catch((err) => {
+            console.log(err, "Not allowed");
+            // return res.status(400).json({
+            //     error: "Can't send message to your client"
+            // })
+          });
+      }
+    );
+  });
 
   router.post("/maestromarv/register", (req, res) => {
-
-    console.log(req.body)
+    console.log(req.body);
     database.collection("users").findOne(
       {
         email: req.body.regForm.email,
@@ -132,32 +163,28 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/maestromarv/login", (req, res) => {
-      const email = req.body.email;
-      const password = req.body.password;
+    const email = req.body.email;
+    const password = req.body.password;
 
-      database.collection("users").findOne(
-          {
-              email: email,
-          },
-          (err, user) => {
-              if (user === null) {
-                  res.redirect("/login?error=not_exists");
-              } else {
-                  bcrypt.compare(
-                      password,
-                      user.password,
-                      (err, isPasswordVerify) => {
-                          if (isPasswordVerify) {
-                              req.session.user_id = user._id;
-                              res.redirect("/");
-                          } else {
-                              res.redirect("/login?error=wrong_password");
-                          }
-                      }
-                  );
-              }
-          }
-      );
+    database.collection("users").findOne(
+      {
+        email: email,
+      },
+      (err, user) => {
+        if (user === null) {
+          res.redirect("/login?error=not_exists");
+        } else {
+          bcrypt.compare(password, user.password, (err, isPasswordVerify) => {
+            if (isPasswordVerify) {
+              req.session.user_id = user._id;
+              res.redirect("/");
+            } else {
+              res.redirect("/login?error=wrong_password");
+            }
+          });
+        }
+      }
+    );
   });
 });
 

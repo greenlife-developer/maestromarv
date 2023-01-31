@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "antd/dist/antd.min.css";
+import { SmileOutlined } from "@ant-design/icons";
+import { Tabs, Button, notification } from "antd";
 import "./appointment.css";
 
 export default function Contact() {
@@ -51,10 +54,21 @@ export default function Contact() {
     const appointment = { ...newDetails, ...newContact, time };
     console.log("res");
     axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
-      console.log(res);
-      // console.log("data has been posted");
-      // alert("Hello there", appointment);
-      // redirect("/?message=booked");
+      console.log("Response from axios", res.status);
+      if(res.status === 200){
+        notification.open({
+          message: "Thank you for booking an appointment",
+          description: "We will get back to you soon... :)",
+          icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+        });
+        redirect("/booked?message=booked")
+      } else {
+        notification.open({
+          message: "Your appointment could not be booked at this time",
+          description: "Please, try again...",
+          icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+        });
+      }
     });
   };
 
@@ -90,7 +104,7 @@ export default function Contact() {
                                 d.toLocaleDateString() +
                                 " " +
                                 time;
-                              console.log(schedule);
+                              // console.log(schedule);
                               return (
                                 <button
                                   onClick={() => handleBook(schedule)}

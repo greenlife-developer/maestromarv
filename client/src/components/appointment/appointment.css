@@ -172,7 +172,7 @@
     /* background-color: #0000dd; */
 }
 
-.booked-body>h1 {
+.booked-body > h1 {
     /* background-color: blue; */
     font-weight: 400;
 }
@@ -265,5 +265,20 @@
     .faq-container {
         width: 100vw;
         margin: 10px;
+    }
+
+    .booked-body {
+        /* background-color: blue; */
+        margin: 1em;
+        font-weight: 400;
+    }
+
+    .booked-item {
+        padding: 1.2rem;
+        margin: 0;
+        border-radius: .8rem;
+        background-color: #fff;
+        box-shadow: 2px 2px 8px #ddd;
+        width: 100%;
     }
 }
