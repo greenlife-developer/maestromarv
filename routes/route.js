@@ -105,8 +105,8 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       },
       (err, data) => {
         const emailData = {
-          from: "yemijoshua80@gmail.com",
-          to: "yemijoshua81@gmail.com",
+          from: "maestromarve@gmail.com",
+          to: "enginemarve@gmail.com",
           subject: "A new appointmemt",
           html: `
               <h1>Appointment by ${fullName}</h1>
