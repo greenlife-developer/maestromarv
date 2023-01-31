@@ -96,7 +96,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       subject: req.body.appointment.subject,
       details: req.body.appointment.details,
     }, (err, data) => {
-      console.log(data)
+      res.redirect("/booked?message=booked")
     })
   })
 

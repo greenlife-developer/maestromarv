@@ -1,33 +1,33 @@
-.appointment-container{
+.appointment-container {
     color: #333;
     background-color: #f2f2f2;
     text-align: left;
     padding-bottom: 4rem;
 }
 
-.appointment-header{
+.appointment-header {
     color: #333333;
     background-color: #f2f2f2;
     padding: .5rem 2rem;
     box-shadow: 2px 2px 10px rgb(212, 206, 206);
 }
 
-.appointment-header h1{
+.appointment-header h1 {
     color: white;
     font-size: 1.5rem;
     text-align: left;
 }
 
-.app-details{
+.app-details {
     margin-top: 3rem;
 }
 
-.app-details .details-form{
+.app-details .details-form {
     display: flex;
     justify-content: center;
 }
 
-.app-details .details-form .form{
+.app-details .details-form .form {
     background-color: white;
     border-radius: 5px;
     display: flex;
@@ -36,28 +36,31 @@
     width: 98%;
 }
 
-.app-details .details-form form{
+.app-details .details-form form {
     width: 50%;
 }
 
-.issue-type *{
+.issue-type * {
     width: 100%;
     margin: .2rem 0;
 }
 
-.issue-type label{
+.issue-type label {
     font-weight: bold;
     color: #867272;
 }
 
-.issue-type input, .issue-type select, .issue-type button, .issue-type textarea{
+.issue-type input,
+.issue-type select,
+.issue-type button,
+.issue-type textarea {
     padding: .5rem .8rem;
     border: 1px solid #f2f2f2;
     outline: none;
     border-radius: 3px;
 }
 
-.issue-type button{
+.issue-type button {
     background-color: #333;
     color: whitesmoke;
 }
@@ -65,20 +68,20 @@
 
 /* time scheduling */
 
-.time-container .details-form .form{
+.time-container .details-form .form {
     padding: 2rem 1rem;
 }
 
-.time-day h1{
+.time-day h1 {
     font-size: 1.5rem;
 }
 
-.time-day .time{
+.time-day .time {
     display: flex;
     width: 100%;
 }
 
-.time-day .time-item{
+.time-day .time-item {
     box-shadow: 3px 3px 10px #ddd;
     cursor: pointer;
     border: none;
@@ -89,7 +92,7 @@
 }
 
 
-.offices{
+.offices {
     margin-top: 5rem;
     display: flex;
     padding: 3rem;
@@ -97,108 +100,170 @@
     justify-content: center;
 }
 
-.offices h1, .faq-container h1{
+.offices h1,
+.faq-container h1 {
     /* color: white; */
     font-weight: 300;
 }
 
-.appointment-office{
+.appointment-office {
     display: flex;
     justify-content: center;
 }
 
-.map-container{
+.map-container {
     display: flex;
 }
 
-.map-office{
+.map-office {
     display: flex;
     justify-content: center;
     height: 450px;
     width: 80%;
 }
 
-.office-map{
+.office-map {
     width: 50%;
 }
 
-.office-address{
+.office-address {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 15px #ddd;
+    box-shadow: 2px 2px 10px #ddd;
+}
+
+.office-address .office-link {
+    background: #0000fd;
+    color: #fff;
+    border-radius: .3rem;
+    padding: .5rem 2.5rem;
 }
 
 /*  ------------ Faq -----------------*/
-.faq{
+.faq {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
-  }
-  
-  .faq-container{
+}
+
+.faq-container {
     width: 900px;
-  }
-  
-  .faq-container p{
+}
+
+.faq-container p {
     text-align: justify;
-  }
-  
-  
-  /*  ------------ Faq -----------------*/
+}
+
+
+/*  ------------ Faq -----------------*/
+
+
+/*  ------------ Booked -----------------*/
+
+.booked-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-weight: 500; */
+    /* background-color: #0000dd; */
+}
+
+.booked-body>h1 {
+    /* background-color: blue; */
+    font-weight: 400;
+}
+
+.booked-item {
+    padding: 5rem 2rem;
+    margin: 2rem;
+    border-radius: .8rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px #ddd;
+    /* width: 70%; */
+}
+
+.booked-item span {
+    font-weight: 300;
+    display: block;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.booked-item h6 {
+    font-weight: 400;
+    display: block;
+    font-size: 18px;
+    line-height: 15px;
+}
+
+.booked-item h1 {
+    /* display: block; */
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 1em;
+
+    /* line-height: 15px; */
+}
+
+
+
+/*  ------------ Booked -----------------*/
 
 
 
 
-@media screen and (max-width: 430px){
-    .app-details .details-form .form{
+@media screen and (max-width: 430px) {
+    .app-details .details-form .form {
         width: 95%;
     }
-    .app-details .details-form form{
+
+    .app-details .details-form form {
         width: 100%;
         padding: 1rem;
     }
 
-    .time-container .details-form .form{
+    .time-container .details-form .form {
         position: relative;
         justify-content: start;
         padding: .4rem;
     }
 
-    .time-container .details-form .form .appointment-time{
+    .time-container .details-form .form .appointment-time {
         width: 100%;
     }
 
-    .time-day .time-item{
+    .time-day .time-item {
         padding: .5rem 1rem;
     }
 
-    .time-day .time{
+    .time-day .time {
         overflow-x: hidden;
         max-width: 100%;
         overflow-x: scroll;
     }
 
-    .map-office{
+    .map-office {
         flex-direction: column;
         height: 450px;
         width: 90%;
     }
-    
-    .office-map{
-        width: 100%;
-        height: 100%;
-    }
-    
-    .office-address{
+
+    .office-map {
         width: 100%;
         height: 100%;
     }
 
-    .faq-container{
+    .office-address {
+        width: 100%;
+        height: 100%;
+    }
+
+    .faq-container {
         width: 100vw;
         margin: 10px;
-      }
+    }
 }

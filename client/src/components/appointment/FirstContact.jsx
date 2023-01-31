@@ -25,12 +25,13 @@ export default function FirstContact() {
             ></iframe>
           </div>
           <div className="office-address">
-            <Link to="/make-appointment/">
-              <h1>Futa office</h1>
-              <h5>Futa North gate, Akure</h5>
-              <h6>
-                <a href="tel:+2348065109764">08065109764</a>
-              </h6>
+            <h1>Futa office</h1>
+            <h5>Futa North gate, Akure</h5>
+            <h6>
+              <a href="tel:+2348065109764">08065109764</a>
+            </h6><br />
+            <Link className="office-link" to="/make-appointment/">
+              Proceed
             </Link>
           </div>
         </div>

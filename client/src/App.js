@@ -12,6 +12,7 @@ import Register from './components/register/Register';
 import Login from './components/register/Login';
 import FirstContact from './components/appointment/FirstContact'
 import New from './components/products/New';
+import Booked from "./components/appointment/Booked"
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/new-product" element={<New />} />
+          <Route path="/booked" element={<Booked />} />
         </Routes>
       </Router>
     </div>

@@ -45,21 +45,16 @@ export default function Contact() {
   const newDetails = JSON.parse(details);
   // console.log(JSON.parse(contact))
 
-  useEffect(() => {
-    
-  })
+  useEffect(() => {});
 
   const handleBook = (time) => {
     const appointment = { ...newDetails, ...newContact, time };
-    console.log("res")
-    axios.post("/api/maestromarv/appointment", { appointment })
-    .then((res) => {
-      console.log(res)
-      if (res.status === 200) {
-        console.log("data has been posted");
-        alert("Hello there", appointment)
-        redirect("/?message=booked");
-      }
+    console.log("res");
+    axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
+      console.log(res);
+      // console.log("data has been posted");
+      // alert("Hello there", appointment);
+      // redirect("/?message=booked");
     });
   };
 
@@ -88,18 +83,18 @@ export default function Contact() {
                             {day.name} ({d.toLocaleDateString()})
                           </h1>
                           <div className="time">
-                            {day.time.map((time, id) => {
+                            {day.time.map((time, id2) => {
                               const schedule =
                                 day.name +
                                 " " +
                                 d.toLocaleDateString() +
                                 " " +
                                 time;
-                              console.log(schedule)
+                              console.log(schedule);
                               return (
                                 <button
                                   onClick={() => handleBook(schedule)}
-                                  key={id}
+                                  key={id2}
                                   className="time-item"
                                 >
                                   {time}
