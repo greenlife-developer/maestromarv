@@ -105,28 +105,22 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       },
       (err, data) => {
         const emailData = {
-          from: "yemijoshua81@gmail.com",
-          to: "yemijoshua80@gmail.com",
+          from: "yemijoshua80@gmail.com",
+          to: "yemijoshua81@gmail.com",
           subject: "A new appointmemt",
           html: `
-                            <h1>Appointment by ${fullName}</h1>
-                            <h5>Please I need a quiker reply sir</h5>
-                        `,
+              <h1>Appointment by ${fullName}</h1>
+              <h5>Please I need a quiker reply sir</h5>
+            `,
         };
 
         sgMail
           .send(emailData)
           .then((sent) => {
-            // TODO: Decide whether to make a response here or when the data has been uploaded to the database
-            // return res.json({
-            //   message: `Email has been sent to ${email}`,
-            // });
+            console.log("Email has been sent")
           })
           .catch((err) => {
             console.log(err, "Not allowed");
-            // return res.status(400).json({
-            //     error: "Can't send message to your client"
-            // })
           });
       }
     );
