@@ -39,26 +39,35 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   database = client.db("MaestroMarv");
 
   router.get("/", (req, res) => {
-    database
-      .collection("sales")
-      .find()
-      .sort({
-        createdAt: -1,
-      })
-      .toArray((err, sales) => {
+    if (req.session.user_id) {
+      getUser(req.session.user_id, (user) => {
         database
-          .collection("cart")
+          .collection("sales")
           .find()
           .sort({
             createdAt: -1,
           })
-          .toArray((err, cart) => {
-            res.json({
-              sales: sales,
-              cart: cart,
-            });
+          .toArray((err, sales) => {
+            database
+              .collection("cart")
+              .find()
+              .sort({
+                createdAt: -1,
+              })
+              .toArray((err, cart) => {
+                res.json({
+                  user: user,
+                  sales: sales,
+                  cart: cart,
+                });
+              });
           });
       });
+    } else {
+      res.json({
+        error: "Please login",
+      });
+    }
   });
 
   router.post("/products/shop", (req, res) => {
@@ -76,19 +85,29 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   router.post("/products/add-to-cart", (req, res) => {
     const product = req.body.product;
     console.log(product);
-    database.collection("cart").insertOne(
-      {
-        ...product,
-      },
-      (err, data) => {
-        res.redirect("/product/view/:id/?message=added-to-cart");
-      }
-    );
+    if (req.session.user_id) {
+      getUser(req.session.user_id, (user) => {
+        database.collection("cart").insertOne(
+          {
+            ...product,
+            user: user
+          },
+          (err, data) => {
+            res.redirect("/product/view/:id/?message=added-to-cart");
+          }
+        );
+      });
+    } else {
+      res.status(301).json({
+        error: "Please login to be able to perform this action",
+      });
+    }
   });
 
   router.post("/maestromarv/appointment", (req, res) => {
     const currentTime = new Date().getTime();
-    const fullName = req.body.appointment.fName + " " + req.body.appointment.lName
+    const fullName =
+      req.body.appointment.fName + " " + req.body.appointment.lName;
     database.collection("apppointments").insertOne(
       {
         createdAt: currentTime,

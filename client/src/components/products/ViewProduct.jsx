@@ -37,15 +37,15 @@ export default function ViewProduct() {
   const handleAddToCart = () => {
     if (product) {
       axios.get("/api").then((data) => {
-        console.log(data.status);
+        console.log(data);
         if (data) {
           setCart(data.data.cart);
         }
       });
       if (cart) {
-        axios.post("/api/products/add-to-cart", { product }).then((res) => {
+        axios.post("/api/products/add-to-cart", { product })
+        .then((res) => {
           console.log(res.status);
-          console.log(res.data);
           notification.open({
             message: "Added to Cart!",
             description: "Please, don't forget to check out",
@@ -78,7 +78,7 @@ export default function ViewProduct() {
     setItems(items + 1);
   };
 
-  const productName = <div style={{fontSize: "14px"}}>{product[0].name}</div>
+  const productName = <div style={{fontSize: "12px"}}>{product[0].name}</div>
 
   return ( 
     <>

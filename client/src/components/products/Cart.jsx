@@ -6,10 +6,15 @@ export default function Cart() {
   const [cart, setCart] = useState(null);
   const [sales, setSales] = useState(null);
   const [cartno, setCartno] = useState(null);
+  const [icon, setIcon] = useState(true);
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      if (data.data) {
+      console.log(data.data.error);
+      if (data.data.error) {
+        setIcon(false);
+      }
+      if (!data.data.error) {
         setCart(data.data.cart);
         setCartno(data.data.cart.length);
         setSales(data.data.sales);
@@ -17,19 +22,25 @@ export default function Cart() {
     });
   }, []);
 
-  console.log(cart)
+  // console.log(cart);
 
   return (
     <div className="cart-container">
       <div className="cart" style={{ marginLeft: "100px" }}>
         <div
+          class="btn btn-primary"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions"
           aria-controls="offcanvasWithBothOptions"
           className="icon"
         >
-          <i class="fa-solid fa-cart-shopping"></i>
+          {/* <i class="fa-solid fa-cart-shopping"></i> */}
+          {icon ? (
+            <i class="fa-solid fa-cart-shopping"></i>
+          ) : (
+            <i class="fa-solid fa-lock"></i>
+          )}
         </div>
         <div className="item-no">
           <span>{cartno}</span>
@@ -54,6 +65,7 @@ export default function Cart() {
             aria-label="Close"
           ></button>
         </div>
+
         <div class="offcanvas-body">
           <div className="order-page">
             <div className="cart-details">
@@ -74,7 +86,9 @@ export default function Cart() {
                     })
                   : null}
               </div>
-            </div><br /><br />
+            </div>
+            <br />
+            <br />
 
             <div className="cart-details">
               <h4>View Your Orders</h4>

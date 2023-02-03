@@ -1,21 +1,24 @@
 import React, { useState } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import "./navstyle.css";
 import logo from "../images/logo.png";
 
 export default function Navigation() {
-
-  // const currentLocation = useNavigate()
-  // console.log(currentLocation)
-  const [navBackground, setNavBackground] = useState(false);
+  const currentLocation = useLocation();
+  // console.log(currentLocation.pathname)
+  const [navBackground, setNavBackground] = useState("");
   // const [icon, setIcon] = useState(true);
 
   window.onscroll = function () {
-    if (window.scrollY > window.innerHeight) {
-      setNavBackground(true);
-    }
-    if (window.scrollY < window.innerHeight) {
-      setNavBackground(false);
+    if (currentLocation.pathname === "/") {
+      if (window.scrollY > window.innerHeight) {
+        setNavBackground("rgba(0, 0, 0, 1)");
+      }
+      if (window.scrollY < window.innerHeight) {
+        setNavBackground("rgba(0, 0, 0, .3)");
+      }
+    } else {
+      setNavBackground("rgba(0, 0, 0, 1)");
     }
   };
 
@@ -23,14 +26,14 @@ export default function Navigation() {
     <>
       <header
         style={{
-          backgroundColor: navBackground
-            ? "rgba(0, 0, 0, 1)"
-            : "rgba(0, 0, 0, .3)",
+          backgroundColor: navBackground,
         }}
       >
         <div className="container1">
           <div className="logo-container">
-            <Link to="/#"><img src={logo} height="50px" alt="" /></Link>
+            <Link to="/#">
+              <img src={logo} height="50px" alt="" />
+            </Link>
           </div>
 
           <div className="nav-btn">
@@ -87,14 +90,16 @@ export default function Navigation() {
 
           <div className="login-register">
             <button className="login-fill">
-              <Link className="login-fill-btn" to="/login#">Login</Link>
+              <Link className="login-fill-btn" to="/login#">
+                Login
+              </Link>
             </button>
             <button>
               <Link to="/register#">Register</Link>
             </button>
           </div>
 
-          <div className="btn-group">
+          <div className="btn-group navigationBox">
             <div
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasWithBothOptions"
@@ -120,6 +125,7 @@ export default function Navigation() {
                   aria-label="Close"
                 ></button>
               </div>
+
               <div class="offcanvas-body mobile-navs">
                 <div className="navs">
                   <div className="nav-items">
@@ -185,11 +191,14 @@ export default function Navigation() {
                         </Link>
                       </span>
                     </div>
-                  </div><br />
+                  </div>
+                  <br />
 
                   <div className="login-register1">
                     <button className="login-fill">
-                      <Link className="login-fill-btn" to="/login#">Login</Link>
+                      <Link className="login-fill-btn" to="/login#">
+                        Login
+                      </Link>
                     </button>
                     <button>
                       <Link to="/register#">Register</Link>
