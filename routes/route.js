@@ -106,10 +106,10 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       (err, data) => {
         const emailData = {
           from: "maestromarve@gmail.com",
-          to: "enginemarve@gmail.com",
+          to: "yemijoshua81@gmail.com",
           subject: "A new appointmemt",
           html: `
-              <h1>Appointment by ${fullName}</h1>
+              <h3>Appointment by ${fullName}</h4>
               <h5>Please I need a quiker reply sir</h5>
             `,
         };
@@ -117,7 +117,9 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         sgMail
           .send(emailData)
           .then((sent) => {
-            console.log("Email has been sent")
+            return res.json({
+              message: `Email has been sent!`,
+            });
           })
           .catch((err) => {
             console.log(err, "Not allowed");

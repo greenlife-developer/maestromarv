@@ -48,7 +48,6 @@ export default function Contact() {
   const newDetails = JSON.parse(details);
   // console.log(JSON.parse(contact))
 
-  useEffect(() => {});
 
   const handleBook = (time) => {
     const appointment = { ...newDetails, ...newContact, time };
@@ -71,6 +70,12 @@ export default function Contact() {
       }
     });
   };
+
+  useEffect(() => {
+    const appBtn = document.getElementById("appBtn");
+    appBtn.addEventListener("click", handleBook)
+  });
+
 
   // console.log(details, contact);
 
@@ -109,6 +114,7 @@ export default function Contact() {
                                 <button
                                   onClick={() => handleBook(schedule)}
                                   key={id2}
+                                  id="appBtn"
                                   className="time-item"
                                 >
                                   {time}

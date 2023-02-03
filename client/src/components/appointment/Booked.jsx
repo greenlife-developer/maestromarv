@@ -12,6 +12,7 @@ export default function Booked() {
           <span>Thank you for schedulling an appointment</span>
           <span>We hope to see you soon</span>
           <span>Please give us a call at <a href="tel:08142439130">08142439130</a> if you have any futher questions or concerns</span>
+          <a href="/">Home</a>
         </div>
       </div>
     </div>
