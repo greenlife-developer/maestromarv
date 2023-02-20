@@ -11,13 +11,24 @@ export default function Cart() {
   useEffect(() => {
     axios.get("/api").then((data) => {
       console.log(data.data.error);
-      if (data.data.error) {
+      if (data.data.isLogin === false) {
         setIcon(false);
+        setCart(null);
+        setCartno(null);
+        setSales(null);
       }
-      if (!data.data.error) {
-        setCart(data.data.cart);
-        setCartno(data.data.cart.length);
-        setSales(data.data.sales);
+      if (data.data.isLogin === true) {
+        if (data.data.user.email === data.data.cart.user.email) {
+          setCart(data.data.cart);
+          setCartno(data.data.cart.length);
+          setSales(data.data.sales);
+          setIcon(true);
+        } else {
+          setCart(null);
+          setCartno(null);
+          setIcon(false);
+          setSales(null);
+        }
       }
     });
   }, []);

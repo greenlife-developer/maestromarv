@@ -33,10 +33,11 @@ export default function Register() {
     e.preventDefault();
 
     axios.post("/api/maestromarv/login", { loginForm }).then((res) => {
-      if(res.status === 200){
-        console.log("Successfully registered!");
-        redirect("/?message=logged-in");
-      }
+      console.log(res)
+      // if(res.status === 200){
+      //   console.log("Successfully registered!");
+      //   redirect("/?message=logged-in");
+      // }
     });
   };
   return (
@@ -48,7 +49,7 @@ export default function Register() {
         <div className="">
           <div className="details-form">
             <div className="form">
-              <form onSubmit={handleSubmit}>
+              <form action="/api/maestromarv/login" method="post">
                 <div className="issue-details">
                   <h3>Welcome! Please login</h3>
                   <p>
@@ -60,7 +61,7 @@ export default function Register() {
                   <label htmlFor="type">Email Address</label>
                   <input
                     name="email"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     type="email"
                     placeholder="Email Address"
                     required
@@ -71,7 +72,7 @@ export default function Register() {
                   <label htmlFor="type">Password</label>
                   <input
                     name="password"
-                    onChange={handleChange}
+                    // onChange={handleChange}
                     type="password"
                     placeholder="Password Address"
                     required

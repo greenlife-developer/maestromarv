@@ -217,7 +217,6 @@
     padding: 5px;
     height: 150px;
     overflow-y: scroll;
-    font-family: "roboto";
     text-align: justify;
 }
 
@@ -250,7 +249,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: inset 600px 0 160px 50px #000000;
+    /* box-shadow: inset 600px 0 160px 50px #000000; */
     width: 100%;
     height: 550px;
     text-align: center;
@@ -379,21 +378,48 @@
 
 /* -------------------------- section 7 - footer ----------------------------- */
 .footer-container {
-    background-color: #292929;
+    background: #02026B;
     display: flex;
     justify-content: center;
 }
 
 .footer-logo {
     display: flex;
-    width: 75%;
-    justify-content: center;
+    align-items: center;
+    /* width: 75%; */
+    /* justify-content: center; */
 }
 
-.footer-logo h1 img {
+.footer-item-logo hr {
+    color: #EBF1FF;
+    font-weight: bold;
+    width: 100%;
+    height: 3px !important;
+}
+
+.footer-logo .logos {
+    background-color: #EBF1FF;
+    border-radius: 10px;
+}
+
+.footer-logo .social-medias {
+    display: flex;
+    width: 150px;
+    margin-left: 3.5rem;
+    /* background-color: yellowgreen; */
+    justify-content: space-around;
+}
+
+.footer-logo .social-medias i {
+    color: #EBF1FF;
+    font-size: 20px;
+}
+
+.footer-logo .logos img {
     width: 80px;
     height: 80px;
-    padding: 2rem;
+    margin: .5rem 1.2rem;
+    /* padding: 2rem; */
     object-fit: contain;
     /* border-radius: 50%; */
 }
@@ -401,6 +427,8 @@
 .footer-container .footer-items {
     /* background-color: blue; */
     padding: 7.1rem;
+    /* margin: 1rem; */
+    /* background-color: orange; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -424,27 +452,21 @@
     padding: .3rem 0;
 }
 
-.footer-items .footer-item h6 {
+.footer-items .footer-item h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
     margin-bottom: 1rem;
-    /* background-color: yellow; */
+    color: #EBF1FF;
 }
 
 .footer-items .footer-item .footer-link {
+    font-style: normal;
     color: white;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-.footer-items .footer-item h6 {
-    color: #007BFF;
-}
-
-.social-icon i {
-    color: white;
-    padding: .5em 1em !important;
-    border-radius: .5rem;
-    font-size: 1rem;
-    margin: auto !important;
-    margin-right: .5rem !important;
-}
 
 
 
@@ -473,8 +495,8 @@
 
     .footer-container .footer-items {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        background-color: orange;
-        padding: 1rem 0 0 0 ;
+        /* background-color: orange; */
+        padding: 2rem;
     }
 
     .footer-items .footer-item {
@@ -515,10 +537,6 @@
 }
 
 @media screen and (max-width: 430px) {
-
-    h1 {
-        font-size: 1.5rem;
-    }
 
     /* ------------------------- Carousel ----------------------------- */
     .content-carouel {
@@ -612,18 +630,6 @@
         width: 100%;
     }
 
-    .footer-container .footer-items {
-        grid-template-columns: 1fr;
-        background-color: orange;
-        padding: 1rem 0 0 0 ;
-    }
-
-    .footer-items .footer-item {
-        width: 100%;
-        background-color: blue;
-        margin-bottom: 1rem;
-    }
-
     .section-5 {
         box-shadow: inset 100px 0 160px 50px #000000;
     }
@@ -636,11 +642,40 @@
 
     .section-5-content .item1 {
         width: 100%;
-        background-color: rgba(0, 0, 0, 0);
+        padding: .8rem;
+        /* background-color: rgb(138, 47, 47); */
     }
 
     .section-5-content .item2 {
+        /* background-color: rgb(138, 47, 47); */
         width: 0;
+    }
+
+    .footer-container {
+        background-color: #02026B;
+        display: flex;
+        justify-content: start;
+    }
+
+    .footer-container .footer-items {
+        grid-template-columns: 1fr 1fr;
+        /* background-color: orange; */
+        /* width: 50vw; */
+        padding: 1.5rem;
+    }
+
+    .footer-logo{
+        padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+
+    .footer-items .footer-item {
+        width: 100%;
+        /* background-color: blue; */
+        margin-bottom: 1rem;
+    }
+
+    .computer-footer-repair{
+        margin-top: 1.5rem;
     }
 
 }

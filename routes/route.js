@@ -11,23 +11,6 @@ const mongodb = require("mongodb");
 const ObjectId = mongodb.ObjectId;
 const mongoClient = mongodb.MongoClient;
 
-function getUser(userId, callBack) {
-  database.collection("users").findOne(
-    {
-      _id: ObjectId(userId),
-    },
-    function (error, result) {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      if (callBack !== null) {
-        callBack(result);
-      }
-    }
-  );
-}
-
 const db = process.env.MONGO_URI;
 
 mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
@@ -38,7 +21,25 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   console.log("MongoDB Connected...");
   database = client.db("MaestroMarv");
 
+  function getUser(userId, callBack) {
+    database.collection("users").findOne(
+      {
+        _id: ObjectId(userId),
+      },
+      function (error, result) {
+        if (error) {
+          console.log(error);
+          return;
+        }
+        if (callBack !== null) {
+          callBack(result);
+        }
+      }
+    );
+  }
+
   router.get("/", (req, res) => {
+    console.log("api session", req.session.user_id);
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
         database
@@ -56,6 +57,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
               })
               .toArray((err, cart) => {
                 res.json({
+                  isLogin: true,
                   user: user,
                   sales: sales,
                   cart: cart,
@@ -66,31 +68,43 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     } else {
       res.json({
         error: "Please login",
+        isLogin: false,
       });
     }
   });
 
   router.post("/products/shop", (req, res) => {
     const shop = req.body.formBody;
-    database.collection("sales").insertOne(
-      {
-        ...shop,
-      },
-      (err, data) => {
-        res.redirect("/?message=bought");
-      }
-    );
+    if (("session shop", req.session.user_id)) {
+      getUser(req.session.user_id, (user) => {
+        database.collection("sales").insertOne(
+          {
+            ...shop,
+            user,
+          },
+          (err, data) => {
+            res.redirect("/?message=bought");
+          }
+        );
+      });
+    } else {
+      res.status(301).json({
+        error: "Please login to be able to perform this action",
+      });
+    }
   });
 
   router.post("/products/add-to-cart", (req, res) => {
     const product = req.body.product;
-    console.log(product);
+    console.log("api product", product);
+    console.log("addcard session", req.session.user_id);
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
         database.collection("cart").insertOne(
           {
             ...product,
-            user: user
+            user: user,
+            isLogin: true
           },
           (err, data) => {
             res.redirect("/product/view/:id/?message=added-to-cart");
@@ -100,6 +114,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     } else {
       res.status(301).json({
         error: "Please login to be able to perform this action",
+        isLogin: false
       });
     }
   });
@@ -192,7 +207,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
           bcrypt.compare(password, user.password, (err, isPasswordVerify) => {
             if (isPasswordVerify) {
               req.session.user_id = user._id;
-              res.redirect("/");
+              res.redirect("/products");
             } else {
               res.redirect("/login?error=wrong_password");
             }
@@ -201,6 +216,13 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       }
     );
   });
+
+
+  router.get("/logout", (req, res) => {
+    req.session = null;
+    res.redirect("/");
+  });
+
 });
 
 module.exports = router;

@@ -1,32 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import "./navstyle.css";
 import logo from "../images/logo.png";
 
 export default function Navigation() {
   const currentLocation = useLocation();
   // console.log(currentLocation.pathname)
+  const redirect = useNavigate();
   const [navBackground, setNavBackground] = useState("");
-  // const [icon, setIcon] = useState(true);
+  const [login, setLogin] = useState(false);
+  const [changeIcon, setChangeIcon] = useState(false);
 
-  window.onscroll = function () {
-    if (currentLocation.pathname === "/") {
-      if (window.scrollY > window.innerHeight) {
+  const handleLogOut = () => {
+    axios.get("/api/logout").then((res) => {
+      redirect("/?message=logged_out");
+    });
+  };
+
+  const handleMenu = () => {
+    console.log("menu is clicked");
+    setChangeIcon(!changeIcon);
+  };
+
+  useEffect(() => {
+    axios.get("/api").then((data) => {
+      console.log("data from api", data.data.isLogin);
+      if (data.data.isLogin === true) {
+        setLogin(data.data.isLogin);
+      }
+    });
+
+    window.onscroll = function () {
+      if (currentLocation.pathname === "/") {
+        if (window.scrollY > window.innerHeight) {
+          setNavBackground("rgba(0, 0, 0, 1)");
+        }
+        if (window.scrollY < window.innerHeight) {
+          setNavBackground("rgba(0, 0, 0, .3)");
+        }
+      } else {
         setNavBackground("rgba(0, 0, 0, 1)");
       }
-      if (window.scrollY < window.innerHeight) {
-        setNavBackground("rgba(0, 0, 0, .3)");
-      }
-    } else {
-      setNavBackground("rgba(0, 0, 0, 1)");
-    }
-  };
+    };
+  });
 
   return (
     <>
       <header
         style={{
-          backgroundColor: navBackground,
+          // backgroundColor: navBackground,
+          background:
+            "linear-gradient(273.29deg, rgba(2, 2, 107, 0.2) 0%, rgba(7, 10, 173, 0.1) 20.24%, rgba(255, 255, 255, 0.1) 67.09%, rgba(255, 255, 255, 0.1) 67.09%)",
+          borderBottom:
+            "linear-gradient(273.29deg,  #02026B 0%, #02026B 20.24%, #EBF1FF 67.09%, #EBF1FF 67.09%)",
+          backdropFilter: "blur(20px)",
         }}
       >
         <div className="container1">
@@ -89,110 +117,95 @@ export default function Navigation() {
           </div>
 
           <div className="login-register">
-            <button className="login-fill">
-              <Link className="login-fill-btn" to="/login#">
-                Login
-              </Link>
-            </button>
-            <button>
-              <Link to="/register#">Register</Link>
-            </button>
+            {login ? (
+              <button className="login-fill">
+                <a className="login-fill-btn" onClick={handleLogOut} href="#">
+                  Log out
+                </a>
+              </button>
+            ) : (
+              <>
+                <button className="login-fill">
+                  <Link className="login-fill-btn" to="/login#">
+                    Login
+                  </Link>
+                </button>
+                <button>
+                  <Link className="login-normal-btn" to="/register#">
+                    Register
+                  </Link>
+                </button>
+              </>
+            )}
           </div>
 
-          <div className="btn-group navigationBox">
-            <div
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasWithBothOptions"
-              aria-controls="offcanvasWithBothOptions"
-              className="dropbtx"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div
-              class="offcanvas offcanvas-end"
-              data-bs-scroll="true"
-              tabindex="-1"
-              id="offcanvasWithBothOptions"
-              aria-labelledby="offcanvasWithBothOptionsLabel"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
+          <div className="mobile-nav-style">
+            <div className="menu-bar">
+              <div className="cart-icon">
+                <i class="ri-shopping-cart-2-line"></i>
+                <sup className="cart-no">1</sup>
               </div>
-
-              <div class="offcanvas-body mobile-navs">
-                <div className="navs">
-                  <div className="nav-items">
-                    <div className="nav-item">
-                      <i class="fa-solid fa-house"></i>
-                      <span>
-                        <Link className="nav-link1" to="/#">
-                          Home
-                        </Link>
-                      </span>
+              <div className="menu-icon" onClick={handleMenu}>
+                {changeIcon ? (
+                  <div>
+                    <div className="icon-x"></div>
+                  </div>
+                ) : (
+                  <div className="">
+                    <div className="width">
+                      <div className="width-1"></div>
                     </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-screwdriver-wrench"></i>
-                      <span>
-                        <Link className="nav-link1" to="/repairs#">
-                          Repairs
-                        </Link>
-                      </span>
+                    <div className="width">
+                      <div className="width-2"></div>
                     </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-box-open"></i>
-                      <span>
-                        <Link className="nav-link1" to="/products#">
-                          Products
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-inbox"></i>
-                      <span>
-                        <Link
-                          className="nav-link1"
-                          to="/make-appointment/first-contact/#"
-                        >
-                          Contact
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-circle-info"></i>
-                      <span>
-                        <Link className="nav-link1" to="/#about">
-                          About
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-house-laptop"></i>
-                      <span>
-                        <Link className="nav-link1" to="/repairs#">
-                          Computer Repair
-                        </Link>
-                      </span>
-                    </div>
-                    <div className="nav-item">
-                      <i class="fa-solid fa-location-dot"></i>
-                      <span>
-                        <Link
-                          className="nav-link1"
-                          to="/make-appointment/first-contact#"
-                        >
-                          Location
-                        </Link>
-                      </span>
+                    <div className="width">
+                      <div className="width-3"></div>
                     </div>
                   </div>
-                  <br />
+                )}
+              </div>
+            </div>
+            {changeIcon ? (
+              <div className="menu-items-mobile">
+                <div className="">
+                  <div className="user-loggedin">
+                    {/* <div className="username"> */}
+                      <h1>Welcome, Grace</h1>
+                    {/* </div> */}
+                  </div>
+                  <ul>
+                    <li>
+                      <Link to="/" className="mobile-menu-btn">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/products/#" className="mobile-menu-btn">
+                        Products
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/repairs/#" className="mobile-menu-btn">
+                        Repairs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/make-appointment/first-contact/#"
+                        className="mobile-menu-btn"
+                      >
+                        Contact Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/make-appointment/first-contact/#"
+                        className="mobile-menu-btn"
+                      >
+                        About Us
+                      </Link>
+                    </li>
+                  </ul>
 
                   <div className="login-register1">
                     <button className="login-fill">
@@ -201,12 +214,14 @@ export default function Navigation() {
                       </Link>
                     </button>
                     <button>
-                      <Link to="/register#">Register</Link>
+                      <Link className="login-normal-btn" to="/register#">
+                        Register
+                      </Link>
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : null}
           </div>
         </div>
       </header>

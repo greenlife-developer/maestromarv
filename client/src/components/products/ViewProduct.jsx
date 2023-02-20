@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
@@ -37,30 +37,38 @@ export default function ViewProduct() {
   const handleAddToCart = () => {
     if (product) {
       axios.get("/api").then((data) => {
-        console.log(data);
-        if (data) {
+        console.log("data from api",data.data.cart);
+        if (data.data.cart) {
           setCart(data.data.cart);
         }
-      });
-      if (cart) {
-        axios.post("/api/products/add-to-cart", { product })
-        .then((res) => {
-          console.log(res.status);
+
+        if (data.data.isLogin === true) {
+          axios.post("/api/products/add-to-cart", { product })
+          .then((res) => {
+            console.log(res);
+            notification.open({
+              message: "Added to Cart!",
+              description: "Please, don't forget to check out",
+              icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+            });
+          });
+        } else {
           notification.open({
-            message: "Added to Cart!",
-            description: "Please, don't forget to check out",
+            message: "Oops!!",
+            description: "We could not add to cart, please login",
             icon: <SmileOutlined style={{ color: "#108ee9" }} />,
           });
-        });
-      } else {
-        notification.open({
-          message: "Added to Cart!",
-          description: "Please, don't forget to check out",
-          icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-        });
-      }
+          redirect("/login?message=cannot_add_cart");
+        }
+      });
+      
     }
   };
+
+  useEffect(() => {
+    const addCart = document.getElementById("addCart")
+    addCart.addEventListener("click", handleAddToCart)
+  })
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -220,7 +228,7 @@ export default function ViewProduct() {
                     >
                       Buy Now
                     </button>
-                    <button onClick={handleAddToCart}>Add to Cart</button>
+                    <button id="addCart" onClick={handleAddToCart}>Add to Cart</button>
                   </div>
                   <Modal
                     open={previewVisible}
