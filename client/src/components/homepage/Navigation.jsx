@@ -168,11 +168,13 @@ export default function Navigation() {
             {changeIcon ? (
               <div className="menu-items-mobile">
                 <div className="">
-                  <div className="user-loggedin">
-                    {/* <div className="username"> */}
-                      <h1>Welcome, Grace</h1>
-                    {/* </div> */}
-                  </div>
+                  {login ? (
+                    <div className="user-loggedin-mobile">
+                      {/* <div className="username"> */}
+                      <h1>Welcome, Deborah</h1>
+                      {/* </div> */}
+                    </div>
+                  ) : null}
                   <ul>
                     <li>
                       <Link to="/" className="mobile-menu-btn">
@@ -207,18 +209,20 @@ export default function Navigation() {
                     </li>
                   </ul>
 
-                  <div className="login-register1">
-                    <button className="login-fill">
-                      <Link className="login-fill-btn" to="/login#">
-                        Login
-                      </Link>
-                    </button>
-                    <button>
-                      <Link className="login-normal-btn" to="/register#">
-                        Register
-                      </Link>
-                    </button>
-                  </div>
+                  {!login ? (
+                    <div className="login-register1">
+                      <button className="login-fill">
+                        <Link className="login-fill-btn" to="/login#">
+                          Login
+                        </Link>
+                      </button>
+                      <button>
+                        <Link className="login-normal-btn" to="/register#">
+                          Register
+                        </Link>
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             ) : null}

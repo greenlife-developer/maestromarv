@@ -12,6 +12,7 @@
 
 body {
     font-family: "campton" !important;
+    font-style: normal;
     overflow-x: hidden !important;
 }
 
@@ -103,8 +104,8 @@ header {
 }
 
 .container1 .login-register {
-    /* margin-top: .8rem; */
-    background-color: yellowgreen;
+    margin-top: .8rem;
+    /* background-color: yellowgreen; */
 }
 
 /* .container1 .login-register1{
@@ -121,29 +122,45 @@ header {
     color: #fff;
 }
 
+.login-register button{
+    padding: .3rem 1.8rem;
+    /* border-radius: 1rem; */
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    margin-right: .6em;
+    border-radius: 1rem;
+    color: #fff;
+}
+
 .login-register1 button{
     padding: .6rem 2.5rem;
 }
 
-.user-loggedin{
+.user-loggedin-mobile{
     background-color: #EBF1FF;
-    max-width: 100%;
+    width: 325px;
     display: flex;
     justify-content: center;
-    margin: .6rem 2.5rem;
+    height: 70px;
     align-items: center;
+    /* padding: 1rem 0; */
+    margin: 1rem 2rem;
 
 }
 
 .user-loggedin .username{
-    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
     background-color: #dda;
 }
 
-.user-loggedin .username h1{
-    display: inline-block;
+.user-loggedin-mobile h1{
+    padding: 0;
+    margin: 0 !important;
     margin: 0 auto;
     font-size: 32px;
+    color: #02026B;
     font-weight: 400;
 }
 
