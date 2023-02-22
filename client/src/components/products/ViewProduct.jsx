@@ -22,48 +22,46 @@ export default function ViewProduct() {
   const [previewVisible, setPreviewVisible] = useState(false);
   const redirect = useNavigate();
 
-  // const selected = location.pathname.split("/")[3];
+  const selected = location.pathname.split("/")[3];
 
-  // const product = products.filter((std) => {
-  //   return std.id === selected;
-  // });
+  const product = products.filter((std) => {
+    return std.id === selected;
+  });
 
-  // const handleCancel = () => setPreviewVisible(false);
+  const handleCancel = () => setPreviewVisible(false);
 
-  // const handleRedirect = () => {
-  //   return redirect("/?message=bought");
-  // };
+  const handleRedirect = () => {
+    return redirect("/?message=bought");
+  };
 
-  // const handleAddToCart = () => {
-  //   if (product) {
-  //     axios.get("/api").then((data) => {
-  //       console.log("data from api",data.data.cart);
-  //       if (data.data.cart) {
-  //         setCart(data.data.cart);
-  //       }
+  const handleAddToCart = () => {
+    if (product) {
+      axios.get("/api").then((data) => {
+        console.log("data from api", data.data.cart);
+        if (data.data.cart) {
+          setCart(data.data.cart);
+        }
 
-  //       if (data.data.isLogin === true) {
-  //         axios.post("/api/products/add-to-cart", { product })
-  //         .then((res) => {
-  //           console.log(res);
-  //           notification.open({
-  //             message: "Added to Cart!",
-  //             description: "Please, don't forget to check out",
-  //             icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-  //           });
-  //         });
-  //       } else {
-  //         notification.open({
-  //           message: "Oops!!",
-  //           description: "We could not add to cart, please login",
-  //           icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-  //         });
-  //         redirect("/login?message=cannot_add_cart");
-  //       }
-  //     });
-
-  //   }
-  // };
+        if (data.data.isLogin === true) {
+          axios.post("/api/products/add-to-cart", { product }).then((res) => {
+            console.log(res);
+            notification.open({
+              message: "Added to Cart!",
+              description: "Please, don't forget to check out",
+              icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+            });
+          });
+        } else {
+          notification.open({
+            message: "Oops!!",
+            description: "We could not add to cart, please login",
+            icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+          });
+          redirect("/login?message=cannot_add_cart");
+        }
+      });
+    }
+  };
 
   // useEffect(() => {
   //   const addCart = document.getElementById("addCart")
@@ -86,7 +84,7 @@ export default function ViewProduct() {
     setItems(items + 1);
   };
 
-  // const productName = <div style={{ fontSize: "12px" }}>{product[0].name}</div>;
+  const productName = <div style={{ fontSize: "12px" }}>{product[0].name}</div>;
 
   return (
     <>
@@ -112,8 +110,15 @@ export default function ViewProduct() {
           </div>
 
           <div className="action-cart-buttons">
-            <button className="cart-fill">Add to Cart</button>
-            <button className="cart-normal">Buy Now</button>
+            <button className="cart-fill" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
+            <button
+              className="cart-normal"
+              onClick={() => setPreviewVisible(true)}
+            >
+              Buy Now
+            </button>
           </div>
 
           <div className="">
@@ -131,45 +136,76 @@ export default function ViewProduct() {
                 </p>
               </TabPane>
             </Tabs>
-          </div><br /><br />
+          </div>
+          <br />
+          <br />
 
           <div className="best-on-sale">
             <div className="heading">
               <h1>Best on sale</h1>
             </div>
-            <div className="best-sale-card">
-              <div className="sale-bg">
-                <img src={laptop} alt="" />
+            <div className="card-container">
+              <div className="best-sale-card">
+                <div className="sale-bg">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="sale-content">
+                  <h1>Lenovo Fold 2019</h1>
+                  <h5>N300,540</h5>
+                  <button>View More</button>
+                </div>
               </div>
-              <div className="sale-content">
-                <h1>Lenovo Fold 2019</h1>
-                <h5>N300,540</h5>
-                <button>View More</button>
+              <div className="best-sale-card">
+                <div className="sale-bg">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="sale-content">
+                  <h1>Lenovo Fold 2019</h1>
+                  <h5>N300,540</h5>
+                  <button>View More</button>
+                </div>
+              </div>
+              <div className="best-sale-card">
+                <div className="sale-bg">
+                  <img src={laptop} alt="" />
+                </div>
+                <div className="sale-content">
+                  <h1>Lenovo Fold 2019</h1>
+                  <h5>N300,540</h5>
+                  <button>View More</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <Modal
+        title="Confirm and proceed to payment"
+        style={{
+          top: 20,
+        }}
+        open={previewVisible}
+        // onOk={() => setPreviewVisible(false)}
+        // onCancel={() => setPreviewVisible(false)}
+      >
+        <Paystack
+          amount={
+            (parseInt(product[0].price) - parseInt(product[0].subprice)) *
+              items +
+            "00"
+          }
+          name={productName}
+          item={product}
+          close={handleRedirect}
+        />
+      </Modal>
+
       <div className="footer">
         <Footer />
       </div>
     </>
   );
-}
-
-{
-  /* <Paystack
-                      amount={
-                        (parseInt(product[0].price) -
-                          parseInt(product[0].subprice)) *
-                          items +
-                        "00"
-                      }
-                      name={productName}
-                      item={product}
-                      close={handleRedirect}
-                    /> */
 }
 
 {

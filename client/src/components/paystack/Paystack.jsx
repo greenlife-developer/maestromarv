@@ -62,7 +62,7 @@ const Paystack = (props) => {
 
   return (
     <div className="App">
-      <div className="container">
+      <div className="container-cart-checkout">
         <div className="item">
           <div className="item-details">
             <h3>{props.name}</h3>

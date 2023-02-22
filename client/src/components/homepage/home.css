@@ -386,8 +386,6 @@
 .footer-logo {
     display: flex;
     align-items: center;
-    /* width: 75%; */
-    /* justify-content: center; */
 }
 
 .footer-item-logo hr {
@@ -404,7 +402,7 @@
 
 .footer-logo .social-medias {
     display: flex;
-    width: 150px;
+    width: 120px;
     margin-left: 3.5rem;
     /* background-color: yellowgreen; */
     justify-content: space-around;
@@ -660,12 +658,13 @@
     .footer-container .footer-items {
         grid-template-columns: 1fr 1fr;
         /* background-color: orange; */
-        /* width: 50vw; */
-        padding: 1.5rem;
+        width: 100%;
+        padding: 1rem;
     }
 
     .footer-logo{
-        padding: 1.5rem 1.5rem 0 1.5rem;
+        padding: 1.5rem .5rem 0 1rem;
+        max-width: 100%;
     }
 
     .footer-items .footer-item {

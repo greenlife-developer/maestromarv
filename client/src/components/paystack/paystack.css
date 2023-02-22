@@ -11,35 +11,43 @@
   height: auto;
 }
 
-.container .item .item-details {
-  /* background-color: bisque; */
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  margin: 1rem 0;
+.container-cart-checkout{
+  /* background-color: yellow; */
+  width: 100%;
 }
 
-.container .item .item-details p {
+.container-cart-checkout .item .item-details {
+  /* background-color: bisque; */
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.container-cart-checkout .item .item-details p {
   margin: 0;
   font-weight: bold;
   padding: 0;
-  /* background-color: orchid; */
+}
+
+.container-cart-checkout .item .item-details h3{
+  text-align: left;
 }
 
 .checkout-form form label {
   display: block;
   text-align: left;
-  margin: 0.9rem 0 0 2%;
+  margin: 0.9rem 0 0 0;
   font-size: 16px;
   font-weight: bold;
 }
 
 .checkout-form form input {
-  width: 98%;
+  width: 100%;
   border: none;
   padding: 10px;
   box-shadow: 1px 1px 10px #ddd;
-  border-radius: 3px;
   height: 35px;
 }
 
@@ -49,13 +57,11 @@
 
 .checkout-form button{
   border: none;
-  margin: .5rem 0;
-  /* margin-bottom: 2rem; */
+  margin: 1rem 0;
   padding: .5rem 0;
-  border-radius: 3px;
-  background-color: red;
-  color: white;
-  width: 98%;
+  background-color: #02026B;
+  color: #fff;
+  width: 100%;
 }
 
 .checkout-form .paystack-button {

@@ -30,7 +30,7 @@
   }
 
   .main-product .name-quantity{
-    padding: 24px;
+    padding: 20px;
     /* background-color: yellow; */
   }
 
@@ -102,8 +102,15 @@
     height: 80%;
   }
 
+  .best-on-sale .card-container{
+    display: flex;
+    overflow-x: scroll;
+  }
+
   .best-on-sale .best-sale-card{
     background: #fff;
+    margin-right: 12px;
+    min-width: 315px;
   }
 
   .best-on-sale .sale-content{
