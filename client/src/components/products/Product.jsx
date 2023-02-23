@@ -14,7 +14,7 @@ export default function Product() {
 
   return (
     <>
-      <div className="">
+      <div className="product-page-container">
         <Navigation />
         <div
           id="demo"
@@ -30,15 +30,6 @@ export default function Product() {
           <div class="carousel-inner">
             <div class="carousel-item2 active">
               <img src={phoneaccess} alt="Laptop cover" width="100%" />
-              <div className="content-carouel">
-                <div className="">
-                  <h1>Best and affordable electronic gadgets</h1>
-                  <p>
-                    Welcome to Maestromarv Tech solutions, welcome you to our world.
-                  </p>
-                  <button>Start now</button>
-                </div>
-              </div>
             </div>
             <div class="carousel-item">
               <img src={laptopaccess} alt="laptopaccess" width="100%" />

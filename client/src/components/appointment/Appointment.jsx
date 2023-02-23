@@ -63,7 +63,7 @@ export default function Appointment() {
       <div className="appointment-container">
         <div className="appointment-header">
           <h4>
-            <Link to="/">Make an appointment</Link>
+            <Link className="home-appointment" to="/">Make an appointment</Link>
           </h4>
         </div>
         <div className="app-details">

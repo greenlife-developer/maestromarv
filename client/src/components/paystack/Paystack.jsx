@@ -60,12 +60,20 @@ const Paystack = (props) => {
     // console.log("Hello submit");
   };
 
+  function truncate(str, n) {
+    return str.length > n ? str.slice(0, n - 1) + "..." : str;
+  }
+  // const short = props.name.replace(/(.{7})..+/, "$1&hellip;");
+  const productTitle =
+    props.name.length > 1 ? props.name.slice(0, 0) + "..." : "props.name";
+  // const realTitle =
+
   return (
     <div className="App">
       <div className="container-cart-checkout">
         <div className="item">
           <div className="item-details">
-            <h3>{props.name}</h3>
+            <h3>{productTitle}</h3>
             <p>{amount}</p>
           </div>
         </div>

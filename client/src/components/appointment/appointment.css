@@ -1,21 +1,31 @@
 .appointment-container {
-    color: #333;
-    background-color: #f2f2f2;
+    color: #02026B;
+    background-color: #EBF1FF;
     text-align: left;
     padding-bottom: 4rem;
 }
 
 .appointment-header {
-    color: #333333;
-    background-color: #f2f2f2;
-    padding: .5rem 2rem;
+    background-color: #EBF1FF;
+    height: 70px;
     box-shadow: 2px 2px 10px rgb(212, 206, 206);
+    display: flex;
+    align-items: center;
 }
 
-.appointment-header h1 {
-    color: white;
-    font-size: 1.5rem;
+.appointment-header h4 {
+    color: #EBF1FF;
     text-align: left;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.appointment-header .home-appointment{
+    color: #02026B;
+    font-size: 24px;
+    margin-left: .5rem;
 }
 
 .app-details {
@@ -29,7 +39,6 @@
 
 .app-details .details-form .form {
     background-color: white;
-    border-radius: 5px;
     display: flex;
     justify-content: center;
     padding: 2em 0;
@@ -47,7 +56,7 @@
 
 .issue-type label {
     font-weight: bold;
-    color: #867272;
+    color: #8E98A8;
 }
 
 .issue-type input,
@@ -55,14 +64,14 @@
 .issue-type button,
 .issue-type textarea {
     padding: .5rem .8rem;
-    border: 1px solid #f2f2f2;
+    border: 1px solid #EBF1FF;
     outline: none;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 
 .issue-type button {
-    background-color: #333;
-    color: whitesmoke;
+    background-color: #02026B;
+    color: #EBF1FF;
 }
 
 
@@ -87,7 +96,7 @@
     border: none;
     background-color: transparent;
     padding: 2rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     margin: .5rem;
 }
 
@@ -137,8 +146,7 @@
 
 .office-address .office-link {
     background: #02026B;
-    color: #fff;
-    border-radius: .3rem;
+    color: #EBF1FF;
     padding: .5rem 2.5rem;
 }
 
@@ -180,8 +188,8 @@
 .booked-item {
     padding: 5rem 2rem;
     margin: 2rem;
-    border-radius: .8rem;
-    background-color: #fff;
+    /* border-radius: .8rem; */
+    background-color: #EBF1FF;
     box-shadow: 2px 2px 8px #ddd;
     /* width: 70%; */
 }
@@ -212,7 +220,7 @@
 .booked-item a{
     text-decoration: none;
     font-weight: 500;
-    color: #000dd0;
+    color: #02026B;
 }
 
 
@@ -282,8 +290,8 @@
     .booked-item {
         padding: 1.2rem;
         margin: 0;
-        border-radius: .8rem;
-        background-color: #fff;
+        /* border-radius: .8rem; */
+        background-color: #EBF1FF;
         box-shadow: 2px 2px 8px #ddd;
         width: 100%;
     }

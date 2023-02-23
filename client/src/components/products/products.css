@@ -1,7 +1,16 @@
 .product-page .carousel-item img{
-  height: 100vh;
+  height: 40vh;
   background-color: red;
 }
+
+.product-page-container .carousel-container{
+  margin-top: 60px;
+}
+
+.product-page-container .carousel-item2 img{
+  object-fit: cover;
+}
+
 
 .category-1{
   /* background-color: yellow; */
@@ -11,14 +20,14 @@
 }
 
 .cat-head{
-  background-color: black;
+  background-color: #02026B;
 }
 
 .cat-head h1{
   padding: 1rem;
   font-size: 1.3rem;
   text-align: left;
-  color: #fff;
+  color: #EBF1FF;
 }
 
 
@@ -97,7 +106,7 @@
 .cat-item{
   margin: 1rem;
   box-shadow: 1px 1px 10px #ddd;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   /* padding-right: 1rem; */
   display: flex;
 }
@@ -153,7 +162,7 @@
 /* ---------------------------- New products --------------------- */
 .new-products .form form{
   box-shadow: 3px 3px 20px #ddd;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   padding: 2rem;
 }
 
@@ -249,5 +258,9 @@
     grid-template-columns: 1fr;
     /* justify-content: center; */
     /* margin: auto; */
+  }
+
+  .cart .icon, .cart .item-no{
+    display: none;
   }
 }

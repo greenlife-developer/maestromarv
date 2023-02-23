@@ -48,7 +48,7 @@ export default function Home() {
                 <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
                 <p>Welcome to our world.</p>
                 <button>
-                <Link
+                  <Link
                     className="make-appointment-btn"
                     to="/make-appointment/first-contact/"
                   >
@@ -146,15 +146,11 @@ export default function Home() {
               <div className="">
                 <h1>Computer Repair</h1>
                 <p>
-                  It is crucial to maintain your computer's performance and
-                  stability. When your computer starts experiencing problems,
-                  it's important to get it repaired as soon as possible. Our
-                  computer repair services include everything from basic
+                  Our computer repair services include everything from basic
                   troubleshooting and system optimization to virus and malware
-                  removal. We have years of experience in diagnosing and
-                  resolving computer issues, including hardware and software
-                  malfunctions. We provide quick and profession al service so
-                  you can get back to what's important in no time.
+                  removal. We have years of experience in troubleshooting and
+                  resolving computer issues. We provide quick and profession al
+                  service so you can get back to what's important in no time.
                 </p>
                 <button>
                   <Link
@@ -173,11 +169,9 @@ export default function Home() {
               <div className="">
                 <h1>Liquid Damage Repair</h1>
                 <p>
-                  We know accidents happen, so if you have suffered liquid
-                  damage to your device, don't worry. Our technicians are
-                  experts in repairing liquid-damaged devices of all makes and
-                  models. Come to our store now to get your device back in
-                  working order!
+                  Spills happen. Fixing fluid-damaged equipment is one of our
+                  specialties. If you suspect an exposure to liquids in your
+                  machine, do not delay, turn off,
                 </p>
                 <button>
                   <Link
@@ -270,7 +264,7 @@ export default function Home() {
             </ul>
             <br />
             <br />
-            <button>MAKE APPOINTMENT</button>
+            <button className="make-appointment-btn">Make Appointment</button>
           </div>
           <div className="item2"></div>
         </div>

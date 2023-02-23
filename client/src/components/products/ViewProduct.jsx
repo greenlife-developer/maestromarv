@@ -138,43 +138,42 @@ export default function ViewProduct() {
             </Tabs>
           </div>
           <br />
-          <br />
+        </div>
+      </div>
 
-          <div className="best-on-sale">
-            <div className="heading">
-              <h1>Best on sale</h1>
+      <div className="best-on-sale">
+        <div className="heading">
+          <h1>Best on sale</h1>
+        </div>
+        <div className="card-container">
+          <div className="best-sale-card">
+            <div className="sale-bg">
+              <img src={laptop} alt="" />
             </div>
-            <div className="card-container">
-              <div className="best-sale-card">
-                <div className="sale-bg">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="sale-content">
-                  <h1>Lenovo Fold 2019</h1>
-                  <h5>N300,540</h5>
-                  <button>View More</button>
-                </div>
-              </div>
-              <div className="best-sale-card">
-                <div className="sale-bg">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="sale-content">
-                  <h1>Lenovo Fold 2019</h1>
-                  <h5>N300,540</h5>
-                  <button>View More</button>
-                </div>
-              </div>
-              <div className="best-sale-card">
-                <div className="sale-bg">
-                  <img src={laptop} alt="" />
-                </div>
-                <div className="sale-content">
-                  <h1>Lenovo Fold 2019</h1>
-                  <h5>N300,540</h5>
-                  <button>View More</button>
-                </div>
-              </div>
+            <div className="sale-content">
+              <h1>Lenovo Fold 2019</h1>
+              <h5>N300,540</h5>
+              <button>View More</button>
+            </div>
+          </div>
+          <div className="best-sale-card">
+            <div className="sale-bg">
+              <img src={laptop} alt="" />
+            </div>
+            <div className="sale-content">
+              <h1>Lenovo Fold 2019</h1>
+              <h5>N300,540</h5>
+              <button>View More</button>
+            </div>
+          </div>
+          <div className="best-sale-card">
+            <div className="sale-bg">
+              <img src={laptop} alt="" />
+            </div>
+            <div className="sale-content">
+              <h1>Lenovo Fold 2019</h1>
+              <h5>N300,540</h5>
+              <button>View More</button>
             </div>
           </div>
         </div>

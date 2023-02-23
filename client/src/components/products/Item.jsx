@@ -11,6 +11,8 @@ export default function Item(props) {
     style: "currency",
     currency: "NGN",
   });
+
+  const shortName = props.name.length > 15 ? props.name.slice(0, 14) + " ...." : props.name
   
   return (
     <>
@@ -22,14 +24,7 @@ export default function Item(props) {
             </a>
           </div>
           <div className="item-content">
-            <p>
-              <ResponsiveEllipsis
-                text={props.name}
-                maxLine="1"
-                ellipsis="..."
-                basedOn="letters"
-              />
-            </p>
+            <p> {shortName} </p>
             <h4>{formatter.format(props.price)} <sub>{formatter.format(props.subprice)}</sub></h4>
             <span>your're saving 18%</span>
             <span>

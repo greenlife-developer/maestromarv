@@ -117,19 +117,19 @@ header {
     padding: .7rem 2rem;
     /* border-radius: 1rem; */
     background-color: transparent;
-    border: 1.5px solid #fff;
+    border: 1.5px solid #EBF1FF;
     margin-right: .6em;
-    color: #fff;
+    color: #EBF1FF;
 }
 
 .login-register button{
     padding: .3rem 1.8rem;
     /* border-radius: 1rem; */
     background-color: transparent;
-    border: 1.5px solid #fff;
+    border: 1.5px solid #EBF1FF;
     margin-right: .6em;
-    border-radius: 1rem;
-    color: #fff;
+    /* border-radius: 1rem; */
+    color: #EBF1FF;
 }
 
 .login-register1 button{

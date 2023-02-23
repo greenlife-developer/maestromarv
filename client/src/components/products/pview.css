@@ -1,6 +1,142 @@
 
 
+.main-product{
+  background: #EBF1FF;
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+}
 
+.main-product .product-img {
+  width: 50%;
+  /* background: #1E1E1E;; */
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  margin: 60px 0 30px 0;
+}
+
+.main-product .product-img img{
+  width: 80%;
+  object-fit: contain;
+  height: 80%;
+}
+
+.main-product .name-quantity{
+  padding: 20px;
+  width: 50%;
+  /* background-color: yellow; */
+}
+
+.name-quantity h3,  .name-quantity h6,  .name-quantity span{
+  font-family: arial;
+}
+
+.name-quantity h1, .name-quantity h3{
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.quantity h4, .quantity span{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.quantity span{
+  padding-right: 1rem;
+}
+
+.quantity h4, .name-quantity h3{
+  font-weight: 700;
+}
+
+.main-product .name-quantity {
+  /* display: flex; */
+  text-align: left;
+}
+
+.main-product .name-quantity .action-cart-buttons{
+  margin: 1rem 0;
+}
+
+.main-product .name-quantity .action-cart-buttons button{
+  font-size: 25px;
+  border: none;
+  padding: .5rem 0;
+  margin: .5rem 0;
+  color: #EBF1FF;
+  width: 100%;
+  font-weight: 400;
+}
+
+.main-product .name-quantity .action-cart-buttons .cart-fill{
+  background: #02026B;
+}
+.main-product .name-quantity .action-cart-buttons .cart-normal{
+  background: transparent;
+  color: #000;
+  border: 1px solid #02026B;
+}
+
+.best-on-sale{
+  background: #EBF1FF;
+  padding-bottom: 3rem;
+}
+
+.best-on-sale .heading h1{
+  font-size: 25px;
+}
+
+.best-on-sale .sale-bg{
+  background: grey;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-on-sale .sale-bg img{
+  width: 80%;
+  height: 80%;
+}
+
+.best-on-sale .card-container{
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+.best-on-sale .best-sale-card{
+  background: #fff;
+  margin-right: 12px;
+  min-width: 315px;
+}
+
+.best-on-sale .sale-content{
+  margin: 1rem;
+}
+
+.sale-content h1, .sale-content h5{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sale-content h5{
+  font-weight: 700;
+  font-family: arial;
+}
+
+.sale-content button{
+    width: 100%;
+    border: none;
+    background: #02026B;
+    color: #EBF1FF;
+    margin: 1rem 0;
+    padding: .5rem 0;
+}
 
 
 
@@ -11,6 +147,7 @@
 @media screen and (max-width: 430px) {
   .main-product{
     background: #EBF1FF;
+    flex-direction: column;
   }
 
   .main-product .product-img {
@@ -31,6 +168,7 @@
 
   .main-product .name-quantity{
     padding: 20px;
+    width: 100%;
     /* background-color: yellow; */
   }
 

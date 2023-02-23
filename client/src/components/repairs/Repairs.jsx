@@ -15,8 +15,8 @@ export default function Repairs() {
             <h1>#1 Laptop Repair Service in Akure</h1>
             <p>
               Is there anything more frustrating than a broken laptop? Never
-              fear: <br /> MTS is here to help. <br /> We’re thrilled to be
-              Seattle’s laptop repair and <br /> data recovery specialists.
+              fear: <br /> MTS is here to help. <br /> We're thrilled to be
+              Seattle's laptop repair and <br /> data recovery specialists.
             </p>
           </div>
         </div>

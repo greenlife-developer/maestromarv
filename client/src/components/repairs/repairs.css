@@ -1,7 +1,11 @@
+body{
+    background:  #EBF1FF;
+}
+
 .repair-page-banner {
     height: 65vh;
     width: 100%;
-    background-color: blue;
+    background-color: #02026B;
     color: white;
     display: flex;
     justify-content: center;
@@ -9,14 +13,14 @@
 }
 
 .re-banner-content h1 {
-    font-size: 4.5em;
+    font-size: 32px;
     color: white;
-    font-weight: 300;
+    font-weight: 700;
 }
 
 .re-banner-content p {
-    font-size: 1.5em;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .laptop-services {
@@ -27,7 +31,7 @@
 
 .services-items {
     /* background-color: blue; */
-    box-shadow: 2px 2px 15px #615e5e;
+    box-shadow: 1px 1px 8px #ddd;
     width: 80%;
     border-radius: 0.5rem;
     margin-top: 2rem;
@@ -40,8 +44,6 @@
 }
 
 .services-items .service-item img {
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
     object-fit: cover;
 }
 
@@ -51,13 +53,22 @@
     padding-right: 1rem;
 }
 
-.service-item .item2 * {
-    font-weight: 300;
+.services-items .item2 h1{
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
-.services-items .item2 .appointment {
-    font-size: 1.8em;
+/* .service-item .item2 * {
     font-weight: 300;
+} */
+
+.services-items .item2 .appointment {
+    font-size: 24px;
+    font-weight: 400;
+    padding: .5rem 1rem;
+    color: #02026B;
+    border: 1px solid #02026B;
     display: flex;
     justify-content: center;
 }
@@ -67,7 +78,8 @@
     margin: 0;
     padding: 0;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .services-items .service-item p {
@@ -77,7 +89,7 @@
 .data-recovery {
     height: 80vh;
     width: 100%;
-    background-color: maroon;
+    background: #02026B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,17 +102,17 @@
     width: 60%;
 }
 
-.data * {
-    font-weight: 200;
-}
 
 .data h2 {
-    font-size: 2em;
+    font-size: 20px;
+    font-weight: 400;
     color: white;
 }
 
 .data h1 {
     color: white;
+    font-weight: 700;
+    font-size: 32px;
 }
 
 .data .team {
@@ -109,11 +121,18 @@
 }
 
 .data p {
-    font-size: 1.5em;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .data .appointment {
-    font-size: 1.6em;
+    font-size: 24px;
+    font-weight: 400;
+    color: #EBF1FF;
+    border: 1px solid #EBF1FF;
+    padding: .5rem 1rem;
+    /* display: flex;
+    justify-content: center; */
 }
 
 @media screen and (max-width: 768px) {
@@ -130,9 +149,9 @@
     }
 
     .services-items .service-item img {
-        border-top-left-radius: 0.5rem;
+        /* border-top-left-radius: 0.5rem; */
         border-bottom-left-radius: 0;
-        border-top-right-radius: 0.5rem;
+        /* border-top-right-radius: 0.5rem; */
     }
 
     .data h2 {
@@ -162,6 +181,7 @@
 
     .services-items {
         flex-direction: column;
+        width: 100%;
     }
 
     .services-items .service-item {
@@ -169,10 +189,10 @@
     }
 
     .services-items .service-item img {
-        border-top-left-radius: 0.5rem;
+        /* border-top-left-radius: 0.5rem; */
         border-bottom-left-radius: 0;
         margin-bottom: 1em;
-        border-top-right-radius: 0.5rem;
+        /* border-top-right-radius: 0.5rem; */
         object-fit: cover;
     }
 

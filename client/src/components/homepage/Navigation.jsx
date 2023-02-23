@@ -141,7 +141,13 @@ export default function Navigation() {
 
           <div className="mobile-nav-style">
             <div className="menu-bar">
-              <div className="cart-icon">
+              <div
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions"
+                className="cart-icon"
+              >
                 <i class="ri-shopping-cart-2-line"></i>
                 <sup className="cart-no">1</sup>
               </div>

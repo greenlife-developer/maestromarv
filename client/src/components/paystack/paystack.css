@@ -27,11 +27,13 @@
 
 .container-cart-checkout .item .item-details p {
   margin: 0;
+  /* background-color: #02026B; */
   font-weight: bold;
   padding: 0;
 }
 
 .container-cart-checkout .item .item-details h3{
+  width: 170px;
   text-align: left;
 }
 
