@@ -68,10 +68,10 @@ export default function ViewProduct() {
   //   addCart.addEventListener("click", handleAddToCart)
   // })
 
-  // const formatter = new Intl.NumberFormat("en-US", {
-  //   style: "currency",
-  //   currency: "NGN",
-  // });
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "NGN",
+  });
 
   const handleDecreament = (e) => {
     if (items === 1) {
@@ -83,6 +83,8 @@ export default function ViewProduct() {
   const handleIncreament = () => {
     setItems(items + 1);
   };
+
+  const price = product[0].price * items
 
   const productName = <div style={{ fontSize: "12px" }}>{product[0].name}</div>;
 
@@ -98,7 +100,7 @@ export default function ViewProduct() {
         <div className="name-quantity">
           <div className="name">
             <h1>Lenovo Fold 2019</h1>
-            <h3>N300,401</h3>
+            <h3>{formatter.format(price)}</h3>
           </div>
           <br />
 
@@ -131,7 +133,7 @@ export default function ViewProduct() {
               </TabPane>
               <TabPane tab="Specification" key="2">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet adetoyi adipisicing elit.
                   Officiis, velit!
                 </p>
               </TabPane>
@@ -153,7 +155,9 @@ export default function ViewProduct() {
             <div className="sale-content">
               <h1>Lenovo Fold 2019</h1>
               <h5>N300,540</h5>
-              <button>View More</button>
+              <button>
+                <Link className="best-salebtn" to="/products">View More</Link>
+              </button>
             </div>
           </div>
           <div className="best-sale-card">
@@ -163,7 +167,9 @@ export default function ViewProduct() {
             <div className="sale-content">
               <h1>Lenovo Fold 2019</h1>
               <h5>N300,540</h5>
-              <button>View More</button>
+              <button>
+                <Link className="best-salebtn" to="/products">View More</Link>
+              </button>
             </div>
           </div>
           <div className="best-sale-card">
@@ -173,7 +179,9 @@ export default function ViewProduct() {
             <div className="sale-content">
               <h1>Lenovo Fold 2019</h1>
               <h5>N300,540</h5>
-              <button>View More</button>
+              <button>
+                <Link className="best-salebtn" to="/products">View More</Link>
+              </button>
             </div>
           </div>
         </div>
@@ -185,8 +193,8 @@ export default function ViewProduct() {
           top: 20,
         }}
         open={previewVisible}
-        // onOk={() => setPreviewVisible(false)}
-        // onCancel={() => setPreviewVisible(false)}
+        onOk={() => setPreviewVisible(false)}
+        onCancel={() => setPreviewVisible(false)}
       >
         <Paystack
           amount={

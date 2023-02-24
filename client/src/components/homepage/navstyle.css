@@ -119,17 +119,17 @@ header {
     background-color: transparent;
     border: 1.5px solid #EBF1FF;
     margin-right: .6em;
-    color: #EBF1FF;
+    /* color: #EBF1FF; */
 }
 
 .login-register button{
     padding: .3rem 1.8rem;
     /* border-radius: 1rem; */
     background-color: transparent;
-    border: 1.5px solid #EBF1FF;
+    border: 1.5px solid #02026B;
     margin-right: .6em;
     /* border-radius: 1rem; */
-    color: #EBF1FF;
+    color: #02026B;
 }
 
 .login-register1 button{
@@ -139,6 +139,7 @@ header {
 .user-loggedin-mobile{
     background-color: #EBF1FF;
     width: 325px;
+    color: #EBF1FF;
     display: flex;
     justify-content: center;
     height: 70px;
@@ -166,7 +167,8 @@ header {
 
 .login-register .login-fill,
 .login-register1 .login-fill {
-    background-color: #fff;
+    background-color: #02026B;
+    color: #EBF1FF;
     border: none;
     font-size: 18px;
     font-weight: 400;
@@ -174,14 +176,29 @@ header {
 }
 
 .login-fill .login-fill-btn {
-    color: #02026B;
+    color: #EBF1FF;
     /* color: #fff; */
 }
 
 .login-normal-btn{
-    color: #fff;
+    color: #02026B;
     font-size: 18px;
     font-weight: 400;
+}
+
+.login-register1 .login-fill{
+    background: #EBF1FF;
+    color: #02026B !important;
+}
+
+.menu-items-mobile .login-register1 .login-fill-btn{
+    color: #02026B !important;
+}
+
+.login-register1 .login-normal-btn{
+    background: transparent;
+    color: #EBF1FF;
+    border-radius: 1px solid #EBF1FF;
 }
 
 .container1 .navigationBox {

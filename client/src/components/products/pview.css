@@ -32,6 +32,7 @@
 
 .name-quantity h3,  .name-quantity h6,  .name-quantity span{
   font-family: arial;
+  cursor: pointer;
 }
 
 .name-quantity h1, .name-quantity h3{
@@ -113,6 +114,10 @@
   background: #fff;
   margin-right: 12px;
   min-width: 315px;
+}
+
+.best-on-sale .best-sale-card .best-salebtn{
+  color: #EBF1FF;
 }
 
 .best-on-sale .sale-content{
@@ -249,6 +254,11 @@
     background: #fff;
     margin-right: 12px;
     min-width: 315px;
+  }
+
+  .best-on-sale .card-container{
+    justify-content: start;
+    margin-left: 24px;
   }
 
   .best-on-sale .sale-content{

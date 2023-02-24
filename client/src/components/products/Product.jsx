@@ -52,7 +52,53 @@ export default function Product() {
           <div className="category-1">
             <div className="cat-head">
               <div className="cat-head-1">
-                <h1>Laptops and Phones</h1>
+                <h1>Laptops</h1>
+              </div>
+            </div>
+            <div className="cat-body">
+              {products.map((product, index) => {
+                return (
+                  <Item
+                    key={index}
+                    sold={product.sold}
+                    name={product.name}
+                    subprice={product.subprice}
+                    id={product.id}
+                    price={product.price}
+                    rating={product.rating}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="category-1">
+            <div className="cat-head">
+              <div className="cat-head-1">
+                <h1>Phones</h1>
+              </div>
+            </div>
+            <div className="cat-body">
+              {products.map((product, index) => {
+                return (
+                  <Item
+                    key={index}
+                    sold={product.sold}
+                    name={product.name}
+                    subprice={product.subprice}
+                    id={product.id}
+                    price={product.price}
+                    rating={product.rating}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="category-1">
+            <div className="cat-head">
+              <div className="cat-head-1">
+                <h1>Other Accessories</h1>
               </div>
             </div>
             <div className="cat-body">

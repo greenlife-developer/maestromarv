@@ -264,7 +264,14 @@ export default function Home() {
             </ul>
             <br />
             <br />
-            <button className="make-appointment-btn">Make Appointment</button>
+            <button>
+              <Link
+                className="make-appointment-btn"
+                to="/make-appointment/first-contact/"
+              >
+                Make Appontment
+              </Link>
+            </button>
           </div>
           <div className="item2"></div>
         </div>

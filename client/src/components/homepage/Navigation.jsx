@@ -9,6 +9,7 @@ export default function Navigation() {
   // console.log(currentLocation.pathname)
   const redirect = useNavigate();
   const [navBackground, setNavBackground] = useState("");
+  const [cart, setCart]  = useState("")
   const [login, setLogin] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
 
@@ -25,8 +26,9 @@ export default function Navigation() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log("data from api", data.data.isLogin);
+      console.log("data from api", data.data.cart.length);
       if (data.data.isLogin === true) {
+        setCart(data.data.cart.length)
         setLogin(data.data.isLogin);
       }
     });
@@ -149,7 +151,7 @@ export default function Navigation() {
                 className="cart-icon"
               >
                 <i class="ri-shopping-cart-2-line"></i>
-                <sup className="cart-no">1</sup>
+                <sup className="cart-no">{cart ? cart : "0"}</sup>
               </div>
               <div className="menu-icon" onClick={handleMenu}>
                 {changeIcon ? (
