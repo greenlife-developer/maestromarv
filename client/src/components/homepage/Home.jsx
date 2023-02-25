@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       <div className="fist-section">
-        <h1 className="text-center text-primary" data-aos="fade-right">
+        <h1 className="text-center" data-aos="fade-right">
           Why choose us?
         </h1>
         <div className="phone-pc">

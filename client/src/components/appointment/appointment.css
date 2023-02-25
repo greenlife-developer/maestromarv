@@ -158,11 +158,17 @@
 }
 
 .faq-container {
-    width: 900px;
+    width: 800px;
+    /* background: #02026B; */
 }
 
 .faq-container p {
     text-align: justify;
+    max-width: 90%;
+}
+
+.faq-header .header{
+   text-align: left;
 }
 
 
@@ -277,7 +283,7 @@
     }
 
     .faq-container {
-        width: 100vw;
+        width: 90vw;
         margin: 10px;
     }
 
