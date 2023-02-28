@@ -10,7 +10,8 @@ export default function Cart() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log(data.data.error);
+      console.log(data.data.cart);
+      
       if (data.data.isLogin === false) {
         setIcon(false);
         setCart(null);
@@ -18,17 +19,14 @@ export default function Cart() {
         setSales(null);
       }
       if (data.data.isLogin === true) {
-        if (data.data.user.email === data.data.cart.user.email) {
-          setCart(data.data.cart);
-          setCartno(data.data.cart.length);
-          setSales(data.data.sales);
-          setIcon(true);
-        } else {
-          setCart(null);
-          setCartno(null);
-          setIcon(false);
-          setSales(null);
-        }
+        const result = data.data.cart.filter((std) => {
+          return std.user.email === data.data.user.email;
+        });
+        console.log(result.length);
+        setCart(result);
+        setCartno(result.length);
+        setSales(data.data.sales);
+        setIcon(true);
       }
     });
   }, []);
@@ -46,7 +44,6 @@ export default function Cart() {
           aria-controls="offcanvasWithBothOptions"
           className="icon"
         >
-          {/* <i class="fa-solid fa-cart-shopping"></i> */}
           {icon ? (
             <i class="fa-solid fa-cart-shopping"></i>
           ) : (
@@ -77,7 +74,7 @@ export default function Cart() {
           ></button>
         </div>
 
-        <div class="offcanvas-body">
+        <div class="offcanvas-body" id="canvasBody">
           <div className="order-page">
             <div className="cart-details">
               <h4>View Your Cart({cartno})</h4>

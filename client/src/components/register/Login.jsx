@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import "./register.css";
 
 export default function Register() {
-  const redirect = useNavigate()
+  const redirect = useNavigate();
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
   });
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("error");
+
+  console.log(query);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +38,7 @@ export default function Register() {
     e.preventDefault();
 
     axios.post("/api/maestromarv/login", { loginForm }).then((res) => {
-      console.log(res)
+      console.log(res);
       // if(res.status === 200){
       //   console.log("Successfully registered!");
       //   redirect("/?message=logged-in");
@@ -57,6 +62,13 @@ export default function Register() {
                   </p>
                 </div>
                 <br />
+                {query ? (
+                  <div className="error-messages">
+                    <p>{query === "not_exists" ? "A User with this email does not exist": null}</p>
+                    <p>{query === "wrong_password" ? "The password does not match your email": null}</p>
+                  </div>
+                ) : null}
+
                 <div className="issue-type">
                   <label htmlFor="type">Email Address</label>
                   <input

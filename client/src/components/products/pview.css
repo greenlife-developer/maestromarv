@@ -31,7 +31,6 @@
 }
 
 .name-quantity h3,  .name-quantity h6,  .name-quantity span{
-  font-family: arial;
   cursor: pointer;
 }
 
@@ -131,7 +130,6 @@
 
 .sale-content h5{
   font-weight: 700;
-  font-family: arial;
 }
 
 .sale-content button{
@@ -177,9 +175,9 @@
     /* background-color: yellow; */
   }
 
-  .name-quantity h3,  .name-quantity h6,  .name-quantity span{
+  /* .name-quantity h3,  .name-quantity h6,  .name-quantity span{
     font-family: arial;
-  }
+  } */
 
   .name-quantity h1, .name-quantity h3{
     font-size: 25px;
@@ -272,7 +270,6 @@
 
   .sale-content h5{
     font-weight: 700;
-    font-family: arial;
   }
 
   .sale-content button{

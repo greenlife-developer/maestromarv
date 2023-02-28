@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import Item from "../products/Item";
+import Cart from "../products/Cart";
 import "./navstyle.css";
 import logo from "../images/logo.png";
 
@@ -9,7 +11,9 @@ export default function Navigation() {
   // console.log(currentLocation.pathname)
   const redirect = useNavigate();
   const [navBackground, setNavBackground] = useState("");
-  const [cart, setCart]  = useState("")
+  const [cart, setCart] = useState(null);
+  const [sales, setSales] = useState(null);
+  const [cartno, setCartno] = useState("");
   const [login, setLogin] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
 
@@ -26,10 +30,22 @@ export default function Navigation() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log("data from api", data.data.cart.length);
+      console.log(data.data.cart);
+      
+      if (data.data.isLogin === false) {
+        setCart(null);
+        setCartno(null);
+        setSales(null);
+      }
       if (data.data.isLogin === true) {
-        setCart(data.data.cart.length)
-        setLogin(data.data.isLogin);
+        const result = data.data.cart.filter((std) => {
+          return std.user.email === data.data.user.email;
+        });
+        console.log(result.length);
+        setLogin(true)
+        setCart(result);
+        setCartno(result.length);
+        setSales(data.data.sales);
       }
     });
 
@@ -143,15 +159,21 @@ export default function Navigation() {
 
           <div className="mobile-nav-style">
             <div className="menu-bar">
-              <div
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions"
-                aria-controls="offcanvasWithBothOptions"
-                className="cart-icon"
-              >
-                <i class="ri-shopping-cart-2-line"></i>
-                <sup className="cart-no">{cart ? cart : "0"}</sup>
+              <div className="">
+                <div
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasWithBothOptions"
+                  aria-controls="offcanvasWithBothOptions"
+                  className="cart-icon"
+                >
+                  <i class="ri-shopping-cart-2-line"></i>
+                  <div className="cart-no">
+                     <p>{cartno}</p>
+                  </div>
+                  
+                </div>
+                {/* <Cart /> */}
               </div>
               <div className="menu-icon" onClick={handleMenu}>
                 {changeIcon ? (

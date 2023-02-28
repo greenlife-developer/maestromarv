@@ -186,7 +186,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
             );
           });
         } else {
-          res.redirect("/register?error=exists");
+          res.redirect("/register?message=exists");
         }
       }
     );

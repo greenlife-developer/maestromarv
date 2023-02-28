@@ -1,6 +1,6 @@
 @font-face {
     font-family: "campton";
-    src: url(../../../public/Campton/Commercial/TTF/Campton-LightDEMO.ttf);
+    src: url(../../../public/campton/CamptonLight.otf);
 }
 
 * {
@@ -259,19 +259,25 @@ header {
     position: absolute;
     display: flex;
     align-items: center;
-    font-family: arial !important;
+    font-family: inherit;
     justify-content: center;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     left: 12px;
     top: -6px;
-    color: #fff;
-    background: #3D4CC6;
+    color: #EBF1FF;
+    background: #02026B;
     border-radius: 50%;
 }
 
+.mobile-nav-style .cart-no p{
+    margin: 0;
+    font-size: 10px;
+    padding: 0;
+}
+
 .mobile-nav-style .icon-x {
-    font-family: arial !important;
+    font-family: inherit;
 }
 
 .mobile-nav-style .icon-x::after {

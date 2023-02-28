@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Navigation from "./Navigation";
-import image from "../images/image1.png";
+import image from "../images/image1.jpg";
 import AOS from "aos";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
@@ -14,6 +14,7 @@ import "./home.css";
 import "aos/dist/aos.css";
 import Swipper from "./Reviews";
 import Footer from "./Footer";
+import Cart from "../products/Cart";
 
 export default function Home() {
   useEffect(() => {
@@ -29,10 +30,14 @@ export default function Home() {
   return (
     <>
       <Navigation />
+      {/* <Cart /> */}
       <div
         id="demo"
         class="carousel slide carousel-container"
         data-ride="carousel"
+        // id="carouselExampleControls"
+        // class="carousel slide carousel-container"
+        // data-ride="carousel"
       >
         <ul class="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -42,27 +47,29 @@ export default function Home() {
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src={image} alt="Los Angeles" width="100%" />
-            <div className="content-carouel">
-              <div className="" data-aos="fade-down">
-                <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
-                <p>Welcome to our world.</p>
-                <button>
-                  <Link
-                    className="make-appointment-btn"
-                    to="/make-appointment/first-contact/"
-                  >
-                    Start Now
-                  </Link>
-                </button>
+            <img src={image} alt="Maestromarv banner" width="100%" />
+            <div className="home-banner-carousel">
+              <div className="content-carouel">
+                <div className="" data-aos="fade-down">
+                  <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
+                  <p>Welcome to our world.</p>
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img src={image} alt="Chicago" width="100%" />
+            <img src={image} alt="Maestromarv banner" width="100%" />
           </div>
           <div class="carousel-item">
-            <img src={image} alt="New York" width="100%" />
+            <img src={image} alt="Maestromarv banner" width="100%" />
           </div>
         </div>
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
