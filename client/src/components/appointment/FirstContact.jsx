@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function FirstContact() {
   return (
-    <div className="first-contact">
+    <div className="first-contact" id="topup">
       <Navigation />
       <div className="offices">
         <h1>To make an appointment, please choose a store: </h1>

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Navigation from "./Navigation";
-import image from "../images/image1.jpg";
+import image from "../images/image2.jpg";
+import carousel from "../images/carousel.jpg";
+import carousel1 from "../images/carousel1.jpg";
 import AOS from "aos";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
@@ -8,13 +10,15 @@ import { Link } from "react-router-dom";
 import image4 from "../images/image4.jpg";
 import image6 from "../images/image6.jpg";
 import image5 from "../images/image5.jpg";
+import { Carousel } from "antd";
 import video2 from "../images/videos/video2.mp4";
 import section2 from "../images/section2.png";
-import "./home.css";
 import "aos/dist/aos.css";
 import Swipper from "./Reviews";
 import Footer from "./Footer";
 import Cart from "../products/Cart";
+
+import "./home.css";
 
 export default function Home() {
   useEffect(() => {
@@ -27,58 +31,57 @@ export default function Home() {
     AOS.refresh();
   }, []);
 
+  const contentStyle = {
+    height: "90vh",
+    color: "#fff",
+    marginTop: "60px",
+    textAlign: "center",
+    boxShadow: "inset 2px 2px 1000px rgba(0, 0, 0, 0.8)",
+    background: "#02026B",
+  };
+
   return (
     <>
       <Navigation />
       {/* <Cart /> */}
-      <div
-        id="demo"
-        class="carousel slide carousel-container"
-        data-ride="carousel"
-        // id="carouselExampleControls"
-        // class="carousel slide carousel-container"
-        // data-ride="carousel"
-      >
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={image} alt="Maestromarv banner" width="100%" />
-            <div className="home-banner-carousel">
-              <div className="content-carouel">
-                <div className="" data-aos="fade-down">
-                  <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
-                  <p>Welcome to our world.</p>
-                  <button>
-                    <Link
-                      className="make-appointment-btn"
-                      to="/make-appointment/first-contact/"
-                    >
-                      Make Appointment
-                    </Link>
-                  </button>
-                </div>
+      <Carousel effect="fade" autoplay>
+        <div>
+          <div className="antd-content-carousel1" style={contentStyle}>
+            <img src={image} alt="" />
+            <div className="antd-opacity-container">
+            <div className="content-carousel">
+              <div className="" data-aos="fade-down">
+                <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
+                <p>Welcome to our world.</p>
+                <button>
+                  <Link
+                    className="make-appointment-btn"
+                    to="/make-appointment/first-contact/#topup"
+                  >
+                    Make Appointment
+                  </Link>
+                </button>
               </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src={image} alt="Maestromarv banner" width="100%" />
-          </div>
-          <div class="carousel-item">
-            <img src={image} alt="Maestromarv banner" width="100%" />
+            </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel} alt="" />
+            <div className="content-carousel">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel1} alt="" />
+            <div className="content-carouel">
+            </div>
+          </div>
+        </div>
+      </Carousel>
 
       <div className="fist-section">
         <h1 className="text-center" data-aos="fade-right">
@@ -104,7 +107,7 @@ export default function Home() {
             <button>
               <Link
                 className="make-appointment-btn"
-                to="/make-appointment/first-contact/"
+                to="/make-appointment/first-contact/#topup"
               >
                 Make Appontment
               </Link>
@@ -132,7 +135,7 @@ export default function Home() {
           <button>
             <Link
               className="make-appointment-btn"
-              to="/make-appointment/first-contact/"
+              to="/make-appointment/first-contact/#topup"
             >
               Make Appontment
             </Link>
@@ -162,7 +165,7 @@ export default function Home() {
                 <button>
                   <Link
                     className="make-appointment-btn"
-                    to="/make-appointment/first-contact/"
+                    to="/make-appointment/first-contact/#topup"
                   >
                     Make Appontment
                   </Link>
@@ -183,7 +186,7 @@ export default function Home() {
                 <button>
                   <Link
                     className="make-appointment-btn"
-                    to="/make-appointment/first-contact/"
+                    to="/make-appointment/first-contact/#topup"
                   >
                     Make Appontment
                   </Link>
@@ -208,7 +211,7 @@ export default function Home() {
                 <button>
                   <Link
                     className="make-appointment-btn"
-                    to="/make-appointment/first-contact/"
+                    to="/make-appointment/first-contact/#topup"
                   >
                     Make Appontment
                   </Link>
@@ -232,7 +235,7 @@ export default function Home() {
                 <button>
                   <Link
                     className="make-appointment-btn"
-                    to="/make-appointment/first-contact/"
+                    to="/make-appointment/first-contact/#topup"
                   >
                     Make Appontment
                   </Link>
@@ -274,7 +277,7 @@ export default function Home() {
             <button>
               <Link
                 className="make-appointment-btn"
-                to="/make-appointment/first-contact/"
+                to="/make-appointment/first-contact/#topup"
               >
                 Make Appontment
               </Link>

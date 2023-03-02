@@ -9,7 +9,7 @@ export default function Repairs() {
   return (
     <>
       <Navigation />
-      <div className="repairs-page">
+      <div id="topup" className="repairs-page">
         <div className="repair-page-banner">
           <div className="re-banner-content">
             <h1>#1 Laptop Repair Service in Akure</h1>

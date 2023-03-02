@@ -13,7 +13,7 @@ export default function Navigation() {
   const [navBackground, setNavBackground] = useState("");
   const [cart, setCart] = useState(null);
   const [sales, setSales] = useState(null);
-  const [cartno, setCartno] = useState("");
+  const [cartno, setCartno] = useState("0");
   const [login, setLogin] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
 
@@ -31,7 +31,7 @@ export default function Navigation() {
   useEffect(() => {
     axios.get("/api").then((data) => {
       console.log(data.data.cart);
-      
+
       if (data.data.isLogin === false) {
         setCart(null);
         setCartno(null);
@@ -42,7 +42,7 @@ export default function Navigation() {
           return std.user.email === data.data.user.email;
         });
         console.log(result.length);
-        setLogin(true)
+        setLogin(true);
         setCart(result);
         setCartno(result.length);
         setSales(data.data.sales);
@@ -68,8 +68,7 @@ export default function Navigation() {
       <header
         style={{
           // backgroundColor: navBackground,
-          background:
-            "linear-gradient(273.29deg, rgba(2, 2, 107, 0.2) 0%, rgba(7, 10, 173, 0.1) 20.24%, rgba(255, 255, 255, 0.1) 67.09%, rgba(255, 255, 255, 0.1) 67.09%)",
+          background: "#EBF1FF",
           borderBottom:
             "linear-gradient(273.29deg,  #02026B 0%, #02026B 20.24%, #EBF1FF 67.09%, #EBF1FF 67.09%)",
           backdropFilter: "blur(20px)",
@@ -86,24 +85,24 @@ export default function Navigation() {
             <div className="nav-links">
               <ul>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/#">
+                  <NavLink className="nav-link" to="/#topup">
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/repairs#">
+                  <NavLink className="nav-link" to="/repairs#topup">
                     Repairs
                   </NavLink>
                 </li>
                 <li className="nav-link">
-                  <NavLink className="nav-link" to="/products#">
+                  <NavLink className="nav-link" to="/products#topup">
                     Products
                   </NavLink>
                 </li>
                 <li className="nav-link">
                   <NavLink
                     className="nav-link"
-                    to="/make-appointment/first-contact/#"
+                    to="/make-appointment/first-contact/#topup"
                   >
                     Contact
                   </NavLink>
@@ -115,16 +114,16 @@ export default function Navigation() {
                   <div className="dropdown">
                     <ul>
                       <li className="dropdown-link">
-                        <NavLink to="/#">About us</NavLink>
+                        <NavLink to="/#topup">About us</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/#">Blog</NavLink>
+                        <NavLink to="/#topup">Blog</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/#">Location</NavLink>
+                        <NavLink to="/#topup">Location</NavLink>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/#">FAQ</NavLink>
+                        <NavLink to="/#topup">FAQ</NavLink>
                       </li>
                       <div className="arrow"></div>
                     </ul>
@@ -169,11 +168,9 @@ export default function Navigation() {
                 >
                   <i class="ri-shopping-cart-2-line"></i>
                   <div className="cart-no">
-                     <p>{cartno}</p>
+                    <p>{cartno}</p>
                   </div>
-                  
                 </div>
-                {/* <Cart /> */}
               </div>
               <div className="menu-icon" onClick={handleMenu}>
                 {changeIcon ? (
@@ -259,6 +256,74 @@ export default function Navigation() {
           </div>
         </div>
       </header>
+
+      <div
+        class="offcanvas offcanvas-end"
+        data-bs-scroll="true"
+        tabindex="-1"
+        id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+            Orders Details
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <div className="order-page">
+            <div className="cart-details">
+              <h4>View Your Cart({cartno})</h4>
+              <div className="cart-items">
+                {cart
+                  ? cart.map((cat, id) => {
+                      return (
+                        <Item
+                          key={id}
+                          sold={cat[0].sold}
+                          name={cat[0].name}
+                          id={cat[0].id}
+                          price={cat[0].price}
+                          rating={cat[0].rating}
+                        />
+                      );
+                    })
+                  : null}
+              </div>
+            </div>
+            <br />
+            <br />
+
+            <div className="cart-details">
+              <h4>View Your Orders</h4>
+              <div className="cart-items">
+                {sales && sales[0] && sales[0].item
+                  ? sales.map((sale, id) => {
+                      return (
+                        <Item
+                          key={id}
+                          sold={sale.item[0].sold}
+                          name={sale.item[0].name}
+                          id={sale.item[0].id}
+                          price={sale.item[0].price}
+                          rating={sale.item[0].rating}
+                          phone={sale.item[0].phone}
+                          call={"call"}
+                        />
+                      );
+                    })
+                  : null}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

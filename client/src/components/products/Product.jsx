@@ -2,7 +2,9 @@ import React from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
+import productImage from "../images/products.jpg";
 import accessories from "../images/accessories.jpg";
+import { Carousel } from "antd";
 import "antd/dist/antd.min.css";
 import "./products.css";
 import products from "../../products";
@@ -11,40 +13,32 @@ import Cart from "./Cart";
 import Item from "./Item";
 
 export default function Product() {
+  const contentStyle = {
+    height: "45vh",
+    color: "#fff",
+    marginTop: "60px",
+    textAlign: "center",
+    boxShadow: "inset 2px 2px 1000px rgba(0, 0, 0, 0.8)",
+    background: "#02026B",
+  };
 
   return (
     <>
       <div className="product-page-container">
         <Navigation />
-        <div
-          id="demo"
-          class="carousel slide carousel-container"
-          data-ride="carousel"
-        >
-          <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" className="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-          </ul>
 
-          <div class="carousel-inner">
-            <div class="carousel-item2 active">
-              <img src={phoneaccess} alt="Laptop cover" width="100%" />
-            </div>
-            <div class="carousel-item">
-              <img src={laptopaccess} alt="laptopaccess" width="100%" />
-            </div>
-            <div class="carousel-item">
-              <img src={accessories} alt="laptopaccess" width="100%" />
+        <Carousel effect="fade" autoplay>
+          <div>
+            <div className="antd-product-carousel" style={contentStyle}>
+              <img src={phoneaccess} alt="" />
             </div>
           </div>
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-        </div>
+          <div>
+            <div className="antd-product-carousel" style={contentStyle}>
+              <img src={productImage} alt="" />
+            </div>
+          </div>
+        </Carousel>
 
         <Cart />
 
@@ -76,6 +70,29 @@ export default function Product() {
             <div className="cat-head">
               <div className="cat-head-1">
                 <h1>Phones</h1>
+              </div>
+            </div>
+            <div className="cat-body">
+              {products.map((product, index) => {
+                return (
+                  <Item
+                    key={index}
+                    sold={product.sold}
+                    name={product.name}
+                    subprice={product.subprice}
+                    id={product.id}
+                    price={product.price}
+                    rating={product.rating}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="category-1">
+            <div className="cat-head">
+              <div className="cat-head-1">
+                <h1>Electronics</h1>
               </div>
             </div>
             <div className="cat-body">

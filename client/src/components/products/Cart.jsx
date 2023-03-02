@@ -5,7 +5,7 @@ import Item from "./Item";
 export default function Cart() {
   const [cart, setCart] = useState(null);
   const [sales, setSales] = useState(null);
-  const [cartno, setCartno] = useState(null);
+  const [cartno, setCartno] = useState("0");
   const [icon, setIcon] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Cart() {
       if (data.data.isLogin === false) {
         setIcon(false);
         setCart(null);
-        setCartno(null);
+        setCartno("0");
         setSales(null);
       }
       if (data.data.isLogin === true) {

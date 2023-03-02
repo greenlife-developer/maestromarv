@@ -5,50 +5,71 @@
     color: #EBF1FF;
 }
 
-.carousel-container {
+/* .carousel-container {
     position: relative;
     margin-top: 60px;
-}
+} */
 
-.home-banner-carousel{
+/* .home-banner-carousel{
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    /* background: #02026B; */
+    /* background: #02026B; 
     box-shadow: inset 2px 2px 1000px rgba(0, 0, 0, 0.8);
+} */
+
+.antd-opacity-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+
 }
 
 
-.content-carouel {
+.content-carousel {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-weight: 400;
+    font-weight: 600;
     transform: translateX(-50%) translateY(-50%);
     /* background: #02026B; */
     padding: .5rem;
     color: white;
 }
 
-.content-carouel h1 {
-    font-weight: 400;
-    color: white;
+.content-carousel h1 {
+    font-weight: 600;
+    color: #EBF1FF;
 }
 
-.carousel-item img {
+/* .carousel-item img {
     object-fit: cover;
     background: #02026B;
     width: 100%;
     height: 85vh;
-}
+} */
 
-.carousel-item2 img {
+/* .carousel-item2 img {
     height: 45vh;
+}  */
+
+.antd-content-carousel1 img{
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.9)
 }
 
-.content-carouel button {
+.antd-content-carousel img, .antd-content-carousel1 img{
+    object-fit: cover !important;
+    width: 100%;
+    height: 100%;
+}
+
+
+.content-carousel button {
     background-color: transparent;
     padding: .5rem 2.5rem;
     border: none;
@@ -57,7 +78,7 @@
     color: #EBF1FF;
 }
 
-.content-carouel .make-appointment-btn{
+.content-carousel .make-appointment-btn{
     color: #EBF1FF;
 }
 
@@ -70,7 +91,7 @@
 }
 
 .fist-section h1 {
-    font-weight: 400;
+    font-weight: 600;
     /* background: yellow; */
     color: #02026B;
 }
@@ -125,7 +146,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 400;
+    font-weight: 600;
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -133,7 +154,7 @@
 }
 
 .section-2 h1 {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .section-2 .section-2-content {
@@ -176,7 +197,7 @@
     bottom: 0;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     width: 100%;
-    font-weight: 400;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,7 +210,7 @@
 }
 
 .section-3-content h1 {
-    font-weight: 400;
+    font-weight: 600;
     color: white;
 }
 
@@ -282,7 +303,7 @@
 
 
 .section-5 h6 {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.5rem;
     color: #fff;
     letter-spacing: 2px;
@@ -300,7 +321,7 @@
 
 .our-services {
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 
@@ -329,7 +350,7 @@
     text-transform: uppercase;
     display: flex;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     padding: 7px 0 10px;
 }
 
@@ -382,7 +403,7 @@
 .about h3,
 .customer h3 {
     padding: 2rem 1rem;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.6rem;
 }
 
@@ -408,7 +429,7 @@
 
 .footer-item-logo hr {
     color: #EBF1FF;
-    font-weight: 700;
+    font-weight: 900;
     width: 100%;
     height: 3px !important;
 }
@@ -481,7 +502,7 @@
 
 .footer-items .footer-item h1 {
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 14px;
     margin-bottom: 1rem;
     color: #EBF1FF;
@@ -491,7 +512,7 @@
     font-style: normal;
     color: white;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 
@@ -507,18 +528,24 @@
 
     .section-3 {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         grid-gap: 2rem 1.2rem;
         margin: 2rem 2rem;
     }
 
-    .carousel-item img {
-        height: 80vh;
+    .antd-content-carousel, .antd-content-carousel1{
+        height: 80vh !important;
     }
 
-    .carousel-item2 img {
-        height: 30vh;
+    .antd-content-carousel img{
+        object-fit: contain !important;
+        width: 100%;
+        height: 100%;
     }
+
+    /* .carousel-item2 img {
+        height: 30vh;
+    } */
 
     .footer-container .footer-items {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -566,10 +593,11 @@
 @media screen and (max-width: 430px) {
 
     /* ------------------------- Carousel ----------------------------- */
-    .content-carouel {
-        position: absolute;
-        /* top: 40%; */
+    .content-carousel {
+        /* position: absolute;
+        top: 40%; */
         width: 100%;
+        /* background: #888; */
     }
 
     /* ------------------------- !Carousel ----------------------------- */
@@ -637,7 +665,7 @@
     }
 
     .section-3-content p {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .section-3 img {

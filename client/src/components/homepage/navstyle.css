@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 300;
+    /* font-weight: 300; */
 }
 
 body {
@@ -162,7 +162,7 @@ header {
     margin: 0 auto;
     font-size: 32px;
     color: #02026B;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .login-register .login-fill,
@@ -171,7 +171,7 @@ header {
     color: #EBF1FF;
     border: none;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     /* color: #EBF1FF; */
 }
 
@@ -183,7 +183,7 @@ header {
 .login-normal-btn{
     color: #02026B;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .login-register1 .login-fill{
@@ -218,15 +218,19 @@ header {
     display: block;
 } */
 
-.container1 .offcanvas-header {
+/* .container1 .offcanvas-header {
     background-color: #000;
     color: #fff;
-}
+} */
 
-.container1 .offcanvas-header button {
+/* .container1 .offcanvas-body{
+    height: 100vh !important;
+} */
+
+/* .container1 .offcanvas-header button {
     color: #fff;
     background-color: #02026B;
-}
+} */
 
 /* .container1 .mobile-navs .nav-items{
 
@@ -362,7 +366,7 @@ header {
 
 .mobile-nav-style .menu-items-mobile .mobile-menu-btn {
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 600;
     color: #EBF1FF;
 }
 
@@ -402,7 +406,15 @@ header {
         display: block;
     }
 
+    
+
     .mobile-nav-style {
         display: block;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .mobile-nav-style .menu-items-mobile .login-register1{
+        padding: 2rem 0 1.8rem .5rem;
     }
 }
