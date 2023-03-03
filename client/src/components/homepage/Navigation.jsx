@@ -14,6 +14,7 @@ export default function Navigation() {
   const [cart, setCart] = useState(null);
   const [sales, setSales] = useState(null);
   const [cartno, setCartno] = useState("0");
+  const [user, setUser] = useState(null);
   const [login, setLogin] = useState(false);
   const [changeIcon, setChangeIcon] = useState(false);
 
@@ -30,7 +31,7 @@ export default function Navigation() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log(data.data.cart);
+      console.log(data.data);
 
       if (data.data.isLogin === false) {
         setCart(null);
@@ -43,6 +44,7 @@ export default function Navigation() {
         });
         console.log(result.length);
         setLogin(true);
+        setUser(data.data.user)
         setCart(result);
         setCartno(result.length);
         setSales(data.data.sales);
@@ -185,7 +187,7 @@ export default function Navigation() {
                   {login ? (
                     <div className="user-loggedin-mobile">
                       {/* <div className="username"> */}
-                      <h1>Welcome, Deborah</h1>
+                      <h1>Welcome, {user ? user.firstName : null}</h1>
                       {/* </div> */}
                     </div>
                   ) : null}
