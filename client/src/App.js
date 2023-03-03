@@ -12,12 +12,14 @@ import Register from './components/register/Register';
 import Login from './components/register/Login';
 import FirstContact from './components/appointment/FirstContact'
 import New from './components/products/New';
-import Booked from "./components/appointment/Booked"
+import Booked from "./components/appointment/Booked";
+import ScrollToTop from './scrollToTop';
 
 export default function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/repairs" element={<Repairs />} />

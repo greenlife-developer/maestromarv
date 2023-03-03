@@ -36,7 +36,7 @@ const Faq = () => {
             </p>
           </div>
         </Panel>
-        <Panel className="header" header="Can one or two keys on my keyboard be fixed" key="3">
+        <Panel className="header" header="Can one or two keys on my keyboard be fixed" key="4">
           <div className="faq-container">
             <p>
               it depends, it may work and it may not work when serviced, the

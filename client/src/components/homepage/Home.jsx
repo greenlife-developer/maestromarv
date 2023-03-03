@@ -109,7 +109,7 @@ export default function Home() {
                 className="make-appointment-btn"
                 to="/make-appointment/first-contact/#topup"
               >
-                Make Appontment
+                Make Appointment
               </Link>
             </button>
           </div>
@@ -137,7 +137,7 @@ export default function Home() {
               className="make-appointment-btn"
               to="/make-appointment/first-contact/#topup"
             >
-              Make Appontment
+              Make Appointment
             </Link>
           </button>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
                     className="make-appointment-btn"
                     to="/make-appointment/first-contact/#topup"
                   >
-                    Make Appontment
+                    Make Appointment
                   </Link>
                 </button>
               </div>
@@ -188,7 +188,7 @@ export default function Home() {
                     className="make-appointment-btn"
                     to="/make-appointment/first-contact/#topup"
                   >
-                    Make Appontment
+                    Make Appointment
                   </Link>
                 </button>
               </div>
@@ -213,7 +213,7 @@ export default function Home() {
                     className="make-appointment-btn"
                     to="/make-appointment/first-contact/#topup"
                   >
-                    Make Appontment
+                    Make Appointment
                   </Link>
                 </button>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                     className="make-appointment-btn"
                     to="/make-appointment/first-contact/#topup"
                   >
-                    Make Appontment
+                    Make Appointment
                   </Link>
                 </button>
               </div>
@@ -279,7 +279,7 @@ export default function Home() {
                 className="make-appointment-btn"
                 to="/make-appointment/first-contact/#topup"
               >
-                Make Appontment
+                Make Appointment
               </Link>
             </button>
           </div>

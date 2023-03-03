@@ -606,8 +606,8 @@
     .phone-pc {
         display: flex;
         flex-direction: column-reverse;
-        margin: .5rem;
-        padding: 1rem;
+        margin: 2rem .3rem;
+        padding: .5rem;
     }
 
     .phone-pc-info {

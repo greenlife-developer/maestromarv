@@ -48,19 +48,6 @@ export default function Navigation() {
         setSales(data.data.sales);
       }
     });
-
-    window.onscroll = function () {
-      if (currentLocation.pathname === "/") {
-        if (window.scrollY > window.innerHeight) {
-          setNavBackground("rgba(0, 0, 0, 1)");
-        }
-        if (window.scrollY < window.innerHeight) {
-          setNavBackground("rgba(0, 0, 0, .3)");
-        }
-      } else {
-        setNavBackground("rgba(0, 0, 0, 1)");
-      }
-    };
   });
 
   return (
