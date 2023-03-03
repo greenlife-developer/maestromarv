@@ -1,13 +1,19 @@
 .main-product {
   background: #EBF1FF;
-  width: 100%;
+  min-width: 100%;
+  /* background-color: blue; */
   margin-top: 60px;
   display: flex;
 }
 
+.main-product .carousel.slide{
+  min-width: 50% !important;
+  /* background-color: white; */
+}
+
 .main-product .product-img {
-  width: 50%;
-  /* background: #1E1E1E;; */
+  min-width: 100% !important;
+  /* background: #1E1E1E; */
   height: 375px;
   display: flex;
   justify-content: center;
@@ -24,7 +30,7 @@
 
 .main-product .name-quantity {
   padding: 20px;
-  width: 50%;
+  min-width: 50%;
   /* background-color: yellow; */
 }
 
