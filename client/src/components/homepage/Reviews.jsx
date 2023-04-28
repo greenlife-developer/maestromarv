@@ -21,7 +21,7 @@ export default function Swipper() {
   return (
     <div className="container customer">
       <h3 style={{textAlign: "center"}}>What our customer's say</h3>
-      <hr />
+      {/* <hr /> */}
       <Swiper
         spaceBetween={30} 
         slidesPerView={window.screen.width <= 425 ? 1 : 3}

@@ -6,6 +6,8 @@ const express = require("express");
 const router = express.Router();
 sgMail.setApiKey(process.env.MAIL_KEY);
 const bcrypt = require("bcrypt");
+const pdfTemplate = require("../documents");
+
 
 const mongodb = require("mongodb");
 const ObjectId = mongodb.ObjectId;
@@ -121,8 +123,13 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
 
   router.post("/maestromarv/appointment", (req, res) => {
     const currentTime = new Date().getTime();
-    const fullName =
-      req.body.appointment.fName + " " + req.body.appointment.lName;
+    const user = {
+      name: req.body.appointment.fName + " " + req.body.appointment.lName,
+      phone: "09087635542",
+      region: "Abuja",
+      position: "Leader",
+      date: currentTime
+    }
     database.collection("apppointments").insertOne(
       {
         createdAt: currentTime,
@@ -142,16 +149,14 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
           from: "maestromarve@gmail.com",
           to: "yemijoshua81@gmail.com",
           subject: "A new appointmemt",
-          html: `
-              <h3>Appointment by ${fullName}</h4>
-              <h5>Please I need a quiker reply sir</h5>
-            `,
+          html: `${pdfTemplate(user)} Ade`,
         };
 
         sgMail
-          .send(emailData)
+          .send(emailData)   
           .then((sent) => {
-            return res.json({
+            console.log(sent)
+              return res.json({
               message: `Email has been sent!`,
             });
           })

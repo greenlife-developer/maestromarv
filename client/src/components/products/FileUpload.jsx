@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 import { PlusOutlined, EyeOutlined  } from "@ant-design/icons";
 import { Modal } from "antd";
 import { useEffect } from "react";

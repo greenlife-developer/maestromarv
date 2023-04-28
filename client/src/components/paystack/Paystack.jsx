@@ -1,14 +1,15 @@
 import React, { useRef, useState } from "react";
 import PaystackPop from "@paystack/inline-js";
 import { SmileOutlined } from "@ant-design/icons";
-import "antd/dist/antd.min.css";
+// import "antd/dist/antd.min.css";
 import { notification } from "antd";
 import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
-  const publicKey = "pk_test_ea2edc0186f8edb588fe762f89d73ef2c0fdeeef";
-  const amount = props.amount;
+  const publicKey = 'pk_live_a1ed994ce8fed73e65ba3662766e0782e38c7af0';
+  const amount = 1500000;
+  const currency = "NGN"
   const item = props.item;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ const Paystack = (props) => {
   const componentProps = {
     email,
     amount,
+    currency,
     metadata: {
       name,
       phone,

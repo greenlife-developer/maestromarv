@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "antd/dist/antd.min.css";
+// import "antd/dist/antd.min.css";
 import { SmileOutlined } from "@ant-design/icons";
 import { Tabs, Button, notification } from "antd";
 import "./appointment.css";

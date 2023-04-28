@@ -39,7 +39,7 @@ export default function FirstContact() {
 
       <div className="faq">
         <div className="faq-container">
-          <h1>Frequesntly Asked Questions</h1>
+          <h1>Frequently Asked Questions</h1>
           <div className="">
             <Faq />
           </div>

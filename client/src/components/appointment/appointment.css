@@ -157,18 +157,29 @@
     margin-top: 5rem;
 }
 
-.faq-container {
+.faq-header{
     width: 800px;
-    /* background: #02026B; */
+    margin: 0 auto;
+}
+
+.faq-container {
+    width: 100%;
+    /* background-color: #02026B !important; */
 }
 
 .faq-container p {
     text-align: justify;
-    max-width: 90%;
+    font-weight: 300;
 }
 
 .faq-header .header{
-   text-align: left;
+    background-color: #EBF1FF !important;
+    font-weight: 700;
+    text-align: left;
+}
+
+.faq-header .header div{
+    background: #EBF1FF;
 }
 
 
@@ -282,8 +293,12 @@
         height: 100%;
     }
 
+    .faq-header{
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .faq-container {
-        width: 90vw;
         margin: 10px;
     }
 

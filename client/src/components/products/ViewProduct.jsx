@@ -6,7 +6,7 @@ import { Modal } from "antd";
 import axios from "axios";
 import { SmileOutlined } from "@ant-design/icons";
 import Footer from "../homepage/Footer";
-import "antd/dist/antd.min.css";
+// import "antd/dist/antd.min.css";
 import { Tabs, Button, notification } from "antd";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
@@ -159,7 +159,7 @@ export default function ViewProduct() {
 
         <div className="name-quantity">
           <div className="name">
-            <h1>Lenovo Fold 2019</h1>
+            <h1>{product[0].name}</h1>
             <h3>{formatter.format(price)}</h3>
           </div>
           <br />
@@ -187,14 +187,12 @@ export default function ViewProduct() {
             <Tabs tabPosition={window.innerWidth <= 425 ? "top" : "top"}>
               <TabPane tab="Description" key="1">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, velit!
+                  {product[0].description}
                 </p>
               </TabPane>
               <TabPane tab="Specification" key="2">
                 <p>
-                  Lorem ipsum dolor sit amet adetoyi adipisicing elit. Officiis,
-                  velit!
+                  {product[0].specification}
                 </p>
               </TabPane>
             </Tabs>
