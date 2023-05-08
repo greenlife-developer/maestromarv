@@ -22,7 +22,7 @@ export default function Item(props) {
         <div className="cat-item">
           <div className="cat-item-img">
             <a href={"/products/view/" + props.id}>
-              <img src={laptop} alt={props.name} />
+              <img src={props.url} alt={props.name} />
             </a>
           </div>
           <div className="item-content">

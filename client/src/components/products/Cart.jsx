@@ -85,6 +85,7 @@ export default function Cart() {
                         <Item
                           key={id}
                           sold={cat[0].sold}
+                          url={cat[0].img}
                           name={cat[0].name}
                           id={cat[0].id}
                           price={cat[0].price}
@@ -109,6 +110,7 @@ export default function Cart() {
                           sold={sale.item[0].sold}
                           name={sale.item[0].name}
                           id={sale.item[0].id}
+                          url={sale.item[0].img}
                           price={sale.item[0].price}
                           rating={sale.item[0].rating}
                           phone={sale.item[0].phone}

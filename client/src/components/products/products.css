@@ -1,6 +1,30 @@
+.search{
+  display: flex;
+  justify-content: right;
+  margin: .5rem 1.5rem;
+}
+
+.search input{
+  margin: 0;
+  border: 1.5px solid #ddd;
+  outline: none;
+  background: transparent;
+  padding: .3rem .4rem;
+  width: 250px;
+}
+
+.product-search-icon{
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+  cursor: pointer;
+}
+
+
 .product-page .carousel-item img{
   height: 40vh;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .product-page-container .carousel-container{
@@ -240,9 +264,13 @@
 /* ------------- Queries ------------------------ */
 @media screen and (max-width: 430px) {
 
-  .category-1{
+  .category-1, .search{
     width: 100%;
-    margin: 0;
+    margin: .5rem 0;
+  }
+
+  .search input{
+    width: 200px;
   }
 
   .cat-head h1{

@@ -28,6 +28,12 @@ export default function ViewProduct() {
     return std.id === selected;
   });
 
+  const bestOnSale = products.filter((std) => {
+    return std.category === product[0].category;
+  });
+
+  const productImages = product[0].otherImages;
+
   const handleCancel = () => setPreviewVisible(false);
 
   const handleRedirect = () => {
@@ -121,19 +127,28 @@ export default function ViewProduct() {
             ></button>
           </div>
           <div class="carousel-inner">
+            {/* {productImages.map((image, id) => {
+              return (
+                <div key={id} class="carousel-item active">
+                  <div className="product-img">
+                    <img src={image.img1} alt={product[0].name} />
+                  </div>
+                </div>
+              );
+            })} */}
             <div class="carousel-item active">
               <div className="product-img">
-                <img src={laptop} alt="" />
+                <img src={product[0].otherImages[0].img1} alt="" />
               </div>
             </div>
             <div class="carousel-item">
               <div className="product-img">
-                <img src={laptop} alt="" />
+                <img src={product[0].otherImages[1].img1} alt="" />
               </div>
             </div>
             <div class="carousel-item">
               <div className="product-img">
-                <img src={laptop} alt="" />
+                <img src={product[0].otherImages[2].img1} alt="" />
               </div>
             </div>
           </div>
@@ -186,14 +201,10 @@ export default function ViewProduct() {
           <div className="">
             <Tabs tabPosition={window.innerWidth <= 425 ? "top" : "top"}>
               <TabPane tab="Description" key="1">
-                <p>
-                  {product[0].description}
-                </p>
+                <p>{product[0].description}</p>
               </TabPane>
               <TabPane tab="Specification" key="2">
-                <p>
-                  {product[0].specification}
-                </p>
+                <p>{product[0].specification}</p>
               </TabPane>
             </Tabs>
           </div>
@@ -206,48 +217,26 @@ export default function ViewProduct() {
           <h1>Best on sale</h1>
         </div>
         <div className="card-container">
-          <div className="best-sale-card">
-            <div className="sale-bg">
-              <img src={laptop} alt="" />
-            </div>
-            <div className="sale-content">
-              <h1>Lenovo Fold 2019</h1>
-              <h5>N300,540</h5>
-              <button>
-                <Link className="best-salebtn" to="/products">
-                  View More
-                </Link>
-              </button>
-            </div>
-          </div>
-          <div className="best-sale-card">
-            <div className="sale-bg">
-              <img src={laptop} alt="" />
-            </div>
-            <div className="sale-content">
-              <h1>Lenovo Fold 2019</h1>
-              <h5>N300,540</h5>
-              <button>
-                <Link className="best-salebtn" to="/products">
-                  View More
-                </Link>
-              </button>
-            </div>
-          </div>
-          <div className="best-sale-card">
-            <div className="sale-bg">
-              <img src={laptop} alt="" />
-            </div>
-            <div className="sale-content">
-              <h1>Lenovo Fold 2019</h1>
-              <h5>N300,540</h5>
-              <button>
-                <Link className="best-salebtn" to="/products">
-                  View More
-                </Link>
-              </button>
-            </div>
-          </div>
+          {bestOnSale
+            ? bestOnSale.map((bestSale, id) => {
+                return (
+                  <div key={id} className="best-sale-card">
+                    <div className="sale-bg">
+                      <img src={bestSale.img} alt="" />
+                    </div>
+                    <div className="sale-content">
+                      <h1>{bestSale.name}</h1>
+                      <h5>{formatter.format(bestSale.price)}</h5>
+                      <button>
+                        <Link className="best-salebtn" to="/products">
+                          View More
+                        </Link>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
 
@@ -255,6 +244,7 @@ export default function ViewProduct() {
         title="Confirm and proceed to payment"
         style={{
           top: 20,
+          padding: 20
         }}
         open={previewVisible}
         onOk={() => setPreviewVisible(false)}

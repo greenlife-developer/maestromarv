@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
@@ -26,18 +26,28 @@ export default function Product() {
   //   return std.name === style;
   // });
 
-  const laptops = products.filter((laptop) => {
-    return laptop.category === "laptop"
-  })
-  const phones = products.filter((phone) => {
-    return phone.category === "phone"
-  })
-  const electronics = products.filter((electronic) => {
-    return electronic.category === "electronics"
-  })
-  const otherAccessories = products.filter((other) => {
-    return other.category === "other accessories"
-  })
+  const [filteredProduct, setFilteredProduct] = useState(products);
+
+  function handleSearch(e) {
+    const search = e.target.value;
+    const result = products.filter((std) => {
+      return std.name.contains(search);
+    });
+    setFilteredProduct(result);
+  }
+
+  const laptops = filteredProduct.filter((laptop) => {
+    return laptop.category === "laptop";
+  });
+  const phones = filteredProduct.filter((phone) => {
+    return phone.category === "phone";
+  });
+  const electronics = filteredProduct.filter((electronic) => {
+    return electronic.category === "electronics";
+  });
+  const otherAccessories = filteredProduct.filter((other) => {
+    return other.category === "other accessories";
+  });
 
   return (
     <>
@@ -60,6 +70,17 @@ export default function Product() {
         <Cart />
 
         <div className="product-categories">
+          <div className="search">
+            <div className="product-search-icon">
+              <i className="fa-solid fa-lens">a</i>
+            </div>
+            <input
+              type="text"
+              onChange={handleSearch}
+              placeholder="Search products"
+              className="search"
+            />
+          </div>
           <div className="category-1">
             <div className="cat-head">
               <div className="cat-head-1">
@@ -73,6 +94,7 @@ export default function Product() {
                     key={index}
                     sold={product.sold}
                     name={product.name}
+                    url={product.img}
                     subprice={product.subprice}
                     id={product.id}
                     price={product.price}
@@ -98,6 +120,7 @@ export default function Product() {
                     name={product.name}
                     subprice={product.subprice}
                     src={product.img}
+                    url={product.img}
                     id={product.id}
                     price={product.price}
                     rating={product.rating}
@@ -122,6 +145,7 @@ export default function Product() {
                     name={product.name}
                     subprice={product.subprice}
                     id={product.id}
+                    url={product.img}
                     price={product.price}
                     rating={product.rating}
                   />
@@ -145,6 +169,7 @@ export default function Product() {
                     name={product.name}
                     subprice={product.subprice}
                     id={product.id}
+                    url={product.img}
                     price={product.price}
                     rating={product.rating}
                   />

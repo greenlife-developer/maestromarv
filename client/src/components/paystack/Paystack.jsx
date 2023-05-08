@@ -8,7 +8,7 @@ import "./paystack.css";
 
 const Paystack = (props) => {
   const publicKey = 'pk_live_a1ed994ce8fed73e65ba3662766e0782e38c7af0';
-  const amount = 1500000;
+  const amount = props.amount;
   const currency = "NGN"
   const item = props.item;
   const [email, setEmail] = useState("");
@@ -75,7 +75,7 @@ const Paystack = (props) => {
       <div className="container-cart-checkout">
         <div className="item">
           <div className="item-details">
-            <h3>{productTitle}</h3>
+            <h3>{truncate(props.name, 1)}</h3>
             <p>{amount}</p>
           </div>
         </div>
