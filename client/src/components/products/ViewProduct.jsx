@@ -138,7 +138,7 @@ export default function ViewProduct() {
             })} */}
             <div class="carousel-item active">
               <div className="product-img">
-                <img src={product[0].otherImages[0].img1} alt="" />
+                <img src={product[0].img} alt="" />
               </div>
             </div>
             <div class="carousel-item">
@@ -216,27 +216,29 @@ export default function ViewProduct() {
         <div className="heading">
           <h1>Best on sale</h1>
         </div>
-        <div className="card-container">
-          {bestOnSale
-            ? bestOnSale.map((bestSale, id) => {
-                return (
-                  <div key={id} className="best-sale-card">
-                    <div className="sale-bg">
-                      <img src={bestSale.img} alt="" />
+        <div className="flex-card-container">
+          <div className="card-container">
+            {bestOnSale
+              ? bestOnSale.map((bestSale, id) => {
+                  return (
+                    <div key={id} className="best-sale-card">
+                      <div className="sale-bg">
+                        <img src={bestSale.img} alt="" />
+                      </div>
+                      <div className="sale-content">
+                        <h1>{bestSale.name}</h1>
+                        <h5>{formatter.format(bestSale.price)}</h5>
+                        <button>
+                          <Link className="best-salebtn" to="/products">
+                            View More
+                          </Link>
+                        </button>
+                      </div>
                     </div>
-                    <div className="sale-content">
-                      <h1>{bestSale.name}</h1>
-                      <h5>{formatter.format(bestSale.price)}</h5>
-                      <button>
-                        <Link className="best-salebtn" to="/products">
-                          View More
-                        </Link>
-                      </button>
-                    </div>
-                  </div>
-                );
-              })
-            : null}
+                  );
+                })
+              : null}
+          </div>
         </div>
       </div>
 
@@ -244,7 +246,7 @@ export default function ViewProduct() {
         title="Confirm and proceed to payment"
         style={{
           top: 20,
-          padding: 20
+          padding: 20,
         }}
         open={previewVisible}
         onOk={() => setPreviewVisible(false)}

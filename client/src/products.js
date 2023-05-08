@@ -5,7 +5,7 @@ const products = [
         specification: "specification",
         category: "electronics",
         price: 1800,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s",
+        img: "https://i.ibb.co/pJTcMQ4/fixedsolderingiron.jpg",
         otherImages: [
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
@@ -37,7 +37,7 @@ const products = [
         specification: "specification",
         category: "electronics",
         price: 4863.63,
-        img: "../images/laptop.png",
+        img: "https://i.ibb.co/HnLZqHw/A80L.webp",
         otherImages: [
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
@@ -68,14 +68,13 @@ const products = [
         specification: "specification",
         category: "electronics",
         price: 4000,
-        img: "../images/laptop.png",
+        img: "https://i.ibb.co/wMjsRKW/DT-9250-A-Multimeters-2.jpg",
         otherImages: [
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
             },
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
-
             },
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
@@ -99,7 +98,7 @@ const products = [
         specification: "specification",
         category: "electronics",
         price: 840,
-        img: "../images/laptop.png",
+        img: "https://i.ibb.co/0jgGXws/solderingironstand.jpg",
         otherImages: [
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
@@ -130,7 +129,7 @@ const products = [
         specification: "specification",
         category: "electronics",
         price: 230000,
-        img: "https://drive.google.com/file/d/1ry4bs-m4BwcbCwaQkCKfO4vezvXw0oFZ/view?usp=share_link",
+        img: "https://i.ibb.co/XF43Kdd/inter.jpg",
         otherImages: [
             {
                 img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"

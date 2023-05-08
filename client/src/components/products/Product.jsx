@@ -72,7 +72,7 @@ export default function Product() {
         <div className="product-categories">
           <div className="search">
             <div className="product-search-icon">
-              <i className="fa-solid fa-lens">a</i>
+            <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <input
               type="text"
