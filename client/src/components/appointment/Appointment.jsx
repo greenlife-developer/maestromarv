@@ -84,9 +84,9 @@ export default function Appointment() {
                       required
                     >
                       <option value=""></option>
-                      <option value="high">High</option>
-                      <option value="medium">Medium</option>
-                      <option value="low">Low</option>
+                      <option value="urgent">Urgent</option>
+                      <option value="very_urgent">Very urgent</option>
+                      <option value="not_urgent">Not urgent</option>
                     </select>
                   </div>
                   <br />

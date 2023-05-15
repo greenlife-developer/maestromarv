@@ -1,12 +1,14 @@
 .search{
   display: flex;
-  justify-content: right;
+  justify-content: right !important;
   margin: .5rem 1.5rem;
+  /* background: #02026B; */
 }
 
 .search input{
   margin: 0;
   border: 1.5px solid #ddd;
+  background-color: red;
   outline: none;
   background: transparent;
   padding: .3rem .4rem;
@@ -266,7 +268,10 @@
 
   .category-1, .search{
     width: 100%;
-    margin: .5rem 0;
+    margin: .5rem .5rem 0 0;
+  }
+  .search{
+    padding-right: .5rem;
   }
 
   .search input{

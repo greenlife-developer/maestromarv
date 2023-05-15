@@ -128,7 +128,7 @@ const products = [
         description: "8 Interchangeable Tips Laptop Adapter Universal DC Plugs for AC Power Connector Charger for Notebook Computer L1 Specification: Brand new and high quality Perfect for laptop/notebook computers 8 interchangeable tips for flexible adaptability to different notebook models Output Tip A :6.5x4.4mm Output Tip B :6.3x3.0mm Output Tip C:5.5x2.5mm Output Tip D:5.5x2.1mm Output Tip E:5.5x1.7mm Output Tip F:4.8x1.7mm Output Tip G:4.0x1.7mm Output Tip H:3.5x1.35mm",
         specification: "specification",
         category: "electronics",
-        price: 230000,
+        price: 7000,
         img: "https://i.ibb.co/XF43Kdd/inter.jpg",
         otherImages: [
             {
@@ -151,15 +151,15 @@ const products = [
         color: "grey",
         rating: 4.8,
         sold: "200",
-        subprice: 10000,
+        subprice: 200,
         id: "5"
     },
     {
-        name: "Hp Laptop",
+        name: "Arduino Kits",
         description: "Lorem ipsum dolor sit amet jide.",
         specification: "specification for a phone",
-        category: "phone",
-        price: 230000,
+        category: "electronics",
+        price: 24000,
         img: "../images/laptop.png",
         otherImages: [
             {
@@ -182,15 +182,15 @@ const products = [
         color: "grey",
         rating: 4.8,
         sold: "200",
-        subprice: 10000,
+        subprice: 3000,
         id: "6"
     },
     {
-        name: "Hp Laptop",
+        name: "Fortune Hand tools/ Strippers",
         description: "Lorem ipsum dolor sit amet jide.",
         specification: "specification for a phone",
-        category: "phone",
-        price: 230000,
+        category: "electronics",
+        price: 5000,
         img: "../images/laptop.png",
         otherImages: [
             {
@@ -213,9 +213,475 @@ const products = [
         color: "grey",
         rating: 4.8,
         sold: "200",
-        subprice: 10000,
-        id: "6"
+        subprice: 600,
+        id: "7"
+    },
+    {
+        name: "Cutter",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 1200,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 200,
+        id: "8"
+    },
+    {
+        name: "Antistatic Wristband",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 1800,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 200,
+        id: "9"
+    },
+    {
+        name: "Copper Clad",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 0,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 0,
+        id: "10"
+    },
+    {
+        name: "Line Vero Board",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 340,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 50,
+        id: "11"
+    },
+    {
+        name: "OTG/USB Card Reader",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 2300,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 100,
+        id: "12"
+    },
+    {
+        name: "2 IN 1 MUX IC (74LS157)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 720,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 80,
+        id: "13"
+    },
+    {
+        name: "3 X 8 Decoder IC (74LS138)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 180,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 20,
+        id: "14"
+    },
+    {
+        name: "Decimal to BCD Priority Encoder (74LS147)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 0,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 0,
+        id: "15"
+    },
+    {
+        name: "3-Input AND Gate IC (74LS11)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 1200,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 100,
+        id: "16"
+    },
+    {
+        name: "Shift Register IC (74LS95)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 0,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 0,
+        id: "17"
+    },
+    {
+        name: "Seven-Segment Counter IC (CD4026)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 600,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 100,
+        id: "18"
+    },
+    {
+        name: "555 Timer",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 100,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 20,
+        id: "19"
+    },
+    {
+        name: "two-input AND gate IC (74HC08)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 240,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 40,
+        id: "20"
+    },
+    {
+        name: "3 X 8 Decoder IC (74138)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 0,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 0,
+        id: "21"
+    },
+    {
+        name: "NOT Gate IC (74HC04)",
+        description: "Lorem ipsum dolor sit amet jide.",
+        specification: "specification for a phone",
+        category: "electronics",
+        price: 240,
+        img: "../images/laptop.png",
+        otherImages: [
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+            {
+                img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnTWiG-wTtRUJVs2oqiIFMxb0PHYYCRyNqYxUJWuh&s"
+
+            },
+
+        ],
+        color: "grey",
+        rating: 4.8,
+        sold: "200",
+        subprice: 30,
+        id: "22"
     },
 ]
+// 24
 
 export default products;

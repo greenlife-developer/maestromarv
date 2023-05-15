@@ -9,6 +9,7 @@ import Products from "./components/products/Product";
 import Appointment from './components/appointment/Appointment';
 import Contact from "./components/appointment/Contact";
 import Time from './components/appointment/Time';
+import NewProduct from './components/products/NewProduct';
 import Register from './components/register/Register';
 import Login from './components/register/Login';
 import FirstContact from './components/appointment/FirstContact'
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/make-appointment/time" element={<Time />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          {/* <Route path="/new-product" element={<NewProduct />} /> */}
           <Route path="/new-product" element={<New />} />
           <Route path="/booked" element={<Booked />} />
         </Routes>

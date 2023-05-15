@@ -31,7 +31,7 @@ export default function Navigation() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log(data.data);
+      // console.log(data.data);
 
       if (data.data.isLogin === false) {
         setCart(null);
@@ -42,7 +42,7 @@ export default function Navigation() {
         const result = data.data.cart.filter((std) => {
           return std.user.email === data.data.user.email;
         });
-        console.log(result.length);
+        // console.log(result.length);
         setLogin(true);
         setUser(data.data.user)
         setCart(result);
@@ -155,7 +155,7 @@ export default function Navigation() {
                   aria-controls="offcanvasWithBothOptions"
                   className="cart-icon"
                 >
-                  <i class="ri-shopping-cart-2-line"></i>
+                  <i className="ri-shopping-cart-2-line"></i>
                   <div className="cart-no">
                     <p>{cartno}</p>
                   </div>
@@ -247,25 +247,25 @@ export default function Navigation() {
       </header>
 
       <div
-        class="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-end"
         data-bs-scroll="true"
         tabindex="-1"
         id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">
             Orders Details
           </h5>
           <button
             type="button"
-            class="btn-close"
+            className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
 
-        <div class="offcanvas-body">
+        <div className="offcanvas-body">
           <div className="order-page">
             <div className="cart-details">
               <h4>View Your Cart({cartno})</h4>

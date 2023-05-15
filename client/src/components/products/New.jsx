@@ -11,51 +11,51 @@ export default function New() {
     details: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
 
-    setDetails((prev) => {
-      if (name === "priority") {
-        return {
-          priority: value,
-          type: prev.type,
-          subject: prev.subject,
-          details: prev.details,
-        };
-      }
-      if (name === "type") {
-        return {
-          priority: prev.priority,
-          type: value,
-          subject: prev.subject,
-          details: prev.details,
-        };
-      }
-      if (name === "subject") {
-        return {
-          priority: prev.priority,
-          type: prev.type,
-          subject: value,
-          details: prev.details,
-        };
-      }
-      if (name === "details") {
-        return {
-          priority: prev.priority,
-          type: prev.type,
-          subject: prev.subject,
-          details: value,
-        };
-      }
-    });
-  };
+  //   setDetails((prev) => {
+  //     if (name === "priority") {
+  //       return {
+  //         priority: value,
+  //         type: prev.type,
+  //         subject: prev.subject,
+  //         details: prev.details,
+  //       };
+  //     }
+  //     if (name === "type") {
+  //       return {
+  //         priority: prev.priority,
+  //         type: value,
+  //         subject: prev.subject,
+  //         details: prev.details,
+  //       };
+  //     }
+  //     if (name === "subject") {
+  //       return {
+  //         priority: prev.priority,
+  //         type: prev.type,
+  //         subject: value,
+  //         details: prev.details,
+  //       };
+  //     }
+  //     if (name === "details") {
+  //       return {
+  //         priority: prev.priority,
+  //         type: prev.type,
+  //         subject: prev.subject,
+  //         details: value,
+  //       };
+  //     }
+  //   });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    localStorage.setItem("details", JSON.stringify(details));
-    redirect("/make-appointment/contact");
-  };
+  //   localStorage.setItem("details", JSON.stringify(details));
+  //   redirect("/make-appointment/contact");
+  // };
 
 
   return (
@@ -65,14 +65,26 @@ export default function New() {
           <div className="">
             <div className="details-form">
               <div className="form">
-                <form action="" onSubmit={handleSubmit}>
+                <form action="/api/new-product" method="POST">
                   <div className="issue-details">
-                    <h3>Add a new product here...</h3>
+                    <h3>Add a New Product Here</h3>
                   </div>
                   <div className="issue-type">
                     <label htmlFor="type">Name</label>
                     <br />
                     <input type="text" name="productName" id="" />
+                  </div>
+                  <br />
+                  <div className="issue-type">
+                    <label htmlFor="type">Category</label>
+                    <br />
+                    <select name="category" id="">
+                      <option value="electronics">Electronics</option>
+                      <option value="laptop">Laptops</option>
+                      <option value="phone">Phones</option>
+                      <option value="other">Other Accessories</option>
+                    </select>
+                    {/* <input type="text" name="productName" id="" /> */}
                   </div>
                   <br />
                   <div className="issue-type">
@@ -91,18 +103,19 @@ export default function New() {
                     <label htmlFor="type">Color</label>
                     <br />
                     <input
-                      onChange={handleChange}
+                      // onChange={handleChange}
                       type="text"
                       name="color"
                       placeholder="color"
                       required
                     />
-                  </div><br />
+                  </div>
+                  <br />
                   <div className="issue-type">
                     <label htmlFor="type">Rating</label>
                     <br />
                     <input
-                      onChange={handleChange}
+                      // onChange={handleChange}
                       type="number"
                       name="rating"
                       placeholder="rating"
@@ -114,7 +127,7 @@ export default function New() {
                     <label htmlFor="type">Sold</label>
                     <br />
                     <input
-                      onChange={handleChange}
+                      // onChange={handleChange}
                       type="number"
                       name="sold"
                       placeholder="Number of sales"
@@ -122,14 +135,26 @@ export default function New() {
                     />
                   </div>
                   <br />
-                  <FileUpload />
+                  <div className="issue-type">
+                    <label htmlFor="type">Image url</label>
+                    <br />
+                    <input
+                      // onChange={handleChange}
+                      type="text"
+                      name="url"
+                      placeholder="Enter th url for this product"
+                      required
+                    />
+                  </div>
                   <br />
+                  {/* <FileUpload /> */}
+                  {/* <br /> */}
                   <div className="issue-type">
                     <label htmlFor="type">Description(Please make use of the markdown text)</label>
                     <br />
                     <textarea
-                      name="details"
-                      onChange={handleChange}
+                      name="description"
+                      // onChange={handleChange}
                       id=""
                       cols="30"
                       rows="5"
@@ -141,8 +166,8 @@ export default function New() {
                     <label htmlFor="type">Other Specifications(use markdown :)</label>
                     <br />
                     <textarea
-                      name="details"
-                      onChange={handleChange}
+                      name="specification"
+                      // onChange={handleChange}
                       id=""
                       cols="30"
                       rows="5"
@@ -151,7 +176,7 @@ export default function New() {
                     ></textarea>
                   </div>
                   <div className="issue-type">
-                    <button type="submit">Next</button>
+                    <button type="submit">Add a New Product</button>
                   </div>
                 </form>
               </div>

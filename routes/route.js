@@ -58,12 +58,20 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
                 createdAt: -1,
               })
               .toArray((err, cart) => {
-                res.json({
-                  isLogin: true,
-                  user: user,
-                  sales: sales,
-                  cart: cart,
-                });
+                database.collection("products")
+                .find()
+                .sort({
+                  createdAt: -1
+                })
+                .toArray((err, product) => {
+                  res.json({
+                    isLogin: true,
+                    user: user,
+                    sales: sales,
+                    products: product,
+                    cart: cart,
+                  });
+                })
               });
           });
       });
@@ -122,13 +130,15 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/maestromarv/appointment", (req, res) => {
-    const currentTime = new Date().getTime();
+    const currentTime = Date.now();
     const user = {
       name: req.body.appointment.fName + " " + req.body.appointment.lName,
-      phone: "09087635542",
-      region: "Abuja",
-      position: "Leader",
-      date: currentTime
+      phone: req.body.appointment.phone,
+      address: req.body.appointment.address,
+      details: req.body.appointment.details,
+      date: req.body.appointment.time,
+      subject: req.body.appointment.subject,
+      priority: req.body.appointment.priority
     }
     database.collection("apppointments").insertOne(
       {
@@ -147,16 +157,16 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       (err, data) => {
         const emailData = {
           from: "maestromarve@gmail.com",
-          to: "yemijoshua81@gmail.com",
+          to: ["yemijoshua81@gmail.com", "yemijoshua89@gmail.com", "maestromarve@gmail.com", req.body.appointment.email],
           subject: "A new appointmemt",
-          html: `${pdfTemplate(user)} Ade`,
+          html: `${pdfTemplate(user)}`,
         };
 
         sgMail
-          .send(emailData)   
+          .sendMultiple(emailData)
           .then((sent) => {
             console.log(sent)
-              return res.json({
+            return res.json({
               message: `Email has been sent!`,
             });
           })
@@ -220,6 +230,62 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         }
       }
     );
+  });
+
+  router.post("/new-product", (req, res) => {
+    const name = req.body.productName;
+    const price = req.body.price;
+    console.log({
+      name: req.body.productName,
+      description: req.body.description,
+      specification: req.body.specification,
+      category: req.body.category,
+      price: req.body.price,
+      img: req.body.url,
+      color: req.body.color,
+      rating: req.body.rating,
+      sold: req.body.sold,
+      subprice: req.body.slprice,
+      // user: user,
+      isLogin: true
+    })
+
+    if (req.session.user_id) {
+      getUser(req.session.user_id, (user) => {
+        database.collection("products").insertOne(
+          {
+            name: req.body.productName,
+            description: req.body.description,
+            specification: req.body.specification,
+            category: req.body.category,
+            price: req.body.price,
+            img: req.body.url,
+            color: req.body.color,
+            rating: req.body.rating,
+            sold: req.body.sold,
+            subprice: req.body.slprice,
+            user: user,
+            isLogin: true
+          },
+          (err, data) => {
+            res.redirect("/product/view/:id/?message=added-to-cart");
+          }
+        );
+      });
+    } else {
+      res.status(301).json({
+        error: "Please login to be able to perform this action",
+        isLogin: false
+      });
+    }
+
+
+  });
+
+  router.get("/new-product", (req, res) => {
+    res.json({
+      logggedIn: true
+    })
   });
 
 

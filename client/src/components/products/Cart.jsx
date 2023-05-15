@@ -10,7 +10,7 @@ export default function Cart() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      console.log(data.data.cart);
+      // console.log(data.data.cart);
       
       if (data.data.isLogin === false) {
         setIcon(false);
@@ -22,7 +22,7 @@ export default function Cart() {
         const result = data.data.cart.filter((std) => {
           return std.user.email === data.data.user.email;
         });
-        console.log(result.length);
+        // console.log(result.length);
         setCart(result);
         setCartno(result.length);
         setSales(data.data.sales);
@@ -37,17 +37,17 @@ export default function Cart() {
     <div className="cart-container">
       <div className="cart" style={{ marginLeft: "100px" }}>
         <div
-          class="btn btn-primary"
+          className="btn btn-primary icon"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions"
           aria-controls="offcanvasWithBothOptions"
-          className="icon"
+          // className="icon"
         >
           {icon ? (
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
           ) : (
-            <i class="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-lock"></i>
           )}
         </div>
         <div className="item-no">
@@ -56,25 +56,25 @@ export default function Cart() {
       </div>
 
       <div
-        class="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-end"
         data-bs-scroll="true"
         tabindex="-1"
         id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">
             Orders Details
           </h5>
           <button
             type="button"
-            class="btn-close"
+            className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
 
-        <div class="offcanvas-body" id="canvasBody">
+        <div className="offcanvas-body" id="canvasBody">
           <div className="order-page">
             <div className="cart-details">
               <h4>View Your Cart({cartno})</h4>

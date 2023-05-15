@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
 import laptopaccess from "../images/laptopaccess.jpg";
@@ -11,6 +11,7 @@ import products from "../../products";
 import Footer from "../homepage/Footer";
 import Cart from "./Cart";
 import Item from "./Item";
+import axios from "axios";
 
 export default function Product() {
   const contentStyle = {
@@ -27,26 +28,50 @@ export default function Product() {
   // });
 
   const [filteredProduct, setFilteredProduct] = useState(products);
+  const [keyword, setKeyword] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("/api")
+      // .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data.products);
+        // if (data.items) {
+        //   setItems(data.items);
+        // }
+      });
+  }, []);
+
+  // {items
+  //   ? items
+  //       .filter((item) => {
+  //         if (keyword === "") {
+  //           return item;
+  //         } else if (
+  //           item.productName
+  //             .toLowerCase()
+  //             .includes(keyword.toLowerCase())
+  //         ) {
+  //           return item;
+  //         }
+  //         return ""
+  //       })
 
   function handleSearch(e) {
-    const search = e.target.value;
-    const result = products.filter((std) => {
-      return std.name.contains(search);
-    });
-    setFilteredProduct(result);
+    setKeyword(e.target.value);
   }
 
-  const laptops = filteredProduct.filter((laptop) => {
+  const laptops = products.filter((laptop) => {
     return laptop.category === "laptop";
   });
-  const phones = filteredProduct.filter((phone) => {
+  const phones = products.filter((phone) => {
     return phone.category === "phone";
   });
-  const electronics = filteredProduct.filter((electronic) => {
+  const electronics = products.filter((electronic) => {
     return electronic.category === "electronics";
   });
-  const otherAccessories = filteredProduct.filter((other) => {
-    return other.category === "other accessories";
+  const otherAccessories = products.filter((other) => {
+    return other.category === "other";
   });
 
   return (
@@ -72,7 +97,7 @@ export default function Product() {
         <div className="product-categories">
           <div className="search">
             <div className="product-search-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </div>
             <input
               type="text"
@@ -88,20 +113,33 @@ export default function Product() {
               </div>
             </div>
             <div className="cat-body">
-              {laptops.map((product, index) => {
-                return (
-                  <Item
-                    key={index}
-                    sold={product.sold}
-                    name={product.name}
-                    url={product.img}
-                    subprice={product.subprice}
-                    id={product.id}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                );
-              })}
+              {laptops
+                ? laptops
+                    .filter((item) => {
+                      if (keyword === "") {
+                        return item;
+                      } else if (
+                        item.name.toLowerCase().includes(keyword.toLowerCase())
+                      ) {
+                        return item;
+                      }
+                      return "";
+                    })
+                    .map((product, index) => {
+                      return (
+                        <Item
+                          key={index}
+                          sold={product.sold}
+                          name={product.name}
+                          subprice={product.subprice}
+                          id={product.id}
+                          url={product.img}
+                          price={product.price}
+                          rating={product.rating}
+                        />
+                      );
+                    })
+                : ""}
             </div>
           </div>
 
@@ -112,21 +150,33 @@ export default function Product() {
               </div>
             </div>
             <div className="cat-body">
-              {phones.map((product, index) => {
-                return (
-                  <Item
-                    key={index}
-                    sold={product.sold}
-                    name={product.name}
-                    subprice={product.subprice}
-                    src={product.img}
-                    url={product.img}
-                    id={product.id}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                );
-              })}
+              {phones
+                ? phones
+                    .filter((item) => {
+                      if (keyword === "") {
+                        return item;
+                      } else if (
+                        item.name.toLowerCase().includes(keyword.toLowerCase())
+                      ) {
+                        return item;
+                      }
+                      return "";
+                    })
+                    .map((product, index) => {
+                      return (
+                        <Item
+                          key={index}
+                          sold={product.sold}
+                          name={product.name}
+                          subprice={product.subprice}
+                          id={product.id}
+                          url={product.img}
+                          price={product.price}
+                          rating={product.rating}
+                        />
+                      );
+                    })
+                : ""}
             </div>
           </div>
 
@@ -137,20 +187,33 @@ export default function Product() {
               </div>
             </div>
             <div className="cat-body">
-              {electronics.map((product, index) => {
-                return (
-                  <Item
-                    key={index}
-                    sold={product.sold}
-                    name={product.name}
-                    subprice={product.subprice}
-                    id={product.id}
-                    url={product.img}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                );
-              })}
+              {electronics
+                ? electronics
+                    .filter((item) => {
+                      if (keyword === "") {
+                        return item;
+                      } else if (
+                        item.name.toLowerCase().includes(keyword.toLowerCase())
+                      ) {
+                        return item;
+                      }
+                      return "";
+                    })
+                    .map((product, index) => {
+                      return (
+                        <Item
+                          key={index}
+                          sold={product.sold}
+                          name={product.name}
+                          subprice={product.subprice}
+                          id={product.id}
+                          url={product.img}
+                          price={product.price}
+                          rating={product.rating}
+                        />
+                      );
+                    })
+                : ""}
             </div>
           </div>
 
@@ -161,20 +224,33 @@ export default function Product() {
               </div>
             </div>
             <div className="cat-body">
-              {otherAccessories.map((product, index) => {
-                return (
-                  <Item
-                    key={index}
-                    sold={product.sold}
-                    name={product.name}
-                    subprice={product.subprice}
-                    id={product.id}
-                    url={product.img}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                );
-              })}
+              {otherAccessories
+                ? otherAccessories
+                    .filter((item) => {
+                      if (keyword === "") {
+                        return item;
+                      } else if (
+                        item.name.toLowerCase().includes(keyword.toLowerCase())
+                      ) {
+                        return item;
+                      }
+                      return "";
+                    })
+                    .map((product, index) => {
+                      return (
+                        <Item
+                          key={index}
+                          sold={product.sold}
+                          name={product.name}
+                          subprice={product.subprice}
+                          id={product.id}
+                          url={product.img}
+                          price={product.price}
+                          rating={product.rating}
+                        />
+                      );
+                    })
+                : ""}
             </div>
           </div>
         </div>

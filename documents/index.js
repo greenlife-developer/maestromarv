@@ -1,4 +1,4 @@
-module.exports = ({ name, phone, region, position, date }) => {
+module.exports = ({ name, phone, details, address, priority, subject, date }) => {
     // const logo = require("../public/images/logo")
 
     const today = new Date();
@@ -9,6 +9,23 @@ module.exports = ({ name, phone, region, position, date }) => {
         <meta charset="utf-8" />
         <title>Appointment Details</title>
         <style>
+        @font-face {
+            font-family: "campton";
+            src: url(../client/public/campton/CamptonLight.otf);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "campton" !important;
+            font-style: normal;
+            background-color: #EBF1FF !important;
+            overflow-x: hidden !important;
+        }
             .invoice-box {
                 max-width: 800px;
                 margin: auto;
@@ -59,7 +76,6 @@ module.exports = ({ name, phone, region, position, date }) => {
             }
     
             .invoice-box table tr.heading td {
-                background: #eee;
                 border-bottom: 1px solid #ddd;
                 font-weight: bold;
             }
@@ -95,6 +111,7 @@ module.exports = ({ name, phone, region, position, date }) => {
             .logo {
                 display: flex;
                 margin: 1rem 0;
+                width: 100%;
                 justify-content: center;
             }
     
@@ -119,10 +136,10 @@ module.exports = ({ name, phone, region, position, date }) => {
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: #fff !important;">
         <div class="invoice-box">
-            <div class="logo">
-                <img src="../public/images/logo" alt="" />
+            <div style="width: 100%; display: flex; justify-content: center;" class="logo">
+                <img src="https://i.ibb.co/y54KG3b/logo.png" alt="" />
             </div>
             <br />
             <div class="church-name">
@@ -141,16 +158,24 @@ module.exports = ({ name, phone, region, position, date }) => {
                     <td>${phone}</td>
                 </tr>
                 <tr class="item">
-                    <td>Region</td>
-                    <td>${region}</td>
+                    <td>Address</td>
+                    <td>${address}</td>
                 </tr>
                 <tr class="item">
-                    <td>Position</td>
-                    <td>${position}</td>
+                    <td>Subject</td>
+                    <td>${subject}</td>
                 </tr>
                 <tr class="item">
-                    <td>Registration date</td>
+                    <td>Date</td>
                     <td>${date}</td>
+                </tr>
+                <tr class="item">
+                    <td>Issue Details</td>
+                    <td>${details}</td>
+                </tr>
+                <tr class="item">
+                    <td>Issue Priority</td>
+                    <td>${priority}</td>
                 </tr>
             </table>
         </div>
