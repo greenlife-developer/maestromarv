@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
-import laptopaccess from "../images/laptopaccess.jpg";
 import productImage from "../images/products.jpg";
-import accessories from "../images/accessories.jpg";
 import { Carousel } from "antd";
 // import "antd/dist/antd.min.css";
 import "./products.css";
-import products from "../../products";
+// import products from "../../products";
 import Footer from "../homepage/Footer";
 import Cart from "./Cart";
 import Item from "./Item";
@@ -15,7 +13,7 @@ import axios from "axios";
 
 export default function Product() {
   const contentStyle = {
-    height: "45vh",
+    // height: "25vh",
     color: "#fff",
     marginTop: "60px",
     textAlign: "center",
@@ -27,18 +25,19 @@ export default function Product() {
   //   return std.name === style;
   // });
 
-  const [filteredProduct, setFilteredProduct] = useState(products);
+  // const [filteredProduct, setFilteredProduct] = useState(products);
   const [keyword, setKeyword] = useState("");
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
     axios
-      .get("/api")
+      .get("/api/new-product")
       // .then((res) => res.json())
       .then((data) => {
         console.log(data.data.products);
-        // if (data.items) {
-        //   setItems(data.items);
-        // }
+        if (data.data) {
+          setProducts(data.data.products);
+        }
       });
   }, []);
 
@@ -61,18 +60,18 @@ export default function Product() {
     setKeyword(e.target.value);
   }
 
-  const laptops = products.filter((laptop) => {
+  const laptops = products ? products.filter((laptop) => {
     return laptop.category === "laptop";
-  });
-  const phones = products.filter((phone) => {
+  }) : null;
+  const phones = products ? products.filter((phone) => {
     return phone.category === "phone";
-  });
-  const electronics = products.filter((electronic) => {
+  }) : null;
+  const electronics = products ? products.filter((electronic) => {
     return electronic.category === "electronics";
-  });
-  const otherAccessories = products.filter((other) => {
+  }) : null;
+  const otherAccessories = products ? products.filter((other) => {
     return other.category === "other";
-  });
+  }) : null;
 
   return (
     <>
@@ -131,15 +130,15 @@ export default function Product() {
                           key={index}
                           sold={product.sold}
                           name={product.name}
-                          subprice={product.subprice}
-                          id={product.id}
+                          id={product._id}
+                          subprice={Number(product.subprice)}
                           url={product.img}
-                          price={product.price}
+                          price={Number(product.price)}
                           rating={product.rating}
                         />
                       );
                     })
-                : ""}
+                : "There is no item in this category"}
             </div>
           </div>
 
@@ -167,16 +166,16 @@ export default function Product() {
                         <Item
                           key={index}
                           sold={product.sold}
+                          id={product._id}
                           name={product.name}
-                          subprice={product.subprice}
-                          id={product.id}
+                          subprice={Number(product.subprice)}
                           url={product.img}
-                          price={product.price}
+                          price={Number(product.price)}
                           rating={product.rating}
                         />
                       );
                     })
-                : ""}
+                : "There is no item in this category"}
             </div>
           </div>
 
@@ -204,16 +203,16 @@ export default function Product() {
                         <Item
                           key={index}
                           sold={product.sold}
+                          id={product._id}
                           name={product.name}
-                          subprice={product.subprice}
-                          id={product.id}
+                          subprice={Number(product.subprice)}
                           url={product.img}
-                          price={product.price}
+                          price={Number(product.price)}
                           rating={product.rating}
                         />
                       );
                     })
-                : ""}
+                : "There is no item in this category"}
             </div>
           </div>
 
@@ -241,16 +240,16 @@ export default function Product() {
                         <Item
                           key={index}
                           sold={product.sold}
+                          id={product._id}
                           name={product.name}
-                          subprice={product.subprice}
-                          id={product.id}
+                          subprice={Number(product.subprice)}
                           url={product.img}
-                          price={product.price}
+                          price={Number(product.price)}
                           rating={product.rating}
                         />
                       );
                     })
-                : ""}
+                : "There is no item in this category"}
             </div>
           </div>
         </div>

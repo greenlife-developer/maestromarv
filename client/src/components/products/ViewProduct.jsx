@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import products from "../../products";
+// import products from "../../products";
 import Navigation from "../homepage/Navigation";
 import laptop from "../images/laptop.png";
 import { Modal } from "antd";
@@ -24,15 +24,29 @@ export default function ViewProduct() {
 
   const selected = location.pathname.split("/")[3];
 
-  const product = products.filter((std) => {
-    return std.id === selected;
-  });
+  const [products, setProducts] = useState(null);
 
-  const bestOnSale = products.filter((std) => {
+  useEffect(() => {
+    axios
+      .get("/api")
+      // .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data.products);
+        if (data.data) {
+          setProducts(data.data.products);
+        }
+      });
+  }, []);
+
+  const product = products ? products.filter((std) => {
+    return std._id === selected;
+  }) : null;
+
+  const bestOnSale = products ?  products.filter((std) => {
     return std.category === product[0].category;
-  });
+  }) : null;
 
-  const productImages = product[0].otherImages;
+  // const productImages = product[0].otherImages;
 
   const handleCancel = () => setPreviewVisible(false);
 
@@ -90,9 +104,9 @@ export default function ViewProduct() {
     setItems(items + 1);
   };
 
-  const price = product[0].price * items;
+  const price = product ? product[0].price * items : "No price";
 
-  const productName = <div style={{ fontSize: "12px" }}>{product[0].name}</div>;
+  const productName = <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>;
 
   return (
     <>
@@ -138,17 +152,17 @@ export default function ViewProduct() {
             })} */}
             <div class="carousel-item active">
               <div className="product-img">
-                <img src={product[0].img} alt="" />
+                <img src={ product? product[0].img : ""} alt="" />
               </div>
             </div>
             <div class="carousel-item">
               <div className="product-img">
-                <img src={product[0].otherImages[1].img1} alt="" />
+                {/* <img src={product[0].otherImages[1].img1} alt="" /> */}
               </div>
             </div>
             <div class="carousel-item">
               <div className="product-img">
-                <img src={product[0].otherImages[2].img1} alt="" />
+                {/* <img src={product[0].otherImages[2].img1} alt="" /> */}
               </div>
             </div>
           </div>
@@ -174,7 +188,7 @@ export default function ViewProduct() {
 
         <div className="name-quantity">
           <div className="name">
-            <h1>{product[0].name}</h1>
+            <h1>{product ? product[0].name : ""}</h1>
             <h3>{formatter.format(price)}</h3>
           </div>
           <br />
@@ -201,10 +215,10 @@ export default function ViewProduct() {
           <div className="">
             <Tabs tabPosition={window.innerWidth <= 425 ? "top" : "top"}>
               <TabPane tab="Description" key="1">
-                <p>{product[0].description}</p>
+                <p>{product ? product[0].description : ""}</p>
               </TabPane>
               <TabPane tab="Specification" key="2">
-                <p>{product[0].specification}</p>
+                <p>{product ? product[0].specification : ""}</p>
               </TabPane>
             </Tabs>
           </div>
@@ -254,7 +268,7 @@ export default function ViewProduct() {
       >
         <Paystack
           amount={
-            (parseInt(product[0].price) - parseInt(product[0].subprice)) *
+            (parseInt(product ? product[0].price : "") - parseInt(product ? product[0].subprice : "")) *
               items +
             "00"
           }

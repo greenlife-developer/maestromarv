@@ -59,19 +59,19 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
               })
               .toArray((err, cart) => {
                 database.collection("products")
-                .find()
-                .sort({
-                  createdAt: -1
-                })
-                .toArray((err, product) => {
-                  res.json({
-                    isLogin: true,
-                    user: user,
-                    sales: sales,
-                    products: product,
-                    cart: cart,
-                  });
-                })
+                  .find()
+                  .sort({
+                    createdAt: -1
+                  })
+                  .toArray((err, product) => {
+                    res.json({
+                      isLogin: true,
+                      user: user,
+                      sales: sales,
+                      products: product,
+                      cart: cart,
+                    });
+                  })
               });
           });
       });
@@ -268,7 +268,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
             isLogin: true
           },
           (err, data) => {
-            res.redirect("/product/view/:id/?message=added-to-cart");
+            res.redirect("/product/");
           }
         );
       });
@@ -283,9 +283,16 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.get("/new-product", (req, res) => {
-    res.json({
-      logggedIn: true
-    })
+    database.collection("products")
+      .find()
+      .sort({
+        createdAt: -1
+      })
+      .toArray((err, product) => {
+        res.json({
+          products: product
+        });
+      })
   });
 
 

@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./home.css";
 import logo from "../images/logo.png";
 
 export default function Footer() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("/api")
+      // .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data);
+        if (data.data) {
+          setUser(data.data.user);
+        }
+      });
+  }, []);
+  // console.log(user.email)
+
   return (
     <footer>
       <div className="footer-container">
@@ -23,7 +39,6 @@ export default function Footer() {
             <hr />
           </div>
 
-          
           <div className="footer-items-container">
             <div className="footer-items">
               <div className="footer-item">
@@ -137,7 +152,12 @@ export default function Footer() {
                     <li>
                       <Link className="footer-link" to="/">
                         Futa NorthGate
-                      </Link>
+                      </Link><br />
+                      {user && user.email === "yemijoshua80@gmail.com" ? (
+                        <Link className="footer-link" to="/new-product">
+                          Add a New Product
+                        </Link>
+                      ) : null}
                     </li>
                   </ul>
                 </div>
