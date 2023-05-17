@@ -153,7 +153,7 @@ export default function Footer() {
                       <Link className="footer-link" to="/">
                         Futa NorthGate
                       </Link><br />
-                      {user && user.email === "yemijoshua80@gmail.com" ? (
+                      {user && user.email === "maestromarve@gmail.com" ? (
                         <Link className="footer-link" to="/new-product">
                           Add a New Product
                         </Link>
