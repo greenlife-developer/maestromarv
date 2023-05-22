@@ -52,7 +52,7 @@ export default function New() {
                     <input
                       type="text"
                       name="productName"
-                      value={products ? editedProduct[0].name : ""}
+                      defaultValue={products ? editedProduct[0].name : ""}
                       id=""
                     />
                   </div>
@@ -116,7 +116,7 @@ export default function New() {
                     <input
                       type="text"
                       name="price"
-                      value={products ? editedProduct[0].price : ""}
+                      defaultValue={products ? editedProduct[0].price : ""}
                       id=""
                     />
                   </div>

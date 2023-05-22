@@ -300,7 +300,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         .collection("products")
         .findOne({ _id: ObjectId(req.params.id) });
       getUser(req.session.user_id, (user) => {
-        if (user.email === "maestromarve@gmail.com" && user.email === "yemijoshua80@gmail.com") {
+        if (user.email === "maestromarve@gmail.com" || user.email === "yemijoshua80@gmail.com") {
           const myquery = { quantity: result.quantity, price: result.price };
           const newvalues = {
             $set: {
@@ -323,7 +323,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
             .collection("products")
             .updateMany({ _id: ObjectId(req.params.id) }, newvalues, function (err, data) {
               if (err) throw err;
-              res.redirect("/product?success=new_update")
+              res.redirect("/products?success=new_update")
             });
         } else {
           res.send("<h1>Only the owner of the store can edit products <a href=/login > Please login as owner</a> </h1>");
