@@ -224,7 +224,7 @@ export default function New() {
                     ></textarea>
                   </div>
                   <div className="issue-type">
-                    <button type="submit">Add a New Product</button>
+                    <button type="submit">Update Product Details</button>
                   </div>
                 </form>
               </div>
