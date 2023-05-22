@@ -278,8 +278,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         isLogin: false
       });
     }
-
-
   });
 
   router.get("/new-product", (req, res) => {
@@ -294,6 +292,47 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         });
       })
   });
+
+  router.post("/new-product/edit/:id", async (req, res) => {
+    console.log(req.params.id)
+    if (req.session.user_id) {
+      const result = await database
+        .collection("products")
+        .findOne({ _id: ObjectId(req.params.id) });
+      getUser(req.session.user_id, (user) => {
+        if (user.email === "maestromarve@gmail.com" && user.email === "yemijoshua80@gmail.com") {
+          const myquery = { quantity: result.quantity, price: result.price };
+          const newvalues = {
+            $set: {
+              name: req.body.productName,
+              description: req.body.description,
+              specification: req.body.specification,
+              category: req.body.category,
+              price: req.body.price,
+              img: req.body.url,
+              color: req.body.color,
+              rating: req.body.rating,
+              sold: req.body.sold,
+              subprice: req.body.slprice,
+              user: user,
+              isLogin: true
+            }
+          };
+          // db.collection.update({_id: req.body.id},{$set:{status: 1}}, function(err,doc){})
+          database
+            .collection("products")
+            .updateMany({ _id: ObjectId(req.params.id) }, newvalues, function (err, data) {
+              if (err) throw err;
+              res.redirect("/product?success=new_update")
+            });
+        } else {
+          res.send("<h1>Only the owner of the store can edit products <a href=/login > Please login as owner</a> </h1>");
+        }
+      })
+    } else {
+      res.redirect("/login?error=need_login")
+    }
+  })
 
 
   router.get("/logout", (req, res) => {

@@ -12,10 +12,13 @@ export default function Item(props) {
     currency: "NGN",
   });
 
-  const percent = Math.round((Number(props.subprice)/Number(props.price))*100)
+  const percent = Math.round(
+    (Number(props.subprice) / Number(props.price)) * 100
+  );
 
-  const shortName = props.name.length > 15 ? props.name.slice(0, 14) + " ...." : props.name
-  
+  const shortName =
+    props.name.length > 15 ? props.name.slice(0, 14) + " ...." : props.name;
+
   return (
     <>
       <div className="cat-items-container">
@@ -27,13 +30,21 @@ export default function Item(props) {
           </div>
           <div className="item-content">
             <p> {shortName} </p>
-            <h4>{formatter.format(props.price)} <sub>{formatter.format(Number(props.price) + Number(props.subprice))}</sub></h4>
+            <h4>
+              {formatter.format(props.price)}{" "}
+              <sub>
+                {formatter.format(Number(props.price) + Number(props.subprice))}
+              </sub>
+            </h4>
             <span>your're saving {percent}%</span>
             <span>
               {props.sold} sold &#9733; {props.rating}
             </span>
             <span>
               <a href={`tel:${props.phone}`}>{props.call}</a>
+            </span>
+            <span>
+              <Link to={"/edit-products/" + props.id}>Edit</Link>
             </span>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function ViewProduct() {
 
   useEffect(() => {
     axios
-      .get("/api")
+      .get("/api/new-product")
       // .then((res) => res.json())
       .then((data) => {
         console.log(data.data.products);
@@ -104,7 +104,7 @@ export default function ViewProduct() {
     setItems(items + 1);
   };
 
-  const price = product ? product[0].price * items : "No price";
+  const price = Number(product ? product[0].price * items : 0);
 
   const productName = <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>;
 
@@ -155,16 +155,16 @@ export default function ViewProduct() {
                 <img src={ product? product[0].img : ""} alt="" />
               </div>
             </div>
-            <div class="carousel-item">
+            {/* <div class="carousel-item">
               <div className="product-img">
-                {/* <img src={product[0].otherImages[1].img1} alt="" /> */}
+                <img src={product[0].otherImages[1].img1} alt="" />
               </div>
-            </div>
-            <div class="carousel-item">
+            </div> */}
+            {/* <div class="carousel-item">
               <div className="product-img">
-                {/* <img src={product[0].otherImages[2].img1} alt="" /> */}
+                <img src={product[0].otherImages[2].img1} alt="" />
               </div>
-            </div>
+            </div> */}
           </div>
           <button
             class="carousel-control-prev"
