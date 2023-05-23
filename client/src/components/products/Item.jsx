@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
 import laptop from "../images/laptop.png";
+import axios from "axios";
 
 export default function Item(props) {
   const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
@@ -11,6 +12,20 @@ export default function Item(props) {
     style: "currency",
     currency: "NGN",
   });
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("/api")
+      // .then((res) => res.json())
+      .then((data) => {
+        console.log(data.data);
+        if (data.data) {
+          setUser(data.data.user);
+        }
+      });
+  }, []);
 
   const percent = Math.round(
     (Number(props.subprice) / Number(props.price)) * 100
@@ -43,9 +58,12 @@ export default function Item(props) {
             <span>
               <a href={`tel:${props.phone}`}>{props.call}</a>
             </span>
-            <span>
-              <Link to={"/edit-products/" + props.id}>Edit</Link>
-            </span>
+
+            {user && user.email === "maestromarve@gmail.com" ? (
+              <span>
+                <Link to={"/edit-products/" + props.id}>Edit</Link>
+              </span>
+            ) : null}
           </div>
         </div>
       </div>

@@ -73,12 +73,16 @@ export default function Product() {
     return other.category === "other";
   }) : null;
 
+  const handleChange = () => {
+    
+  }
+
   return (
     <>
       <div className="product-page-container">
         <Navigation />
 
-        <Carousel effect="fade" autoplay>
+        <Carousel effect="fade" beforeChange={handleChange} autoplay>
           <div>
             <div className="antd-product-carousel" style={contentStyle}>
               <img src={phoneaccess} alt="" />
