@@ -1,8 +1,15 @@
 import React from "react";
 import Navigation from "../homepage/Navigation";
 import Footer from "../homepage/Footer";
+import { Carousel } from "antd";
 import { Link } from "react-router-dom";
 import repairImage from "../images/image5.jpg";
+import repairImage2 from "../images/phone-repair.jpg";
+import repair1 from "../images/repair1.jpg";
+import repair2 from "../images/repair2.jpg";
+import repair3 from "../images/repair3.jpg";
+import repair4 from "../images/repair4.jpg";
+import repair5 from "../images/repair5.jpg";
 import "./repairs.css";
 
 export default function Repairs() {
@@ -10,16 +17,88 @@ export default function Repairs() {
     <>
       <Navigation />
       <div id="topup" className="repairs-page">
-        <div className="repair-page-banner">
-          <div className="re-banner-content">
-            <h1>#1 Laptop Repair Service in Akure</h1>
-            <p>
-              Is there anything more frustrating than a broken laptop? Never
-              fear: <br /> MTS is here to help. <br /> We're thrilled to be
-              Seattle's laptop repair and <br /> data recovery specialists.
-            </p>
+        <Carousel effect="fade" autoplay>
+          <div>
+            <div className="repair-banner">
+              <img src={repair1} alt="" />
+              <div className="repair-page-banner">
+                <div className="re-banner-content">
+                  <h1>#1 Repair Services in Akure</h1>
+                  <p>
+                    Is there anything more frustrating than a broken laptop?
+                    Never fear: <br /> MTS is here to help. <br /> We're
+                    thrilled to be Seattle's laptop repair and <br /> data
+                    recovery specialists.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+          <div>
+            <div className="repair-banner">
+              <img src={repair2} alt="" />
+              <div className="repair-page-banner">
+                <div className="re-banner-content">
+                  <h1>#1 Repair Services in Akure</h1>
+                  <p>
+                    Is there anything more frustrating than a broken laptop?
+                    Never fear: <br /> MTS is here to help. <br /> We're
+                    thrilled to be Seattle's laptop repair and <br /> data
+                    recovery specialists.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="repair-banner">
+              <img src={repair3} alt="" />
+              <div className="repair-page-banner">
+                <div className="re-banner-content">
+                  <h1>#1 Repair Services in Akure</h1>
+                  <p>
+                    Is there anything more frustrating than a broken laptop?
+                    Never fear: <br /> MTS is here to help. <br /> We're
+                    thrilled to be Seattle's laptop repair and <br /> data
+                    recovery specialists.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="repair-banner">
+              <img src={repair4} alt="" />
+              <div className="repair-page-banner">
+                <div className="re-banner-content">
+                  <h1>#1 Repair Services in Akure</h1>
+                  <p>
+                    Is there anything more frustrating than a broken laptop?
+                    Never fear: <br /> MTS is here to help. <br /> We're
+                    thrilled to be Seattle's laptop repair and <br /> data
+                    recovery specialists.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="repair-banner">
+              <img src={repair5} alt="" />
+              <div className="repair-page-banner">
+                <div className="re-banner-content">
+                  <h1>#1 Repair Services in Akure</h1>
+                  <p>
+                    Is there anything more frustrating than a broken laptop?
+                    Never fear: <br /> MTS is here to help. <br /> We're
+                    thrilled to be Seattle's laptop repair and <br /> data
+                    recovery specialists.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Carousel>
 
         <div className="laptop-services">
           <div className="services-items">
@@ -67,7 +146,7 @@ export default function Repairs() {
           <div className="services-items">
             <div className="service-item">
               <img
-                src={repairImage}
+                src={repairImage2}
                 alt="repair image"
                 width="100%"
                 height="100%"

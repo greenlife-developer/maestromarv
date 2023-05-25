@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import Navigation from "./Navigation";
 import image from "../images/image2.jpg";
-import carousel from "../images/carousel.jpg";
-import carousel1 from "../images/carousel1.jpg";
+import carousel from "../images/we fix androids.jpg";
+import carousel1 from "../images/mac fixing.jpg";
+import carousel2 from "../images/we fix laptops.jpg";
+import carousel3 from "../images/we fix iphones.jpg";
 import AOS from "aos";
 import image7 from "../images/automation.jpeg";
 import image2 from "../images/image2.jpg";
@@ -50,34 +52,104 @@ export default function Home() {
           <div className="antd-content-carousel1" style={contentStyle}>
             <img src={image} alt="" />
             <div className="antd-opacity-container">
-            <div className="content-carousel">
-              <div className="" data-aos="fade-down">
-                <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
-                <p>Welcome to our world.</p>
-                <button>
-                  <Link
-                    className="make-appointment-btn"
-                    to="/make-appointment/first-contact/#topup"
-                  >
-                    Make Appointment
-                  </Link>
-                </button>
+              <div className="content-carousel">
+                <div className="" data-aos="fade-down">
+                  <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
+                  <p>Welcome to our world.</p>
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
         <div>
           <div className="antd-content-carousel" style={contentStyle}>
             <img src={carousel} alt="" />
-            <div className="content-carousel">
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className="" data-aos="fade-down">
+                  <h1>We fix androids at MaestroMarv Tech Solution</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div>
           <div className="antd-content-carousel" style={contentStyle}>
             <img src={carousel1} alt="" />
-            <div className="content-carouel">
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className="" data-aos="fade-down">
+                  <h1>We fix macbooks at MaestroMarv Tech Solution</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel3} alt="" />
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className="" data-aos="fade-down">
+                  <h1>We fix iPhones at MaestroMarv Tech Solution.</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel2} alt="" />
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className="" data-aos="fade-down">
+                  <h1>We fix laptops at MaestroMarv Tech Solution</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -287,7 +359,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="section-6" id="about" data-aos="fade-up">
+      <div className="section-6" id="aboutUs" data-aos="fade-up">
         <div className="about">
           <h3>About MaestroMarv Tech Solution (MTS)</h3>
         </div>

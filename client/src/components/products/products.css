@@ -34,13 +34,17 @@
 }
 
 .product-page-container .carousel-item2 img{
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.product-page-container .oraimo img{
+  object-fit: contain;
 }
 
 .antd-product-carousel img{
-  object-fit: cover !important;
-  width: 100% !important;
-  height: 100% !important;
+  object-fit: contain ;
+  width: 100% ;
+  height: 100% ;
 }
 
 .antd-product-carousel{

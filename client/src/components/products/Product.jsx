@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../homepage/Navigation";
 import phoneaccess from "../images/phoneaccess.jpg";
+import oraimo from "../images/oraimo1.png";
 import productImage from "../images/products.jpg";
 import { Carousel } from "antd";
 // import "antd/dist/antd.min.css";
@@ -18,7 +19,7 @@ export default function Product() {
     marginTop: "60px",
     textAlign: "center",
     boxShadow: "inset 2px 2px 1000px rgba(0, 0, 0, 0.8)",
-    background: "#02026B",
+    background: "#fff",
   };
 
   //  const result = styles.filter((std) => {
@@ -60,22 +61,32 @@ export default function Product() {
     setKeyword(e.target.value);
   }
 
-  const laptops = products ? products.filter((laptop) => {
-    return laptop.category === "laptop";
-  }) : null;
-  const phones = products ? products.filter((phone) => {
-    return phone.category === "phone";
-  }) : null;
-  const electronics = products ? products.filter((electronic) => {
-    return electronic.category === "electronics";
-  }) : null;
-  const otherAccessories = products ? products.filter((other) => {
-    return other.category === "other";
-  }) : null;
+  const laptops = products
+    ? products.filter((laptop) => {
+        return laptop.category === "laptop";
+      })
+    : null;
+  const phones = products
+    ? products.filter((phone) => {
+        return phone.category === "phone";
+      })
+    : null;
+  const electronics = products
+    ? products.filter((electronic) => {
+        return electronic.category === "electronics";
+      })
+    : null;
+  const otherAccessories = products
+    ? products.filter((other) => {
+        return other.category === "other";
+      })
+    : null;
 
-  const handleChange = () => {
-    
+  if (laptops) {
+    console.log(laptops.length);
   }
+
+  const handleChange = () => {};
 
   return (
     <>
@@ -83,6 +94,11 @@ export default function Product() {
         <Navigation />
 
         <Carousel effect="fade" beforeChange={handleChange} autoplay>
+          <div>
+            <div className="antd-product-carousel oraimo" style={contentStyle}>
+              <img src={oraimo} alt="" />
+            </div>
+          </div>
           <div>
             <div className="antd-product-carousel" style={contentStyle}>
               <img src={phoneaccess} alt="" />
@@ -109,153 +125,169 @@ export default function Product() {
               className="search"
             />
           </div>
-          <div className="category-1">
-            <div className="cat-head">
-              <div className="cat-head-1">
-                <h1>Laptops</h1>
+          {laptops && laptops.length > 0 ? (
+            <div className="category-1">
+              <div className="cat-head">
+                <div className="cat-head-1">
+                  <h1>Laptops</h1>
+                </div>
+              </div>
+              <div className="cat-body">
+                {laptops
+                  ? laptops
+                      .filter((item) => {
+                        if (keyword === "") {
+                          return item;
+                        } else if (
+                          item.name
+                            .toLowerCase()
+                            .includes(keyword.toLowerCase())
+                        ) {
+                          return item;
+                        }
+                        return "There is no item in this category";
+                      })
+                      .map((product, index) => {
+                        return (
+                          <Item
+                            key={index}
+                            sold={product.sold}
+                            name={product.name}
+                            id={product._id}
+                            subprice={Number(product.subprice)}
+                            url={product.img}
+                            price={Number(product.price)}
+                            rating={product.rating}
+                          />
+                        );
+                      })
+                  : "There is no item in this category"}
               </div>
             </div>
-            <div className="cat-body">
-              {laptops
-                ? laptops
-                    .filter((item) => {
-                      if (keyword === "") {
-                        return item;
-                      } else if (
-                        item.name.toLowerCase().includes(keyword.toLowerCase())
-                      ) {
-                        return item;
-                      }
-                      return "There is no item in this category";
-                    })
-                    .map((product, index) => {
-                      return (
-                        <Item
-                          key={index}
-                          sold={product.sold}
-                          name={product.name}
-                          id={product._id}
-                          subprice={Number(product.subprice)}
-                          url={product.img}
-                          price={Number(product.price)}
-                          rating={product.rating}
-                        />
-                      );
-                    })
-                : "There is no item in this category"}
-            </div>
-          </div>
+          ) : null}
 
-          <div className="category-1">
-            <div className="cat-head">
-              <div className="cat-head-1">
-                <h1>Phones</h1>
+          {phones && phones.length > 0 ? (
+            <div className="category-1">
+              <div className="cat-head">
+                <div className="cat-head-1">
+                  <h1>Phones</h1>
+                </div>
+              </div>
+              <div className="cat-body">
+                {phones
+                  ? phones
+                      .filter((item) => {
+                        if (keyword === "") {
+                          return item;
+                        } else if (
+                          item.name
+                            .toLowerCase()
+                            .includes(keyword.toLowerCase())
+                        ) {
+                          return item;
+                        }
+                        return "";
+                      })
+                      .map((product, index) => {
+                        return (
+                          <Item
+                            key={index}
+                            sold={product.sold}
+                            id={product._id}
+                            name={product.name}
+                            subprice={Number(product.subprice)}
+                            url={product.img}
+                            price={Number(product.price)}
+                            rating={product.rating}
+                          />
+                        );
+                      })
+                  : "There is no item in this category"}
               </div>
             </div>
-            <div className="cat-body">
-              {phones
-                ? phones
-                    .filter((item) => {
-                      if (keyword === "") {
-                        return item;
-                      } else if (
-                        item.name.toLowerCase().includes(keyword.toLowerCase())
-                      ) {
-                        return item;
-                      }
-                      return "";
-                    })
-                    .map((product, index) => {
-                      return (
-                        <Item
-                          key={index}
-                          sold={product.sold}
-                          id={product._id}
-                          name={product.name}
-                          subprice={Number(product.subprice)}
-                          url={product.img}
-                          price={Number(product.price)}
-                          rating={product.rating}
-                        />
-                      );
-                    })
-                : "There is no item in this category"}
-            </div>
-          </div>
+          ) : null}
 
-          <div className="category-1">
-            <div className="cat-head">
-              <div className="cat-head-1">
-                <h1>Electronics</h1>
+          {electronics && electronics.length > 0 ? (
+            <div className="category-1">
+              <div className="cat-head">
+                <div className="cat-head-1">
+                  <h1>Electronics</h1>
+                </div>
+              </div>
+              <div className="cat-body">
+                {electronics
+                  ? electronics
+                      .filter((item) => {
+                        if (keyword === "") {
+                          return item;
+                        } else if (
+                          item.name
+                            .toLowerCase()
+                            .includes(keyword.toLowerCase())
+                        ) {
+                          return item;
+                        }
+                        return "";
+                      })
+                      .map((product, index) => {
+                        return (
+                          <Item
+                            key={index}
+                            sold={product.sold}
+                            id={product._id}
+                            name={product.name}
+                            subprice={Number(product.subprice)}
+                            url={product.img}
+                            price={Number(product.price)}
+                            rating={product.rating}
+                          />
+                        );
+                      })
+                  : "There is no item in this category"}
               </div>
             </div>
-            <div className="cat-body">
-              {electronics
-                ? electronics
-                    .filter((item) => {
-                      if (keyword === "") {
-                        return item;
-                      } else if (
-                        item.name.toLowerCase().includes(keyword.toLowerCase())
-                      ) {
-                        return item;
-                      }
-                      return "";
-                    })
-                    .map((product, index) => {
-                      return (
-                        <Item
-                          key={index}
-                          sold={product.sold}
-                          id={product._id}
-                          name={product.name}
-                          subprice={Number(product.subprice)}
-                          url={product.img}
-                          price={Number(product.price)}
-                          rating={product.rating}
-                        />
-                      );
-                    })
-                : "There is no item in this category"}
-            </div>
-          </div>
+          ) : null}
 
-          <div className="category-1">
-            <div className="cat-head">
-              <div className="cat-head-1">
-                <h1>Other Accessories</h1>
+          {otherAccessories && otherAccessories.length > 0 ? (
+            <div className="category-1">
+              <div className="cat-head">
+                <div className="cat-head-1">
+                  <h1>Other Accessories</h1>
+                </div>
+              </div>
+              <div className="cat-body">
+                {otherAccessories
+                  ? otherAccessories
+                      .filter((item) => {
+                        if (keyword === "") {
+                          return item;
+                        } else if (
+                          item.name
+                            .toLowerCase()
+                            .includes(keyword.toLowerCase())
+                        ) {
+                          return item;
+                        }
+                        return "";
+                      })
+                      .map((product, index) => {
+                        return (
+                          <Item
+                            key={index}
+                            sold={product.sold}
+                            id={product._id}
+                            name={product.name}
+                            subprice={Number(product.subprice)}
+                            url={product.img}
+                            price={Number(product.price)}
+                            rating={product.rating}
+                          />
+                        );
+                      })
+                  : "There is no item in this category"}
               </div>
             </div>
-            <div className="cat-body">
-              {otherAccessories
-                ? otherAccessories
-                    .filter((item) => {
-                      if (keyword === "") {
-                        return item;
-                      } else if (
-                        item.name.toLowerCase().includes(keyword.toLowerCase())
-                      ) {
-                        return item;
-                      }
-                      return "";
-                    })
-                    .map((product, index) => {
-                      return (
-                        <Item
-                          key={index}
-                          sold={product.sold}
-                          id={product._id}
-                          name={product.name}
-                          subprice={Number(product.subprice)}
-                          url={product.img}
-                          price={Number(product.price)}
-                          rating={product.rating}
-                        />
-                      );
-                    })
-                : "There is no item in this category"}
-            </div>
-          </div>
+          ) : null}
         </div>
 
         <div className="footer">

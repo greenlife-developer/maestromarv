@@ -52,18 +52,22 @@ header {
 }
 
 .nav-links {
-    width: 450px;
+    width: 520px;
     /* background-color: yellow; */
-    margin-top: .4em;
+    /* margin-top: .2em; */
 }
 
-.nav-links>ul {
+.active{
+    border-bottom: 3px solid #02386b;
+}
+
+.nav-links > ul {
     display: flex;
     justify-content: space-between;
 }
 
-.nav-links>ul li {
-    font-size: 12px;
+.nav-links > ul li {
+    font-size: 18px;
 }
 
 .dropdown {

@@ -44,7 +44,7 @@ export default function Navigation() {
         });
         // console.log(result.length);
         setLogin(true);
-        setUser(data.data.user)
+        setUser(data.data.user);
         setCart(result);
         setCartno(result.length);
         setSales(data.data.sales);
@@ -103,16 +103,18 @@ export default function Navigation() {
                   <div className="dropdown">
                     <ul>
                       <li className="dropdown-link">
-                        <NavLink to="/#topup">About us</NavLink>
+                        <a href="/#aboutUs">About us</a>
+                      </li>
+                      {/* <li className="dropdown-link">
+                        <Link to="/#topup">Blog</Link>
+                      </li> */}
+                      <li className="dropdown-link">
+                        <Link to="/make-appointment/first-contact/">
+                          Location
+                        </Link>
                       </li>
                       <li className="dropdown-link">
-                        <NavLink to="/#topup">Blog</NavLink>
-                      </li>
-                      <li className="dropdown-link">
-                        <NavLink to="/#topup">Location</NavLink>
-                      </li>
-                      <li className="dropdown-link">
-                        <NavLink to="/#topup">FAQ</NavLink>
+                        <Link to="/make-appointment/first-contact/">FAQ</Link>
                       </li>
                       <div className="arrow"></div>
                     </ul>
