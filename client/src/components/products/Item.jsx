@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
-import laptop from "../images/laptop.png";
 import axios from "axios";
 
 export default function Item(props) {

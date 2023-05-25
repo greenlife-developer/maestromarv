@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import products from "../../products";
 import Navigation from "../homepage/Navigation";
-import laptop from "../images/laptop.png";
 import { Modal } from "antd";
 import axios from "axios";
 import { SmileOutlined } from "@ant-design/icons";
 import Footer from "../homepage/Footer";
-// import "antd/dist/antd.min.css";
 import { Tabs, Button, notification } from "antd";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
