@@ -5,7 +5,7 @@
     color: #EBF1FF;
 }
 
-.loader-container{
+.loader-container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -19,20 +19,31 @@
     border-top: 5px solid #3498db;
     width: 50px;
     height: 50px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
     animation: spin 1s linear infinite;
-  }
-  
-  /* Safari */
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* .carousel-container {
     position: relative;
@@ -49,7 +60,7 @@
     box-shadow: inset 2px 2px 1000px rgba(0, 0, 0, 0.8);
 } */
 
-.antd-opacity-container{
+.antd-opacity-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,11 +98,12 @@
     height: 45vh;
 }  */
 
-.antd-content-carousel1 img{
+.antd-content-carousel1 img {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.9)
 }
 
-.antd-content-carousel img, .antd-content-carousel1 img{
+.antd-content-carousel img,
+.antd-content-carousel1 img {
     object-fit: cover !important;
     width: 100%;
     height: 100%;
@@ -107,7 +119,7 @@
     color: #EBF1FF;
 }
 
-.content-carousel .make-appointment-btn{
+.content-carousel .make-appointment-btn {
     color: #EBF1FF;
 }
 
@@ -248,7 +260,7 @@
     /* border-radius: 10px; */
 }
 
-.section-3-content button .make-appointment-btn{
+.section-3-content button .make-appointment-btn {
     color: #EBF1FF;
 }
 
@@ -281,7 +293,7 @@
 .review-item {
     background: transparent;
     /* color: blue; */
-    
+
     /* border-radius: 10px; */
     border: 1px solid #ddd;
     padding: 10px;
@@ -494,7 +506,7 @@
     /* border-radius: 50%; */
 }
 
-.footer-container .footer-items-container{
+.footer-container .footer-items-container {
     display: flex;
     /* background-color: #007BFF; */
     /* width: max-content; */
@@ -566,12 +578,13 @@
         margin: 2rem 2rem;
     }
 
-    .antd-content-carousel, .antd-content-carousel1{
+    .antd-content-carousel,
+    .antd-content-carousel1 {
         height: 80vh !important;
     }
 
-    .antd-content-carousel img{
-        object-fit: contain !important;
+    .antd-content-carousel img {
+        /* object-fit: contain !important; */
         width: 100%;
         height: 100%;
     }
@@ -752,7 +765,7 @@
         padding: 1rem;
     }
 
-    .footer-logo{
+    .footer-logo {
         padding: 1.5rem .5rem 0 1rem;
         max-width: 100%;
     }
@@ -763,7 +776,7 @@
         margin-bottom: 1rem;
     }
 
-    .computer-footer-repair{
+    .computer-footer-repair {
         margin-top: 1.5rem;
     }
 
