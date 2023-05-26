@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./appointment.css";
 
 export default function Contact() {
   const redirect = useNavigate();
 
+  const [loading, setLoading] = useState(true)
   const [contact, setContact] = useState({
     fName: "",
     lName: "",
@@ -65,12 +66,28 @@ export default function Contact() {
     });
   };
 
+
+  useEffect(() => {
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
     localStorage.setItem("contact", JSON.stringify(contact))
     redirect("/make-appointment/time");
   };
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
+
 
   return (
     <>

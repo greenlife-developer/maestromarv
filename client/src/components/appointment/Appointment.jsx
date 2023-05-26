@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./appointment.css";
@@ -11,6 +11,8 @@ export default function Appointment() {
     subject: "",
     details: "",
   });
+
+  const [loading, setLoading] = useState(true)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,12 +53,26 @@ export default function Appointment() {
     });
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     localStorage.setItem("details", JSON.stringify(details));
     redirect("/make-appointment/contact");
   };
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
 
   return (
     <>

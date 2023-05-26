@@ -22,6 +22,8 @@ export default function ViewProduct() {
   const selected = location.pathname.split("/")[3];
 
   const [products, setProducts] = useState(null);
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     axios
@@ -33,6 +35,10 @@ export default function ViewProduct() {
           setProducts(data.data.products);
         }
       });
+  
+      setTimeout(() => {
+        setLoading(false)
+     }, 5000)
   }, []);
 
   const product = products ? products.filter((std) => {
@@ -104,6 +110,14 @@ export default function ViewProduct() {
   const price = Number(product ? product[0].price * items : 0);
 
   const productName = <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>;
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
 
   return (
     <>

@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Navigation from "../homepage/Navigation";
 import Footer from "../homepage/Footer";
 import Faq from "./Faq";
 import { Link } from "react-router-dom";
 
 export default function FirstContact() {
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
+  }, []);
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
+
   return (
     <div className="first-contact" id="topup">
       <Navigation />

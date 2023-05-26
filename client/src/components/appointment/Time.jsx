@@ -9,6 +9,8 @@ import "./appointment.css";
 export default function Contact() {
   const redirect = useNavigate();
   let d = new Date();
+
+  const [loading, setLoading] = useState(true)
   const [days, setDays] = useState([
     {
       name: "Monday",
@@ -49,10 +51,10 @@ export default function Contact() {
   // console.log(JSON.parse(contact))
 
 
-  const handleBook = (time) => {
+  const handleBook = async(time) => {
     const appointment = { ...newDetails, ...newContact, time };
     console.log("res");
-    axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
+    await axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
       console.log("Response from axios", res.status);
       if(res.status === 200){
         notification.open({
@@ -72,12 +74,24 @@ export default function Contact() {
   };
 
   useEffect(() => {
-    const appBtn = document.getElementById("appBtn");
-    appBtn.addEventListener("click", handleBook)
+    // const appBtn = document.getElementById("appBtn");
+    // appBtn.addEventListener("click", handleBook)
+    setTimeout(() => {
+      setLoading(false)
+   }, 5000)
   });
 
 
   // console.log(details, contact);
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
+
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import image from "../images/image2.jpg";
 import carousel from "../images/we fix androids.jpg";
@@ -21,6 +21,10 @@ import Cart from "../products/Cart";
 import "./home.css";
 
 export default function Home() {
+
+  const [loading, setLoading] = useState(true)
+
+
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -29,6 +33,10 @@ export default function Home() {
       mirror: false,
     });
     AOS.refresh();
+
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
   }, []);
 
   const contentStyle = {
@@ -39,6 +47,15 @@ export default function Home() {
     boxShadow: "inset 2px 2px 1000px rgba(0, 0, 0, 0.8)",
     background: "#02026B",
   };
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
+  
 
   return (
     <>

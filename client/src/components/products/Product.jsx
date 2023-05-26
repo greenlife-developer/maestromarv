@@ -29,6 +29,8 @@ export default function Product() {
   // const [filteredProduct, setFilteredProduct] = useState(products);
   const [keyword, setKeyword] = useState("");
   const [products, setProducts] = useState(null);
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     axios
@@ -40,6 +42,10 @@ export default function Product() {
           setProducts(data.data.products);
         }
       });
+    
+      setTimeout(() => {
+        setLoading(false)
+     }, 5000)
   }, []);
 
   // {items
@@ -87,6 +93,14 @@ export default function Product() {
   }
 
   const handleChange = () => {};
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
 
   return (
     <>

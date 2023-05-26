@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import FileUpload from "./FileUpload";
 
@@ -11,6 +11,22 @@ export default function New() {
     details: "",
   });
 
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
+  }, []);
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
 
   return (
     <>

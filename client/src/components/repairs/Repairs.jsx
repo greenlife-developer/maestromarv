@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Navigation from "../homepage/Navigation";
 import Footer from "../homepage/Footer";
 import { Carousel } from "antd";
@@ -13,6 +13,24 @@ import repair5 from "../images/repair5.jpg";
 import "./repairs.css";
 
 export default function Repairs() {
+
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    setTimeout(() => {
+       setLoading(false)
+    }, 5000)
+  }, []);
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
+  }
+
   return (
     <>
       <Navigation />

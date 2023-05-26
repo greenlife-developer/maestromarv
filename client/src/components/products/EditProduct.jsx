@@ -9,6 +9,7 @@ export default function New() {
 
   const [products, setProduct] = useState(null);
   const selected = location.pathname.split("/")[2];
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     axios
@@ -20,6 +21,10 @@ export default function New() {
           setProduct(data.data.products);
         }
       });
+    
+      setTimeout(() => {
+        setLoading(false)
+     }, 5000)
   }, []);
 
   const editedProduct = products
@@ -30,6 +35,14 @@ export default function New() {
 
   if (products) {
     console.log("selected product", editedProduct, "selected id", selected);
+  }
+
+  if(loading) {
+    return (
+      <div className="loader-container">
+        <div class="loader"></div>
+      </div>
+    )
   }
 
   return (
