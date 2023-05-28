@@ -34,7 +34,7 @@
 }
 
 .product-page-container .carousel-item2 img{
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .product-page-container .oraimo img{

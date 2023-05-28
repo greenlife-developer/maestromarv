@@ -39,6 +39,12 @@ export default function Home() {
     }, 5000)
   }, []);
 
+  const handleCarouselChange = () => {
+    setTimeout(() => {
+       console.log("Carousel changed")
+    }, 5000)
+  }
+
   const contentStyle = {
     height: "90vh",
     color: "#fff",
@@ -62,7 +68,7 @@ export default function Home() {
       <Navigation />
       {/* <Cart /> */}
 
-      <Carousel effect="fade" autoplay>
+      <Carousel effect="fade" beforeChange={handleCarouselChange} autoplay>
         <div>
           <div className="antd-content-carousel1" style={contentStyle}>
             <img src={image} alt="" />
