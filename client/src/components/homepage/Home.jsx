@@ -5,6 +5,8 @@ import carousel from "../images/we fix androids.jpg";
 import carousel1 from "../images/mac fixing.jpg";
 import carousel2 from "../images/we fix laptops.jpg";
 import carousel3 from "../images/we fix iphones.jpg";
+import carousel4 from "../images/carousel3.jpg";
+import carousel5 from "../images/carousel4.jpg";
 import AOS from "aos";
 import image2 from "../images/image2.jpg";
 import { Link } from "react-router-dom";
@@ -22,7 +24,8 @@ import "./home.css";
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [animate, setAnimate] = useState(false)
 
 
   useEffect(() => {
@@ -40,9 +43,7 @@ export default function Home() {
   }, []);
 
   const handleCarouselChange = () => {
-    setTimeout(() => {
-       console.log("Carousel changed")
-    }, 5000)
+    setAnimate(!animate)
   }
 
   const contentStyle = {
@@ -68,13 +69,13 @@ export default function Home() {
       <Navigation />
       {/* <Cart /> */}
 
-      <Carousel effect="fade" beforeChange={handleCarouselChange} autoplay>
+      <Carousel effect="fade" afterChange={handleCarouselChange} autoplay autoplaySpeed={10000}>
         <div>
           <div className="antd-content-carousel1" style={contentStyle}>
             <img src={image} alt="" />
             <div className="antd-opacity-container">
               <div className="content-carousel">
-                <div className="" data-aos="fade-down">
+                <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>Welcome to MaestroMarv Tech Solution (MTS).</h1>
                   <p>Welcome to our world.</p>
                   <button>
@@ -95,7 +96,7 @@ export default function Home() {
             <img src={carousel} alt="" />
             <div className="antd-opacity-container">
               <div className="content-carousel">
-                <div className="" data-aos="fade-down">
+                <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix androids at MaestroMarv Tech Solution</h1>
                   {/* <p>Welcome to our world.</p> */}
                   <button>
@@ -116,7 +117,7 @@ export default function Home() {
             <img src={carousel1} alt="" />
             <div className="antd-opacity-container">
               <div className="content-carousel">
-                <div className="" data-aos="fade-down">
+                <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix macbooks at MaestroMarv Tech Solution</h1>
                   {/* <p>Welcome to our world.</p> */}
                   <button>
@@ -137,7 +138,7 @@ export default function Home() {
             <img src={carousel3} alt="" />
             <div className="antd-opacity-container">
               <div className="content-carousel">
-                <div className="" data-aos="fade-down">
+                <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix iPhones at MaestroMarv Tech Solution.</h1>
                   {/* <p>Welcome to our world.</p> */}
                   <button>
@@ -158,8 +159,50 @@ export default function Home() {
             <img src={carousel2} alt="" />
             <div className="antd-opacity-container">
               <div className="content-carousel">
-                <div className="" data-aos="fade-down">
+                <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix laptops at MaestroMarv Tech Solution</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel4} alt="" />
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className={animate ? "mastro-fade-down" : ""}>
+                  <h1>We sell Embedded system and IOT components at MaestroMarv Tech Solution</h1>
+                  {/* <p>Welcome to our world.</p> */}
+                  <button>
+                    <Link
+                      className="make-appointment-btn"
+                      to="/make-appointment/first-contact/#topup"
+                    >
+                      Make Appointment
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="antd-content-carousel" style={contentStyle}>
+            <img src={carousel5} alt="" />
+            <div className="antd-opacity-container">
+              <div className="content-carousel">
+                <div className={animate ? "mastro-fade-down" : ""}>
+                  <h1>We sell Gadgets and Accessories at MaestroMarv Tech Solution</h1>
                   {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link

@@ -85,7 +85,8 @@ body{
     font-size: 20px;
     font-weight: 400;
     padding: .5rem 1rem;
-    color: #02026B;
+    color: #EBF1FF;
+    background: #02026B;
     border: 1px solid #02026B;
     display: flex;
     justify-content: center;

@@ -43,7 +43,7 @@ export default function FirstContact() {
           </div>
           <div className="office-address">
             <h1>Futa office</h1>
-            <h5>Suit 8,  </h5>
+            <h5>Suit GF 8, Futa shopping complex, beside GTBank, Obanla </h5>
             <h6>
               <a href="tel:+2348142439130">08142439130</a>
             </h6>

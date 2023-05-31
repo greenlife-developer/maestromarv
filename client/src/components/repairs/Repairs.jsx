@@ -3,7 +3,7 @@ import Navigation from "../homepage/Navigation";
 import Footer from "../homepage/Footer";
 import { Carousel } from "antd";
 import { Link } from "react-router-dom";
-import repairImage from "../images/image5.jpg";
+import repairImage from "../images/laptop-repair.jpg";
 import repairImage2 from "../images/phone-repair.jpg";
 import repair1 from "../images/repair1.jpg";
 import repair2 from "../images/repair2.jpg";
@@ -15,7 +15,6 @@ import "./repairs.css";
 export default function Repairs() {
 
   const [loading, setLoading] = useState(true)
-
 
   useEffect(() => {
     setTimeout(() => {

@@ -1,3 +1,32 @@
+/* ---------------------------- Fade Animation ------------------------- */
+
+.mastro-fade-down {
+	/* background: #ccc; */
+	/* text-align: center; */
+	/* line-height: 100px; */
+	opacity: 0;
+	animation: fadeIn 1.5s ease-in both;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -30%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
+/* ----------------------------------- !Fade Animation ------------------- */
+
+
+
+
+
+
 /* ------------------------- Carousel -----------------------------  */
 
 .make-appointment-btn {
