@@ -69,7 +69,7 @@ export default function Home() {
       <Navigation />
       {/* <Cart /> */}
 
-      <Carousel effect="fade" afterChange={handleCarouselChange} autoplay autoplaySpeed={10000}>
+      <Carousel effect="fade" afterChange={handleCarouselChange} autoplay autoplaySpeed={4000}>
         <div>
           <div className="antd-content-carousel1" style={contentStyle}>
             <img src={image} alt="" />
