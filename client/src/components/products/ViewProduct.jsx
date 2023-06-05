@@ -22,8 +22,7 @@ export default function ViewProduct() {
   const selected = location.pathname.split("/")[3];
 
   const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true)
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -35,19 +34,23 @@ export default function ViewProduct() {
           setProducts(data.data.products);
         }
       });
-  
-      setTimeout(() => {
-        setLoading(false)
-     }, 5000)
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   }, []);
 
-  const product = products ? products.filter((std) => {
-    return std._id === selected;
-  }) : null;
+  const product = products
+    ? products.filter((std) => {
+        return std._id === selected;
+      })
+    : null;
 
-  const bestOnSale = products ?  products.filter((std) => {
-    return std.category === product[0].category;
-  }) : null;
+  const bestOnSale = products
+    ? products.filter((std) => {
+        return std.category === product[0].category;
+      })
+    : null;
 
   // const productImages = product[0].otherImages;
 
@@ -109,14 +112,16 @@ export default function ViewProduct() {
 
   const price = Number(product ? product[0].price * items : 0);
 
-  const productName = <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>;
+  const productName = (
+    <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>
+  );
 
-  if(loading) {
+  if (loading) {
     return (
       <div className="loader-container">
         <div class="loader"></div>
       </div>
-    )
+    );
   }
 
   return (
@@ -163,9 +168,28 @@ export default function ViewProduct() {
             })} */}
             <div class="carousel-item active">
               <div className="product-img">
-                <img src={ product? product[0].img : ""} alt="" />
+                <img src={product ? product[0].img : ""} alt="" />
               </div>
             </div>
+            {product &&
+            product[0].img1 !== undefined &&
+            product[0].img1.length > 5 ? (
+              <div class="carousel-item active">
+                <div className="product-img">
+                  <img src={product ? product[0].img1 : ""} alt="" />
+                </div>
+              </div>
+            ) : null}
+            
+            {product &&
+            product[0].img2 !== undefined &&
+            product[0].img2.length > 5 ? (
+              <div class="carousel-item active">
+                <div className="product-img">
+                  <img src={product ? product[0].img2 : ""} alt="" />
+                </div>
+              </div>
+            ) : null}
             {/* <div class="carousel-item">
               <div className="product-img">
                 <img src={product[0].otherImages[1].img1} alt="" />
@@ -279,7 +303,8 @@ export default function ViewProduct() {
       >
         <Paystack
           amount={
-            (parseInt(product ? product[0].price : "") - parseInt(product ? product[0].subprice : "")) *
+            (parseInt(product ? product[0].price : "") -
+              parseInt(product ? product[0].subprice : "")) *
               items +
             "00"
           }

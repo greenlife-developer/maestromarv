@@ -159,7 +159,7 @@ export default function Product() {
                         ) {
                           return item;
                         }
-                        return "There is no item in this category";
+                        return "";
                       })
                       .map((product, index) => {
                         return (

@@ -106,14 +106,36 @@ export default function New() {
                   </div>
                   <br />
                   <div className="issue-type">
-                    <label htmlFor="type">Image url</label>
+                    <label htmlFor="type">Image main product image url</label>
                     <br />
                     <input
                       // onChange={handleChange}
                       type="text"
                       name="url"
-                      placeholder="Enter th url for this product"
+                      placeholder="Enter a url for this product"
                       required
+                    />
+                  </div>
+                  <br />
+                  <div className="issue-type">
+                    <label htmlFor="type">Image url 1</label>
+                    <br />
+                    <input
+                      // onChange={handleChange}
+                      type="text"
+                      name="img1"
+                      placeholder="Enter a url for this product"
+                    />
+                  </div>
+                  <br />
+                  <div className="issue-type">
+                    <label htmlFor="type">Image url 2</label>
+                    <br />
+                    <input
+                      // onChange={handleChange}
+                      type="text"
+                      name="img2"
+                      placeholder="Enter a url for this product"
                     />
                   </div>
                   <br />
