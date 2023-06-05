@@ -4,18 +4,16 @@ import { Modal } from "antd";
 import axios from "axios";
 import { SmileOutlined } from "@ant-design/icons";
 import Footer from "../homepage/Footer";
-import { Tabs, Button, notification } from "antd";
+import { Tabs, notification } from "antd";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
 import "./pview.css";
-import Cart from "./Cart";
 
 const { TabPane } = Tabs;
 
 export default function ViewProduct() {
   const location = useLocation();
   const [items, setItems] = useState(1);
-  const [cart, setCart] = useState(null);
   const [previewVisible, setPreviewVisible] = useState(false);
   const redirect = useNavigate();
 
@@ -27,9 +25,7 @@ export default function ViewProduct() {
   useEffect(() => {
     axios
       .get("/api/new-product")
-      // .then((res) => res.json())
       .then((data) => {
-        console.log(data.data.products);
         if (data.data) {
           setProducts(data.data.products);
         }
@@ -52,9 +48,6 @@ export default function ViewProduct() {
       })
     : null;
 
-  // const productImages = product[0].otherImages;
-
-  const handleCancel = () => setPreviewVisible(false);
 
   const handleRedirect = () => {
     return redirect("/?message=bought");
@@ -63,14 +56,8 @@ export default function ViewProduct() {
   const handleAddToCart = () => {
     if (product) {
       axios.get("/api").then((data) => {
-        console.log("data from api", data.data.cart);
-        if (data.data.cart) {
-          setCart(data.data.cart);
-        }
-
         if (data.data.isLogin === true) {
           axios.post("/api/products/add-to-cart", { product }).then((res) => {
-            console.log(res);
             notification.open({
               message: "Added to Cart!",
               description: "Please, don't forget to check out",
@@ -88,11 +75,6 @@ export default function ViewProduct() {
       });
     }
   };
-
-  // useEffect(() => {
-  //   const addCart = document.getElementById("addCart")
-  //   addCart.addEventListener("click", handleAddToCart)
-  // })
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -157,15 +139,6 @@ export default function ViewProduct() {
             ></button>
           </div>
           <div class="carousel-inner">
-            {/* {productImages.map((image, id) => {
-              return (
-                <div key={id} class="carousel-item active">
-                  <div className="product-img">
-                    <img src={image.img1} alt={product[0].name} />
-                  </div>
-                </div>
-              );
-            })} */}
             <div class="carousel-item active">
               <div className="product-img">
                 <img src={product ? product[0].img : ""} alt="" />
@@ -180,7 +153,7 @@ export default function ViewProduct() {
                 </div>
               </div>
             ) : null}
-            
+
             {product &&
             product[0].img2 !== undefined &&
             product[0].img2.length > 5 ? (
@@ -190,16 +163,6 @@ export default function ViewProduct() {
                 </div>
               </div>
             ) : null}
-            {/* <div class="carousel-item">
-              <div className="product-img">
-                <img src={product[0].otherImages[1].img1} alt="" />
-              </div>
-            </div> */}
-            {/* <div class="carousel-item">
-              <div className="product-img">
-                <img src={product[0].otherImages[2].img1} alt="" />
-              </div>
-            </div> */}
           </div>
           <button
             class="carousel-control-prev"
@@ -321,22 +284,3 @@ export default function ViewProduct() {
   );
 }
 
-{
-  /* <Tabs tabPosition={window.innerWidth <= 425 ? "top" : "top"}>
-          <TabPane tab="SPECIFICATIONS" key="1">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-              velit!
-            </p>
-          </TabPane>
-          <TabPane tab="DESCRIPTION" key="2">
-            <p>Lorem ipsum dolor sit amet.</p>
-          </TabPane>
-          <TabPane tab="MORE" key="3">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              totam voluptas, placeat ullam temporibus corrupti.
-            </p>
-          </TabPane>
-        </Tabs> */
-}

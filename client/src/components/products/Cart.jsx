@@ -9,9 +9,7 @@ export default function Cart() {
   const [icon, setIcon] = useState(true);
 
   useEffect(() => {
-    axios.get("/api").then((data) => {
-      console.log(data.data.cart);
-      
+    axios.get("/api").then((data) => {      
       if (data.data.isLogin === false) {
         setIcon(false);
         setCart(null);
@@ -22,7 +20,6 @@ export default function Cart() {
         const result = data.data.cart.filter((std) => {
           return std.user.email === data.data.user.email;
         });
-        console.log(result, "result");
         setCart(result);
         setCartno(result.length);
         setSales(data.data.sales);
@@ -31,7 +28,6 @@ export default function Cart() {
     });
   }, []);
 
-  // console.log(cart);
 
   return (
     <div className="cart-container">

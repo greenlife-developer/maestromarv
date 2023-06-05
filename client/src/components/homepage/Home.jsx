@@ -18,7 +18,6 @@ import video2 from "../images/videos/video2.mp4";
 import "aos/dist/aos.css";
 import Swipper from "./Reviews";
 import Footer from "./Footer";
-import Cart from "../products/Cart";
 
 import "./home.css";
 
@@ -67,7 +66,6 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      {/* <Cart /> */}
 
       <Carousel effect="fade" afterChange={handleCarouselChange} autoplay autoplaySpeed={4000}>
         <div>
@@ -98,7 +96,6 @@ export default function Home() {
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix androids at MaestroMarv Tech Solution</h1>
-                  {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -119,7 +116,6 @@ export default function Home() {
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix macbooks at MaestroMarv Tech Solution</h1>
-                  {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -140,7 +136,6 @@ export default function Home() {
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix iPhones at MaestroMarv Tech Solution.</h1>
-                  {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -161,7 +156,6 @@ export default function Home() {
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We fix laptops at MaestroMarv Tech Solution</h1>
-                  {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -182,7 +176,6 @@ export default function Home() {
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
                   <h1>We sell Embedded system and IOT components at MaestroMarv Tech Solution</h1>
-                  {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -253,7 +246,6 @@ export default function Home() {
             <video src={video2} autoPlay muted loop className="myVideo">
               <source type="video/mp4" />
             </video>
-            {/* <img src={image3} alt="" /> */}
           </div>
         </div>
       </div>
@@ -387,7 +379,6 @@ export default function Home() {
       </div>
 
       <div className="section-5">
-        {/* <img src={image7} alt="" /> */}
         <div className="section-5-content">
           <div className="item1" data-aos="fade-down">
             <h6>We Are Here to Help</h6>

@@ -17,7 +17,6 @@ const db = process.env.MONGO_URI;
 
 mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   if (error) {
-    console.log(error);
     return;
   }
   console.log("MongoDB Connected...");
@@ -30,7 +29,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       },
       function (error, result) {
         if (error) {
-          console.log(error);
           return;
         }
         if (callBack !== null) {
@@ -41,7 +39,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   }
 
   router.get("/", (req, res) => {
-    console.log("api session", req.session.user_id);
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
         database
@@ -106,8 +103,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
 
   router.post("/products/add-to-cart", (req, res) => {
     const product = req.body.product;
-    console.log("api product", product);
-    console.log("addcard session", req.session.user_id);
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
         database.collection("cart").insertOne(
@@ -165,7 +160,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
         sgMail
           .sendMultiple(emailData)
           .then((sent) => {
-            console.log(sent)
             return res.json({
               message: `Email has been sent!`,
             });
@@ -178,7 +172,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/maestromarv/register", (req, res) => {
-    console.log(req.body);
     database.collection("users").findOne(
       {
         email: req.body.regForm.email,
@@ -195,7 +188,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
                 password: hash,
               },
               (err, data) => {
-                console.log(err);
                 res.redirect("/login?message=registered");
               }
             );
@@ -233,22 +225,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/new-product", (req, res) => {
-    const name = req.body.productName;
-    const price = req.body.price;
-    console.log({
-      name: req.body.productName,
-      description: req.body.description,
-      specification: req.body.specification,
-      category: req.body.category,
-      price: req.body.price,
-      img: req.body.url,
-      color: req.body.color,
-      rating: req.body.rating,
-      sold: req.body.sold,
-      subprice: req.body.slprice,
-      // user: user,
-      isLogin: true
-    })
 
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
@@ -296,14 +272,12 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/new-product/edit/:id", async (req, res) => {
-    console.log(req.params.id)
     if (req.session.user_id) {
       const result = await database
         .collection("products")
         .findOne({ _id: ObjectId(req.params.id) });
       getUser(req.session.user_id, (user) => {
         if (user.email === "maestromarve@gmail.com" || user.email === "yemijoshua80@gmail.com") {
-          const myquery = { quantity: result.quantity, price: result.price };
           const newvalues = {
             $set: {
               name: req.body.productName,
@@ -322,7 +296,6 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
               isLogin: true
             }
           };
-          // db.collection.update({_id: req.body.id},{$set:{status: 1}}, function(err,doc){})
           database
             .collection("products")
             .updateMany({ _id: ObjectId(req.params.id) }, newvalues, function (err, data) {

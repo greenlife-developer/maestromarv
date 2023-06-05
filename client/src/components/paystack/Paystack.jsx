@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import PaystackPop from "@paystack/inline-js";
 import { SmileOutlined } from "@ant-design/icons";
-// import "antd/dist/antd.min.css";
 import { notification } from "antd";
 import axios from "axios";
 import "./paystack.css";
@@ -13,7 +12,6 @@ const Paystack = (props) => {
   const item = props.item;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const payRef = useRef();
   const [phone, setPhone] = useState("");
 
   const formBody = {
@@ -33,8 +31,7 @@ const Paystack = (props) => {
     },
     onSuccess: () => {
       axios.post("/api/products/shop", { formBody }).then((res) => {
-        console.log(res);
-        console.log(res.data);
+        const message = "Hello"
       });
       props.close();
       notification.open({
@@ -59,16 +56,11 @@ const Paystack = (props) => {
       key: publicKey,
       ...componentProps,
     });
-    // console.log("Hello submit");
   };
 
   function truncate(str, n) {
     return str.length > n ? str.slice(0, n - 1) + "..." : str;
   }
-  // const short = props.name.replace(/(.{7})..+/, "$1&hellip;");
-  const productTitle =
-    props.name.length > 1 ? props.name.slice(0, 0) + "..." : "props.name";
-  // const realTitle =
 
   return (
     <div className="App">

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LinesEllipsis from "react-lines-ellipsis";
-import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
 import axios from "axios";
 
 export default function Item(props) {
-  const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -16,10 +13,8 @@ export default function Item(props) {
 
   useEffect(() => {
     axios
-      .get("/api")
-      // .then((res) => res.json())
-      .then((data) => {
-        console.log(data.data);
+      .get("/api") 
+      .then((data) => {  
         if (data.data) {
           setUser(data.data.user);
         }

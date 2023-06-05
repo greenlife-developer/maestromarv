@@ -10,15 +10,12 @@ export default function Footer() {
   useEffect(() => {
     axios
       .get("/api")
-      // .then((res) => res.json())
       .then((data) => {
-        console.log(data.data);
         if (data.data) {
           setUser(data.data.user);
         }
       });
   }, []);
-  // console.log(user.email)
 
   return (
     <footer>

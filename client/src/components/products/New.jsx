@@ -1,16 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
-import FileUpload from "./FileUpload";
 
 export default function New() {
-  const redirect = useNavigate();
-  const [details, setDetails] = useState({
-    priority: "",
-    type: "",
-    subject: "",
-    details: "",
-  });
-
 
   const [loading, setLoading] = useState(true)
 
@@ -54,7 +44,6 @@ export default function New() {
                       <option value="phone">Phones</option>
                       <option value="other">Other Accessories</option>
                     </select>
-                    {/* <input type="text" name="productName" id="" /> */}
                   </div>
                   <br />
                   <div className="issue-type">

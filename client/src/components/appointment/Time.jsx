@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import "antd/dist/antd.min.css";
 import { SmileOutlined } from "@ant-design/icons";
-import { Tabs, Button, notification } from "antd";
+import { notification } from "antd";
 import "./appointment.css";
 
 export default function Contact() {
@@ -48,14 +47,11 @@ export default function Contact() {
   const contact = localStorage.getItem("contact");
   const newContact = JSON.parse(contact);
   const newDetails = JSON.parse(details);
-  // console.log(JSON.parse(contact))
 
 
   const handleBook = async(time) => {
     const appointment = { ...newDetails, ...newContact, time };
-    console.log("res");
     await axios.post("/api/maestromarv/appointment", { appointment }).then((res) => {
-      console.log("Response from axios", res.status);
       if(res.status === 200){
         notification.open({
           message: "Thank you for booking an appointment",
@@ -80,9 +76,6 @@ export default function Contact() {
       setLoading(false)
    }, 5000)
   });
-
-
-  // console.log(details, contact);
 
   if(loading) {
     return (
@@ -123,7 +116,6 @@ export default function Contact() {
                                 d.toLocaleDateString() +
                                 " " +
                                 time;
-                              // console.log(schedule);
                               return (
                                 <button
                                   onClick={() => handleBook(schedule)}

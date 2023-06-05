@@ -4,9 +4,7 @@ import phoneaccess from "../images/phoneaccess.jpg";
 import oraimo from "../images/oraimo1.png";
 import productImage from "../images/products.jpg";
 import { Carousel } from "antd";
-// import "antd/dist/antd.min.css";
 import "./products.css";
-// import products from "../../products";
 import Footer from "../homepage/Footer";
 import Cart from "./Cart";
 import Item from "./Item";
@@ -14,7 +12,6 @@ import axios from "axios";
 
 export default function Product() {
   const contentStyle = {
-    // height: "25vh",
     color: "#fff",
     marginTop: "60px",
     textAlign: "center",
@@ -22,11 +19,6 @@ export default function Product() {
     background: "#fff",
   };
 
-  //  const result = styles.filter((std) => {
-  //   return std.name === style;
-  // });
-
-  // const [filteredProduct, setFilteredProduct] = useState(products);
   const [keyword, setKeyword] = useState("");
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true)
@@ -35,9 +27,7 @@ export default function Product() {
   useEffect(() => {
     axios
       .get("/api/new-product")
-      // .then((res) => res.json())
       .then((data) => {
-        console.log(data.data.products);
         if (data.data) {
           setProducts(data.data.products);
         }
@@ -47,21 +37,6 @@ export default function Product() {
         setLoading(false)
      }, 5000)
   }, []);
-
-  // {items
-  //   ? items
-  //       .filter((item) => {
-  //         if (keyword === "") {
-  //           return item;
-  //         } else if (
-  //           item.productName
-  //             .toLowerCase()
-  //             .includes(keyword.toLowerCase())
-  //         ) {
-  //           return item;
-  //         }
-  //         return ""
-  //       })
 
   function handleSearch(e) {
     setKeyword(e.target.value);
@@ -88,9 +63,6 @@ export default function Product() {
       })
     : null;
 
-  if (laptops) {
-    console.log(laptops.length);
-  }
 
   const handleChange = () => {};
 

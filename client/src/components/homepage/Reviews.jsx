@@ -1,21 +1,12 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 import reviews from "../../review";
-// console.log(reviews[0].time);j8ki9lo0p;-'[]
 
 export default function Swipper() {
-
-  // if (window.screen.width <= 425) { 
-  //   setSlide(1)
-  //  }
-  // if (window.screen.width <= 425) { 
-  //   setSlide(1)
-  //  }
 
 
   return (

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
-import FileUpload from "./FileUpload";
 
 export default function New() {
-  const redirect = useNavigate();
   const location = useLocation();
 
   const [products, setProduct] = useState(null);
@@ -14,9 +12,7 @@ export default function New() {
   useEffect(() => {
     axios
       .get("/api/new-product")
-      // .then((res) => res.json())
       .then((data) => {
-        console.log(data.data.products);
         if (data.data) {
           setProduct(data.data.products);
         }
@@ -32,10 +28,6 @@ export default function New() {
         return std._id === selected;
       })
     : null;
-
-  if (products) {
-    console.log("selected product", editedProduct, "selected id", selected);
-  }
 
   if(loading) {
     return (

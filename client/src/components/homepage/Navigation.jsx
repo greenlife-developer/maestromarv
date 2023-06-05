@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Item from "../products/Item";
-import Cart from "../products/Cart";
 import "./navstyle.css";
 import logo from "../images/logo.png";
 
 export default function Navigation() {
-  const currentLocation = useLocation();
-  // console.log(currentLocation.pathname)
   const redirect = useNavigate();
-  const [navBackground, setNavBackground] = useState("");
   const [cart, setCart] = useState(null);
   const [sales, setSales] = useState(null);
   const [cartno, setCartno] = useState("0");
@@ -25,13 +21,11 @@ export default function Navigation() {
   };
 
   const handleMenu = () => {
-    console.log("menu is clicked");
     setChangeIcon(!changeIcon);
   };
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-      // console.log(data.data);
 
       if (data.data.isLogin === false) {
         setCart(null);
@@ -42,7 +36,6 @@ export default function Navigation() {
         const result = data.data.cart.filter((std) => {
           return std.user.email === data.data.user.email;
         });
-        // console.log(result.length);
         setLogin(true);
         setUser(data.data.user);
         setCart(result);
@@ -56,7 +49,6 @@ export default function Navigation() {
     <>
       <header
         style={{
-          // backgroundColor: navBackground,
           background: "#EBF1FF",
           borderBottom:
             "linear-gradient(273.29deg,  #02026B 0%, #02026B 20.24%, #EBF1FF 67.09%, #EBF1FF 67.09%)",
@@ -105,9 +97,6 @@ export default function Navigation() {
                       <li className="dropdown-link">
                         <a href="/#aboutUs">About us</a>
                       </li>
-                      {/* <li className="dropdown-link">
-                        <Link to="/#topup">Blog</Link>
-                      </li> */}
                       <li className="dropdown-link">
                         <Link to="/make-appointment/first-contact/">
                           Location
@@ -188,9 +177,7 @@ export default function Navigation() {
                 <div className="">
                   {login ? (
                     <div className="user-loggedin-mobile">
-                      {/* <div className="username"> */}
                       <h1>Welcome, {user ? user.firstName : null}</h1>
-                      {/* </div> */}
                     </div>
                   ) : null}
                   <ul>
