@@ -265,12 +265,7 @@ export default function ViewProduct() {
         onCancel={() => setPreviewVisible(false)}
       >
         <Paystack
-          amount={
-            (parseInt(product ? product[0].price : "") -
-              parseInt(product ? product[0].subprice : "")) *
-              items +
-            "00"
-          }
+          amount={price+"00"}
           name={productName}
           item={product}
           close={handleRedirect}
