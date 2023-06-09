@@ -6,9 +6,11 @@ import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
-  const publicKey = 'pk_live_a1ed994ce8fed73e65ba3662766e0782e38c7af0';
+  const publicKey = "pk_live_168e390a89d88254907e5c7881c9710d193d3d5c";
+  // pk_test_5e2bb4decdc516f19cab4e4bb07968f7350c1a05
+  // pk_live_168e390a89d88254907e5c7881c9710d193d3d5c
   const amount = props.amount;
-  const currency = "NGN"
+  const currency = "NGN";
   const item = props.item;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -31,7 +33,7 @@ const Paystack = (props) => {
     },
     onSuccess: () => {
       axios.post("/api/products/shop", { formBody }).then((res) => {
-        const message = "Hello"
+        const message = "Hello";
       });
       props.close();
       notification.open({
