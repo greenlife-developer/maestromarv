@@ -172,12 +172,14 @@
 .cat-item .cat-item-img{
   max-width: 150px;
   max-height: 125px;
+  /* mix-blend-mode: screen; */
   padding: .5rem;
 }
 
 .cat-item .cat-item-img img{
   width: 100%;
   object-fit: contain;
+  /* mixblendmode */
   cursor: pointer;
   height: 100%;
 } 
