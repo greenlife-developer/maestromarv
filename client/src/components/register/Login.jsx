@@ -85,7 +85,7 @@ export default function Register() {
           <div className="details-form">
             <div className="form">
               {!user ? (
-                <form onSubmit={handleSubmit}>
+                <form action="api/maestromarv/login" method="POST">
                   <div className="issue-details">
                     <h3>Welcome! Please login</h3>
                     <p>

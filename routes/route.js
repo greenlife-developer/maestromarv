@@ -231,8 +231,10 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/maestromarv/login", (req, res) => {
-    const email = req.body.loginForm.email;
-    const password = req.body.loginForm.password;
+    const email = req.body.email;
+    const password = req.body.password;
+
+    console.log(req.body)
 
     database.collection("users").findOne(
       {

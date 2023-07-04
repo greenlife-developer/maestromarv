@@ -6,14 +6,14 @@
     flex-direction: column;
 }
 
-.transaction-header{
+.transaction-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.transaction-header p{
+.transaction-header p {
     width: 89%;
 }
 
@@ -28,11 +28,11 @@
     background-color: yellow;
 } */
 
-.transaction-body .mb-3{
+.transaction-body .mb-3 {
     width: 100%;
 }
 
-.product-description-container{
+.product-description-container {
     display: flex;
     width: 100%;
     gap: 20px;
@@ -42,7 +42,7 @@
 
 } */
 
-.product-description-container .cat-item{
+.product-description-container .cat-item {
     padding-right: 1rem;
     height: 100%;
     width: 400px;
@@ -51,7 +51,7 @@
     margin: 0;
 }
 
-.transaction-cart-items .cat-item{
+.transaction-cart-items .cat-item {
     margin: 0;
     padding-right: 1rem;
     height: 90px;
@@ -69,38 +69,38 @@
     /* background-color: #bbb; */
 }
 
-.transaction-cart-items .other-details{
+.transaction-cart-items .other-details {
     display: flex;
     justify-content: space-between;
     width: 500px;
 }
 
-.transaction-buy{
+.transaction-buy {
     width: 100%;
     /* background: #6b0202; */
     display: flex;
     justify-content: end;
 }
 
-.transaction-buy a{
+.transaction-buy a {
     text-align: end;
     color: #F8F8F8;
     padding: 10px 40px;
     background: #02026B;
 }
 
-.parent-transaction{
+.parent-transaction {
     /* background: orange; */
     padding: 1rem 0;
 }
 
-.parent-transaction hr{
+.parent-transaction hr {
     border: 1px solid #ddd;
     width: 100%;
     margin: 10px 0;
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 430px) {
     .transaction-body {
         width: 95%;
     }
@@ -114,11 +114,14 @@
         flex-direction: column;
     }
 
-    .transaction-cart-items .other-details{
+    .transaction-cart-items .other-details {
         width: 100%;
     }
 
-    .product-description-container .cat-item {
+    .product-description-container .cat-item,
+    .transaction-cart-items .cat-item {
         width: 100%;
+        margin-bottom: 1rem;
+        height: fit-content;
     }
 }

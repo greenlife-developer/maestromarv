@@ -40,7 +40,7 @@ export default function Transaction() {
         }
         if (
           data.data.user.email === "yemijoshua81@gmail.com" ||
-          data.data.user.email === "enginemarv@gmail.com"
+          data.data.user.email === "maestromarve@gmail.com"
         ) {
           setAdmin(false);
         }
