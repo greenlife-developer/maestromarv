@@ -1,0 +1,28 @@
+.progress-section{
+
+}
+
+.progress-section form{
+    display: flex;
+    gap: 10px;
+}
+
+.progress-section form input{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+.progress-section form button{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    transition: all .6s ease-in-out;
+}
+
+.progress-section form button:hover{
+    background: #02026B;
+    color: #fff;
+}
+
+.progress-section form input:focus{
+    outline: none;
+}

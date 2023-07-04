@@ -82,12 +82,14 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
 
   router.post("/products/shop", (req, res) => {
     const shop = req.body.formBody;
+    const currentTime = new Date().getTime()
     if (("session shop", req.session.user_id)) {
       getUser(req.session.user_id, (user) => {
         database.collection("sales").insertOne(
           {
             ...shop,
             user,
+            createdAt: currentTime
           },
           (err, data) => {
             res.redirect("/?message=bought");
@@ -101,8 +103,36 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
     }
   });
 
+  router.post("/shop/edit/:id", async (req, res) => {
+    console.log(req.params.id)
+    console.log(req.body)
+    if (req.session.user_id) {
+      // const result = await database
+      //   .collection("sales")
+      //   .findOne({ _id: ObjectId(req.params.id) });
+      getUser(req.session.user_id, (user) => {
+        if (user.email === "yemijoshua81@gmail.com") {
+          const newValue = { $set: { message: req.body.message, percent: req.body.percent } };
+          // db.collection.update({_id: req.body.id},{$set:{status: 1}}, function(err,doc){})
+          console.log(newValue)
+          database
+            .collection("sales")
+            .updateOne({ _id: ObjectId(req.params.id) }, newValue, function (err, data) {
+              if (err) throw err;
+              console.log(data)
+            });
+        } else {
+          res.send("<h1>Only the owner of the store can edit products <a href=/login > Please login as owner</a> </h1>");
+        }
+      })
+    } else {
+      res.redirect("/login?error=need_login")
+    }
+  })
+
   router.post("/products/add-to-cart", (req, res) => {
-    const product = req.body.product;
+    const product = req.body.cart;
+    console.log(product)
     if (req.session.user_id) {
       getUser(req.session.user_id, (user) => {
         database.collection("cart").insertOne(
@@ -125,7 +155,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   });
 
   router.post("/maestromarv/appointment", (req, res) => {
-    const currentTime = Date.now();
+    const currentTime = new Date().getTime();
     const user = {
       name: req.body.appointment.fName + " " + req.body.appointment.lName,
       phone: req.body.appointment.phone,
@@ -174,17 +204,18 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
   router.post("/maestromarv/register", (req, res) => {
     database.collection("users").findOne(
       {
-        email: req.body.regForm.email,
+        email: req.body.email,
       },
       (err, user) => {
         if (user === null) {
           bcrypt.hash(req.body.regForm.password, 10, (err, hash) => {
             database.collection("users").insertOne(
               {
-                firstName: req.body.regForm.fName,
-                lastName: req.body.regForm.lName,
-                email: req.body.regForm.email,
-                number: req.body.regForm.phone,
+                firstName: req.body.fName,
+                lastName: req.body.lName,
+                address: req.body.address,
+                email: req.body.email,
+                number: req.body.phone,
                 password: hash,
               },
               (err, data) => {
@@ -193,15 +224,15 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
             );
           });
         } else {
-          res.redirect("/register?message=exists");
+          res.redirect("/register?error=exists");
         }
       }
     );
   });
 
   router.post("/maestromarv/login", (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
+    const email = req.body.loginForm.email;
+    const password = req.body.loginForm.password;
 
     database.collection("users").findOne(
       {
@@ -214,7 +245,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
           bcrypt.compare(password, user.password, (err, isPasswordVerify) => {
             if (isPasswordVerify) {
               req.session.user_id = user._id;
-              res.redirect("/products");
+              res.redirect('back')
             } else {
               res.redirect("/login?error=wrong_password");
             }

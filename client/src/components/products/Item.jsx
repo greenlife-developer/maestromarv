@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Item(props) {
-
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "NGN",
@@ -12,13 +11,11 @@ export default function Item(props) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("/api") 
-      .then((data) => {  
-        if (data.data) {
-          setUser(data.data.user);
-        }
-      });
+    axios.get("/api").then((data) => {
+      if (data.data) {
+        setUser(data.data.user);
+      }
+    });
   }, []);
 
   const percent = Math.round(
@@ -38,17 +35,23 @@ export default function Item(props) {
             </a>
           </div>
           <div className="item-content">
-            <p> {shortName} </p>
-            <h4>
-              {formatter.format(props.price)}{" "}
-              <sub>
-                {formatter.format(Number(props.price) + Number(props.subprice))}
-              </sub>
-            </h4>
-            <span>your're saving {percent}%</span>
-            <span>
-              {props.sold} sold &#9733; {props.rating}
-            </span>
+            <a href={"/products/view/" + props.id}>
+              <p> {shortName} </p>
+              <h4>
+                {formatter.format(props.price)}{" "}
+                <sub>
+                  {formatter.format(
+                    Number(props.price) + Number(props.subprice)
+                  )}
+                </sub>
+              </h4>
+              <span>your're saving {percent}%</span>
+              {props.sold ? (
+                <span>
+                  {props.sold} sold &#9733; {props.rating}
+                </span>
+              ) : null}
+            </a>
             <span>
               <a href={`tel:${props.phone}`}>{props.call}</a>
             </span>

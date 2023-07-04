@@ -26,7 +26,6 @@ export default function Navigation() {
 
   useEffect(() => {
     axios.get("/api").then((data) => {
-
       if (data.data.isLogin === false) {
         setCart(null);
         setCartno(null);
@@ -146,10 +145,18 @@ export default function Navigation() {
                   aria-controls="offcanvasWithBothOptions"
                   className="cart-icon"
                 >
-                  <i className="ri-shopping-cart-2-line"></i>
-                  <div className="cart-no">
-                    <p>{cartno}</p>
-                  </div>
+                  <Link
+                    to={
+                      user
+                        ? "/transactions"
+                        : "/login?error=login-to-proceed-to-cart"
+                    }
+                  >
+                    <i className="ri-shopping-cart-2-line"></i>
+                    <div className="cart-no">
+                      <p>{cartno}</p>
+                    </div>
+                  </Link>
                 </div>
               </div>
               <div className="menu-icon" onClick={handleMenu}>
@@ -174,10 +181,10 @@ export default function Navigation() {
             </div>
             {changeIcon ? (
               <div className="menu-items-mobile">
-                <div className="">
+                <div className="mobile-nav-body">
                   {login ? (
                     <div className="user-loggedin-mobile">
-                      <h1>Welcome, {user ? user.firstName : null}</h1>
+                      <h3>Welcome, {user ? user.firstName : null}</h3>
                     </div>
                   ) : null}
                   <ul>
@@ -235,72 +242,8 @@ export default function Navigation() {
         </div>
       </header>
 
-      <div
-        className="offcanvas offcanvas-end"
-        data-bs-scroll="true"
-        tabindex="-1"
-        id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel"
-      >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-            Orders Details
-          </h5>
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-
-        <div className="offcanvas-body">
-          <div className="order-page">
-            <div className="cart-details">
-              <h4>View Your Cart({cartno})</h4>
-              <div className="cart-items">
-                {cart
-                  ? cart.map((cat, id) => {
-                      return (
-                        <Item
-                          key={id}
-                          sold={cat[0].sold}
-                          name={cat[0].name}
-                          id={cat[0].id}
-                          price={cat[0].price}
-                          rating={cat[0].rating}
-                        />
-                      );
-                    })
-                  : null}
-              </div>
-            </div>
-            <br />
-            <br />
-
-            <div className="cart-details">
-              <h4>View Your Orders</h4>
-              <div className="cart-items">
-                {sales && sales[0] && sales[0].item
-                  ? sales.map((sale, id) => {
-                      return (
-                        <Item
-                          key={id}
-                          sold={sale.item[0].sold}
-                          name={sale.item[0].name}
-                          id={sale.item[0].id}
-                          price={sale.item[0].price}
-                          rating={sale.item[0].rating}
-                          phone={sale.item[0].phone}
-                          call={"call"}
-                        />
-                      );
-                    })
-                  : null}
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <div className="offcanvas-header"></div>
       </div>
     </>
   );

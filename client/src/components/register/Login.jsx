@@ -1,5 +1,11 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  Link,
+  useNavigate,
+  useSearchParams,
+  useLocation,
+} from "react-router-dom";
+// import {useHistory} from "react-router";
 import axios from "axios";
 import "./register.css";
 
@@ -9,9 +15,11 @@ export default function Register() {
     email: "",
     password: "",
   });
+  const [user, setUser] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("error");
+  const message = searchParams.get("message");
 
   console.log(query);
 
@@ -36,65 +44,119 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // console.log(e);
     axios.post("/api/maestromarv/login", { loginForm }).then((res) => {
-      console.log(res);
-      // if(res.status === 200){
-      //   console.log("Successfully registered!");
-      //   redirect("/?message=logged-in");
-      // }
+      if (res.status === 200) {
+        console.log("data has been posted");
+        redirect(-1);
+      }
     });
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      await axios.get("/api").then((data) => {
+        if (data.data.isLogin === false) {
+          setUser(false);
+        }
+        if (data.data.isLogin === true) {
+          setUser(data.data.isLogin);
+        }
+      });
+    }
+
+    fetchData();
+  }, []);
+
+  console.log(user);
+
+  const handlePrevious = () => {
+    // console.log("back is clicked")
+    redirect(-1);
+  };
+
   return (
     <div className="registration-form">
-      <Link className="back" to="/">
+      <a onClick={handlePrevious} className="back">
         Back
-      </Link>
+      </a>
       <div className="app-details">
         <div className="">
           <div className="details-form">
             <div className="form">
-              <form action="/api/maestromarv/login" method="post">
-                <div className="issue-details">
-                  <h3>Welcome! Please login</h3>
-                  <p>
-                    Don't have an account? <Link to="/register">register</Link>
-                  </p>
-                </div>
-                <br />
-                {query ? (
-                  <div className="error-messages">
-                    <p>{query === "not_exists" ? "A User with this email does not exist": null}</p>
-                    <p>{query === "wrong_password" ? "The password does not match your email": null}</p>
+              {!user ? (
+                <form onSubmit={handleSubmit}>
+                  <div className="issue-details">
+                    <h3>Welcome! Please login</h3>
+                    <p>
+                      Don't have an account?{" "}
+                      <Link to="/register">register</Link>
+                    </p>
                   </div>
-                ) : null}
+                  <br />
+                  {query ? (
+                    <div className="error-messages">
+                      <p>
+                        {query === "not_exists"
+                          ? "A User with this email does not exist"
+                          : null}
+                      </p>
+                      <p>
+                        {query === "wrong_password"
+                          ? "The password does not match your email"
+                          : null}
+                      </p>
+                      <p>
+                        {query === "login-to-proceed-for-payment"
+                          ? "Please Login to be able to purchase"
+                          : null}
+                      </p>
+                      <p>
+                        {query === "login-to-proceed-to-cart"
+                          ? "Please Login to view your cart"
+                          : null}
+                      </p>
+                    </div>
+                  ) : null}
+                  {message ? (
+                    <div className="success">
+                      <p>
+                        {message === "registered"
+                          ? "You have been registered, Please log in"
+                          : null}
+                      </p>
+                    </div>
+                  ) : null}
 
-                <div className="issue-type">
-                  <label htmlFor="type">Email Address</label>
-                  <input
-                    name="email"
-                    // onChange={handleChange}
-                    type="email"
-                    placeholder="Email Address"
-                    required
-                  />
-                </div>
-                <br />
-                <div className="issue-type">
-                  <label htmlFor="type">Password</label>
-                  <input
-                    name="password"
-                    // onChange={handleChange}
-                    type="password"
-                    placeholder="Password Address"
-                    required
-                  />
-                </div>
-                <br />
-                <div className="issue-type">
-                  <button type="submit">Login</button>
-                </div>
-              </form>
+                  <div className="issue-type">
+                    <label htmlFor="type">Email Address</label>
+                    <input
+                      name="email"
+                      onChange={handleChange}
+                      type="email"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div className="issue-type">
+                    <label htmlFor="type">Password</label>
+                    <input
+                      name="password"
+                      onChange={handleChange}
+                      type="password"
+                      placeholder="Password Address"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div className="issue-type">
+                    <button type="submit">Login</button>
+                  </div>
+                </form>
+              ) : (
+                <div>You are logged in</div>
+              )}
             </div>
           </div>
         </div>

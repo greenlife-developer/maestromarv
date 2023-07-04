@@ -39,7 +39,7 @@ export default function FirstContact() {
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            ></iframe><br /><br />
           </div>
           <div className="office-address">
             <h1>Futa office</h1>
@@ -50,7 +50,7 @@ export default function FirstContact() {
             <br />
             <Link className="office-link" to="/make-appointment/">
               Proceed
-            </Link>
+            </Link><br /><br />
           </div>
         </div>
       </div>

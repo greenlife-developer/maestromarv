@@ -8,6 +8,7 @@ import { Tabs, notification } from "antd";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Paystack from "../paystack/Paystack";
 import "./pview.css";
+import Cart from "./Cart";
 
 const { TabPane } = Tabs;
 
@@ -53,28 +54,7 @@ export default function ViewProduct() {
     return redirect("/?message=bought");
   };
 
-  const handleAddToCart = () => {
-    if (product) {
-      axios.get("/api").then((data) => {
-        if (data.data.isLogin === true) {
-          axios.post("/api/products/add-to-cart", { product }).then((res) => {
-            notification.open({
-              message: "Added to Cart!",
-              description: "Please, don't forget to check out",
-              icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-            });
-          });
-        } else {
-          notification.open({
-            message: "Oops!!",
-            description: "We could not add to cart, please login",
-            icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-          });
-          redirect("/login?message=cannot_add_cart");
-        }
-      });
-    }
-  };
+  console.log(product)
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -97,6 +77,31 @@ export default function ViewProduct() {
   const productName = (
     <div style={{ fontSize: "12px" }}>{product ? product[0].name : ""}</div>
   );
+
+  const cart = {...product, price, items}
+
+  const handleAddToCart = () => {
+    if (product) {
+      axios.get("/api").then((data) => {
+        if (data.data.isLogin === true) {
+          axios.post("/api/products/add-to-cart", { cart }).then((res) => {
+            notification.open({
+              message: "Added to Cart!",
+              description: "Please, don't forget to check out",
+              icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+            });
+          });
+        } else {
+          notification.open({
+            message: "Oops!!",
+            description: "We could not add to cart, please login",
+            icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+          });
+          redirect("/login?message=cannot_add_cart");
+        }
+      });
+    }
+  };
 
   if (loading) {
     return (
@@ -183,6 +188,8 @@ export default function ViewProduct() {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+
+        <Cart />
 
         <div className="name-quantity">
           <div className="name">

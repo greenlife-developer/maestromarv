@@ -16,6 +16,9 @@ import FirstContact from './components/appointment/FirstContact'
 import New from './components/products/New';
 import Booked from "./components/appointment/Booked";
 import ScrollToTop from './scrollToTop';
+import Transaction from './components/products/Transaction';
+
+
 export default function App() {
   return (
     <div className="App">
@@ -36,6 +39,7 @@ export default function App() {
           {/* <Route path="/new-product" element={<NewProduct />} /> */}
           <Route path="/new-product" element={<New />} />
           <Route path="/booked" element={<Booked />} />
+          <Route path="/transactions" element={<Transaction />} />
         </Routes>
       </Router>
     </div>

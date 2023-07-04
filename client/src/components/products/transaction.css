@@ -1,0 +1,124 @@
+.transactions {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.transaction-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-header p{
+    width: 89%;
+}
+
+.transaction-body {
+    width: 80%;
+    margin-top: 80px;
+    /* border: 1px solid #ddd; */
+}
+
+/* .transaction-body .tabs-container{
+    padding-bottom: 2rem;
+    background-color: yellow;
+} */
+
+.transaction-body .mb-3{
+    width: 100%;
+}
+
+.product-description-container{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+/* .user-cart-item{
+
+} */
+
+.product-description-container .cat-item{
+    padding-right: 1rem;
+    height: 100%;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.transaction-cart-items .cat-item{
+    margin: 0;
+    padding-right: 1rem;
+    height: 90px;
+    /* background: #02026B; */
+    width: 360px;
+}
+
+/*  */
+.transaction-cart-items {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    gap: 20px;
+    /* background-color: #bbb; */
+}
+
+.transaction-cart-items .other-details{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.transaction-buy{
+    width: 100%;
+    /* background: #6b0202; */
+    display: flex;
+    justify-content: end;
+}
+
+.transaction-buy a{
+    text-align: end;
+    color: #F8F8F8;
+    padding: 10px 40px;
+    background: #02026B;
+}
+
+.parent-transaction{
+    /* background: orange; */
+    padding: 1rem 0;
+}
+
+.parent-transaction hr{
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 430px){
+    .transaction-body {
+        width: 95%;
+    }
+
+    .product-description-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .transaction-cart-items {
+        flex-direction: column;
+    }
+
+    .transaction-cart-items .other-details{
+        width: 100%;
+    }
+
+    .product-description-container .cat-item {
+        width: 100%;
+    }
+}

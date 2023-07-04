@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import PaystackPop from "@paystack/inline-js";
 import { SmileOutlined } from "@ant-design/icons";
+import { useNavigate, useLocation } from "react-router-dom";
 import { notification } from "antd";
 import axios from "axios";
 import "./paystack.css";
 
 const Paystack = (props) => {
-  const publicKey = "pk_live_168e390a89d88254907e5c7881c9710d193d3d5c";
+  const publicKey = "pk_test_5e2bb4decdc516f19cab4e4bb07968f7350c1a05";
   // pk_test_5e2bb4decdc516f19cab4e4bb07968f7350c1a05
   // pk_live_168e390a89d88254907e5c7881c9710d193d3d5c
   const amount = props.amount;
@@ -14,12 +15,17 @@ const Paystack = (props) => {
   const item = props.item;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selected = location.pathname.split("/")[3];
 
   const formBody = {
     email,
     name,
     phone,
+    address,
     item: item,
   };
 
@@ -32,15 +38,20 @@ const Paystack = (props) => {
       phone,
     },
     onSuccess: () => {
-      axios.post("/api/products/shop", { formBody }).then((res) => {
-        const message = "Hello";
-      });
-      props.close();
-      notification.open({
-        message: "Thank you for your purchase!",
-        description: "Please, let's do business together in the future",
-        icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-      });
+      axios
+        .post("/api/products/shop", { formBody })
+        .then((res) => {
+          notification.open({
+            message: "Thank you for your purchase!",
+            description: "Please, let's do business together in the future",
+            icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+          });
+          props.close();
+          navigate(`/transactions?message=new-transaction&&item=${selected}`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     onClose: () => {
       notification.open({
@@ -54,9 +65,17 @@ const Paystack = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const pay = new PaystackPop();
-    pay.newTransaction({
-      key: publicKey,
-      ...componentProps,
+
+    axios.get("/api").then((data) => {
+      console.log(data);
+      if (data.data.isLogin === true) {
+        pay.newTransaction({
+          key: publicKey,
+          ...componentProps,
+        });
+      } else {
+        navigate("/login?error=login-to-proceed-for-payment");
+      }
     });
   };
 
@@ -94,6 +113,13 @@ const Paystack = (props) => {
               type="text"
               id="phone"
               onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+            <label>Address (Enter your shipping address)</label>
+            <input
+              type="text"
+              id="address"
+              onChange={(e) => setAddress(e.target.value)}
               required
             />
 

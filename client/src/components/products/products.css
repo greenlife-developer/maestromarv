@@ -34,15 +34,15 @@
 }
 
 .product-page-container .carousel-item2 img{
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .product-page-container .oraimo img{
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .antd-product-carousel img{
-  object-fit: contain ;
+  object-fit: fill ;
   width: 100% ;
   height: 100% ;
 }
@@ -184,11 +184,13 @@
 
 .cat-item .item-content{
   max-height: 100%;
-  /* background-color: blue; */
   padding: .5rem .2rem;
   width: 100%;
   text-align: left;
-  /* padding: .9rem 2rem 2rem .5rem; */
+}
+
+.cat-item .item-content *{
+  color: #000;
 }
 
 .item-content h4{
@@ -276,6 +278,18 @@
 
   .antd-product-carousel{
   height: 25vh;
+}
+
+.product-page-container .carousel-item2 img{
+  object-fit: fill;
+}
+
+.product-page-container .oraimo img{
+  object-fit: fill;
+}
+
+.antd-product-carousel img{
+  object-fit: fill ;
 }
 
   .category-1, .search{
