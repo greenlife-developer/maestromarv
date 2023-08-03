@@ -244,6 +244,28 @@
 
 /*  ------------ Booked -----------------*/
 
+/* ---------------- Location Images --------------- */
+.maestromarv-office{
+    display: flex;
+    /* background: #000; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.maestromarv-office .img{
+    width: 300px;
+}
+
+.maestromarv-office .img img{
+    width: 100%;
+}
+
+
+
+/* --------------- !Location Images --------------- */
+
 
 
 
@@ -272,7 +294,6 @@
     }
 
     .time-day .time {
-        overflow-x: hidden;
         max-width: 100%;
         overflow-x: scroll;
     }
@@ -315,6 +336,19 @@
         /* border-radius: .8rem; */
         background-color: #EBF1FF;
         box-shadow: 2px 2px 8px #ddd;
+        width: 100%;
+    }
+
+    .maestromarv-office{
+        display: flex;
+        overflow-x: scroll;
+    }
+    
+    .maestromarv-office .img{
+        width: 400px !important;
+    }
+    
+    .maestromarv-office .img img{
         width: 100%;
     }
 }

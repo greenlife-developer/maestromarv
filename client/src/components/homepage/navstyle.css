@@ -426,6 +426,15 @@ header .active{
     .mobile-nav-style {
         display: block;
     }
+
+    .login-register1 button {
+        padding: .5rem 1.5rem;
+        /* border-radius: 1rem; */
+        background-color: transparent;
+        border: 1.5px solid #EBF1FF;
+        margin-right: .6em;
+        /* color: #EBF1FF; */
+    }
 }
 
 @media screen and (max-width: 320px){

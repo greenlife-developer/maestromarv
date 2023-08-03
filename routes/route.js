@@ -208,7 +208,7 @@ mongoClient.connect(db, { useUnifiedTopology: true }, function (error, client) {
       },
       (err, user) => {
         if (user === null) {
-          bcrypt.hash(req.body.regForm.password, 10, (err, hash) => {
+          bcrypt.hash(req.body.password, 10, (err, hash) => {
             database.collection("users").insertOne(
               {
                 firstName: req.body.fName,

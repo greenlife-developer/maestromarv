@@ -11,10 +11,10 @@ import "./register.css";
 
 export default function Register() {
   const redirect = useNavigate();
-  const [loginForm, setLoginForm] = useState({
-    email: "",
-    password: "",
-  });
+  // const [loginForm, setLoginForm] = useState({
+  //   email: "",
+  //   password: "",
+  // });
   const [user, setUser] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,35 +23,35 @@ export default function Register() {
 
   console.log(query);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
 
-    setLoginForm((prev) => {
-      if (name === "email") {
-        return {
-          email: value,
-          password: prev.password,
-        };
-      }
-      if (name === "password") {
-        return {
-          email: prev.email,
-          password: value,
-        };
-      }
-    });
-  };
+  //   setLoginForm((prev) => {
+  //     if (name === "email") {
+  //       return {
+  //         email: value,
+  //         password: prev.password,
+  //       };
+  //     }
+  //     if (name === "password") {
+  //       return {
+  //         email: prev.email,
+  //         password: value,
+  //       };
+  //     }
+  //   });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(e);
-    axios.post("/api/maestromarv/login", { loginForm }).then((res) => {
-      if (res.status === 200) {
-        console.log("data has been posted");
-        redirect(-1);
-      }
-    });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // console.log(e);
+  //   axios.post("/api/maestromarv/login", { loginForm }).then((res) => {
+  //     if (res.status === 200) {
+  //       console.log("data has been posted");
+  //       redirect(-1);
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     async function fetchData() {
@@ -132,7 +132,6 @@ export default function Register() {
                     <label htmlFor="type">Email Address</label>
                     <input
                       name="email"
-                      onChange={handleChange}
                       type="email"
                       placeholder="Email Address"
                       required
@@ -143,7 +142,6 @@ export default function Register() {
                     <label htmlFor="type">Password</label>
                     <input
                       name="password"
-                      onChange={handleChange}
                       type="password"
                       placeholder="Password Address"
                       required

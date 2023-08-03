@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import Navigation from "../homepage/Navigation";
 import Footer from "../homepage/Footer";
+import location1 from "../images/location1.jpg"
+import location2 from "../images/location2.jpg"
+import location3 from "../images/location3.jpg"
 import Faq from "./Faq";
 import { Link } from "react-router-dom";
 
@@ -28,11 +31,29 @@ export default function FirstContact() {
       <div className="offices">
         <h1>To make an appointment, please choose a store: </h1>
       </div>
+
+      <br /><br />
+      <div className="maestromarv-locations">
+        <h1>Get Directions to our location</h1>
+
+        <div className="maestromarv-office">
+          <div className="img">
+            <img src={location1} alt="" />
+          </div>
+          <div className="img">
+            <img src={location2} alt="" />
+          </div>
+          <div className="img">
+            <img src={location3} alt="" />
+          </div>
+        </div>
+      </div>
+
       <div className="appointment-office">
         <div className="map-office">
           <div className="office-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15829.498734442981!2d5.1327837999999915!3d7.31173710000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1684939203653!5m2!1sen!2sng"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d989.3645697494309!2d5.1389932!3d7.3022984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047894a6a6454e7%3A0xe3400e8fa8b631a6!2sSenate%20Extension%2C%20Oduduwa%20Road%2C%20340110%2C%20Ipinsa%2C%20Ondo!5e0!3m2!1sen!2sng!4v1690276809971!5m2!1sen!2sng"
               width="100%"
               height="100%"
               style={{ width: "100%" }}

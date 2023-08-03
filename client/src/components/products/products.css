@@ -25,12 +25,12 @@
 
 
 .product-page .carousel-item img{
-  height: 40vh;
+  height: 60vh;
   /* background-color: red; */
 }
 
 .product-page-container .carousel-container{
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .product-page-container .carousel-item2 img{
@@ -48,9 +48,8 @@
 }
 
 .antd-product-carousel{
-  height: 45vh;
+  height: 60vh;
 }
-
 
 .category-1{
   /* background-color: yellow; */
