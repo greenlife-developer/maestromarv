@@ -22,14 +22,12 @@ import Footer from "./Footer";
 import "./home.css";
 
 export default function Home() {
-
   const [loading, setLoading] = useState(true);
-  const [animate, setAnimate] = useState(false)
-
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     AOS.init({
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       once: false,
       mirror: false,
@@ -37,13 +35,13 @@ export default function Home() {
     AOS.refresh();
 
     setTimeout(() => {
-       setLoading(false)
-    }, 5000)
+      setLoading(false);
+    }, 5000);
   }, []);
 
   const handleCarouselChange = () => {
-    setAnimate(!animate)
-  }
+    setAnimate(!animate);
+  };
 
   const contentStyle = {
     height: "90vh",
@@ -54,20 +52,24 @@ export default function Home() {
     background: "#02026B",
   };
 
-  if(loading) {
+  if (loading) {
     return (
       <div className="loader-container">
         <div class="loader"></div>
       </div>
-    )
+    );
   }
-  
 
   return (
     <>
       <Navigation />
 
-      <Carousel effect="fade" afterChange={handleCarouselChange} autoplay autoplaySpeed={4000}>
+      <Carousel
+        effect="fade"
+        afterChange={handleCarouselChange}
+        autoplay
+        autoplaySpeed={4000}
+      >
         <div>
           <div className="antd-content-carousel1" style={contentStyle}>
             <img src={image} alt="" />
@@ -175,7 +177,10 @@ export default function Home() {
             <div className="antd-opacity-container">
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
-                  <h1>We sell Embedded system and IOT components at MaestroMarv Tech Solution</h1>
+                  <h1>
+                    We sell Embedded system and IOT components at MaestroMarv
+                    Tech Solution
+                  </h1>
                   <button>
                     <Link
                       className="make-appointment-btn"
@@ -195,7 +200,9 @@ export default function Home() {
             <div className="antd-opacity-container">
               <div className="content-carousel">
                 <div className={animate ? "mastro-fade-down" : ""}>
-                  <h1>We sell Gadgets and Accessories at MaestroMarv Tech Solution</h1>
+                  <h1>
+                    We sell Gadgets and Accessories at MaestroMarv Tech Solution
+                  </h1>
                   {/* <p>Welcome to our world.</p> */}
                   <button>
                     <Link
@@ -284,11 +291,10 @@ export default function Home() {
               <div className="">
                 <h1>Computer Repair</h1>
                 <p>
-                  Our computer repair services include everything from basic
-                  troubleshooting and system optimization to virus and malware
-                  removal. We have years of experience in troubleshooting and
-                  resolving computer issues. We provide quick and profession al
-                  service so you can get back to what's important in no time.
+                  We offer comprehensive computer repair services, from basic
+                  troubleshooting to virus removal. Our experienced technicians
+                  provide fast and professional service, so you can get back to
+                  your important tasks quikly.
                 </p>
                 <button>
                   <Link
@@ -328,13 +334,10 @@ export default function Home() {
               <div className="">
                 <h1>Custom Build Computers</h1>
                 <p>
-                  Custom built computer systems are an excellent choice for
-                  those who want a powerful and reliable machine that is
-                  tailored to their exact specifications. With a custom-built
-                  computer, you can enjoy faster speeds, better performance, and
-                  the ability to customize it to fit your specific needs. From
-                  gaming rigs to multimedia machines, build the perfect computer
-                  for your needs today!
+                  Custom-built computers offer powerful and reliable performance
+                  tailored to your exact needs. Enjo faster speeds and
+                  optimization options for gaming or multimedia. Build your
+                  perfect computer today
                 </p>
                 <button>
                   <Link
@@ -353,12 +356,10 @@ export default function Home() {
               <div className="">
                 <h1>Windows installation</h1>
                 <p>
-                  We are experts in Windows installation and can help you set up
-                  your system quickly and easily. Our team of specialists are
-                  knowledgeable and experienced, and will be able to provide you
-                  with the best quality service. We guarantee satisfaction with
-                  our service and a great customer experience. Contact us today
-                  to get started!
+                  Our skilled team can swiftly and effortlessly dualboot Windows
+                  and linux on your system. With their expertise and experience,
+                  we promise top-notch service and customer satisfaction.
+                  Contact us to begin!
                 </p>
                 <button>
                   <Link
